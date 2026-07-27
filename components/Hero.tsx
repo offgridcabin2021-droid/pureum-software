@@ -53,8 +53,8 @@ const Hero: React.FC = () => {
       {/* Bottom Right Button Section */}
       <div className="absolute bottom-10 left-6 right-6 md:left-auto md:right-16 lg:right-24 z-20 flex items-center justify-end">
         <a
-          href="#projects"
-          onClick={(e) => handleScroll(e, 'projects')}
+          href="#my-works"
+          onClick={(e) => handleScroll(e, 'my-works')}
           className="hidden md:flex group relative overflow-hidden bg-white/5 backdrop-blur-md md:bg-black/30 border border-white/20 hover:border-[#007AFF] text-white px-8 py-5 md:px-10 md:py-5 transition-all duration-500 w-full md:w-auto text-center rounded-2xl md:rounded-none shadow-lg"
         >
           <div className="absolute inset-0 w-0 bg-[#007AFF] transition-all duration-[250ms] ease-out group-hover:w-full opacity-10"></div>
