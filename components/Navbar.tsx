@@ -42,7 +42,7 @@ const Navbar = () => {
             onClick={(e) => handleScroll(e, 'my-works')}
             className="hover:text-white transition-colors"
           >
-            Projects
+            My Works
           </a>
           <a
             href="mailto:info@pureum.dev"
