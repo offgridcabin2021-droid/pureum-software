@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    // Check if we are on the homepage
     if (window.location.pathname === '/') {
       const element = document.getElementById(id);
       if (element) {
@@ -38,11 +37,11 @@ const Navbar = () => {
             Services
           </a>
           <a
-            href="/#my-works"
-            onClick={(e) => handleScroll(e, 'my-works')}
+            href="/#our-works"
+            onClick={(e) => handleScroll(e, 'our-works')}
             className="hover:text-white transition-colors"
           >
-            My Works
+            Our Works
           </a>
           <a
             href="mailto:info@pureum.dev"

@@ -97,14 +97,14 @@ const ServicesAndWorks: React.FC = () => {
 
         </div>
 
-        {/* BOTTOM SECTION: My Works (5 Columns x 2 Rows Grid = 10 Projects) */}
-        <div className="pt-10 md:pt-14 scroll-mt-24" id="my-works">
+        {/* BOTTOM SECTION: Our Works (5 Columns x 2 Rows Grid = 10 Projects) */}
+        <div className="pt-10 md:pt-14 scroll-mt-24" id="our-works">
           
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 md:mb-12">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-                My Works
+                Our Works
               </h2>
               <span className="bg-blue-50 text-[#007AFF] text-xs font-semibold px-3 py-1 rounded-full border border-blue-200">
                 10 Selected Projects
