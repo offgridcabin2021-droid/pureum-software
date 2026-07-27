@@ -34,7 +34,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -45,29 +44,21 @@
             background: #333;
             border-radius: 4px;
         }
-
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
     </style>
 </head>
 
-<body className="bg-[#050505] text-gray-200 antialiased min-h-screen">
+<body class="bg-[#050505] text-gray-200 antialiased min-h-screen">
 
-    <!-- Top Sticky Header Navigation (Back to Home) -->
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/90 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-3 group">
-                <img src="/pureum-logo.jpg" alt="Pureum Software Logo" className="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform">
-                <span className="font-bold text-xl tracking-tight text-white group-hover:text-[#007AFF] transition-colors">Pureum Software</span>
+    <!-- Top Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#050505]/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 group">
+                <img src="/pureum-logo.jpg" alt="Pureum Software Logo" class="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform">
+                <span class="font-bold text-xl tracking-tight text-white group-hover:text-[#007AFF] transition-colors">Pureum Software</span>
             </a>
 
-            <a href="/" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-[#007AFF] text-white font-semibold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-md">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-[#007AFF] text-white font-semibold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 Back to Home
@@ -75,91 +66,54 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <!-- Main Container -->
+    <main class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         
-        <!-- Document Title & Header Card -->
-        <div className="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 mb-8 text-center relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Header Card -->
+        <div class="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 mb-8 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <span className="text-xs font-bold uppercase tracking-widest text-[#007AFF] mb-3 block">Legal & Privacy</span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Privacy Policy</h1>
-            <p className="text-gray-400 text-sm">Last updated: July 2026 | Applies to all Pureum Software products</p>
-
-            <!-- Language Switcher -->
-            <div className="flex justify-center gap-3 mt-8 flex-wrap">
-                <button onclick="switchLang('en')" id="btn-en" className="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]">English</button>
-                <button onclick="switchLang('ko')" id="btn-ko" className="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white">한국어</button>
-            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#007AFF] mb-3 block">Legal & Privacy</span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Privacy Policy</h1>
+            <p class="text-gray-400 text-sm">Last updated: July 2026 | Applies to all Pureum Software products</p>
         </div>
 
-        <!-- Policy Content Body -->
-        <div className="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 text-gray-300 leading-relaxed shadow-2xl">
+        <!-- Policy Body (English Only) -->
+        <div class="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 text-gray-300 leading-relaxed shadow-2xl space-y-8 text-sm sm:text-base font-light">
             
-            <!-- ENGLISH CONTENT -->
-            <div id="lang-en" className="lang-content active space-y-8 text-sm sm:text-base font-light">
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">1. Introduction</h2>
-                    <p className="text-gray-400">Pureum Software ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy informs you how we look after your personal data when you visit our website, use our mobile applications (including PathLog, Doctor Note, OptiPay, PureStock, MoneyPilot, PlantLog, and Retirement Calc Plus), or interact with our services.</p>
-                </section>
+            <section>
+                <h2 class="text-xl font-bold text-white mb-3">1. Introduction</h2>
+                <p class="text-gray-400">Pureum Software ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy informs you how we look after your personal data when you visit our website, use our mobile applications (including PathLog, Doctor Note, OptiPay, PureStock, MoneyPilot, PlantLog, and Retirement Calc Plus), or interact with our services.</p>
+            </section>
 
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">2. Data We Collect</h2>
-                    <p className="text-gray-400 mb-3">We collect minimal information necessary to deliver exceptional software experiences:</p>
-                    <ul className="list-disc pl-6 space-y-2 text-gray-400">
-                        <li><strong className="text-white">Device & Usage Data:</strong> Anonymized app telemetry, OS version, and crash logs to improve app stability.</li>
-                        <li><strong className="text-white">User Input & Local Files:</strong> Account information, imported CSV files, or KML trail routes are stored locally on your device or secured within authorized cloud backends.</li>
-                        <li><strong className="text-white">Contact Info:</strong> Email address provided voluntarily when requesting demos or support.</li>
-                    </ul>
-                </section>
+            <section>
+                <h2 class="text-xl font-bold text-white mb-3">2. Data We Collect</h2>
+                <p class="text-gray-400 mb-3">We collect minimal information necessary to deliver exceptional software experiences:</p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-400">
+                    <li><strong class="text-white">Device & Usage Data:</strong> Anonymized app telemetry, OS version, and crash logs to improve app stability.</li>
+                    <li><strong class="text-white">User Input & Local Files:</strong> Account information, imported CSV files, or KML trail routes are stored locally on your device or secured within authorized cloud backends.</li>
+                    <li><strong class="text-white">Contact Info:</strong> Email address provided voluntarily when requesting demos or support.</li>
+                </ul>
+            </section>
 
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">3. How We Use Your Data</h2>
-                    <p className="text-gray-400">Your data is strictly utilized to provide and optimize our applications, deliver customer support, ensure system security, and comply with legal requirements. We <strong className="text-white">never sell your personal data</strong> to third-party advertisers.</p>
-                </section>
+            <section>
+                <h2 class="text-xl font-bold text-white mb-3">3. How We Use Your Data</h2>
+                <p class="text-gray-400">Your data is strictly utilized to provide and optimize our applications, deliver customer support, ensure system security, and comply with legal requirements. We <strong class="text-white">never sell your personal data</strong> to third-party advertisers.</p>
+            </section>
 
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">4. Security & Storage</h2>
-                    <p className="text-gray-400">We employ industry-standard encryption protocols (TLS/SSL) for data in transit and robust access controls for data at rest. Offline applications store information securely on your local device enclave.</p>
-                </section>
+            <section>
+                <h2 class="text-xl font-bold text-white mb-3">4. Security & Storage</h2>
+                <p class="text-gray-400">We employ industry-standard encryption protocols (TLS/SSL) for data in transit and robust access controls for data at rest. Offline applications store information securely on your local device enclave.</p>
+            </section>
 
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">5. Contact Us</h2>
-                    <p className="text-gray-400">If you have any questions regarding this Privacy Policy, please contact our privacy compliance team at <a href="mailto:info@pureum.dev" className="text-[#007AFF] underline font-semibold">info@pureum.dev</a>.</p>
-                </section>
-            </div>
+            <section>
+                <h2 class="text-xl font-bold text-white mb-3">5. Contact Us</h2>
+                <p class="text-gray-400">If you have any questions regarding this Privacy Policy, please contact our privacy compliance team at <a href="mailto:info@pureum.dev" class="text-[#007AFF] underline font-semibold">info@pureum.dev</a>.</p>
+            </section>
 
-            <!-- KOREAN CONTENT -->
-            <div id="lang-ko" className="lang-content space-y-8 text-sm sm:text-base font-light">
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">1. 개요</h2>
-                    <p className="text-gray-400">Pureum Software("회사" 또는 "당사")는 사용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다. 본 개인정보 처리방침은 웹사이트 및 모바일 애플리케이션 서비스 이용 시 제공되는 개인정보의 수집, 이용, 보관에 대한 지침을 안내합니다.</p>
-                </section>
-
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">2. 수집하는 개인정보 항목</h2>
-                    <p className="text-gray-400 mb-3">당사는 최소한의 필수 정보만을 수집합니다:</p>
-                    <ul className="list-disc pl-6 space-y-2 text-gray-400">
-                        <li><strong className="text-white">기기 및 이용 기록:</strong> 서비스 개선 및 오류 진단을 위한 익명화된 텔레메트리 데이터</li>
-                        <li><strong className="text-white">사용자 입력 데이터:</strong> CSV 파일, KML 경로 등 애플리케이션 이용 데이터는 기기 로컬 저장소 또는 보안 클라우드에 안전하게 보관됩니다.</li>
-                        <li><strong className="text-white">문의 정보:</strong> 데모 요청 및 고객 지원 시 제출한 이메일 주소</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">3. 개인정보의 제3자 제공 및 판매 금지</h2>
-                    <p className="text-gray-400">당사는 사용자의 개인정보를 제3자 광고주에게 <strong className="text-white">절대로 판매하거나 제공하지 않습니다.</strong></p>
-                </section>
-
-                <section>
-                    <h2 className="text-xl font-bold text-white mb-3">4. 문의처</h2>
-                    <p className="text-gray-400">개인정보 처리방침에 관한 문의사항은 <a href="mailto:info@pureum.dev" className="text-[#007AFF] underline font-semibold">info@pureum.dev</a>로 연락해 주시기 바랍니다.</p>
-                </section>
-            </div>
-
-            <!-- Bottom Home Navigation Button -->
-            <div className="pt-8 border-t border-white/10 mt-12 text-center">
-                <a href="/" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#007AFF] hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg">
+            <!-- Home Link Button -->
+            <div class="pt-8 border-t border-white/10 mt-12 text-center">
+                <a href="/" class="inline-flex items-center gap-2 px-8 py-3.5 bg-[#007AFF] hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg">
                     Return to Homepage
                 </a>
             </div>
@@ -168,23 +122,6 @@
 
     </main>
 
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-            document.getElementById('lang-' + lang).classList.add('active');
-
-            const btnEn = document.getElementById('btn-en');
-            const btnKo = document.getElementById('btn-ko');
-
-            if (lang === 'en') {
-                btnEn.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]";
-                btnKo.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white";
-            } else {
-                btnKo.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]";
-                btnEn.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white";
-            }
-        }
-    </script>
 </body>
 
 </html>
