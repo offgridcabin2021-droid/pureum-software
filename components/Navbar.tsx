@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-3 group">
           <img
             src="/pureum-logo.jpg"
-            alt="Pureum Software Logo"
+            alt="Pureum Software – Toronto Software Agency"
             className="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform"
           />
           <span className="font-bold text-xl tracking-tight text-white group-hover:text-[#007AFF] transition-colors">

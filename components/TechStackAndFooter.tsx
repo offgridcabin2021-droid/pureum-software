@@ -106,15 +106,28 @@ const TechStackAndFooter: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. Footer */}
-      <footer className="max-w-7xl mx-auto border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* 4. Footer with Schema.org NAP for GEO */}
+      <footer
+        className="max-w-7xl mx-auto border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-6"
+        aria-label="Site footer"
+        itemScope
+        itemType="https://schema.org/SoftwareCompany"
+      >
         <div className="flex items-center gap-3">
           <img
             src="/pureum-logo.jpg"
-            alt="Pureum Software Logo"
+            alt="Pureum Software – Toronto Software Development Agency"
             className="w-8 h-8 rounded-full object-cover"
+            itemProp="logo"
           />
-          <span className="font-bold text-lg text-white tracking-tight">Pureum Software</span>
+          <div className="flex flex-col">
+            <span className="font-bold text-lg text-white tracking-tight" itemProp="name">Pureum Software</span>
+            <span className="text-[10px] text-gray-500 tracking-wide" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <span itemProp="addressLocality">Toronto</span>, <span itemProp="addressRegion">ON</span> · <span itemProp="addressCountry">Canada</span>
+            </span>
+          </div>
+          <meta itemProp="url" content="https://pureum.dev" />
+          <meta itemProp="email" content="info@pureum.dev" />
         </div>
 
         <div className="flex gap-6 text-sm text-gray-500">
@@ -124,13 +137,13 @@ const TechStackAndFooter: React.FC = () => {
           <a href="/privacy.html" className="hover:text-[#007AFF] transition-colors">
             Privacy Policy
           </a>
-          <a href="mailto:info@pureum.dev" className="hover:text-[#007AFF] transition-colors">
+          <a href="mailto:info@pureum.dev" className="hover:text-[#007AFF] transition-colors" itemProp="email">
             Contact Us
           </a>
         </div>
 
         <p className="text-gray-600 text-xs uppercase tracking-widest">
-          © {new Date().getFullYear()} Pureum Software. All rights reserved.
+          © {new Date().getFullYear()} Pureum Software · Toronto, Canada. All rights reserved.
         </p>
       </footer>
     </div>

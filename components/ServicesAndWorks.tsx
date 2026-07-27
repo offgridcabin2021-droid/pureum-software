@@ -8,7 +8,7 @@ const ServicesAndWorks: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-[#050505] py-16 px-4 sm:px-6 md:px-12 lg:px-16 scroll-mt-20" id="services">
+    <section className="bg-[#050505] py-16 px-4 sm:px-6 md:px-12 lg:px-16 scroll-mt-20" id="services" aria-label="Services and portfolio">
       <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Main White Card Container (Matching Reference Design) */}
@@ -55,10 +55,10 @@ const ServicesAndWorks: React.FC = () => {
                 Specialties
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Full Stack Development
+                Full Stack Development in Toronto
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-6 font-normal">
-                End-to-end digital engineering. From robust cloud backends to responsive, pixel-perfect frontend applications, we build fast, scalable, and secure systems tailored for growth.
+                End-to-end digital engineering based in Toronto, serving the GTA and all of Canada. From robust cloud backends to responsive, pixel-perfect frontend applications, we build fast, scalable, and secure systems tailored for growth.
               </p>
             </div>
             <a
@@ -80,7 +80,7 @@ const ServicesAndWorks: React.FC = () => {
                 Let's Build Extraordinary Software Together!
               </h3>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed font-light mb-8">
-                We partner with visionaries and forward-thinking businesses to turn complex ideas into seamless digital experiences. Elevate your presence today.
+                We partner with visionaries and forward-thinking businesses across Toronto and the Greater Toronto Area to turn complex ideas into seamless digital experiences. Elevate your presence today.
               </p>
             </div>
 

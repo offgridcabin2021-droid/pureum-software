@@ -1,0 +1,13 @@
+# Pureum Software – robots.txt
+# https://pureum.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pureum.dev/sitemap.xml
+
+# Block crawling of internal assets
+User-agent: *
+Disallow: /_next/
+Disallow: /api/
