@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory App Privacy Policy</title>
+    <meta name="description" content="Inventory App specific privacy policy (EN/FR/ES)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0A84FF;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --bg-secondary: #F5F5F7;
+            --border-color: #E5E5EA;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-page {
+            min-height: 100vh;
+            padding: 56px 0 72px;
+        }
+
+        .legal-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .app-name {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .legal-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.8px;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 24px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-primary);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .legal-content {
+            background: white;
+            border-radius: 22px;
+            padding: 44px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0F0F2;
+        }
+
+        .lang-block {
+            display: none;
+        }
+
+        .lang-block.active {
+            display: block;
+        }
+
+        .legal-section {
+            margin-bottom: 34px;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .legal-section ul {
+            margin: 10px 0 0 22px;
+            color: var(--text-secondary);
+        }
+
+        .legal-section li {
+            margin-bottom: 8px;
+        }
+
+        .legal-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #1D1D1F;
+            color: white;
+            text-align: center;
+            padding: 32px 0;
+            margin-top: 56px;
+        }
+
+        .footer-links {
+            color: #9A9AA1;
+            font-size: 0.88rem;
+        }
+
+        .footer-links a {
+            color: #9A9AA1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .legal-header h1 {
+                font-size: 1.9rem;
+            }
+
+            .legal-content {
+                padding: 30px 22px;
+            }
+
+            .legal-section h2 {
+                font-size: 1.18rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="legal-page">
+        <div class="legal-container">
+            <div class="legal-header">
+                <p class="app-name">Inventory App</p>
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: March 17, 2026</p>
+            </div>
+
+            <div class="language-switcher" aria-label="Language selector">
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="fr">Francais</button>
+                <button class="lang-btn" data-lang="es">Espanol</button>
+            </div>
+
+            <div class="legal-content">
+                <div class="lang-block" data-lang-block="en">
+                    <section class="legal-section">
+                        <h2>1. Scope</h2>
+                        <p>This policy applies specifically to Inventory App, a dental inventory management product by Pureum Software.</p>
+                        <p>For company-wide legal terms, see <a href="../privacy.html" data-base-href="../privacy.html">Pureum Software Privacy Policy</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. Data We Process</h2>
+                        <ul>
+                            <li>Account data (email, sign-in identifiers)</li>
+                            <li>Inventory records (item name, quantity, unit, location, category)</li>
+                            <li>Operational documents (for example invoice images uploaded by users)</li>
+                            <li>Usage data required for app performance and reliability</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. How Data Is Used</h2>
+                        <ul>
+                            <li>Manage inventory, low-stock alerts, ordering, and receiving workflows</li>
+                            <li>Enable sync and backup across authorized devices</li>
+                            <li>Provide user support, troubleshooting, and service improvements</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Security and Retention</h2>
+                        <ul>
+                            <li>Data is transmitted and stored using standard cloud security controls.</li>
+                            <li>Upon account deletion request, data is deleted within 30 days; backups may persist up to 90 days.</li>
+                            <li>Access to production systems is limited by role and operational need.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Healthcare Notice (US/Canada)</h2>
+                        <p>We apply HIPAA Safe Harbor de-identification standards where applicable.</p>
+                        <p>We maintain PIPEDA-compliant privacy practices for the collection, use, disclosure, and retention of personal information.</p>
+                        <p>Do not store full patient medical records in Inventory App unless your organization has a separate legal basis and documented compliance process.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Contact</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Company: Pureum Software</p>
+                    </section>
+                </div>
+
+                <div class="lang-block" data-lang-block="fr">
+                    <section class="legal-section">
+                        <h2>1. Portee</h2>
+                        <p>Cette politique s'applique specifiquement a Inventory App, un produit de gestion des stocks dentaires de Pureum Software.</p>
+                        <p>Pour les conditions juridiques globales, consultez la <a href="../privacy.html" data-base-href="../privacy.html">Politique de confidentialite de Pureum Software</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. Donnees traitees</h2>
+                        <ul>
+                            <li>Donnees de compte (email, identifiants de connexion)</li>
+                            <li>Donnees d'inventaire (nom, quantite, unite, emplacement, categorie)</li>
+                            <li>Documents operationnels (par exemple, photos de factures televersees)</li>
+                            <li>Donnees d'usage necessaires a la fiabilite de l'application</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Utilisation des donnees</h2>
+                        <ul>
+                            <li>Gestion de l'inventaire, alertes de stock faible, commandes et receptions</li>
+                            <li>Synchronisation et sauvegarde sur les appareils autorises</li>
+                            <li>Support utilisateur, diagnostic et amelioration du service</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Securite et conservation</h2>
+                        <ul>
+                            <li>Les donnees sont transmises et stockees avec des controles de securite cloud standards.</li>
+                            <li>Apres demande de suppression du compte, les donnees sont supprimees sous 30 jours; les sauvegardes peuvent persister jusqu'a 90 jours.</li>
+                            <li>L'acces aux systemes de production est limite selon le role et le besoin operationnel.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Avis sante (Etats-Unis/Canada)</h2>
+                        <p>Nous appliquons, lorsque pertinent, les normes de desidentification HIPAA Safe Harbor.</p>
+                        <p>Nous maintenons des pratiques de confidentialite conformes a PIPEDA/LPRPDE pour la collecte, l'utilisation, la divulgation et la conservation des renseignements personnels.</p>
+                        <p>Ne stockez pas de dossiers medicaux patients complets dans Inventory App sans base juridique distincte et processus de conformite documente.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Contact</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Entreprise: Pureum Software</p>
+                    </section>
+                </div>
+
+                <div class="lang-block" data-lang-block="es">
+                    <section class="legal-section">
+                        <h2>1. Alcance</h2>
+                        <p>Esta politica aplica especificamente a Inventory App, un producto de gestion de inventario dental de Pureum Software.</p>
+                        <p>Para los terminos legales generales, consulta la <a href="../privacy.html" data-base-href="../privacy.html">Politica de privacidad de Pureum Software</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. Datos que procesamos</h2>
+                        <ul>
+                            <li>Datos de cuenta (correo electronico e identificadores de inicio de sesion)</li>
+                            <li>Datos de inventario (nombre de item, cantidad, unidad, ubicacion, categoria)</li>
+                            <li>Documentos operativos (por ejemplo, imagenes de facturas cargadas por usuarios)</li>
+                            <li>Datos de uso necesarios para rendimiento y confiabilidad</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Uso de los datos</h2>
+                        <ul>
+                            <li>Gestionar inventario, alertas de bajo stock, pedidos y recepcion</li>
+                            <li>Habilitar sincronizacion y respaldo entre dispositivos autorizados</li>
+                            <li>Brindar soporte, diagnostico y mejora del servicio</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Seguridad y retencion</h2>
+                        <ul>
+                            <li>Los datos se transmiten y almacenan con controles de seguridad estandar en la nube.</li>
+                            <li>Tras solicitud de eliminacion de cuenta, los datos se eliminan en 30 dias; copias de respaldo pueden persistir hasta 90 dias.</li>
+                            <li>El acceso a sistemas de produccion se limita por rol y necesidad operativa.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Aviso de salud (EE. UU./Canada)</h2>
+                        <p>Aplicamos, cuando corresponde, los estandares de desidentificacion HIPAA Safe Harbor.</p>
+                        <p>Mantenemos practicas de privacidad conformes con PIPEDA para la recopilacion, uso, divulgacion y retencion de informacion personal.</p>
+                        <p>No almacenes historiales medicos completos de pacientes en Inventory App sin una base legal independiente y un proceso de cumplimiento documentado.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Contacto</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Empresa: Pureum Software</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="terms.html" data-base-href="terms.html">Terms of Service</a>
+            <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
+            <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
+            <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
+            <p style="margin-top: 14px;">&copy; 2026 Inventory App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const supportedLangs = ['en', 'fr', 'es'];
+
+        function normalizeLang(raw) {
+            const value = (raw || '').toLowerCase();
+            if (value.startsWith('fr')) return 'fr';
+            if (value.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        function updateLocalizedLinks(lang) {
+            document.querySelectorAll('[data-base-href]').forEach((link) => {
+                const baseHref = link.getAttribute('data-base-href');
+                if (!baseHref) return;
+                link.setAttribute('href', `${baseHref}?lang=${lang}`);
+            });
+        }
+
+        function setLanguage(lang) {
+            const finalLang = supportedLangs.includes(lang) ? lang : 'en';
+
+            document.documentElement.setAttribute('lang', finalLang);
+
+            document.querySelectorAll('.lang-btn').forEach((btn) => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === finalLang);
+            });
+
+            document.querySelectorAll('.lang-block').forEach((block) => {
+                block.classList.toggle('active', block.getAttribute('data-lang-block') === finalLang);
+            });
+
+            updateLocalizedLinks(finalLang);
+
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('lang', finalLang);
+            window.history.replaceState({}, '', currentUrl);
+        }
+
+        const initialLang = normalizeLang(new URLSearchParams(window.location.search).get('lang') || 'en');
+        setLanguage(initialLang);
+
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const selected = btn.getAttribute('data-lang');
+                setLanguage(selected);
+            });
+        });
+    </script>
+</body>
+
+</html>

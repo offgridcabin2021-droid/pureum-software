@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Pureum Software</title>
+    <meta name="description" content="Terms of Service for Pureum Software applications and services">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#050505',
+                        surface: '#0F1115',
+                        accent: '#007AFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #E2E8F0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body className="bg-[#050505] text-gray-200 antialiased min-h-screen">
+
+    <!-- Top Sticky Header Navigation (Back to Home) -->
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/90 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="/" className="flex items-center gap-3 group">
+                <img src="/pureum-logo.jpg" alt="Pureum Software Logo" className="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform">
+                <span className="font-bold text-xl tracking-tight text-white group-hover:text-[#007AFF] transition-colors">Pureum Software</span>
+            </a>
+
+            <a href="/" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-[#007AFF] text-white font-semibold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-md">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        
+        <!-- Document Title & Header Card -->
+        <div className="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 mb-8 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <span className="text-xs font-bold uppercase tracking-widest text-[#007AFF] mb-3 block">Legal & Agreements</span>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Terms of Service</h1>
+            <p className="text-gray-400 text-sm">Last updated: July 2026 | Applies to all Pureum Software platforms</p>
+
+            <!-- Language Switcher -->
+            <div className="flex justify-center gap-3 mt-8 flex-wrap">
+                <button onclick="switchLang('en')" id="btn-en" className="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]">English</button>
+                <button onclick="switchLang('ko')" id="btn-ko" className="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white">한국어</button>
+            </div>
+        </div>
+
+        <!-- Policy Content Body -->
+        <div className="bg-[#0F1115] border border-white/10 rounded-3xl p-8 sm:p-12 text-gray-300 leading-relaxed shadow-2xl">
+            
+            <!-- ENGLISH CONTENT -->
+            <div id="lang-en" className="lang-content active space-y-8 text-sm sm:text-base font-light">
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">1. Acceptance of Terms</h2>
+                    <p className="text-gray-400">By accessing or using the services, applications, or websites provided by Pureum Software ("we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">2. Use of Services</h2>
+                    <p className="text-gray-400 mb-3">You agree to use our software applications strictly in compliance with all applicable laws and regulations. You must not:</p>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-400">
+                        <li>Attempt to reverse engineer, decompile, or tamper with any software code.</li>
+                        <li>Use our applications for unlawful, malicious, or fraudulent activities.</li>
+                        <li>Interfere with or disrupt the security or integrity of our servers and infrastructure.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">3. Intellectual Property</h2>
+                    <p className="text-gray-400">All content, trademarks, logos, source code, and design assets are the exclusive property of Pureum Software and are protected under international copyright and intellectual property laws.</p>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">4. Limitation of Liability</h2>
+                    <p className="text-gray-400">Pureum Software provides services on an "as is" and "as available" basis without warranties of any kind. To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the services.</p>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">5. Contact Information</h2>
+                    <p className="text-gray-400">If you have any questions or concerns regarding these Terms, please reach out to <a href="mailto:info@pureum.dev" className="text-[#007AFF] underline font-semibold">info@pureum.dev</a>.</p>
+                </section>
+            </div>
+
+            <!-- KOREAN CONTENT -->
+            <div id="lang-ko" className="lang-content space-y-8 text-sm sm:text-base font-light">
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">1. 약관의 동의</h2>
+                    <p className="text-gray-400">Pureum Software("회사")의 웹사이트 및 모바일 애플리케이션 서비스를 이용함으로써 귀하는 본 이용약관에 동의하게 됩니다. 약관 내용에 동의하지 않으실 경우 서비스 이용이 제한될 수 있습니다.</p>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">2. 서비스 이용 규칙</h2>
+                    <p className="text-gray-400 mb-3">귀하는 정당한 목적과 법령에 따라 서비스를 이용해야 합니다. 다음 행위는 엄격히 금지됩니다:</p>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-400">
+                        <li>소프트웨어 소스 코드의 리버스 엔지니어링, 디컴파일 또는 침해 행위</li>
+                        <li>불법적이거나 사기적인 목적으로 서비스를 이용하는 행위</li>
+                        <li>서버 인프라 및 안보 시스템의 작동을 방해하는 행위</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">3. 지식재산권</h2>
+                    <p className="text-gray-400">Pureum Software에서 제공하는 모든 디자인, 소스 코드, 상표 및 콘텐츠는 당사의 독점적 지식재산이며 국제 저작권법의 보호를 받습니다.</p>
+                </section>
+
+                <section>
+                    <h2 className="text-xl font-bold text-white mb-3">4. 문의처</h2>
+                    <p className="text-gray-400">약관 관련 문의사항은 <a href="mailto:info@pureum.dev" className="text-[#007AFF] underline font-semibold">info@pureum.dev</a>로 전달해 주시기 바랍니다.</p>
+                </section>
+            </div>
+
+            <!-- Bottom Home Navigation Button -->
+            <div className="pt-8 border-t border-white/10 mt-12 text-center">
+                <a href="/" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#007AFF] hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg">
+                    Return to Homepage
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]";
+                btnKo.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white";
+            } else {
+                btnKo.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#007AFF] text-white border border-[#007AFF]";
+                btnEn.className = "px-4 py-2 rounded-full text-xs font-bold transition-all bg-white/5 text-gray-400 border border-white/10 hover:text-white";
+            }
+        }
+    </script>
+</body>
+
+</html>

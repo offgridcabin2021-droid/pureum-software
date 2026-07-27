@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Smart Dental Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2.4">
+</head>
+
+<body>
+
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;"><img
+                    src="assets/logo.jpg" alt="Inventory Logo"
+                    style="height: 36px; width: auto; border-radius: 8px;"><span
+                    style="font-weight: 600; font-size: 18px;">PureStock</span></a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#workflow">Workflow</a>
+                <a href="support.html">Support</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="#" class="btn btn-primary btn-sm">Download App</a>
+        </div>
+    </nav>
+
+    <div class="features-layout">
+        <aside class="features-sidebar">
+            <div class="feature-nav-item active" data-target="inventory">
+                Inventory
+            </div>
+            <div class="feature-nav-item" data-target="order">
+                To Order
+            </div>
+            <div class="feature-nav-item" data-target="scan">
+                Scanner
+            </div>
+            <div class="feature-nav-item" data-target="receiving">
+                Receiving
+            </div>
+            <div class="feature-nav-item" data-target="settings">
+                Settings
+            </div>
+        </aside>
+
+        <main class="features-content">
+            <!-- Inventory Section -->
+            <section id="inventory" class="feature-section active">
+                <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <h1>The <span class="gradient-text">Master List.</span></h1>
+                    <p class="hero-subtitle">The central hub for managing your stock.</p>
+                </div>
+                <div class="detail-layout">
+                    <div class="detail-phone-wrapper">
+                        <div class="video-loader-container">
+                            <div class="video-progress-track">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <div class="video-loading-text">Loading Video...</div>
+                        </div>
+                        <video src="assets/inventory.mp4" autoplay loop muted playsinline
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"></video>
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-block">
+                            <h2>Item Management</h2>
+                            <ul class="feature-list">
+                                <li><strong>Core Actions</strong>: Add, edit, and delete inventory items.</li>
+                                <li><strong>Smart Search</strong>: Find items by name, company, SKU, or category. Search
+                                    "low" to instantly see low stock items.</li>
+                                <li><strong>Filters</strong>: Quickly filter by company, category, or stock status.</li>
+                                <li><strong>Admin Control</strong>: Restricted add/delete permissions for admin users.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Item Details</h2>
+                            <ul class="feature-list">
+                                <li><strong>Comprehensive Info</strong>: Track Name, SKU, Company (multiple supported),
+                                    Quantity, and Unit.</li>
+                                <li><strong>Location & Category</strong>: Organize items by physical location and
+                                    category.</li>
+                                <li><strong>Purchase Tracking</strong>: Record purchase prices and add memo notes.</li>
+                                <li><strong>Batch Tracking</strong>: Manage items with expiry dates and view individual
+                                    batch details.</li>
+                                <li><strong>Stock Threshold</strong>: Set custom minimum levels to trigger auto-alerts.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Stock History</h2>
+                            <ul class="feature-list">
+                                <li><strong>Full Audit Trail</strong>: specific timestamps for every quantity change.
+                                </li>
+                                <li><strong>Transaction Types</strong>: Track increases, decreases, and return
+                                    transactions (negative quantities).</li>
+                                <li><strong>History Filters</strong>: Filter history logs to find specific events.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Print Labels & Export</h2>
+                            <ul class="feature-list">
+                                <li><strong>Label Generation</strong>: Create QR Codes or Barcodes in multiple formats
+                                    (A4, Avery).</li>
+                                <li><strong>Customizable</strong>: Choose from small, medium, or large code sizes.</li>
+                                <li><strong>Batch Actions</strong>: Print labels for single items or in batches.</li>
+                                <li><strong>PDF Reports</strong>: Generate inventory status reports and email them
+                                    directly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order Section -->
+            <section id="order" class="feature-section">
+                <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <h1>Smart <span class="gradient-text">Alerts.</span></h1>
+                    <p class="hero-subtitle">Monitor items that need attention.</p>
+                </div>
+                <div class="detail-layout">
+                    <div class="detail-phone-wrapper">
+                        <div class="video-loader-container">
+                            <div class="video-progress-track">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <div class="video-loading-text">Loading Video...</div>
+                        </div>
+                        <video src="assets/order.mp4" autoplay loop muted playsinline
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"></video>
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-block">
+                            <h2>Alert Management</h2>
+                            <ul class="feature-list">
+                                <li><strong>Auto-Generation</strong>: Alerts are automatically created when stock drops
+                                    below thresholds.</li>
+                                <li><strong>Status Tracking</strong>: Track items across three stages:
+                                    <ul>
+                                        <li><span style="color: var(--warning-color);">Needs Order</span>: Low stock,
+                                            not yet ordered.</li>
+                                        <li><span style="color: var(--error-color);">Backordered</span>: Ordered but
+                                            partial delivery.</li>
+                                        <li><span style="color: var(--success-color);">Ordered</span>: Fully ordered,
+                                            awaiting delivery.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Manual Alerts</strong>: Manually create alerts for any item.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Order Tracking</h2>
+                            <ul class="feature-list">
+                                <li><strong>Mark as Ordered</strong>: Record the order date and quantity with one tap.
+                                </li>
+                                <li><strong>Backorder Handling</strong>: Track specific backorder quantities.</li>
+                                <li><strong>Notes</strong>: Add specific notes or instructions to any alert.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Batch Operations</h2>
+                            <ul class="feature-list">
+                                <li><strong>Export List</strong>: Generate a PDF of all current alerts.</li>
+                                <li><strong>Share</strong>: Email the order list directly to suppliers or staff.</li>
+                                <li><strong>Smart Grouping</strong>: Items are grouped by company for efficient ordering
+                                    from multiple vendors.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scanner Section -->
+            <section id="scan" class="feature-section">
+                <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <h1>Instant <span class="gradient-text">Lookup.</span></h1>
+                    <p class="hero-subtitle">Quickly find and update items using the camera.</p>
+                </div>
+                <div class="detail-layout">
+                    <div class="detail-phone-wrapper">
+                        <div class="video-loader-container">
+                            <div class="video-progress-track">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <div class="video-loading-text">Loading Video...</div>
+                        </div>
+                        <video src="assets/scan.mp4" autoplay loop muted playsinline
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"></video>
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-block">
+                            <h2>Scanning Capabilities</h2>
+                            <ul class="feature-list">
+                                <li><strong>Universal Support</strong>: Scans both QR Codes and standard Barcodes.</li>
+                                <li><strong>Enhanced Controls</strong>: Start/Stop scanning control and Flashlight
+                                    toggle for low-light conditions.</li>
+                                <li><strong>Manual Lookup</strong>: Fallback search by name, company, or legacy UUID if
+                                    a code is unreadable.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Smart Display</h2>
+                            <ul class="feature-list">
+                                <li><strong>Full-Screen View</strong>: Immersive camera view with corner guides for easy
+                                    targeting.</li>
+                                <li><strong>Instant Results</strong>: Automatically navigates to the item page upon a
+                                    successful scan.</li>
+                                <li><strong>Quick Actions</strong>: "Start Scanning" button for rapid-fire inventory
+                                    checks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Receiving Section -->
+            <section id="receiving" class="feature-section">
+                <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <h1>Stock <span class="gradient-text">Page.</span></h1>
+                    <p class="hero-subtitle">Manage incoming stock and invoices.</p>
+                </div>
+                <div class="detail-layout">
+                    <div class="detail-phone-wrapper">
+                        <div class="video-loader-container">
+                            <div class="video-progress-track">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <div class="video-loading-text">Loading Video...</div>
+                        </div>
+                        <video src="assets/receiving.mp4" autoplay loop muted playsinline
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"></video>
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-block">
+                            <h2>Stock Check List</h2>
+                            <ul class="feature-list">
+                                <li><strong>Queue Management</strong>: View all ordered items awaiting receipt, grouped
+                                    by company.</li>
+                                <li><strong>Status Filters</strong>: Filter by "Ordered" (regular orders) or
+                                    "Backordered" items.</li>
+                                <li><strong>Smart Updates</strong>: Search by name or company to quickly find pending
+                                    items.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Stock & Invoice Management</h2>
+                            <ul class="feature-list">
+                                <li><strong>One-Tap Receipt</strong>: Quickly update received quantities and expiry
+                                    dates.</li>
+                                <li><strong>Invoice Capture</strong>: Take or upload invoice photos. Support for
+                                    multiple items per invoice.</li>
+                                <li><strong>Digital Archive</strong>: Invoices are automatically organized by company,
+                                    year, and month.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Return Items</h2>
+                            <ul class="feature-list">
+                                <li><strong>Seamless Returns</strong>: Swipe left on stock items to initiate a return.
+                                </li>
+                                <li><strong>Reason Tracking</strong>: Enter quantity and reason to automatically update
+                                    inventory and history.</li>
+                                <li><strong>Stock Adjustment</strong>: Automatically decreases inventory and creates a
+                                    negative stock history entry.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="feature-section">
+                <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <h1>Admin <span class="gradient-text">Settings.</span></h1>
+                    <p class="hero-subtitle">Configure the app and view reports.</p>
+                </div>
+                <div class="detail-layout">
+                    <div class="detail-phone-wrapper">
+                        <div class="video-loader-container">
+                            <div class="video-progress-track">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <div class="video-loading-text">Loading Video...</div>
+                        </div>
+                        <video src="assets/settings.mp4" autoplay loop muted playsinline
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"></video>
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-block">
+                            <h2>User & Access Control</h2>
+                            <ul class="feature-list">
+                                <li><strong>Role Management</strong>: Switch between "Owner" (full access) and
+                                    "Assistant" (restricted) modes.</li>
+                                <li><strong>Team Access</strong>: Share a unique clinic code to allow multiple users to
+                                    join.</li>
+                                <li><strong>Security</strong>: Admin functions are protected by a secure password.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Annual Archive</h2>
+                            <ul class="feature-list">
+                                <li><strong>Year-End Reset</strong>: Automatically archive all memos, history, and
+                                    notes.</li>
+                                <li><strong>PDF Records</strong>: Download comprehensive PDF reports of past years.</li>
+                                <li><strong>Auto-Reminder</strong>: Get notified on January 1st to perform the annual
+                                    cleanup.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Data Management</h2>
+                            <ul class="feature-list">
+                                <li><strong>CSV Import/Export</strong>: Bulk add items using a CSV template (with AI
+                                    formatting check).</li>
+                                <li><strong>Sample Data</strong>: One-tap generic data generation for testing (12, 100,
+                                    250, or 500 items).</li>
+                                <li><strong>Full Reset</strong>: Admin-only option to wipe all cloud and local data.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Label Configuration</h2>
+                            <ul class="feature-list">
+                                <li><strong>Format Options</strong>: Support for A4 (2x5, 3x6, 4x8) and Avery (5160,
+                                    5163, 5167) sheets.</li>
+                                <li><strong>Code Types</strong>: Choose between QR Code or Barcode.</li>
+                                <li><strong>Batch Printing</strong>: Select multiple items to generate a single
+                                    printable PDF.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Reports & Notifications</h2>
+                            <ul class="feature-list">
+                                <li><strong>Usage Reports</strong>: View monthly and yearly usage trends with top 10
+                                    item rankings.</li>
+                                <li><strong>Notification Settings</strong>: Customize low stock alert frequency and
+                                    delivery method.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js?v=2.5"></script>
+</body>
+
+</html>

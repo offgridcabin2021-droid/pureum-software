@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service – PathLog</title>
+    <meta name="description" content="PathLog Terms of Service. Read the terms governing use of the PathLog iOS app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #1A5DFF;
+            --bg: #F8FAFF;
+            --text: #1C1C1E;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(248,250,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--blue); }
+        .nav-back { font-size: 0.875rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+        .nav-back:hover { text-decoration: underline; }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .lang-select {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--text);
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            font-family: inherit;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .meta { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 48px; }
+
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        p { color: #374151; font-size: 0.975rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 32px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 12px;
+            max-width: 720px; margin: 0 auto;
+        }
+        footer p { font-size: 0.85rem; color: var(--text-secondary); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--blue); }
+
+        @media (max-width: 600px) {
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Path<span>Log</span></a>
+        <div class="nav-actions">
+            <select class="lang-select" onchange="window.location.href=this.value" aria-label="Language selector">
+                <option value="terms.html" selected>English</option>
+                <option value="terms-es.html">Español</option>
+                <option value="terms-ko.html">한국어</option>
+                <option value="terms-fr.html">Français</option>
+            </select>
+            <a href="index.html" class="nav-back">← Back to PathLog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="eyebrow" id="eyebrow">Legal</div>
+        <h1 id="page-title">Terms of Service</h1>
+        <p class="meta" id="meta">Effective date: May 1, 2026</p>
+
+        <section>
+            <p id="intro">By downloading or using PathLog, you agree to these Terms of Service. If you do not agree, please do not use the app.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-1">1. Use of the App</h2>
+            <p id="p-1">You may use PathLog for personal travel and trail planning. You agree not to misuse the app, attempt to reverse engineer it, interfere with service operations, or use it for any unlawful purpose.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-2">2. AI Features &amp; Plant Identification</h2>
+            <p id="p-2">AI itinerary output and Plant Identification results are generated automatically and may be inaccurate, incomplete, or outdated. Plant ID results are for general reference only and are not a substitute for professional botanical or medical advice. You are solely responsible for verifying routes, place names, opening hours, accessibility, and safety information before travel. Do not rely on AI-generated content as authoritative guidance.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-3">3. Safety</h2>
+            <p id="p-3">Do not rely on PathLog as your only navigation or emergency tool. Always follow local laws, trail rules, posted signage, weather alerts, and official guidance from relevant authorities. PathLog is a planning aid - you remain responsible for your own safety.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-4">4. Content and Availability</h2>
+            <p id="p-4">Features, availability, and content may change, pause, or be removed at any time without notice. We do not guarantee uninterrupted availability of AI or network-based features, and we are not responsible for outages caused by third-party services.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-5">5. Intellectual Property</h2>
+            <p id="p-5">PathLog and all its content, design, and code are the property of Pureum Software. You may not copy, modify, or distribute any part of the app without prior written permission.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-6">6. Subscriptions &amp; In-App Purchases</h2>
+            <p id="p-6">PathLog offers a PathLog Standard subscription (monthly and annual plans) processed through Apple’s App Store. Free-tier users may access limited previews of AI city itineraries, Trail KML imports, and Plant ID. Paid subscribers unlock expanded limits. All purchases are final per Apple’s standard policy unless required by applicable law. Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date. To manage or cancel, go to iPhone Settings → Apple ID → Subscriptions.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-7">7. Limitation of Liability</h2>
+            <p id="p-7">To the maximum extent permitted by applicable law, PathLog is provided “as-is” without warranties of any kind, express or implied. Pureum Software is not liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, the app.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-8">8. Changes to These Terms</h2>
+            <p id="p-8">We may update these Terms from time to time. The “Effective date” above will reflect the most recent revision. Continued use of PathLog after changes constitutes acceptance of the revised Terms.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-9">9. Contact</h2>
+            <p id="p-9">For legal or support inquiries, visit our <a href="support.html" style="color: var(--blue);" id="support-link">Support page</a> or email <a href="mailto:support@pureum.dev" style="color: var(--blue);">support@pureum.dev</a>.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-apple-eula">Apple App Store Additional Terms (Required for Custom EULA)</h2>
+            <p id="p-eula-intro" style="margin-bottom: 12px;">The following terms apply if you download the App from the Apple App Store:</p>
+            <p id="p-eula-1" style="margin-bottom: 12px;"><strong>1. Acknowledgment:</strong> This Agreement is concluded between you and Pureum Software only, and not with Apple. Pureum Software, not Apple, is solely responsible for the App and the content thereof.</p>
+            <p id="p-eula-2" style="margin-bottom: 12px;"><strong>2. Scope of License:</strong> The license granted to you for the App is limited to a non-transferable license to use the App on any Apple-branded products that you own or control and as permitted by the Usage Rules set forth in the Apple Media Services Terms and Conditions, except that such App may be accessed and used by other accounts associated with the purchaser via Family Sharing or volume purchasing.</p>
+            <p id="p-eula-3" style="margin-bottom: 12px;"><strong>3. Maintenance and Support:</strong> Pureum Software is solely responsible for providing any maintenance and support services with respect to the App. Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the App.</p>
+            <p id="p-eula-4" style="margin-bottom: 12px;"><strong>4. Warranty:</strong> In the event of any failure of the App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App to you. To the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the App.</p>
+            <p id="p-eula-5" style="margin-bottom: 12px;"><strong>5. Product Claims:</strong> Pureum Software, not Apple, is responsible for addressing any claims you or any third party may have relating to the App or your possession and/or use of the App, including, but not limited to: (i) product liability claims; (ii) any claim that the App fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection, privacy, or similar legislation.</p>
+            <p id="p-eula-6" style="margin-bottom: 12px;"><strong>6. Intellectual Property Rights:</strong> In the event of any third-party claim that the App or your possession and use of the App infringes that third party’s intellectual property rights, Pureum Software, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim.</p>
+            <p id="p-eula-7" style="margin-bottom: 12px;"><strong>7. Legal Compliance:</strong> You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+            <p id="p-eula-8" style="margin-bottom: 12px;"><strong>8. Developer Name and Address:</strong> Any end-user questions, complaints or claims with respect to the App should be directed to Pureum Software at support@pureum.dev.</p>
+            <p id="p-eula-9" style="margin-bottom: 12px;"><strong>9. Third Party Terms of Agreement:</strong> You must comply with applicable third-party terms of agreement when using the App.</p>
+            <p id="p-eula-10" style="margin-bottom: 12px;"><strong>10. Third Party Beneficiary:</strong> You acknowledge and agree that Apple, and Apple’s subsidiaries, are third-party beneficiaries of this Agreement, and that, upon your acceptance of the terms and conditions of this Agreement, Apple will have the right (and will be deemed to have accepted the right) to enforce this Agreement against you as a third-party beneficiary thereof.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 PathLog by Pureum Software. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+        </div>
+    </footer>
+</body>
+</html>

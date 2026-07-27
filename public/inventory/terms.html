@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory App Terms of Service</title>
+    <meta name="description" content="Inventory App specific terms of service (EN/FR/ES)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0A84FF;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --bg-secondary: #F5F5F7;
+            --border-color: #E5E5EA;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-page {
+            min-height: 100vh;
+            padding: 56px 0 72px;
+        }
+
+        .legal-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .app-name {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .legal-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.8px;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 24px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-primary);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .legal-content {
+            background: white;
+            border-radius: 22px;
+            padding: 44px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0F0F2;
+        }
+
+        .lang-block {
+            display: none;
+        }
+
+        .lang-block.active {
+            display: block;
+        }
+
+        .legal-section {
+            margin-bottom: 34px;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .legal-section ul {
+            margin: 10px 0 0 22px;
+            color: var(--text-secondary);
+        }
+
+        .legal-section li {
+            margin-bottom: 8px;
+        }
+
+        .legal-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #1D1D1F;
+            color: white;
+            text-align: center;
+            padding: 32px 0;
+            margin-top: 56px;
+        }
+
+        .footer-links {
+            color: #9A9AA1;
+            font-size: 0.88rem;
+        }
+
+        .footer-links a {
+            color: #9A9AA1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .legal-header h1 {
+                font-size: 1.9rem;
+            }
+
+            .legal-content {
+                padding: 30px 22px;
+            }
+
+            .legal-section h2 {
+                font-size: 1.18rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="legal-page">
+        <div class="legal-container">
+            <div class="legal-header">
+                <p class="app-name">Inventory App</p>
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Last Updated: March 17, 2026</p>
+            </div>
+
+            <div class="language-switcher" aria-label="Language selector">
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="fr">Francais</button>
+                <button class="lang-btn" data-lang="es">Espanol</button>
+            </div>
+
+            <div class="legal-content">
+                <div class="lang-block" data-lang-block="en">
+                    <section class="legal-section">
+                        <h2>1. Service Description</h2>
+                        <p>Inventory App provides inventory workflows for dental clinics, including item tracking, low-stock alerts, ordering, receiving, and reporting.</p>
+                        <p>For company-wide legal terms, see <a href="../terms.html" data-base-href="../terms.html">Pureum Software Terms</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. User Responsibilities</h2>
+                        <ul>
+                            <li>Provide accurate account and inventory information.</li>
+                            <li>Control access for team members in your clinic account.</li>
+                            <li>Comply with local regulations applicable to your practice.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Prohibited Use</h2>
+                        <ul>
+                            <li>No unauthorized access attempts or service disruption.</li>
+                            <li>No use of the app for unlawful activity.</li>
+                            <li>No upload of patient medical records without appropriate legal controls.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Subscription and Billing</h2>
+                        <p>Paid features are billed through Apple App Store terms. Plan limits and feature access may vary by subscription tier.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Account Deletion</h2>
+                        <p>You may request account deletion in-app or via support. Data is deleted within 30 days, with backup retention up to 90 days.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Limitation and Compliance Notice</h2>
+                        <p>This app complies with HIPAA (US) and PIPEDA (Canada).</p>
+                        <p>Inventory App is not a medical records system and is not intended to store full patient medical charts.</p>
+                        <p>Each clinic remains responsible for configuring user access, lawful use, and jurisdiction-specific obligations that apply to its workflow.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>7. Contact</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Company: Pureum Software</p>
+                    </section>
+                </div>
+
+                <div class="lang-block" data-lang-block="fr">
+                    <section class="legal-section">
+                        <h2>1. Description du service</h2>
+                        <p>Inventory App fournit des flux de gestion des stocks pour les cliniques dentaires: suivi des articles, alertes de stock faible, commandes, reception et rapports.</p>
+                        <p>Pour les conditions generales, consultez les <a href="../terms.html" data-base-href="../terms.html">Conditions de Pureum Software</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. Responsabilites utilisateur</h2>
+                        <ul>
+                            <li>Fournir des informations de compte et d'inventaire exactes.</li>
+                            <li>Controler l'acces des membres de l'equipe dans le compte clinique.</li>
+                            <li>Respecter la reglementation locale applicable a votre cabinet.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Usages interdits</h2>
+                        <ul>
+                            <li>Aucune tentative d'acces non autorise ni perturbation du service.</li>
+                            <li>Aucune utilisation illegale de l'application.</li>
+                            <li>Pas de televersement de dossiers medicaux patients sans controles juridiques appropries.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Abonnement et facturation</h2>
+                        <p>Les fonctions payantes sont facturees via les conditions de l'App Store d'Apple. Les limites et fonctionnalites varient selon l'abonnement.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Suppression de compte</h2>
+                        <p>Vous pouvez demander la suppression du compte via l'application ou le support. Les donnees sont supprimees sous 30 jours, avec conservation des sauvegardes jusqu'a 90 jours.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Limitation et avis de conformite</h2>
+                        <p>Cette application est conforme a HIPAA (Etats-Unis) et a PIPEDA/LPRPDE (Canada).</p>
+                        <p>Inventory App n'est pas un systeme de dossiers medicaux et n'est pas concue pour stocker des dossiers cliniques complets.</p>
+                        <p>Chaque clinique reste responsable de la configuration des acces, de l'usage legal et des obligations propres a sa juridiction.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>7. Contact</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Entreprise: Pureum Software</p>
+                    </section>
+                </div>
+
+                <div class="lang-block" data-lang-block="es">
+                    <section class="legal-section">
+                        <h2>1. Descripcion del servicio</h2>
+                        <p>Inventory App ofrece flujos de inventario para clinicas dentales: seguimiento de items, alertas de bajo stock, pedidos, recepcion e informes.</p>
+                        <p>Para los terminos generales, consulta los <a href="../terms.html" data-base-href="../terms.html">Terminos de Pureum Software</a>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. Responsabilidades del usuario</h2>
+                        <ul>
+                            <li>Proporcionar informacion de cuenta e inventario precisa.</li>
+                            <li>Controlar el acceso de miembros del equipo en la cuenta de la clinica.</li>
+                            <li>Cumplir la normativa local aplicable a tu consulta.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Uso prohibido</h2>
+                        <ul>
+                            <li>Sin intentos de acceso no autorizado ni interrupcion del servicio.</li>
+                            <li>Sin uso de la aplicacion para actividades ilegales.</li>
+                            <li>No cargar registros medicos de pacientes sin controles legales adecuados.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. Suscripcion y facturacion</h2>
+                        <p>Las funciones de pago se facturan bajo las condiciones de Apple App Store. Los limites y el acceso pueden variar segun el plan.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Eliminacion de cuenta</h2>
+                        <p>Puedes solicitar la eliminacion de cuenta desde la app o por soporte. Los datos se eliminan en 30 dias, con respaldo de hasta 90 dias.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Limitacion y aviso de cumplimiento</h2>
+                        <p>Esta aplicacion cumple con HIPAA (EE. UU.) y PIPEDA (Canada).</p>
+                        <p>Inventory App no es un sistema de historiales medicos ni esta destinada a almacenar expedientes clinicos completos.</p>
+                        <p>Cada clinica sigue siendo responsable de configurar accesos, del uso legal y de las obligaciones especificas de su jurisdiccion.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>7. Contacto</h2>
+                        <p>Email: support@pureum.dev</p>
+                        <p>Empresa: Pureum Software</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="terms.html" data-base-href="terms.html">Terms of Service</a>
+            <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
+            <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
+            <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
+            <p style="margin-top: 14px;">&copy; 2026 Inventory App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const supportedLangs = ['en', 'fr', 'es'];
+
+        function normalizeLang(raw) {
+            const value = (raw || '').toLowerCase();
+            if (value.startsWith('fr')) return 'fr';
+            if (value.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        function updateLocalizedLinks(lang) {
+            document.querySelectorAll('[data-base-href]').forEach((link) => {
+                const baseHref = link.getAttribute('data-base-href');
+                if (!baseHref) return;
+                link.setAttribute('href', `${baseHref}?lang=${lang}`);
+            });
+        }
+
+        function setLanguage(lang) {
+            const finalLang = supportedLangs.includes(lang) ? lang : 'en';
+
+            document.documentElement.setAttribute('lang', finalLang);
+
+            document.querySelectorAll('.lang-btn').forEach((btn) => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === finalLang);
+            });
+
+            document.querySelectorAll('.lang-block').forEach((block) => {
+                block.classList.toggle('active', block.getAttribute('data-lang-block') === finalLang);
+            });
+
+            updateLocalizedLinks(finalLang);
+
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('lang', finalLang);
+            window.history.replaceState({}, '', currentUrl);
+        }
+
+        const initialLang = normalizeLang(new URLSearchParams(window.location.search).get('lang') || 'en');
+        setLanguage(initialLang);
+
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const selected = btn.getAttribute('data-lang');
+                setLanguage(selected);
+            });
+        });
+    </script>
+</body>
+
+</html>

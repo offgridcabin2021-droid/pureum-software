@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité – PathLog</title>
+    <meta name="description" content="Politique de confidentialité de PathLog. Découvrez comment PathLog traite vos données.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #1A5DFF;
+            --bg: #F8FAFF;
+            --text: #1C1C1E;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(248,250,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--blue); }
+        .nav-back { font-size: 0.875rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+        .nav-back:hover { text-decoration: underline; }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .lang-select {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--text);
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .meta { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 48px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        p { color: #374151; font-size: 0.975rem; }
+        footer {
+            border-top: 1px solid var(--border); padding: 32px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 12px;
+            max-width: 720px; margin: 0 auto;
+        }
+        footer p { font-size: 0.85rem; color: var(--text-secondary); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--blue); }
+        @media (max-width: 600px) {
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Path<span>Log</span></a>
+        <div class="nav-actions">
+            <select class="lang-select" onchange="window.location.href=this.value" aria-label="Sélecteur de langue">
+                <option value="privacy.html">English</option>
+                <option value="privacy-es.html">Español</option>
+                <option value="privacy-ko.html">한국어</option>
+                <option value="privacy-fr.html" selected>Français</option>
+            </select>
+            <a href="index.html" class="nav-back">← Retour à PathLog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="eyebrow">Informations légales</div>
+        <h1>Politique de confidentialité</h1>
+        <p class="meta">Dernière mise à jour : 1 mai 2026</p>
+
+        <section>
+            <p>PathLog vous aide à planifier vos voyages et randonnées. Nous ne collectons que les informations minimales nécessaires au fonctionnement des fonctionnalités principales.</p>
+        </section>
+
+        <section>
+            <h2>1. Données saisies</h2>
+            <p>Les titres de voyage, étapes, notes et fichiers KML importés sont stockés sur votre appareil via le stockage local de l'application. Aucun compte ni connexion n'est requis pour utiliser PathLog.</p>
+        </section>
+
+        <section>
+            <h2>2. Données de localisation</h2>
+            <p>Si vous autorisez l'accès à la localisation, celle-ci est utilisée pour les fonctions de carte et d'itinéraire dans l'application. Nous ne vendons, ne partageons ni ne stockons vos données de localisation sur aucun serveur.</p>
+        </section>
+
+        <section>
+            <h2>3. Requêtes IA et identification de plantes</h2>
+            <p>Lorsque vous générez un itinéraire ou utilisez la fonction d’identification de plantes, le contenu de cette requête (texte ou photo) est envoyé à notre service proxy IA (Cloudflare Workers) puis à un fournisseur IA pour produire une réponse. Seul le contenu de votre requête spécifique est transmis — aucun identifiant personnel, historique de localisation ou autre donnée de voyage n’est inclus. Les photos d’identification de plantes ne sont pas conservées sur nos serveurs après la requête.</p>
+        </section>
+
+        <section>
+            <h2>4. Partage des données</h2>
+            <p>Nous ne vendons pas d'informations personnelles. Les données sont uniquement partagées avec les prestataires de services nécessaires à la fourniture des fonctionnalités de l'application (par exemple, la génération IA). Nous n'utilisons pas de SDK d'analyse ou de publicité tiers.</p>
+        </section>
+
+        <section>
+            <h2>5. Vos choix</h2>
+            <p>Vous pouvez supprimer des voyages individuels dans l'application à tout moment. Vous pouvez exporter vos données en fichier KML depuis la vue carte d'un voyage ou depuis Paramètres → Exporter tous les voyages en KML. La désinstallation de l'application supprime toutes les données stockées localement.</p>
+        </section>
+
+        <section>
+            <h2>6. Apple Health</h2>
+            <p>Si vous activez le compteur de pas quotidien dans Paramètres, PathLog lit votre nombre de pas depuis Apple Health sur votre appareil. Cette donnée est affichée localement sur l'écran d'accueil uniquement et n'est jamais transmise à aucun serveur. Vous pouvez désactiver cette fonction à tout moment dans Paramètres.</p>
+        </section>
+
+        <section>
+            <h2>7. Achats intégrés</h2>
+            <p>Les abonnements PathLog Standard sont traités entièrement via l'App Store d'Apple. Nous ne collectons ni ne stockons aucune information de paiement. Votre statut d'abonnement est vérifié localement sur votre appareil via StoreKit. Pour gérer ou annuler, allez dans Réglages iPhone → Apple ID → Abonnements.</p>
+        </section>
+
+        <section>
+            <h2>8. Confidentialité des enfants</h2>
+            <p>PathLog n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants.</p>
+        </section>
+
+        <section>
+            <h2>9. Modifications de cette politique</h2>
+            <p>Nous pouvons mettre à jour cette Politique de confidentialité de temps en temps. La version mise à jour sera reflétée par la date de « Dernière mise à jour » ci-dessus. L'utilisation continue de PathLog après les modifications vaut acceptation de la politique révisée.</p>
+        </section>
+
+        <section>
+            <h2>10. Contact</h2>
+            <p>Pour toute question ou demande relative à la confidentialité, consultez notre <a href="support.html" style="color: var(--blue);">page d'assistance</a> ou écrivez à <a href="mailto:support@pureum.dev" style="color: var(--blue);">support@pureum.dev</a>.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 PathLog par Pureum Software. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="terms-fr.html">Conditions d'utilisation</a>
+            <a href="privacy-fr.html">Politique de confidentialité</a>
+            <a href="support.html">Assistance</a>
+        </div>
+    </footer>
+</body>
+</html>

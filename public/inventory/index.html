@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory - Smart Dental Inventory Management</title>
+    <meta name="description"
+        content="Streamline your dental practice inventory with smart tracking, one-tap ordering, and instant scanning.">
+
+    <!-- Google Fonts: Inter covering multiple weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=2.4">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;"><img src="assets/logo.jpg"
+                    alt="Inventory Logo" style="height: 36px; width: auto; border-radius: 8px;"><span
+                    style="font-weight: 600; font-size: 18px;">PureStock</span></a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="#workflow">Workflow</a>
+                <a href="support.html">Support</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">Version 2.0 Available Now</div>
+                <h1>Inventory management <br><span class="gradient-text">reimagined.</span></h1>
+                <p class="hero-subtitle">Effortlessly track your dental inventory with real-time insights, AI‑powered
+                    scanning, instant low‑stock alerts, and one‑tap reordering—all in a sleek, secure platform.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">Download App</a>
+                </div>
+                <div class="trust-badges">
+                    <span>Trusted by top clinics</span>
+                    <!-- Placeholder for trust icons if needed -->
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- Abstract representation of the app interface -->
+                <div class="app-mockup glass-panel float-animation">
+                    <div class="mockup-header">
+                        <h2>Inventory</h2>
+                        <div class="mockup-search">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <span>Search items or type 'low'...</span>
+                        </div>
+                        <div class="mockup-tags">
+                            <span class="tag active">All</span>
+                            <span class="tag">3M</span>
+                            <span class="tag">3M ESPE</span>
+                            <span class="tag">Bausch</span>
+                        </div>
+                    </div>
+                    <div class="mockup-list">
+                        <!-- Item 1 -->
+                        <div class="mockup-item">
+                            <div class="item-icon blue-gradient"></div>
+                            <div class="item-details">
+                                <div class="item-name">Surgical Needles 27G</div>
+                                <div class="item-brand">Terumo</div>
+                            </div>
+                            <div class="item-stat">
+                                <span class="stat-value">100</span>
+                                <span class="stat-unit">box</span>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="mockup-item">
+                            <div class="item-icon blue-gradient"></div>
+                            <div class="item-details">
+                                <div class="item-name">Microbrush Fine</div>
+                                <div class="item-brand">Microbrush</div>
+                            </div>
+                            <div class="item-stat">
+                                <span class="stat-value">400</span>
+                                <span class="stat-unit">box</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 Low Stock -->
+                        <div class="mockup-item">
+                            <div class="item-icon alert-gradient">
+                                <div class="alert-dot"></div>
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Handpiece Lubricant</div>
+                                <div class="item-brand">NSK</div>
+                            </div>
+                            <div class="item-stat alert-bg">
+                                <span class="stat-value alert-text">6</span>
+                                <span class="stat-unit alert-text">bottle</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Scan Button -->
+                        <div class="mockup-fab">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Grid -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Designed for efficiency.</h2>
+                <p>Five powerful modules to manage your entire practice.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1: Inventory -->
+                <a href="features.html?tab=inventory" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Inventory</h3>
+                        <p>Smart filters, visual stock levels, and critical alerts.</p>
+                    </div>
+                </a>
+
+                <!-- Feature 2: To Order -->
+                <a href="features.html?tab=order" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="icon-box alert-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <h3>To Order</h3>
+                        <p>One-tap ordering and backorder tracking.</p>
+                    </div>
+                </a>
+
+                <!-- Feature 5: Scanner -->
+                <a href="features.html?tab=scan" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 3h18v18H3zM7 7h3v3H7zm7 0h3v3h-3zm0 7h3v3h-3zM7 14h3v3H7z"></path>
+                            </svg>
+                        </div>
+                        <h3>Scanner</h3>
+                        <p>Instant barcode lookup and fast add.</p>
+                    </div>
+                </a>
+
+                <!-- Feature 3: Receiving -->
+                <a href="features.html?tab=receiving" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Receiving</h3>
+                        <p>Check in packages and verify invoices instantly.</p>
+                    </div>
+                </a>
+
+                <!-- Feature 4: Settings -->
+                <a href="features.html?tab=settings" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Settings</h3>
+                        <p>User roles, clinic codes, and notifications.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Deep Dive -->
+    <section id="workflow" class="deep-dive section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A complete workflow.</h2>
+                <p>From stock check to delivery, every step is covered.</p>
+            </div>
+
+            <div class="split-view">
+                <div class="deep-dive-content">
+                    <h3>1. Monitor</h3>
+                    <p>The <strong>Inventory Tab</strong> is your command center. Use the 'Low' filter to instantly
+                        isolate items that need attention. Visual red indicators ensure you never miss a shortage.</p>
+
+                    <h3>2. Order</h3>
+                    <p>Found a low item? Add it to your <strong>To Order</strong> list with one tap. When you're ready,
+                        export the list or place the order directly. The 'Ordered' status prevents double-ordering.</p>
+
+                    <h3>3. Receive</h3>
+                    <p>When packages arrive, switch to the <strong>Receiving Tab</strong>. Scan the incoming boxes to
+                        instantly update your stock levels and close out the order.</p>
+
+                    <div class="workflow-highlight">
+                        <div class="highlight-item">
+                            <span class="highlight-label">Search</span>
+                            <span class="highlight-desc">Brand & category filtering</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-label">Scan</span>
+                            <span class="highlight-desc">Camera-based barcode lookup</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-label">Track</span>
+                            <span class="highlight-desc">Live quantity updates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deep-dive-visual">
+                    <!-- Workflow Visualization -->
+                    <div class="workflow-card-stack">
+                        <div class="wf-card c1 glass">
+                            <div class="card-header">
+                                <span class="dot red"></span>
+                                <span>Low Stock Alert</span>
+                            </div>
+                            <div class="card-body">
+                                <strong>Handpiece Lubricant</strong>
+                                <small>6 bottles remaining</small>
+                            </div>
+                        </div>
+                        <div class="wf-card c2 glass">
+                            <div class="card-header">
+                                <span class="dot blue"></span>
+                                <span>To Order List</span>
+                            </div>
+                            <div class="card-body">
+                                <strong>+ 12 Bottles</strong>
+                                <small>Added to queue</small>
+                            </div>
+                        </div>
+                        <div class="wf-card c3 glass">
+                            <div class="card-header">
+                                <span class="dot green"></span>
+                                <span>Received</span>
+                            </div>
+                            <div class="card-body">
+                                <strong>Stock Updated</strong>
+                                <small>New Total: 18</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div id="download" class="footer-cta">
+                <h2>Ready to organize your practice?</h2>
+                <a href="#" class="btn btn-white">Download for iOS</a>
+            </div>
+            <div class="footer-links">
+                <p>
+                    <a href="terms.html" style="color: #86868B; margin-right: 24px;">Terms of Service</a>
+                    <a href="privacy.html" style="color: #86868B; margin-right: 24px;">Privacy Policy</a>
+                    <a href="support.html" style="color: #86868B;">Support</a>
+                </p>
+                <p style="margin-top: 16px;">&copy; 2026 Inventory App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js?v=2.5"></script>
+</body>
+
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - PathLog</title>
+    <meta name="description" content="PathLog Support. Find answers to common questions and get help with the PathLog iOS app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #1A5DFF;
+            --blue-light: #EDF2FF;
+            --bg: #F8FAFF;
+            --text: #1C1C1E;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+            --radius: 1rem;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(248,250,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--blue); }
+        .nav-back { font-size: 0.875rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+        .nav-back:hover { text-decoration: underline; }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .lang-select {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--text);
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            font-family: inherit;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 52px; }
+
+        .contact-card {
+            background: var(--blue-light);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 16px;
+            margin-bottom: 56px;
+        }
+        .contact-card-text h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+        .contact-card-text p { font-size: 0.9rem; color: var(--text-secondary); }
+        .contact-btn {
+            display: inline-block;
+            background: var(--blue); color: #fff;
+            padding: 12px 24px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600;
+            text-decoration: none; white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .contact-btn:hover { background: #0040D0; }
+
+        h2.section-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 24px; color: var(--text); }
+
+        .faq-list { list-style: none; }
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+            padding: 20px 24px; font-size: 0.975rem; font-weight: 600; color: var(--text);
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+            font-family: inherit;
+        }
+        .faq-question:hover { background: #F9FAFB; }
+        .faq-chevron {
+            flex-shrink: 0; width: 20px; height: 20px;
+            color: var(--text-secondary); transition: transform 0.25s ease;
+        }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.2s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            font-size: 0.9rem; color: #374151; line-height: 1.75;
+        }
+        .faq-item.open .faq-answer { max-height: 400px; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 32px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 12px;
+            max-width: 720px; margin: 0 auto;
+        }
+        footer p { font-size: 0.85rem; color: var(--text-secondary); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--blue); }
+
+        @media (max-width: 600px) {
+            footer { flex-direction: column; align-items: flex-start; }
+            .contact-card { flex-direction: column; align-items: flex-start; }
+            .nav-back { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Path<span>Log</span></a>
+        <div class="nav-actions">
+            <select id="lang-select" class="lang-select" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="ko">한국어</option>
+                <option value="fr">Français</option>
+            </select>
+            <a href="index.html" class="nav-back" id="nav-back">&larr; Back to PathLog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="eyebrow" id="eyebrow">Help Center</div>
+        <h1 id="page-title">Support</h1>
+        <p class="subtitle" id="subtitle">Frequently asked questions about PathLog. Can't find an answer? Send us an email.</p>
+
+        <div class="contact-card">
+            <div class="contact-card-text">
+                <h2 id="contact-title">Get in touch</h2>
+                <p id="contact-desc">We usually respond within 1-2 business days.</p>
+            </div>
+            <a href="mailto:support@pureum.dev" class="contact-btn" id="contact-btn">Email Support</a>
+        </div>
+
+        <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+        <ul class="faq-list">
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q1">How do I create a new trip or trail?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a1">Choose <strong>Travel</strong> or <strong>Trail</strong> first on the main screen, then open the top-right hamburger menu. For Travel, use <em>Explore Cities</em> or select <em>Import KML File</em>. For Trail, use <em>Explore Trails</em> or select <em>Import KML File</em>.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q2">How do I add stops to a trip?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a2">Open your trip and navigate to the Map view. Tap <strong>Edit</strong>, then tap the <strong>+</strong> button that appears to add a new stop. You can search by name or tap the map directly to place a pin.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q3">How do I build and reorder a day-by-day travel itinerary?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a3">On the trip detail Map screen, first tap the day you want to edit. Tap <strong>Edit</strong>, then tap the <strong>+</strong> button to add places to that day. After you add at least one place, drag the reorder handle (hamburger icon) on the right side of the list row up or down to reorder. While Edit mode is active, you can tap <strong>Add Day</strong> to add a day, or <strong>Delete Day</strong> to remove a day, allowing you to shape the itinerary exactly how you want.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q4">How do I delete a trip?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a4">On the Home screen, swipe left on any trip card and tap the <strong>Delete</strong> button. A confirmation dialog will appear to ensure you don't delete it by mistake.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q5">Why is the distance on the Trail card different from the detail page?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a5">The distance shown on the main Trail card represents the total overall geographic distance of the entire trail route. However, the distance shown on the detail page is specifically calculated based only on the mentioned stops or placemarks in that specific view.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q6">Why does Hiking show a slower speed/longer duration than Walking in tracking?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a6">This is expected behavior. PathLog estimates travel time based on average speeds for each activity type. Hiking speed (~4 km/h) is estimated to be slower than brisk walking (~5-6 km/h) due to typical terrain factors. Therefore, for the same distance, Walking naturally produces a shorter estimated time.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q7">Are the routes in Explore Cities and Explore Trails fully accurate?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a7">No. Explore Cities and Explore Trails are pre-made examples built to help you understand how PathLog works and show you what is possible. Because they are samples, they might not be 100% accurate. We highly encourage you to create and import your own personal travel itineraries and hiking logs to make the app truly yours!</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q8">How do I export my trip as a KML file?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a8">Inside a trip's Map view, tap the <strong>Share icon (up arrow)</strong> in the top-right toolbar. You can also export all your data (both Travels and Trails) at once from <strong>Settings → Export All Trips as KML</strong>.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q9">How do I import KML files back into the app?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a9">Go to Settings and tap <strong>Import KML File</strong>.<br>- <strong>For Cities (Travel):</strong> Generate your desired itinerary with Google Gemini (or any AI), create/download it as a KML file, then import it.<br>- <strong>For Trails:</strong> Create the route in Google Earth, export it as a KML file, then import it.<br>If the file was previously exported from PathLog, the app automatically restores it to the correct Travel or Trail category.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q10">What is the recommended source for Explore Cities and Explore Trails KML files?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a10">Use Google Gemini, OpenAI, or Claude for Cities (Travel) itinerary KML generation, and use Google Earth for Trails KML route creation. This provides the most predictable and stable import results in PathLog.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q11">Is my data stored on a server?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a11">No. All trip data (stops, notes, KML files) is stored locally on your device. Only AI itinerary prompts are sent to the server for generation, and no account registration or login is required.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q12">What are the Standard plan limits?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a12">With the Standard (paid) plan, Travel and Trail imports/saves are unlimited. Plant ID searches can be used up to 10 times per day.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q13">How does the free version work for KML imports?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a13">Free users can preview Travel up to 5 times and Trail up to 5 times. This quota includes both Explore recommendations and custom KML imports. Saving items to the database requires the Standard plan.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q14">Why does PathLog need Location access?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a14">Location access is essential for PathLog's core features.<br>- <strong>For Travel:</strong> It shows your current position on the map alongside your itinerary stops, so you always know where you are relative to your planned route.<br>- <strong>For Trail:</strong> It tracks your location and records your path in real time as you walk/hike.<br>Without location permission, map centering and real-time tracking will not work.</div></div>
+            </li>
+
+            <li class="faq-item">
+                <button class="faq-question" aria-expanded="false"><span id="q15">I skipped location permission — how do I enable it?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner" id="a15">Go to your device <strong>Settings → Apps (or Privacy & Security) → PathLog → Location</strong>, then select <strong>"While Using the App"</strong> or <strong>"Always"</strong>. Once enabled, return to PathLog to see your position on the map.</div></div>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p id="footer-copy">© 2026 PathLog by Pureum Software. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="terms.html" id="footer-terms">Terms of Service</a>
+            <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+            <a href="support.html" id="footer-support">Support</a>
+        </div>
+    </footer>
+
+    <script>
+        const I18N = {
+            en: {
+                title: 'Support - PathLog',
+                navBack: '\u2190 Back to PathLog',
+                eyebrow: 'Help Center',
+                pageTitle: 'Support',
+                subtitle: 'Frequently asked questions about PathLog. Can\'t find an answer? Send us an email.',
+                contactTitle: 'Get in touch',
+                contactDesc: 'We usually respond within 1-2 business days.',
+                contactBtn: 'Email Support',
+                faqTitle: 'Frequently Asked Questions',
+                q1: 'How do I create a new trip or trail?',
+                a1: 'Choose <strong>Travel</strong> or <strong>Trail</strong> first on the main screen, then open the top-right hamburger menu. For Travel, use <em>Explore Cities</em> or select <em>Import KML File</em>. For Trail, use <em>Explore Trails</em> or select <em>Import KML File</em>.',
+                q2: 'How do I add stops to a trip?',
+                a2: 'Open your trip and navigate to the Map view. Tap <strong>Edit</strong>, then tap the <strong>+</strong> button that appears to add a new stop. You can search by name or tap the map directly to place a pin.',
+                q3: 'How do I build and reorder a day-by-day travel itinerary?',
+                a3: 'On the trip detail Map screen, first tap the day you want to edit. Tap <strong>Edit</strong>, then tap the <strong>+</strong> button to add places to that day. After you add at least one place, drag the reorder handle (hamburger icon) on the right side of the list row up or down to reorder. While Edit mode is active, you can tap <strong>Add Day</strong> to add a day, or <strong>Delete Day</strong> to remove a day, allowing you to shape the itinerary exactly how you want.',
+                q4: 'How do I delete a trip?',
+                a4: 'On the Home screen, swipe left on any trip card and tap the <strong>Delete</strong> button. A confirmation dialog will appear to ensure you don\'t delete it by mistake.',
+                q5: 'Why is the distance on the Trail card different from the detail page?',
+                a5: 'The distance shown on the main Trail card represents the total overall geographic distance of the entire trail route. However, the distance shown on the detail page is specifically calculated based only on the mentioned stops or placemarks in that specific view.',
+                q6: 'Why does Hiking show a slower speed/longer duration than Walking in tracking?',
+                a6: 'This is expected behavior. PathLog estimates travel time based on average speeds for each activity type. Hiking speed (~4 km/h) is estimated to be slower than brisk walking (~5-6 km/h) due to typical terrain factors. Therefore, for the same distance, Walking naturally produces a shorter estimated time.',
+                q7: 'Are the routes in Explore Cities and Explore Trails fully accurate?',
+                a7: 'No. Explore Cities and Explore Trails are pre-made examples built to help you understand how PathLog works and show you what is possible. Because they are samples, they might not be 100% accurate. We highly encourage you to create and import your own personal travel itineraries and hiking logs to make the app truly yours!',
+                q8: 'How do I export my trip as a KML file?',
+                a8: 'Inside a trip\'s Map view, tap the <strong>Share icon (up arrow)</strong> in the top-right toolbar. You can also export all your data (both Travels and Trails) at once from <strong>Settings → Export All Trips as KML</strong>.',
+                q9: 'How do I import KML files back into the app?',
+                a9: 'Go to Settings and tap <strong>Import KML File</strong>.<br>- <strong>For Cities (Travel):</strong> Generate your desired itinerary with Google Gemini (or any AI), create/download it as a KML file, then import it.<br>- <strong>For Trails:</strong> Create the route in Google Earth, export it as a KML file, then import it.<br>If the file was previously exported from PathLog, the app automatically restores it to the correct Travel or Trail category.',
+                q10: 'What is the recommended source for Explore Cities and Explore Trails KML files?',
+                a10: 'Use Google Gemini, OpenAI, or Claude for Cities (Travel) itinerary KML generation, and use Google Earth for Trails KML route creation. This provides the most predictable and stable import results in PathLog.',
+                q11: 'Is my data stored on a server?',
+                a11: 'No. All trip data (stops, notes, KML files) is stored locally on your device. Only AI itinerary prompts are sent to the server for generation, and no account registration or login is required.',
+                q12: 'What are the Standard plan limits?',
+                a12: 'With the Standard (paid) plan, Travel and Trail imports/saves are unlimited. Plant ID searches can be used up to 10 times per day.',
+                q13: 'How does the free version work for KML imports?',
+                a13: 'Free users can preview Travel up to 5 times and Trail up to 5 times. This quota includes both Explore recommendations and custom KML imports. Saving items to the database requires the Standard plan.',
+                q14: 'Why does PathLog need Location access?',
+                a14: 'Location access is essential for PathLog\'s core features.<br>- <strong>For Travel:</strong> It shows your current position on the map alongside your itinerary stops, so you always know where you are relative to your planned route.<br>- <strong>For Trail:</strong> It tracks your location and records your path in real time as you walk/hike.<br>Without location permission, map centering and real-time tracking will not work.',
+                q15: 'I skipped location permission — how do I enable it?',
+                a15: 'Go to your device <strong>Settings → Apps (or Privacy & Security) → PathLog → Location</strong>, then select <strong>"While Using the App"</strong> or <strong>"Always"</strong>. Once enabled, return to PathLog to see your position on the map.',
+                copy: '© 2026 PathLog by Pureum Software. All rights reserved.',
+                terms: 'Terms of Service',
+                privacy: 'Privacy Policy',
+                support: 'Support'
+            },
+            es: {
+                title: 'Soporte - PathLog',
+                navBack: '\u2190 Volver a PathLog',
+                eyebrow: 'Centro de ayuda',
+                pageTitle: 'Soporte',
+                subtitle: 'Preguntas frecuentes sobre PathLog. ¿No encuentras una respuesta? Envíanos un correo.',
+                contactTitle: 'Ponte en contacto',
+                contactDesc: 'Normalmente respondemos en 1-2 días hábiles.',
+                contactBtn: 'Enviar correo a soporte',
+                faqTitle: 'Preguntas frecuentes',
+                q1: '¿Cómo creo un nuevo viaje o sendero?',
+                a1: 'Elige <strong>Travel</strong> o <strong>Trail</strong> primero en la pantalla principal, luego abre el menú superior derecho. Para Travel, usa <em>Explorar ciudades</em> o <em>Importar archivo KML</em>. Para Trail, usa <em>Explorar senderos</em> o <em>Importar archivo KML</em>.',
+                q2: '¿Cómo agrego paradas a un viaje?',
+                a2: 'Abre tu viaje y ve a la vista de mapa. Toca <strong>Edit</strong>, luego toca el botón <strong>+</strong> que aparece para agregar una parada. Puedes buscar por nombre o tocar el mapa directamente para colocar un pin.',
+                q3: '¿Cómo creo y reordeno un itinerario de viaje día a día?',
+                a3: 'En la pantalla de mapa de detalles del viaje, toca el día que deseas editar. Toca <strong>Edit</strong>, luego toca el botón <strong>+</strong> para agregar lugares. Si hay al menos un lugar, arrastra el control de ordenación (icono de hamburguesa) para reordenar. Puedes usar <strong>Add Day</strong> o <strong>Delete Day</strong> en modo de edición.',
+                q4: '¿Cómo elimino un viaje?',
+                a4: 'En la pantalla de inicio, desliza hacia la izquierda en cualquier tarjeta de viaje y toca el botón <strong>Delete</strong>. Aparecerá un cuadro de confirmación.',
+                q5: '¿Por qué la distancia en la tarjeta de ruta es diferente de la de detalles?',
+                a5: 'La distancia en la tarjeta representa la distancia geográfica general de toda la ruta. En la página de detalles, se calcula según las paradas mencionadas en esa vista específica.',
+                q6: '¿Por qué Hiking muestra menor velocidad/mayor duración que Walking en el seguimiento?',
+                a6: 'Es el comportamiento esperado. PathLog estima según velocidades promedio. Hiking (~4 km/h) es más lento que caminar rápido (~5-6 km/h) por factores del terreno. Para la misma distancia, caminar tarda menos.',
+                q7: '¿Son las rutas en Explorar ciudades y Explorar senderos completamente exactas?',
+                a7: 'No. Son ejemplos para ayudarte a entender la app y ver qué es posible. Te recomendamos crear e importar tus propios itinerarios y registros.',
+                q8: '¿Cómo exporto mi viaje como un archivo KML?',
+                a8: 'En la vista de mapa del viaje, toca el icono de compartir (flecha arriba). También puedes exportar todos a la vez desde <strong>Settings → Export All Trips as KML</strong>.',
+                q9: '¿Cómo vuelvo a importar archivos KML en la aplicación?',
+                a9: 'Ve a Settings y toca <strong>Import KML File</strong>.<br>- <strong>Para Travel:</strong> genera tu itinerario con Gemini (u otra IA), descárgalo como KML e impórtalo.<br>- <strong>Para Trail:</strong> crea la ruta en Google Earth, expórtala como KML e impórtala.',
+                q10: '¿Cuál es la fuente recomendada para archivos KML de viajes y senderos?',
+                a10: 'Recomendamos usar Gemini, OpenAI o Claude para viajes (Travel) y Google Earth para senderos (Trail) para resultados más estables.',
+                q11: '¿Mis datos se almacenan en un servidor?',
+                a11: 'No. Todos los datos se almacenan localmente en tu dispositivo. Solo se envían al servidor los prompts de IA para generación, sin requerir registro de cuenta.',
+                q12: '¿Cuáles son los límites del plan Standard?',
+                a12: 'Con el plan Standard, las importaciones de Travel y Trail son ilimitadas. La identificación de plantas se puede usar hasta 10 veces al día.',
+                q13: '¿Cómo funciona la versión gratuita para importaciones KML?',
+                a13: 'Los usuarios gratuitos pueden previsualizar Travel hasta 5 veces y Trail hasta 5 veces (incluye recomendaciones y KMLs personalizados). Para guardarlos se requiere Standard.',
+                q14: '¿Por qué PathLog necesita acceso a la ubicación?',
+                a14: 'Es esencial. Para Travel, muestra tu posición actual respecto a las paradas. Para Trail, registra tu ruta en tiempo real. Sin permiso, estas funciones no servirán.',
+                q15: 'Omití el permiso de ubicación, ¿cómo lo activo?',
+                a15: 'Ve a <strong>Ajustes de tu dispositivo → Aplicaciones (o Privacidad) → PathLog → Ubicación</strong>, y selecciona <strong>"Al usar la app"</strong> o <strong>"Siempre"</strong>.',
+                copy: '© 2026 PathLog de Pureum Software. Todos los derechos reservados.',
+                terms: 'Términos de servicio',
+                privacy: 'Política de privacidad',
+                support: 'Soporte'
+            },
+            ko: {
+                title: 'PathLog 지원',
+                navBack: '\u2190 PathLog로 돌아가기',
+                eyebrow: '도움말 센터',
+                pageTitle: '지원',
+                subtitle: 'PathLog 자주 묻는 질문입니다. 원하는 답변이 없으면 이메일로 문의해 주세요.',
+                contactTitle: '문의하기',
+                contactDesc: '보통 영업일 기준 1-2일 내에 답변드립니다.',
+                contactBtn: '이메일 문의',
+                faqTitle: '자주 묻는 질문',
+                q1: '새 여행 또는 트레일은 어떻게 만드나요?',
+                a1: '먼저 메인 화면에서 <strong>Travel(여행)</strong> 또는 <strong>Trail(트레일)</strong>을 선택한 뒤 우측 상단의 햄버거 메뉴를 여세요. Travel의 경우 <em>도시 탐색</em> 또는 <em>KML 파일 가져오기</em>를 사용하고, Trail의 경우 <em>트레일 탐색</em> 또는 <em>KML 파일 가져오기</em>를 사용하면 됩니다.',
+                q2: '여행에 장소(정류장)는 어떻게 추가하나요?',
+                a2: '여행을 열고 지도 화면으로 이동하세요. <strong>편집(Edit)</strong>을 누른 뒤 나타나는 <strong>+</strong> 버튼으로 새 장소를 추가할 수 있습니다. 이름으로 검색하거나 지도에서 직접 탭해 핀을 놓을 수도 있습니다.',
+                q3: '여행 상세 페이지에서 일자별 일정을 만들고 순서를 바꾸려면 어떻게 하나요?',
+                a3: '여행 상세 지도 화면에서 먼저 수정할 날짜를 선택하세요. <strong>Edit</strong>를 누른 뒤 <strong>+</strong> 버튼을 눌러 해당 날짜에 일정을 추가합니다. 일정이 하나 이상 있으면 오른쪽 햄버거 핸들을 위아래로 드래그해 순서를 바꿀 수 있습니다. Edit를 켜면 Day 메뉴 오른쪽에 <strong>Add Day</strong>가 나타나고, Add Day를 누르면 <strong>Delete Day</strong>도 함께 보여서 원하는 형태로 여행 일정을 구성할 수 있습니다.',
+                q4: '여행은 어떻게 삭제하나요?',
+                a4: '홈 화면에서 여행 카드를 왼쪽으로 스와이프한 후 <strong>삭제(Delete)</strong> 버튼을 누르세요. 실수로 삭제하는 것을 방지하기 위해 확인 대화상자가 나타납니다.',
+                q5: '왜 트레일 카드의 거리와 상세 페이지의 거리가 왜 다른가요?',
+                a5: '메인 트레일 카드에 표시된 거리는 전체 경로의 총 거리를 나타냅니다. 반면 상세 페이지의 거리는 해당 화면에 언급된 장소나 위치(Placemark)만을 기준으로 계산됩니다.',
+                q6: '추적에서 왜 하이킹 시간이 걷기보다 길게(느리게) 보이나요?',
+                a6: '정상 동작입니다. PathLog는 활동 유형별 평균 속도로 이동 시간을 추정합니다. 지형 요인으로 인해 하이킹 속도(약 4km/h)는 빠른 걷기(약 5-6km/h)보다 느리게 산정되기 때문에, 같은 거리라면 걷기의 예상 시간이 더 짧게 나옵니다.',
+                q7: '도시 탐색 및 트레일 탐색의 경로는 완전히 정확한가요?',
+                a7: '아니요. 도시 탐색 및 트레일 탐색은 사용자의 이해를 돕기 위해 제공되는 예제일 뿐이며, 완전히 정확하지 않을 수 있습니다. 대신 사용자가 자신만의 특별한 여행 일정과 트레일 기록(Travel & Trail)을 직접 만들고 가져와서 사용해 보시는 것을 적극 권장합니다!',
+                q8: '내 여행을 KML 파일로 내보내려면 어떻게 하나요?',
+                a8: '여행의 지도 화면에서 오른쪽 상단 툴바의 <strong>공유 아이콘(위쪽 화살표)</strong>을 누르세요. 추가로 <strong>설정 → 모든 여행 KML로 내보내기</strong>에서 모든 데이터를 한 번에 내보낼 수도 있습니다.',
+                q9: '앱으로 KML 파일을 다시 가져오려면 어떻게 하나요?',
+                a9: '설정에서 <strong>KML 파일 가져오기(Import KML File)</strong>를 누르세요.<br>- <strong>도시(Travel)의 경우:</strong> 원하는 AI(Gemini, OpenAI, Claude 등)에 여행 일정을 요청해 KML 파일로 다운로드한 뒤 가져오면 됩니다.<br>- <strong>트레일(Trail)의 경우:</strong> Google Earth에서 경로를 만들고 KML로 내보낸 뒤 가져오세요.<br>이전에 PathLog에서 내보낸 파일이라면 앱이 자동으로 올바른 Travel 또는 Trail 유형으로 인식해 복원합니다.',
+                q10: 'Explore Cities와 Explore Trails용 KML 파일은 어떤 소스를 권장하나요?',
+                a10: 'Cities(Travel) 일정 KML 생성은 Gemini·OpenAI·Claude 등 AI 모델을, Trails 경로 KML 생성은 Google Earth를 권장합니다. 이 방법이 PathLog에서 가장 안정적인 가져오기 결과를 제공합니다.',
+                q11: '내 데이터가 서버에 저장되나요?',
+                a11: '아니요. 여행 데이터(장소, 메모, KML 파일)는 모두 기기에 로컬로 저장됩니다. 서버로 전송되는 것은 AI 일정 생성 프롬프트뿐이며, 별도의 계정 등록이나 로그인이 필요하지 않습니다.',
+                q12: 'Standard 플랜 제한은 어떻게 되나요?',
+                a12: 'Standard(유료) 요금제에서는 Travel과 Trail 가져오기 및 저장이 무제한입니다. 식물 식별(Plant ID)은 하루 최대 10회 사용할 수 있습니다.',
+                q13: '무료 버전의 KML 가져오기는 어떻게 동작하나요?',
+                a13: '무료 버전에서는 Travel 5회, Trail 5회까지 미리보기를 사용할 수 있습니다. 각 유형의 Explore 사용과 KML 가져오기 사용이 모두 이 횟수에 포함됩니다. 미리보기는 가능하지만, 내 Trips 목록에 저장하려면 Standard 플랜이 필요합니다.',
+                q14: 'PathLog에 위치 접근 권한이 왜 필요한가요?',
+                a14: '위치 접근 권한은 PathLog의 핵심 기능에 꼭 필요합니다.<br>- <strong>여행(Travel)의 경우:</strong> 지도에 내 여행 일정 장소와 함께 현재 위치가 표시되어 계획한 경로 대비 어디에 있는지 쉽게 파악할 수 있습니다.<br>- <strong>트레일(Trail)의 경우:</strong> 하이킹이나 걷는 동안 실시간으로 위치와 이동 경로를 추적해 기록합니다.<br>위치 권한 없이는 지도가 내 위치를 중심으로 표시되지 않으며 실시간 추적도 작동하지 않습니다.',
+                q15: '위치 권한을 허용하지 않았어요. 어떻게 켤 수 있나요?',
+                a15: '기기의 <strong>설정 → 앱(또는 개인정보 보호 및 보안) → PathLog → 위치</strong>로 이동한 후 <strong>\'앱 사용 중\'</strong> 또는 <strong>\'항상\'</strong>을 선택하세요. 설정 후 앱으로 돌아오면 지도에 현재 위치가 표시됩니다.',
+                copy: '© 2026 Pureum Software의 PathLog. 모든 권리 보유.',
+                terms: '서비스 이용약관',
+                privacy: '개인정보 처리방침',
+                support: '지원'
+            },
+            fr: {
+                title: 'Assistance - PathLog',
+                navBack: '\u2190 Retour à PathLog',
+                eyebrow: 'Centre d\'aide',
+                pageTitle: 'Assistance',
+                subtitle: 'Questions fréquentes sur PathLog. Vous ne trouvez pas la réponse ? Envoyez-nous un e-mail.',
+                contactTitle: 'Nous contacter',
+                contactDesc: 'Nous répondons généralement sous 1 à 2 jours ouvrés.',
+                contactBtn: 'Contacter le support',
+                faqTitle: 'Questions fréquentes',
+                q1: 'Comment créer un nouveau voyage ou sentier ?',
+                a1: 'Choisissez d\'abord <strong>Travel</strong> ou <strong>Trail</strong> sur l\'écran principal, puis ouvrez le menu en haut à droite. Pour Travel, utilisez <em>Explorer les villes</em> ou <em>Importer un fichier KML</em>. Pour Trail, utilisez <em>Explorer les sentiers</em> ou <em>Importer un fichier KML</em>.',
+                q2: 'Comment ajouter des arrêts à un voyage ?',
+                a2: 'Ouvrez votre voyage et accédez à la carte. Appuyez sur <strong>Edit</strong>, puis sur le bouton <strong>+</strong> pour ajouter un arrêt. Recherchez par nom ou touchez directement la carte.',
+                q3: 'Comment créer et réordonner un itinéraire jour par jour ?',
+                a3: 'Sur la carte des détails du voyage, appuyez sur le jour à modifier. Appuyez sur <strong>Edit</strong>, puis sur <strong>+</strong> pour ajouter des lieux. Faites glisser l\'icône de tri (hambourgeois) pour réorganiser. Utilisez <strong>Add Day</strong> ou <strong>Delete Day</strong> en mode édition.',
+                q4: 'Comment supprimer un voyage ?',
+                a4: 'Sur l\'écran d\'accueil, balayez vers la gauche sur une carte et appuyez sur <strong>Delete</strong>. Une boîte de confirmation s\'affiche.',
+                q5: 'Pourquoi la distance sur la carte de sentier diffère-t-elle de la page de détails ?',
+                a5: 'La distance sur la carte représente la distance géographique globale. La page de détails calcule la distance uniquement selon les arrêts de cette vue spécifique.',
+                q6: 'Pourquoi le suivi de Hiking affiche-t-il une vitesse plus lente que Walking ?',
+                a6: 'C\'est normal. PathLog estime selon des moyennes d\'activité. La randonnée (~4 km/h) est plus lente que la marche rapide (~5-6 km/h) en raison du terrain. À distance égale, marcher prend moins de temps.',
+                q7: 'Les itinéraires de villes et sentiers recommandés sont-ils exacts ?',
+                a7: 'Non. Ce sont des exemples pour comprendre le fonctionnement de l\'application. Nous vous recommandons de créer et d\'importer vos propres itinéraires et randonnées.',
+                q8: 'Comment exporter mon voyage sous forme de fichier KML ?',
+                a8: 'Dans la vue Carte, appuyez sur l\'icône de partage (flèche vers le haut). Vous pouvez aussi tout exporter via <strong>Settings → Export All Trips as KML</strong>.',
+                q9: 'Comment réimporter des fichiers KML dans l\'application ?',
+                a9: 'Allez dans Settings et appuyez sur <strong>Import KML File</strong>.<br>- <strong>Pour Travel :</strong> générez votre itinéraire avec Gemini (ou autre IA), téléchargez en KML et importez.<br>- <strong>Pour Trail :</strong> créez le tracé dans Google Earth, exportez en KML et importez.<br>Si le fichier a été précédemment exporté de PathLog, l\'application le restaure automatiquement.',
+                q10: 'Quelle est la source recommandée pour les fichiers KML ?',
+                a10: 'Nous recommandons Gemini, OpenAI ou Claude pour les voyages (Travel), et Google Earth pour les sentiers (Trail) afin d\'obtenir un import stable.',
+                q11: 'Mes données sont-elles stockées sur un serveur ?',
+                a11: 'Non. Toutes vos données sont stockées localement sur votre appareil. Seuls les prompts de génération IA sont envoyés au serveur, sans compte ni inscription.',
+                q12: 'Quelles sont les limites du plan Standard ?',
+                a12: 'Avec le plan Standard, les importations Travel/Trail sont illimitées. L\'identification de plantes est limitée à 10 fois par jour.',
+                q13: 'Comment fonctionne la version gratuite pour les imports KML ?',
+                a13: 'Les utilisateurs gratuits peuvent prévisualiser Travel 5 fois et Trail 5 fois (inclus recommandations et imports KML). Sauvegarder dans la base nécessite Standard.',
+                q14: 'Pourquoi PathLog a-t-il besoin de l\'accès à la localisation ?',
+                a14: 'C\'est essentiel.<br>- <strong>Pour Travel :</strong> cela montre votre position par rapport aux arrêts.<br>- <strong>Pour Trail :</strong> cela enregistre votre itinéraire en temps réel.<br>Sans cela, le suivi et le centrage ne fonctionneront pas.',
+                q15: 'J\'ai refusé l\'accès à la localisation, comment l\'activer ?',
+                a15: 'Allez dans les <strong>Réglages de l\'appareil → Applications (ou Confidentialité) → PathLog → Localisation</strong>, puis sélectionnez <strong>"Pendant l\'utilisation de l\'app"</strong> ou <strong>"Toujours"</strong>.',
+                copy: '© 2026 PathLog par Pureum Software. Tous droits réservés.',
+                terms: 'Conditions d\'utilisation',
+                privacy: 'Politique de confidentialité',
+                support: 'Assistance'
+            }
+        };
+
+        function getInitialLang() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam && I18N[langParam]) {
+                return langParam;
+            }
+            const saved = localStorage.getItem('pathlog_lang');
+            if (saved && I18N[saved]) {
+                return saved;
+            }
+            const browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+            return I18N[browser] ? browser : 'en';
+        }
+
+        function applyLang(lang) {
+            const t = I18N[lang] || I18N.en;
+            document.documentElement.lang = lang;
+            document.title = t.title;
+            document.getElementById('nav-back').textContent = t.navBack;
+            document.getElementById('eyebrow').textContent = t.eyebrow;
+            document.getElementById('page-title').textContent = t.pageTitle;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('contact-desc').textContent = t.contactDesc;
+            document.getElementById('contact-btn').textContent = t.contactBtn;
+            document.getElementById('faq-title').textContent = t.faqTitle;
+
+            for (let i = 1; i <= 15; i++) {
+                const qEl = document.getElementById('q' + i);
+                const aEl = document.getElementById('a' + i);
+                if (qEl && t['q' + i]) qEl.textContent = t['q' + i];
+                if (aEl && t['a' + i]) aEl.innerHTML = t['a' + i];
+            }
+
+            document.getElementById('footer-copy').textContent = t.copy;
+            document.getElementById('footer-terms').textContent = t.terms;
+            document.getElementById('footer-privacy').textContent = t.privacy;
+            document.getElementById('footer-support').textContent = t.support;
+            document.getElementById('lang-select').value = lang;
+            localStorage.setItem('pathlog_lang', lang);
+        }
+
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        const langSelect = document.getElementById('lang-select');
+        langSelect.addEventListener('change', (e) => applyLang(e.target.value));
+        applyLang(getInitialLang());
+    </script>
+</body>
+</html>

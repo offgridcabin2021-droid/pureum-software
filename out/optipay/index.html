@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiPay - Smart Tax and Payroll Optimization</title>
+    <meta name="description" content="Optimize salary, dividends, and long-term tax planning with a modern Canadian optimization platform.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=2.2">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon" aria-hidden="true">
+                    <img src="assets/optipay-logo.jpg" alt="OptiPay Logo">
+                </span>
+                <span class="logo-wordmark">OptiPay</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#features" data-en="Our services" data-fr="Nos services">Our services</a>
+                <a href="#about" data-en="About" data-fr="À propos">About</a>
+                <a href="#support" data-en="Support" data-fr="Support">Support</a>
+                
+                <div class="lang-switch" aria-label="Language switcher">
+                    <button class="lang-toggle" data-set-lang="en" type="button">EN</button>
+                    <button class="lang-toggle" data-set-lang="fr" type="button">FR</button>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-delcap">
+        <div class="container hero-delcap-container">
+            <div class="hero-delcap-content">
+                <div class="hero-delcap-meta" data-en="Since 2007" data-fr="Depuis 2007">Since 2007</div>
+                <h1 class="hero-delcap-title" 
+                    data-i18n-attr="html"
+                    data-en="Maximize your<br>corporate wealth<br>and growth" 
+                    data-fr="Maximisez votre<br>patrimoine et votre<br>croissance d'entreprise">
+                    Maximize your<br>corporate wealth<br>and growth
+                </h1>
+                <a href="#contact" class="hero-delcap-link" data-en="Book a meeting" data-fr="Prendre rendez-vous">Book a meeting</a>
+            </div>
+            
+            <div class="hero-delcap-road">
+                <img class="winding-road-image" src="assets/growth-chart.jpg" alt="Corporate growth chart">
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="offer-section">
+        <div class="container">
+            <h2 class="offer-header-title" data-en="What we offer" data-fr="Notre offre">What we offer</h2>
+            
+            <div class="offer-grid-delcap">
+                <article class="offer-card-delcap">
+                    <div class="offer-card-top">
+                        <h3 data-en="OptiPay Optimization" data-fr="Optimisation OptiPay">OptiPay Optimization</h3>
+                        <p data-en="Smart salary vs dividend balancing. Compare practical compensation options instantly across current tax assumptions." 
+                           data-fr="Arbitrage intelligent salaire vs dividendes. Comparez instantanément des options de rémunération selon les hypothèses fiscales actuelles.">
+                            Smart salary vs dividend balancing. Compare practical compensation options instantly across current tax assumptions.
+                        </p>
+                    </div>
+                    <a href="#optipay-detail" class="offer-card-link" data-en="Learn more" data-fr="En savoir plus">Learn more</a>
+                </article>
+
+                <article class="offer-card-delcap">
+                    <div class="offer-card-top">
+                        <h3 data-en="Compound Growth" data-fr="Croissance composée">Compound Growth</h3>
+                        <p data-en="Forward-looking compound interest forecasting. Model long-term corporate asset expansion and growth scenarios." 
+                           data-fr="Prévision d'intérêts composés prospective. Modélisez l'expansion des actifs d'entreprise et les scénarios de croissance à long terme.">
+                            Forward-looking compound interest forecasting. Model long-term corporate asset expansion and growth scenarios.
+                        </p>
+                    </div>
+                    <a href="#compound-detail" class="offer-card-link" data-en="Learn more" data-fr="En savoir plus">Learn more</a>
+                </article>
+
+                <article class="offer-card-delcap">
+                    <div class="offer-card-top">
+                        <h3 data-en="Payroll Administration" data-fr="Administration de la paie">Payroll Administration</h3>
+                        <p data-en="Structured corporate payroll setup. Streamline payouts with provincial tax rules and compliance mechanisms." 
+                           data-fr="Structure de paie d'entreprise. Simplifiez les versements de salaire en accord avec les règles fiscales provinciales.">
+                            Structured corporate payroll setup. Streamline payouts with provincial tax rules and compliance mechanisms.
+                        </p>
+                    </div>
+                    <a href="#payroll-detail" class="offer-card-link" data-en="Learn more" data-fr="En savoir plus">Learn more</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redesigned Detailed Features Section (Merged from features.html) -->
+    <section class="features-detail-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Advanced Capabilities" data-fr="Fonctionnalités avancées">Advanced Capabilities</h2>
+                <p data-en="OptiPay combines deep tax logic with clean, automated workflows so you can make confident decisions faster."
+                   data-fr="OptiPay combine une logique fiscale avancée avec des flux automatisés pour prendre de meilleures décisions plus rapidement.">
+                    OptiPay combines deep tax logic with clean, automated workflows so you can make confident decisions faster.
+                </p>
+            </div>
+
+            <!-- Detail 1: OptiPay Salary & Dividend -->
+            <article class="feature-detail surface" id="optipay-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-detail-header">
+                        <span class="icon-wrap tone-sky" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M4 14h16M6 10h12M8 6h8"></path><path d="M6 18h4"></path></svg>
+                        </span>
+                        <div>
+                            <h2 data-en="Smart Salary and Dividend Optimization" data-fr="Optimisation intelligente salaire et dividendes">Smart Salary and Dividend Optimization</h2>
+                            <p class="feature-subtitle" data-en="Find the compensation mix that performs best under your actual assumptions."
+                               data-fr="Trouvez la combinaison de rémunération la plus performante selon vos hypothèses réelles.">
+                                Find the compensation mix that performs best under your actual assumptions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-detail-body">
+                        <div class="feature-description">
+                            <h3 data-en="What it does" data-fr="Ce que ça fait">What it does</h3>
+                            <p data-en="Run multiple compensation strategies at once and compare trade-offs in a format that is clear enough for team and advisor review."
+                               data-fr="Exécutez plusieurs stratégies de rémunération en même temps et comparez les compromis dans un format clair pour votre équipe et vos conseillers.">
+                                Run multiple compensation strategies at once and compare trade-offs in a format that is clear enough for team and advisor review.
+                            </p>
+
+                            <h3 data-en="Key capabilities" data-fr="Capacités clés">Key capabilities</h3>
+                            <ul class="feature-list">
+                                <li data-en="Dividend-first, blended, and compound-focused strategy comparisons" data-fr="Comparaison des stratégies dividendes, hybrides et axées sur la croissance composée">Dividend-first, blended, and compound-focused strategy comparisons</li>
+                                <li data-en="Province-aware tax outcomes and after-tax cash flow summaries" data-fr="Résultats fiscaux par province et synthèses des flux nets après impôt">Province-aware tax outcomes and after-tax cash flow summaries</li>
+                                <li data-en="Instant sensitivity checks across changed assumptions" data-fr="Tests de sensibilité instantanés selon les hypothèses modifiées">Instant sensitivity checks across changed assumptions</li>
+                                <li data-en="Clear recommendation logic, not black-box output" data-fr="Logique de recommandation transparente, sans boîte noire">Clear recommendation logic, not black-box output</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-visual">
+                            <div class="calculation-example">
+                                <div class="calc-header" data-en="Optimization Results" data-fr="Résultats d'optimisation">Optimization Results</div>
+                                <div class="calc-comparison">
+                                    <div class="calc-option">
+                                        <div class="calc-label" data-en="Salary Only" data-fr="Salaire seulement">Salary Only</div>
+                                        <div class="calc-value">$65,250</div>
+                                        <div class="calc-detail" data-en="After-tax cash" data-fr="Trésorerie nette">After-tax cash</div>
+                                    </div>
+                                    <div class="calc-arrow">&rarr;</div>
+                                    <div class="calc-option optimized">
+                                        <div class="calc-label" data-en="Balanced Mix" data-fr="Mix équilibré">Balanced Mix</div>
+                                        <div class="calc-value">$69,500</div>
+                                        <div class="calc-detail" data-en="After-tax cash" data-fr="Trésorerie nette">After-tax cash</div>
+                                        <div class="calc-savings" data-en="+$4,250 annually" data-fr="+4 250 $ par an">+$4,250 annually</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Detail 2: Compound Growth -->
+            <article class="feature-detail surface" id="compound-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-detail-header">
+                        <span class="icon-wrap tone-mint" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M6 8h12"></path><path d="M7 16a5 5 0 1 0 10 0"></path></svg>
+                        </span>
+                        <div>
+                            <h2 data-en="Compound Growth & Corporate Projection" data-fr="Croissance composée et projection corporative">Compound Growth & Corporate Projection</h2>
+                            <p class="feature-subtitle" data-en="Model corporate asset expansion over long-term growth horizons."
+                               data-fr="Modélisez l'expansion des actifs d'entreprise sur des horizons de croissance à long terme.">
+                                Model corporate asset expansion over long-term growth horizons.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-detail-body">
+                        <div class="feature-description">
+                            <h3 data-en="What it does" data-fr="Ce que ça fait">What it does</h3>
+                            <p data-en="Forecast compound interest outcomes based on different investment rates and retention strategies inside your corporation."
+                               data-fr="Prévoyez les résultats d'intérêts composés selon différents taux d'investissement et stratégies de rétention au sein de votre entreprise.">
+                                Forecast compound interest outcomes based on different investment rates and retention strategies inside your corporation.
+                            </p>
+
+                            <h3 data-en="Key capabilities" data-fr="Capacités clés">Key capabilities</h3>
+                            <ul class="feature-list">
+                                <li data-en="Long-term compound wealth modeling" data-fr="Modélisation de la richesse composée à long terme">Long-term compound wealth modeling</li>
+                                <li data-en="Corporate asset accumulation projection" data-fr="Projection de l'accumulation d'actifs de l'entreprise">Corporate asset accumulation projection</li>
+                                <li data-en="Growth rate sensitivity analysis" data-fr="Analyse de sensibilité aux taux de croissance">Growth rate sensitivity analysis</li>
+                                <li data-en="Compare investment inside vs outside corporation" data-fr="Comparez l'investissement interne vs externe à l'entreprise">Compare investment inside vs outside corporation</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-visual">
+                            <div class="growth-chart">
+                                <div class="chart-header" data-en="Corporate Growth Projection" data-fr="Projection de croissance corporative">Corporate Growth Projection</div>
+                                <div class="chart-bars">
+                                    <div class="chart-bar" style="height: 40%;">
+                                        <div class="bar-value">$500K</div>
+                                        <div class="bar-label" data-en="Year 5" data-fr="An 5">Year 5</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 60%;">
+                                        <div class="bar-value">$800K</div>
+                                        <div class="bar-label" data-en="Year 10" data-fr="An 10">Year 10</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 80%;">
+                                        <div class="bar-value">$1.2M</div>
+                                        <div class="bar-label" data-en="Year 15" data-fr="An 15">Year 15</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 98%;">
+                                        <div class="bar-value">$1.8M</div>
+                                        <div class="bar-label" data-en="Year 20" data-fr="An 20">Year 20</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Detail 3: Corporate Accounts (CDA/GRIP/RDTOH) -->
+            <article class="feature-detail surface" id="payroll-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-detail-header">
+                        <span class="icon-wrap tone-gold" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 19h18"></path><path d="M7 15V9"></path><path d="M12 15V5"></path><path d="M17 15v-3"></path></svg>
+                        </span>
+                        <div>
+                            <h2 data-en="Corporate Structure & Tax Accounts" data-fr="Structure corporative & comptes fiscaux">Corporate Structure & Tax Accounts</h2>
+                            <p class="feature-subtitle" data-en="Bring CDA, GRIP, and RDTOH style constraints into realistic planning."
+                               data-fr="Intégrez les contraintes de type CDA, GRIP et RDTOH dans une planification réaliste.">
+                                Bring CDA, GRIP, and RDTOH style constraints into realistic planning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-detail-body">
+                        <div class="feature-description">
+                            <h3 data-en="What it does" data-fr="Ce que ça fait">What it does</h3>
+                            <p data-en="Move beyond simplistic calculators by including important corporate account factors in decision analysis."
+                               data-fr="Dépassez les calculateurs simplistes en intégrant les facteurs importants des comptes corporatifs dans l'analyse de décision.">
+                                Move beyond simplistic calculators by including important corporate account factors in decision analysis.
+                            </p>
+
+                            <h3 data-en="Key capabilities" data-fr="Capacités clés">Key capabilities</h3>
+                            <ul class="feature-list">
+                                <li data-en="Corporate account visibility in one dashboard" data-fr="Visibilité des comptes corporatifs dans un seul tableau">Corporate account visibility in one dashboard</li>
+                                <li data-en="Dividend planning context integrated with account balances" data-fr="Contexte de planification des dividendes intégré aux soldes des comptes">Dividend planning context integrated with account balances</li>
+                                <li data-en="Improved advisor conversation readiness" data-fr="Meilleure préparation aux échanges avec les conseillers">Improved advisor conversation readiness</li>
+                                <li data-en="Reduction of overlooked planning constraints" data-fr="Réduction des contraintes de planification souvent oubliées">Reduction of overlooked planning constraints</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-visual">
+                            <div class="corporate-dashboard">
+                                <div class="dashboard-header" data-en="Corporate Accounts Snapshot" data-fr="Aperçu des comptes corporatifs">Corporate Accounts Snapshot</div>
+                                <div class="account-grid">
+                                    <div class="account-item">
+                                        <div class="account-label" data-en="CDA Balance" data-fr="Solde CDA">CDA Balance</div>
+                                        <div class="account-value">$15,000</div>
+                                    </div>
+                                    <div class="account-item">
+                                        <div class="account-label" data-en="GRIP Balance" data-fr="Solde GRIP">GRIP Balance</div>
+                                        <div class="account-value">$8,500</div>
+                                    </div>
+                                    <div class="account-item">
+                                        <div class="account-label" data-en="Eligible RDTOH" data-fr="RDTOH admissible">Eligible RDTOH</div>
+                                        <div class="account-value">$3,200</div>
+                                    </div>
+                                    <div class="account-item">
+                                        <div class="account-label" data-en="Non-Eligible RDTOH" data-fr="RDTOH non admissible">Non-Eligible RDTOH</div>
+                                        <div class="account-value">$1,800</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Detail 4: Provincial Coverage -->
+            <article class="feature-detail surface">
+                <div class="feature-detail-content">
+                    <div class="feature-detail-header">
+                        <span class="icon-wrap tone-navy" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 12h18"></path><path d="M12 3v18"></path><path d="M5 5l14 14"></path></svg>
+                        </span>
+                        <div>
+                            <h2 data-en="Province-Specific Planning Coverage" data-fr="Couverture de planification par province">Province-Specific Planning Coverage</h2>
+                            <p class="feature-subtitle" data-en="Use one planning workflow while maintaining province-sensitive outcomes."
+                               data-fr="Utilisez un seul flux de planification tout en conservant des résultats adaptés à chaque province.">
+                                Use one planning workflow while maintaining province-sensitive outcomes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-detail-body">
+                        <div class="feature-description">
+                            <h3 data-en="What it does" data-fr="Ce que ça fait">What it does</h3>
+                            <p data-en="Support planning conversations across all Canadian provinces and territories without changing your process."
+                               data-fr="Appuyez vos discussions de planification dans toutes les provinces et territoires canadiens sans changer votre méthode.">
+                                Support planning conversations across all Canadian provinces and territories without changing your process.
+                            </p>
+
+                            <h3 data-en="Coverage list" data-fr="Liste de couverture">Coverage list</h3>
+                            <div class="province-grid">
+                                <div class="province-item">Ontario</div>
+                                <div class="province-item" data-en="British Columbia" data-fr="Colombie-Britannique">British Columbia</div>
+                                <div class="province-item" data-en="Quebec" data-fr="Québec">Quebec</div>
+                                <div class="province-item">Alberta</div>
+                                <div class="province-item">Saskatchewan</div>
+                                <div class="province-item">Manitoba</div>
+                                <div class="province-item" data-en="New Brunswick" data-fr="Nouveau-Brunswick">New Brunswick</div>
+                                <div class="province-item" data-en="Nova Scotia" data-fr="Nouvelle-Écosse">Nova Scotia</div>
+                                <div class="province-item" data-en="Prince Edward Island" data-fr="Île-du-Prince-Édouard">Prince Edward Island</div>
+                                <div class="province-item" data-en="Newfoundland and Labrador" data-fr="Terre-Neuve-et-Labrador">Newfoundland and Labrador</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-visual">
+                            <div class="report-preview">
+                                <div class="report-header" data-en="Regional Adjustment Insight" data-fr="Ajustement régional">Regional Adjustment Insight</div>
+                                <div class="report-section">
+                                    <div class="report-title" data-en="Province Differential" data-fr="Différentiel provincial">Province Differential</div>
+                                    <div class="report-text"
+                                         data-en="Compare after-tax outcomes between two provinces before relocation or structure changes."
+                                         data-fr="Comparez les résultats nets après impôt entre deux provinces avant un déménagement ou un changement de structure.">
+                                        Compare after-tax outcomes between two provinces before relocation or structure changes.
+                                    </div>
+                                </div>
+                                <div class="report-section">
+                                    <div class="report-title" data-en="Sensitivity" data-fr="Sensibilité">Sensitivity</div>
+                                    <div class="chart-bars-small">
+                                        <div class="bar-small" style="height: 38%;"></div>
+                                        <div class="bar-small" style="height: 64%;"></div>
+                                        <div class="bar-small" style="height: 82%;"></div>
+                                        <div class="bar-small" style="height: 54%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Detail 5: Report Outputs -->
+            <article class="feature-detail surface">
+                <div class="feature-detail-content">
+                    <div class="feature-detail-header">
+                        <span class="icon-wrap tone-ink" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h6M8 17h5"></path></svg>
+                        </span>
+                        <div>
+                            <h2 data-en="Professional Report Outputs" data-fr="Rapports professionnels">Professional Report Outputs</h2>
+                            <p class="feature-subtitle" data-en="Create concise, advisor-friendly artifacts from each planning run."
+                               data-fr="Créez des livrables concis et adaptés aux conseillers à chaque simulation.">
+                                Create concise, advisor-friendly artifacts from each planning run.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-detail-body">
+                        <div class="feature-description">
+                            <h3 data-en="What it does" data-fr="Ce que ça fait">What it does</h3>
+                            <p data-en="Turn optimization scenarios into polished reports that are easier to communicate, review, and act on."
+                               data-fr="Transformez les scénarios d'optimisation en rapports soignés, faciles à communiquer, à revoir et à appliquer.">
+                                Turn optimization scenarios into polished reports that are easier to communicate, review, and act on.
+                            </p>
+
+                            <h3 data-en="Key capabilities" data-fr="Capacités clés">Key capabilities</h3>
+                            <ul class="feature-list">
+                                <li data-en="Executive summary plus detailed assumptions" data-fr="Résumé exécutif avec hypothèses détaillées">Executive summary plus detailed assumptions</li>
+                                <li data-en="Outcome comparison and rationale sections" data-fr="Sections de comparaison des résultats et de justification">Outcome comparison and rationale sections</li>
+                                <li data-en="Compact charts for quick interpretation" data-fr="Graphiques compacts pour une lecture rapide">Compact charts for quick interpretation</li>
+                                <li data-en="Clean structure suitable for advisor meetings" data-fr="Structure claire adaptée aux rencontres avec les conseillers">Clean structure suitable for advisor meetings</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-visual">
+                            <div class="report-preview">
+                                <div class="report-header" data-en="Tax Optimization Report" data-fr="Rapport d'optimisation fiscale">Tax Optimization Report</div>
+                                <div class="report-section">
+                                    <div class="report-title" data-en="Executive Summary" data-fr="Résumé exécutif">Executive Summary</div>
+                                    <div class="report-text"
+                                         data-en="Recommended salary of $65,000 with $25,000 in dividends delivers stronger after-tax efficiency under current assumptions."
+                                         data-fr="Un salaire recommandé de 65 000 $ avec 25 000 $ en dividendes offre une meilleure efficacité nette après impôt selon les hypothèses actuelles.">
+                                        Recommended salary of $65,000 with $25,000 in dividends delivers stronger after-tax efficiency under current assumptions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section-delcap" id="about">
+        <div class="about-grid-delcap">
+            <div class="about-panel-dark">
+                <h4 data-en="About us" data-fr="À propos de nous">About us</h4>
+                <h2 data-en="We listen, advise and invest" data-fr="Nous écoutons, conseillons et investissons">We listen, advise and invest</h2>
+                <p data-en="At OptiPay, our mission is to help you maximise your financial potential. With over 15 years of experience, we excel at designing tax-smart compensation, compound growth projection, and structured payroll workflows perfectly tailored to you and your goals."
+                   data-fr="Chez OptiPay, notre mission est de vous aider à maximiser votre potentiel financier. Avec plus de 15 ans d'expérience, nous excellons dans la conception de structures de rémunération, de projections de croissance composée et de flux de paie parfaitement adaptés à vos objectifs.">
+                    At OptiPay, our mission is to help you maximise your financial potential. With over 15 years of experience, we excel at designing tax-smart compensation, compound growth projection, and structured payroll workflows perfectly tailored to you and your goals.
+                </p>
+                <a href="#features" class="hero-delcap-link" style="color: #ffffff; border-color: #ffffff;" data-en="Explore services" data-fr="Découvrir les services">Explore services</a>
+            </div>
+            
+            <div class="about-panel-steel">
+                <div class="metric-item">
+                    <div class="metric-label" data-en="Assets optimized" data-fr="Actifs optimisés">Assets optimized</div>
+                    <div class="metric-value">$900 M</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label" data-en="Since" data-fr="Depuis">Since</div>
+                    <div class="metric-value">2007</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label" data-en="Clients" data-fr="Clients">Clients</div>
+                    <div class="metric-value">120+</div>
+                </div>
+                <div class="metric-as-of" data-en="*as of 30 June 2026" data-fr="*au 30 juin 2026">*as of 30 June 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="planning-section-delcap">
+        <div class="container planning-grid-delcap">
+            <div>
+                <div class="planning-header">
+                    <h2 data-en="Data-driven compensation & growth planning" data-fr="Planification de rémunération et croissance axée sur les données">Data-driven compensation & growth planning</h2>
+                    <p data-en="Your wealth and goals need a strategy" data-fr="Votre patrimoine et vos objectifs nécessitent une stratégie">Your wealth and goals need a strategy</p>
+                </div>
+                
+                <div class="planning-steps-list">
+                    <div class="planning-step-item">
+                        <div class="planning-step-number">1</div>
+                        <div class="planning-step-body">
+                            <h3 data-en="First, we listen & analyze" data-fr="D'abord, nous écoutons & analysons">First, we listen & analyze</h3>
+                            <p data-en="We get to know your corporate structure - we build a clear picture of active business income, investment accounts, and personal targets."
+                               data-fr="Nous apprenons à connaître votre structure corporative - nous dressons un portrait clair des revenus d'entreprise actifs, des comptes de placement et des objectifs personnels.">
+                                We get to know your corporate structure - we build a clear picture of active business income, investment accounts, and personal targets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="planning-step-item">
+                        <div class="planning-step-number">2</div>
+                        <div class="planning-step-body">
+                            <h3 data-en="Then, we project & compound" data-fr="Ensuite, nous projetons & cumulons">Then, we project & compound</h3>
+                            <p data-en="Using forward-looking compound simulations, we project future corporate net worth and determine optimal balances between salary drawdowns and corporate investments."
+                               data-fr="À l'aide de simulations composées prospectives, nous projetons la valeur nette future de l'entreprise et déterminons l'équilibre optimal entre retraits de salaire et placements corporatifs.">
+                                Using forward-looking compound simulations, we project future corporate net worth and determine optimal balances between salary drawdowns and corporate investments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="planning-step-item">
+                        <div class="planning-step-number">3</div>
+                        <div class="planning-step-body">
+                            <h3 data-en="Finally, we implement & advise" data-fr="Enfin, nous conseillons & mettons en œuvre">Finally, we implement & advise</h3>
+                            <p data-en="We lay out structural dividend and salary schedules aligned with provincial tax engines, making it easy for you to review with your accountant."
+                               data-fr="Nous établissons des calendriers structurels de dividendes et de salaires alignés sur les règles provinciales, facilitant ainsi l'examen avec votre comptable.">
+                                We lay out structural dividend and salary schedules aligned with provincial tax engines, making it easy for you to review with your accountant.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="brochure-mockup">
+                    <div class="brochure-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                        <div class="brochure-logo-text">OPTIPAY</div>
+                    </div>
+                    <div class="brochure-image"></div>
+                    <div class="brochure-content">
+                        <div class="brochure-meta" data-en="REPORTS • PLANNER" data-fr="RAPPORTS • PLANIFICATION">REPORTS • PLANNER</div>
+                        <div class="brochure-title" data-en="Compensation Strategy" data-fr="Stratégie de Rémunération">Compensation Strategy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redesigned Support & FAQ Section (Merged from support.html) -->
+    <section class="faq-section" id="support">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Support & FAQ" data-fr="Support & FAQ">Support & FAQ</h2>
+                <p data-en="Find answers to common planning questions or connect directly with our support team."
+                   data-fr="Trouvez des réponses aux questions fréquentes de planification ou contactez notre équipe de support.">
+                    Find answers to common planning questions or connect directly with our support team.
+                </p>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-container" style="margin-bottom: 50px;">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-en="How accurate are the tax calculations?" data-fr="Quelle est la précision des calculs fiscaux?">How accurate are the tax calculations?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="OptiPay uses current federal and provincial assumptions and a transparent optimization model, making results practical for planning and advisor discussion."
+                           data-fr="OptiPay utilise les hypothèses fédérales et provinciales actuelles ainsi qu'un modèle d'optimisation transparent, pour des résultats concrets en planification et en conseil.">
+                            OptiPay uses current federal and provincial assumptions and a transparent optimization model, making results practical for planning and advisor discussion.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-en="Which provinces are supported?" data-fr="Quelles provinces sont prises en charge?">Which provinces are supported?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="All Canadian provinces and territories are supported with province-sensitive calculations and consistent workflows."
+                           data-fr="Toutes les provinces et tous les territoires canadiens sont pris en charge avec des calculs adaptés et un flux de travail cohérent.">
+                            All Canadian provinces and territories are supported with province-sensitive calculations and consistent workflows.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-en="Can I export reports for my accountant?" data-fr="Puis-je exporter des rapports pour mon comptable?">Can I export reports for my accountant?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="Yes. Reports are organized for quick professional review, including assumptions, key outcomes, and recommendation rationale."
+                           data-fr="Oui. Les rapports sont structurés pour une revue professionnelle rapide, avec hypothèses, résultats clés et justification des recommandations.">
+                            Yes. Reports are organized for quick professional review, including assumptions, key outcomes, and recommendation rationale.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-en="Is financial data kept private?" data-fr="Les données financières restent-elles privées?">Is financial data kept private?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="OptiPay is designed for minimal collection and secure handling practices so sensitive planning information remains protected."
+                           data-fr="OptiPay est conçu pour minimiser la collecte et appliquer des pratiques de sécurité afin de protéger les informations sensibles.">
+                            OptiPay is designed for minimal collection and secure handling practices so sensitive planning information remains protected.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Helpful Resources Grid -->
+            <div class="resources-grid" style="margin-bottom: 60px;">
+                <article class="resource-item">
+                    <div class="resource-type" data-en="Guide" data-fr="Guide">Guide</div>
+                    <h3 data-en="Salary vs Dividend Playbook" data-fr="Guide pratique salaire vs dividende">Salary vs Dividend Playbook</h3>
+                    <p data-en="A practical guide to evaluating common compensation mixes for incorporated professionals." data-fr="Un guide pratique pour évaluer les combinaisons de rémunération courantes des professionnels incorporés.">A practical guide to evaluating common compensation mixes for incorporated professionals.</p>
+                    <a href="#" class="resource-link" data-en="Read guide →" data-fr="Lire le guide →">Read guide &rarr;</a>
+                </article>
+
+                <article class="resource-item">
+                    <div class="resource-type" data-en="Calculator" data-fr="Calculateur">Calculator</div>
+                    <h3 data-en="Compound Growth Calculator" data-fr="Calculateur d'intérêts composés">Compound Growth Calculator</h3>
+                    <p data-en="Model growth rate assumptions and compare long-term corporate asset accumulations quickly." data-fr="Modélisez les hypothèses de taux de croissance et comparez rapidement l'accumulation d'actifs d'entreprise.">Model growth rate assumptions and compare long-term corporate asset accumulations quickly.</p>
+                    <a href="#" class="resource-link" data-en="Open calculator →" data-fr="Ouvrir le calculateur →">Open calculator &rarr;</a>
+                </article>
+
+                <article class="resource-item">
+                    <div class="resource-type" data-en="Article" data-fr="Article">Article</div>
+                    <h3 data-en="Understanding Corporate Tax Accounts" data-fr="Comprendre les comptes fiscaux corporatifs">Understanding Corporate Tax Accounts</h3>
+                    <p data-en="Learn why CDA, GRIP, and related balances can change compensation strategy decisions." data-fr="Découvrez pourquoi les soldes CDA, GRIP et associés peuvent modifier les décisions de stratégie de rémunération.">Learn why CDA, GRIP, and related balances can change compensation strategy decisions.</p>
+                    <a href="#" class="resource-link" data-en="Read article →" data-fr="Lire l'article →">Read article &rarr;</a>
+                </article>
+            </div>
+
+            <!-- Direct Contact Grid -->
+            <div class="contact-grid" id="contact">
+                <article class="contact-method">
+                    <span class="icon-wrap tone-sky" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="M4 8l8 6 8-6"></path></svg>
+                    </span>
+                    <h3 data-en="Email Support" data-fr="Support par courriel">Email Support</h3>
+                    <p data-en="Get detailed help from our team. Typical response time is within one business day." data-fr="Obtenez une aide détaillée de notre équipe. Le délai de réponse habituel est d'un jour ouvrable.">Get detailed help from our team. Typical response time is within one business day.</p>
+                    <a href="mailto:support@optipay.ca" class="contact-link">support@optipay.ca</a>
+                </article>
+
+                <article class="contact-method">
+                    <span class="icon-wrap tone-mint" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l2.6-2.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+                    </span>
+                    <h3 data-en="Live Chat" data-fr="Clavardage en direct">Live Chat</h3>
+                    <p data-en="Use chat for fast clarifications during active planning sessions." data-fr="Utilisez le clavardage pour obtenir rapidement des clarifications pendant vos sessions de planification.">Use chat for fast clarifications during active planning sessions.</p>
+                    <button class="chat-button" type="button" data-en="Start Chat" data-fr="Démarrer le chat">Start Chat</button>
+                </article>
+
+                <article class="contact-method">
+                    <span class="icon-wrap tone-ink" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 19h16"></path><path d="M7 15V9"></path><path d="M12 15V5"></path><path d="M17 15v-3"></path></svg>
+                    </span>
+                    <h3 data-en="Knowledge Base" data-fr="Base de connaissances">Knowledge Base</h3>
+                    <p data-en="Search our library of visual workflows and setup tutorials." data-fr="Recherchez dans notre bibliothèque de guides visuels et de tutoriels.">Search our library of visual workflows and setup tutorials.</p>
+                    <a href="#" class="contact-link" data-en="Browse guides →" data-fr="Parcourir les guides →">Browse guides &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Ready for better tax and compensation decisions?" data-fr="Prêt à optimiser vos choix fiscaux et salariaux?">Ready for better tax and compensation decisions?</h2>
+                <p data-en="Upgrade from spreadsheet formulas to a focused planning platform built for modern Canadian incorporated professionals."
+                   data-fr="Passez des formules de tableur à une plateforme de planification dédiée aux professionnels incorporés au Canada.">
+                    Upgrade from spreadsheet formulas to a focused planning platform built for modern Canadian incorporated professionals.
+                </p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary" data-en="Download OptiPay App" data-fr="Télécharger l'app OptiPay">Download OptiPay App</a>
+                    <span class="cta-note" data-en="Available on iOS. Trial included." data-fr="Disponible sur iOS. Essai inclus.">Available on iOS. Trial included.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon" aria-hidden="true">
+                            <img src="assets/optipay-logo.jpg" alt="OptiPay Logo">
+                        </span>
+                        <span class="logo-wordmark">OptiPay</span>
+                    </a>
+                    <p data-en="Smart tax optimization for Canadian business owners and incorporated professionals."
+                       data-fr="Optimisation fiscale intelligente pour les entrepreneurs et professionnels incorporés au Canada.">
+                        Smart tax optimization for Canadian business owners and incorporated professionals.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 data-en="Product" data-fr="Produit">Product</h4>
+                        <a href="#features" data-en="Our services" data-fr="Nos services">Our services</a>
+                        <a href="#about" data-en="About" data-fr="À propos">About</a>
+                        <a href="#support" data-en="Support" data-fr="Support">Support</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-en="Resources" data-fr="Ressources">Resources</h4>
+                        <a href="#support" data-en="Support" data-fr="Support">Support</a>
+                        <a href="#" data-en="Tax Guide" data-fr="Guide fiscal">Tax Guide</a>
+                        <a href="#" data-en="Updates" data-fr="Mises à jour">Updates</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-en="Legal" data-fr="Juridique">Legal</h4>
+                        <a href="privacy.html" data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</a>
+                        <a href="terms.html" data-en="Terms of Service" data-fr="Conditions d'utilisation">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-en="© 2026 OptiPay. Built for Canadian tax optimization."
+                   data-fr="© 2026 OptiPay. Conçu pour l'optimisation fiscale canadienne.">
+                    © 2026 OptiPay. Built for Canadian tax optimization.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        const langButtons = document.querySelectorAll(".lang-toggle");
+
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener("click", () => {
+                mobileMenuToggle.classList.toggle("active");
+                navLinks.classList.toggle("show");
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", (event) => {
+                const href = anchor.getAttribute("href");
+                if (!href || href === "#") return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                navLinks?.classList.remove("show");
+                mobileMenuToggle?.classList.remove("active");
+            });
+        });
+
+        // FAQ Accordion logic
+        document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", () => {
+                const item = question.closest(".faq-item");
+                const answer = item?.querySelector(".faq-answer");
+                const icon = question.querySelector(".faq-icon");
+                if (!item || !answer || !icon) return;
+
+                const isOpen = item.classList.contains("active");
+                item.classList.toggle("active", !isOpen);
+                answer.style.maxHeight = isOpen ? "0px" : `${answer.scrollHeight}px`;
+                icon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+            });
+        });
+
+        const metaByLang = {
+            en: {
+                title: "OptiPay - Smart Tax and Payroll Optimization",
+                description: "Optimize salary, dividends, and long-term tax planning with a modern Canadian optimization platform.",
+                chatAlert: "Live chat is launching soon. Please email support@optipay.ca for immediate help."
+            },
+            fr: {
+                title: "OptiPay - Optimisation intelligente fiscale et salariale",
+                description: "Optimisez salaire, dividendes, et planification fiscale à long terme avec une plateforme moderne canadienne.",
+                chatAlert: "Le clavardage sera disponible bientôt. Veuillez écrire à support@optipay.ca pour une aide immédiate."
+            }
+        };
+
+        function normalizeLang(raw) {
+            const value = (raw || "").toLowerCase();
+            return value.startsWith("fr") ? "fr" : "en";
+        }
+
+        function updateLocalizedLinks(lang) {
+            document.querySelectorAll("a[href]").forEach((link) => {
+                const href = link.getAttribute("href");
+                if (!href) return;
+                if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("http")) return;
+                if (!href.includes(".html")) return;
+
+                const [pathWithQuery, hashFragment] = href.split("#");
+                const cleanPath = pathWithQuery.split("?")[0];
+                const hash = hashFragment ? `#${hashFragment}` : "";
+                link.setAttribute("href", `${cleanPath}?lang=${lang}${hash}`);
+            });
+        }
+
+        let currentLang = "en";
+
+        function applyLanguage(lang) {
+            const finalLang = normalizeLang(lang);
+            currentLang = finalLang;
+            document.documentElement.setAttribute("lang", finalLang);
+
+            const meta = metaByLang[finalLang];
+            if (meta) {
+                document.title = meta.title;
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) metaDescription.setAttribute("content", meta.description);
+            }
+
+            document.querySelectorAll("[data-en][data-fr]").forEach((node) => {
+                const attrMode = node.getAttribute("data-i18n-attr") || "text";
+                const nextValue = finalLang === "fr" ? node.getAttribute("data-fr") : node.getAttribute("data-en");
+                if (nextValue === null) return;
+
+                if (attrMode === "html") {
+                    node.innerHTML = nextValue;
+                } else if (attrMode === "placeholder") {
+                    node.setAttribute("placeholder", nextValue);
+                } else if (attrMode === "aria-label") {
+                    node.setAttribute("aria-label", nextValue);
+                } else {
+                    node.textContent = nextValue;
+                }
+            });
+
+            langButtons.forEach((btn) => {
+                btn.classList.toggle("active", btn.getAttribute("data-set-lang") === finalLang);
+            });
+
+            updateLocalizedLinks(finalLang);
+
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set("lang", finalLang);
+            window.history.replaceState({}, "", currentUrl);
+        }
+
+        const initialLang = normalizeLang(new URLSearchParams(window.location.search).get("lang") || "en");
+        applyLanguage(initialLang);
+
+        langButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                applyLanguage(button.getAttribute("data-set-lang") || "en");
+            });
+        });
+
+        const chatButton = document.querySelector(".chat-button");
+        chatButton?.addEventListener("click", () => {
+            alert(metaByLang[currentLang]?.chatAlert || metaByLang.en.chatAlert);
+        });
+    </script>
+</body>
+
+</html>

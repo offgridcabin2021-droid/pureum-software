@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.org/kml/2.2">
+  <Document>
+    <name>3-Night Florence Cultural Itinerary</name>
+    <description><![CDATA[A curated 3-night, 3-day itinerary covering the historical heart, legendary art galleries, panoramic vistas, and vibrant culinary spots of Florence, Italy.]]></description>
+    
+    <!-- Custom Styles for Itinerary Days -->
+    <Style id="day1-icon">
+      <IconStyle>
+        <color>ff0000ff</color> <!-- Red -->
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/1.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="day2-icon">
+      <IconStyle>
+        <color>ffff0000</color> <!-- Blue -->
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/2.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="day3-icon">
+      <IconStyle>
+        <color>ff00ff00</color> <!-- Green -->
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/3.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <!-- DAY 1 FOLDER -->
+    <Folder>
+      <name>Day 1: The Historic Heart &amp; Iconic Landmarks</name>
+      <description>Explore the historic center and quintessential Florentine landmarks.</description>
+      
+      <Placemark>
+        <name>Cattedrale di Santa Maria del Fiore (Duomo)</name>
+        <description><![CDATA[Start your trip at Florence's breathtaking cathedral, featuring Brunelleschi's iconic dome, Giotto's Campanile, and the adjacent Baptistery of San Giovanni.]]></description>
+        <styleUrl>#day1-icon</styleUrl>
+        <Point>
+          <coordinates>11.2560,43.7732,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Piazza della Signoria &amp; Palazzo Vecchio</name>
+        <description><![CDATA[The political heart of historic Florence. Walk through the open-air sculpture gallery of Loggia dei Lanzi and view the imposing Palazzo Vecchio.]]></description>
+        <styleUrl>#day1-icon</styleUrl>
+        <Point>
+          <coordinates>11.2558,43.7696,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Ponte Vecchio</name>
+        <description><![CDATA[Stroll across Florence's oldest and most famous bridge, renowned for its historic jewelry shops built along the span over the Arno River.]]></description>
+        <styleUrl>#day1-icon</styleUrl>
+        <Point>
+          <coordinates>11.2531,43.7680,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- DAY 2 FOLDER -->
+    <Folder>
+      <name>Day 2: Renaissance Art &amp; Sunset Vistas</name>
+      <description>Immerse yourself in world-class masterpieces and cross the river for beautiful gardens and panoramic views.</description>
+      
+      <Placemark>
+        <name>Uffizi Gallery</name>
+        <description><![CDATA[Spend your morning admiring one of the world's greatest art museums, home to priceless works by Botticelli, Michelangelo, Leonardo da Vinci, and Raphael. Pre-booking is essential.]]></description>
+        <styleUrl>#day2-icon</styleUrl>
+        <Point>
+          <coordinates>11.2556,43.7684,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Palazzo Pitti &amp; Boboli Gardens</name>
+        <description><![CDATA[Cross the Arno to visit the vast Renaissance palace of the Medici family, followed by a relaxing walk through the beautifully manicured Boboli Gardens.]]></description>
+        <styleUrl>#day2-icon</styleUrl>
+        <Point>
+          <coordinates>11.2501,43.7651,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Piazzale Michelangelo</name>
+        <description><![CDATA[Head up to this famous square in the evening to capture the classic, postcard-perfect sunset view over the entire Florentine skyline.]]></description>
+        <styleUrl>#day2-icon</styleUrl>
+        <Point>
+          <coordinates>11.2650,43.7628,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- DAY 3 FOLDER -->
+    <Folder>
+      <name>Day 3: Masterpieces, Markets &amp; Sacred Architecture</name>
+      <description>Encounter the David, dive into local culinary culture, and explore historic basilicas.</description>
+      
+      <Placemark>
+        <name>Galleria dell'Accademia</name>
+        <description><![CDATA[Morning visit to see Michelangelo's original masterpiece, the statue of David, alongside his unfinished 'Slaves'.]]></description>
+        <styleUrl>#day3-icon</styleUrl>
+        <Point>
+          <coordinates>11.2585,43.7768,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Mercato Centrale</name>
+        <description><![CDATA[Stop by this historic multi-level market for lunch. The ground floor hosts traditional food stalls, while the first floor features a vibrant, modern artisanal food court.]]></description>
+        <styleUrl>#day3-icon</styleUrl>
+        <Point>
+          <coordinates>11.2530,43.7765,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Basilica di Santa Maria Novella</name>
+        <description><![CDATA[Explore this beautiful Dominican church featuring a stunning marble facade and interiors adorned with frescoes by Giotto, Brunelleschi, and Masaccio.]]></description>
+        <styleUrl>#day3-icon</styleUrl>
+        <Point>
+          <coordinates>11.2493,43.7746,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Basilica di Santa Croce</name>
+        <description><![CDATA[Wrap up your trip at the burial place of some of Italy's most illustrious figures, including Michelangelo, Galileo, and Machiavelli.]]></description>
+        <styleUrl>#day3-icon</styleUrl>
+        <Point>
+          <coordinates>11.2628,43.7685,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

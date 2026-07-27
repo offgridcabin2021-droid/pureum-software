@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'utilisation – PathLog</title>
+    <meta name="description" content="Conditions d'utilisation de PathLog. Consultez les conditions régissant l'utilisation de l'application iOS PathLog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #1A5DFF;
+            --bg: #F8FAFF;
+            --text: #1C1C1E;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(248,250,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--blue); }
+        .nav-back { font-size: 0.875rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+        .nav-back:hover { text-decoration: underline; }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .lang-select {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--text);
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .meta { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 48px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        p { color: #374151; font-size: 0.975rem; }
+        footer {
+            border-top: 1px solid var(--border); padding: 32px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 12px;
+            max-width: 720px; margin: 0 auto;
+        }
+        footer p { font-size: 0.85rem; color: var(--text-secondary); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--blue); }
+        @media (max-width: 600px) {
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Path<span>Log</span></a>
+        <div class="nav-actions">
+            <select class="lang-select" onchange="window.location.href=this.value" aria-label="Sélecteur de langue">
+                <option value="terms.html">English</option>
+                <option value="terms-es.html">Español</option>
+                <option value="terms-ko.html">한국어</option>
+                <option value="terms-fr.html" selected>Français</option>
+            </select>
+            <a href="index.html" class="nav-back">← Retour à PathLog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="eyebrow">Informations légales</div>
+        <h1>Conditions d'utilisation</h1>
+        <p class="meta">Date d'effet : 1 mai 2026</p>
+
+        <section>
+            <p>En téléchargeant ou en utilisant PathLog, vous acceptez ces Conditions d'utilisation. Si vous n'êtes pas d'accord, veuillez ne pas utiliser l'application.</p>
+        </section>
+
+        <section>
+            <h2>1. Utilisation de l'application</h2>
+            <p>Vous pouvez utiliser PathLog pour la planification personnelle de voyages et de sentiers. Vous acceptez de ne pas détourner l'application, tenter de la rétro-ingénierie, perturber le service ou l'utiliser à des fins illégales.</p>
+        </section>
+
+        <section>
+            <h2>2. Fonctions IA et identification de plantes</h2>
+            <p>Les résultats d'itinéraire IA et d'identification de plantes sont générés automatiquement et peuvent être inexacts, incomplets ou obsolètes. Les résultats d'identification de plantes sont fournis à titre de référence générale uniquement et ne remplacent pas un avis botanique ou médical professionnel. Vous êtes seul responsable de vérifier les itinéraires, noms de lieux, horaires, accessibilité et informations de sécurité avant de voyager. Ne vous fiez pas au contenu généré par IA comme source d'autorité.</p>
+        </section>
+
+        <section>
+            <h2>3. Sécurité</h2>
+            <p>Ne comptez pas sur PathLog comme unique outil de navigation ou d'urgence. Respectez toujours les lois locales, règles des sentiers, signalisation, alertes météo et consignes officielles des autorités compétentes. PathLog est une aide à la planification ; vous restez responsable de votre sécurité.</p>
+        </section>
+
+        <section>
+            <h2>4. Contenu et disponibilité</h2>
+            <p>Les fonctionnalités, la disponibilité et le contenu peuvent changer, être interrompus ou supprimés à tout moment sans préavis. Nous ne garantissons pas la disponibilité continue des fonctions IA ou réseau et ne sommes pas responsables des interruptions causées par des services tiers.</p>
+        </section>
+
+        <section>
+            <h2>5. Propriété intellectuelle</h2>
+            <p>PathLog et l'ensemble de son contenu, design et code sont la propriété de Pureum Software. Vous ne pouvez pas copier, modifier ou distribuer une partie de l'application sans autorisation écrite préalable.</p>
+        </section>
+
+        <section>
+            <h2>6. Abonnements et achats intégrés</h2>
+            <p>PathLog propose un abonnement PathLog Standard (plans mensuel et annuel) traité via l'App Store d'Apple. Les utilisateurs gratuits peuvent accéder à des aperçus limités des itinéraires de villes IA, des imports KML de sentiers et de l'identification de plantes. Les abonnés payants bénéficient de limites élargies. Tous les achats sont définitifs selon la politique standard d'Apple, sauf exigence légale contraire. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la date de renouvellement. Pour gérer ou annuler, allez dans Réglages iPhone → Apple ID → Abonnements.</p>
+        </section>
+
+        <section>
+            <h2>7. Limitation de responsabilité</h2>
+            <p>Dans la limite maximale autorisée par la loi applicable, PathLog est fourni « tel quel » sans garantie d'aucune sorte, expresse ou implicite. Pureum Software n'est pas responsable des dommages indirects, accessoires, spéciaux ou consécutifs liés à l'utilisation ou à l'impossibilité d'utiliser l'application.</p>
+        </section>
+
+        <section>
+            <h2>8. Modifications de ces conditions</h2>
+            <p>Nous pouvons mettre à jour ces Conditions périodiquement. La date d'effet ci-dessus reflétera la révision la plus récente. L'utilisation continue de PathLog après modification vaut acceptation des Conditions révisées.</p>
+        </section>
+
+        <section>
+            <h2>9. Contact</h2>
+            <p>Pour toute question juridique ou assistance, consultez notre <a href="support.html" style="color: var(--blue);">page d'assistance</a> ou écrivez à <a href="mailto:support@pureum.dev" style="color: var(--blue);">support@pureum.dev</a>.</p>
+        </section>
+
+        <section>
+            <h2 id="h2-apple-eula">Conditions supplémentaires pour l'Apple App Store (Obligatoires pour la EULA personnalisée)</h2>
+            <p id="p-eula-intro" style="margin-bottom: 12px;">Les conditions suivantes s'appliquent si vous téléchargez l'Application depuis l'Apple App Store :</p>
+            <p id="p-eula-1" style="margin-bottom: 12px;"><strong>1. Reconnaissance :</strong> Le présent contrat est conclu uniquement entre vous et Pureum Software, et non avec Apple. Pureum Software, et non Apple, est seul responsable de l'Application et de son contenu.</p>
+            <p id="p-eula-2" style="margin-bottom: 12px;"><strong>2. Portée de la licence :</strong> La licence qui vous est accordée pour l'Application est limitée à une licence non transférable d'utilisation de l'Application sur tout produit de marque Apple que vous possédez ou contrôlez et comme le permettent les règles d'utilisation énoncées dans les Conditions générales des services Apple Media, sauf que l'Application peut être consultée et utilisée par d'autres comptes associés à l'acheteur via le Partage familial ou l'achat en volume.</p>
+            <p id="p-eula-3" style="margin-bottom: 12px;"><strong>3. Maintenance et assistance :</strong> Pureum Software est seul responsable de la fourniture des services de maintenance et d'assistance concernant l'Application. Apple n'a aucune obligation de fournir des services de maintenance et d'assistance concernant l'Application.</p>
+            <p id="p-eula-4" style="margin-bottom: 12px;"><strong>4. Garantie :</strong> En cas de défaut de conformité de l'Application à toute garantie applicable, vous pouvez en informer Apple, et Apple vous remboursera le prix d'achat de l'Application. Dans la limite maximale autorisée par la loi applicable, Apple n'a aucune autre obligation de garantie concernant l'Application.</p>
+            <p id="p-eula-5" style="margin-bottom: 12px;"><strong>5. Réclamations relatives au produit :</strong> Pureum Software, et non Apple, est responsable du traitement de toute réclamation formulée par vous ou par un tiers concernant l'Application ou votre possession et/ou utilisation de l'Application, y compris, mais sans s'y limiter : (i) les réclamations en matière de responsabilité du fait des produits ; (ii) toute réclamation selon laquelle l'Application ne se conforme pas aux exigences légales ou réglementaires applicables ; et (iii) les réclamations découlant de la législation sur la protection des consommateurs, de la vie privée ou similaire.</p>
+            <p id="p-eula-6" style="margin-bottom: 12px;"><strong>6. Droits de propriété intellectuelle :</strong> En cas de réclamation d'un tiers selon laquelle l'Application ou votre possession et utilisation de l'Application enfreint les droits de propriété intellectuelle de ce tiers, Pureum Software, et non Apple, sera seul responsable de l'enquête, de la défense, du règlement et de l'apurement de toute réclamation pour contrefaçon de propriété intellectuelle.</p>
+            <p id="p-eula-7" style="margin-bottom: 12px;"><strong>7. Conformité légale :</strong> Vous déclarez et garantissez que (i) vous ne vous trouvez pas dans un pays soumis à un embargo du gouvernement américain ou désigné par le gouvernement américain comme pays soutenant le terrorisme ; et (ii) vous ne figurez sur aucune liste de personnes interdites ou restreintes du gouvernement américain.</p>
+            <p id="p-eula-8" style="margin-bottom: 12px;"><strong>8. Nom et adresse du développeur :</strong> Toute question, réclamation ou plainte de l'utilisateur final concernant l'Application doit être adressée à Pureum Software à l'adresse <a href="mailto:support@pureum.dev" style="color: var(--blue);">support@pureum.dev</a>.</p>
+            <p id="p-eula-9" style="margin-bottom: 12px;"><strong>9. Conditions des contrats de tiers :</strong> Vous devez vous conformer aux conditions des contrats de tiers applicables lors de l'utilisation de l'Application.</p>
+            <p id="p-eula-10" style="margin-bottom: 12px;"><strong>10. Tiers bénéficiaire :</strong> Vous reconnaissez et acceptez qu'Apple et ses filiales soient des tiers bénéficiaires du présent contrat, et que, dès votre acceptation des conditions du présent contrat, Apple aura le droit (et sera réputé avoir accepté le droit) d'appliquer le présent contrat contre vous en tant que tiers bénéficiaire de celui-ci.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 PathLog par Pureum Software. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="terms-fr.html">Conditions d'utilisation</a>
+            <a href="privacy-fr.html">Politique de confidentialité</a>
+            <a href="support.html">Assistance</a>
+        </div>
+    </footer>
+</body>
+</html>

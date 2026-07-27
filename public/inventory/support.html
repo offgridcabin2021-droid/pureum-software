@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Inventory App</title>
+    <meta name="description" content="Get help with Inventory App - Contact us and browse frequently asked questions">
+
+    <!-- Google Fonts: Inter covering multiple weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=2.4">
+    <style>
+        .support-page {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .support-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .support-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .support-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            border-radius: 24px;
+            padding: 48px;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-section p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .contact-email:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .response-time {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .faq-category {
+            margin-bottom: 40px;
+        }
+
+        .faq-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E5E5EA;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            background: #FAFAFA;
+        }
+
+        .faq-question-text {
+            flex: 1;
+            padding-right: 12px;
+        }
+
+        .faq-question svg {
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-answer-content ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 4px;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Additional Help */
+        .additional-help {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .additional-help h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .additional-help p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .help-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .help-link {
+            padding: 12px 24px;
+            background: #F2F2F7;
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .help-link:hover {
+            background: #E5E5EA;
+        }
+
+        @media (max-width: 768px) {
+            .support-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-section {
+                padding: 32px 24px;
+            }
+
+            .contact-email {
+                font-size: 1rem;
+                padding: 14px 24px;
+            }
+
+            .faq-question {
+                padding: 16px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;"><img
+                    src="assets/logo.jpg" alt="Inventory Logo"
+                    style="height: 36px; width: auto; border-radius: 8px;"><span
+                    style="font-weight: 600; font-size: 18px;">PureStock</span></a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="index.html#workflow">Workflow</a>
+                <a href="support.html" style="color: var(--primary-color);">Support</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="index.html#download" class="btn btn-primary btn-sm">Download App</a>
+        </div>
+    </nav>
+
+    <main class="support-page">
+        <div class="support-container">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </a>
+
+            <div class="support-header">
+                <h1>How can we help?</h1>
+                <p>Get in touch with our support team or find answers in our FAQ</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2>Contact Us</h2>
+                <p>Have a question or need help? We're here for you.</p>
+                <a href="mailto:support@pureum.dev" class="contact-email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    support@pureum.dev
+                </a>
+                <p class="response-time">We typically respond within 24-48 hours</p>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <!-- Account & Login -->
+                <div class="faq-category">
+                    <h3>🔐 Account & Login</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">How do I create an account?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                You can create an account using your email, Google Sign-In, or Apple Sign-In. Simply
+                                download the app and tap "Sign Up" on the login screen. Follow the prompts to complete
+                                your registration.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">I forgot my password. How do I reset it?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                On the login screen, tap "Forgot Password" and enter your email address. You'll receive
+                                a password reset link within a few minutes. If you signed up with Google or Apple, use
+                                those services to sign in instead.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Why can't I sign in with a different method?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>Important:</strong> You must use the same sign-in method you originally
+                                registered with. Even if you use the same email address, each sign-in method creates a
+                                separate account:
+                                <ul>
+                                    <li>Signed up with <strong>Google</strong> → Must sign in with Google</li>
+                                    <li>Signed up with <strong>Apple</strong> → Must sign in with Apple</li>
+                                    <li>Signed up with <strong>Email/Password</strong> → Must sign in with
+                                        Email/Password</li>
+                                </ul>
+                                <strong>Tip:</strong> If you can't remember which method you used, try each one. Your
+                                inventory data is tied to the sign-in method you originally chose.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">How do I delete my account?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Go to Settings &gt; Delete Account within the app. Alternatively, email us at
+                                support@pureum.dev to request account deletion. Your data will be permanently deleted
+                                within 30 days of the request.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Usage -->
+                <div class="faq-category">
+                    <h3>📱 Features & Usage</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">How do I scan barcodes?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Navigate to the Scanner tab and point your camera at a barcode. The app will
+                                automatically detect and scan 1D and 2D barcodes. Make sure to allow camera access when
+                                prompted.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">How do low-stock alerts work?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                When you add or edit an item, you can set a minimum stock threshold. When the quantity
+                                falls below this level, the item will be highlighted in red and appear in the "To Order"
+                                tab automatically.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Can I export my inventory data?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes! Go to Settings > Export Data. You can export your inventory in CSV or PDF format.
+                                The export includes all item details, quantities, and categories.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">How do I import inventory from a spreadsheet?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Go to Settings > Import Data and select your CSV file. Make sure your CSV follows our
+                                template format. You can download the CSV template from the same screen. Pro tip: Use AI
+                                tools to check your CSV format before importing!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data & Sync -->
+                <div class="faq-category">
+                    <h3>☁️ Data & Sync</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Is my data synced across devices?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes! When you sign in with your account, your inventory data is automatically synced
+                                across all your devices in real-time. Any changes you make on one device will appear on
+                                others within seconds.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">My data isn't syncing. What should I do?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Try these steps:
+                                <ul>
+                                    <li>Check your internet connection</li>
+                                    <li>Pull down to refresh the inventory list</li>
+                                    <li>Sign out and sign back in</li>
+                                    <li>Force close and reopen the app</li>
+                                </ul>
+                                If the problem persists, contact us at support@pureum.dev.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Is my data backed up?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, your data is stored securely in the cloud and backed up regularly. We use Firebase,
+                                a Google Cloud platform, with industry-standard encryption and security measures. We
+                                recommend also exporting your data periodically for your own records.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="faq-category">
+                    <h3>🔧 Troubleshooting</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">The app keeps crashing. What should I do?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Try these solutions:
+                                <ul>
+                                    <li>Make sure you have the latest version of the app</li>
+                                    <li>Restart your device</li>
+                                    <li>Delete and reinstall the app (your data is saved in the cloud)</li>
+                                </ul>
+                                If crashes continue, email us with details about when the crash occurs.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Camera/scanner isn't working</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Make sure you've granted camera permission to the app. Go to your device Settings >
+                                Privacy > Camera and ensure Inventory is enabled. If the issue persists, try restarting
+                                the app.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Help -->
+            <div class="additional-help">
+                <h3>Still need help?</h3>
+                <p>Check out these resources or contact our support team directly.</p>
+                <div class="help-links">
+                    <a href="features.html" class="help-link">Features Guide</a>
+                    <a href="terms.html" class="help-link">Terms of Service</a>
+                    <a href="privacy.html" class="help-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-cta">
+                <h2>Ready to organize your practice?</h2>
+                <a href="#" class="btn btn-white">Download for iOS</a>
+            </div>
+            <div class="footer-links">
+                <p>
+                    <a href="terms.html" style="color: #86868B; margin-right: 24px;">Terms of Service</a>
+                    <a href="privacy.html" style="color: #86868B; margin-right: 24px;">Privacy Policy</a>
+                    <a href="support.html" style="color: #86868B;">Support</a>
+                </p>
+                <p style="margin-top: 16px;">&copy; 2026 Inventory App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.5"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
