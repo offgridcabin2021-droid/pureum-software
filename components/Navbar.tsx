@@ -31,11 +31,11 @@ const Navbar = () => {
 
         <div className="flex items-center gap-6 md:gap-8 text-sm font-medium text-gray-400">
           <a
-            href="/#about"
-            onClick={(e) => handleScroll(e, 'about')}
+            href="/#services"
+            onClick={(e) => handleScroll(e, 'services')}
             className="hover:text-white transition-colors"
           >
-            About
+            Services
           </a>
           <a
             href="/#my-works"
