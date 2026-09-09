@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiPay Privacy Policy</title>
-    <meta name="description" content="OptiPay privacy policy in English and French.">
+    <title>OptiPay — Privacy Policy / Politique de Confidentialité</title>
+    <meta name="description" content="OptiPay Privacy Policy and Politique de Confidentialité. Data privacy, security, and storage disclosures.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=2.1">
+    <link rel="stylesheet" href="styles.css?v=2.2">
 </head>
 
 <body>
@@ -25,9 +25,9 @@
             </a>
 
             <div class="nav-links">
-                <a href="index.html#features" data-base-href="index.html#features">Features</a>
-                <a href="index.html#support" data-base-href="index.html#support">Support</a>
-                <a href="#" class="btn btn-primary small">Sign In</a>
+                <a href="index.html#features" data-base-href="index.html#features" data-en="Features" data-fr="Fonctionnalités">Features</a>
+                <a href="index.html#support" data-base-href="index.html#support" data-en="Support" data-fr="Support">Support</a>
+                <a href="#" class="btn btn-primary small" data-en="Sign In" data-fr="Connexion">Sign In</a>
             </div>
 
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
@@ -44,142 +44,317 @@
                 <svg viewBox="0 0 24 24">
                     <path d="M19 12H5M12 19l-7-7 7-7"></path>
                 </svg>
-                Back to Home
+                <span data-en="Back to Home" data-fr="Retour à l'accueil">Back to Home</span>
             </a>
 
             <header class="legal-header">
                 <p class="app-name">OptiPay</p>
-                <h1>Privacy Policy</h1>
-                <p class="last-updated">Last Updated: March 18, 2026</p>
+                <h1 data-en="Privacy Policy" data-fr="Politique de Confidentialité">Privacy Policy</h1>
+                <p class="last-updated" data-en="Effective Date: September 1, 2026 | Last Updated: September 9, 2026" data-fr="Date d'entrée en vigueur : 1er septembre 2026 | Dernière mise à jour : 9 septembre 2026">Effective Date: September 1, 2026 | Last Updated: September 9, 2026</p>
             </header>
 
             <div class="language-switcher" aria-label="Language selector">
                 <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="fr">Francais</button>
+                <button class="lang-btn" data-lang="fr">Français</button>
             </div>
 
             <div class="legal-content">
+                <!-- English Block -->
                 <div class="lang-block" data-lang-block="en">
+                    <div class="legal-meta-box">
+                        <div class="legal-meta-item"><strong>Effective Date:</strong> September 1, 2026</div>
+                        <div class="legal-meta-item"><strong>Last Updated:</strong> September 9, 2026</div>
+                        <div class="legal-meta-item"><strong>Developer:</strong> Pureum Software (<a href="https://pureum.dev" target="_blank" rel="noopener">pureum.dev</a>)</div>
+                        <div class="legal-meta-item"><strong>Contact:</strong> <a href="mailto:support@pureum.dev">support@pureum.dev</a></div>
+                    </div>
+
+                    <div class="legal-callout">
+                        <div class="legal-callout-title">⚠️ Important Notice — Educational &amp; Informational Tool Only</div>
+                        <p>OptiPay is designed for <strong>educational and informational purposes only</strong>. It is a tax estimation tool that helps Canadian incorporated business owners explore and understand Canadian tax scenarios. OptiPay does <strong>not</strong> provide professional tax, legal, or financial advice. All calculations are estimates based on publicly available Canadian tax rates and are not a substitute for advice from a qualified CPA, tax lawyer, or financial advisor.</p>
+                    </div>
+
                     <section class="legal-section">
-                        <h2>1. Scope</h2>
-                        <p>This policy applies specifically to OptiPay, a Canadian tax planning and compensation optimization product offered by Pureum Software.</p>
-                        <p>For broader company legal information, see the <a href="../privacy.html" data-base-href="../privacy.html">Pureum Software Privacy Policy</a>.</p>
+                        <h2>1. Introduction</h2>
+                        <p>This Privacy Policy explains how Pureum Software ("we," "us," or "our") collects, uses, stores, and protects your information when you use the <strong>OptiPay</strong> mobile application ("the App"). By using the App, you agree to the terms of this Privacy Policy.</p>
+                        <p>OptiPay is intended for Canadian incorporated business owners and professionals who wish to explore tax planning scenarios. The App is a financial estimation tool — not a substitute for professional tax or legal advice.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>2. Information We Process</h2>
+                        <h2>2. Information We Collect</h2>
+
+                        <h3>2.1 Account Information</h3>
+                        <p>When you sign in using Apple Sign In or Google Sign In, we receive:</p>
                         <ul>
-                            <li>Account details such as email and sign-in identifiers</li>
-                            <li>Planning inputs such as province, income assumptions, corporate balances, growth targets, and payroll variables</li>
-                            <li>User-generated scenarios, optimization outputs, and reports</li>
-                            <li>Limited technical and diagnostic data for reliability, security, and support</li>
+                            <li>Your name (if provided)</li>
+                            <li>Your email address</li>
+                            <li>A unique user identifier from Apple or Google</li>
+                        </ul>
+                        <p>We do <strong>not</strong> collect passwords. Authentication is handled entirely by Apple and Google.</p>
+
+                        <h3>2.2 Financial Data You Enter</h3>
+                        <p>The App stores financial inputs you provide, including:</p>
+                        <ul>
+                            <li>Corporate net income and passive income figures</li>
+                            <li>Salary and dividend preferences</li>
+                            <li>RRSP and TFSA contribution estimates</li>
+                            <li>Province of residence</li>
+                            <li>Corporate debt and interest rate information</li>
+                            <li>Tax account balances (CDA, GRIP, RDTOH)</li>
+                            <li>Payroll records and remittance tracking entries</li>
+                            <li>Saved tax scenarios</li>
+                        </ul>
+                        <p>This data is stored <strong>locally on your device</strong> and, if you have iCloud enabled, <strong>synced via Apple CloudKit</strong> to your other devices.</p>
+
+                        <h3>2.3 Authentication &amp; Usage Data</h3>
+                        <p>We use <strong>Firebase</strong> (Google) for authentication. Firebase may collect:</p>
+                        <ul>
+                            <li>Device type and operating system</li>
+                            <li>App crash reports and performance data</li>
+                            <li>Anonymized usage analytics</li>
+                        </ul>
+                        <p>Firebase's data practices are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+                        <h3>2.4 Subscription Data</h3>
+                        <p>In-app purchases are handled by Apple's App Store. We receive confirmation of your subscription status but do <strong>not</strong> receive your payment details.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. How We Use Your Information</h2>
+                        <p>We use collected information to:</p>
+                        <ul>
+                            <li>Authenticate and maintain your account</li>
+                            <li>Store and sync your financial inputs across your devices (via CloudKit)</li>
+                            <li>Provide tax estimation calculations within the App</li>
+                            <li>Improve app stability and performance via crash analytics</li>
+                            <li>Verify your subscription status for premium features</li>
+                        </ul>
+                        <p><strong>We do not:</strong></p>
+                        <ul>
+                            <li>Sell your data to third parties</li>
+                            <li>Share your financial inputs with any external party</li>
+                            <li>Use your data for advertising purposes</li>
+                            <li>Access your data unless required for technical support you request</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. How Information Is Used</h2>
+                        <h2>4. Data Storage &amp; Security</h2>
+                        <div class="legal-table-wrapper">
+                            <table class="legal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Storage Location</th>
+                                        <th>Provider</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Financial inputs &amp; payroll records</td>
+                                        <td>On-device + iCloud</td>
+                                        <td>Apple CloudKit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>User account credentials</td>
+                                        <td>Not stored (handled by Apple/Google)</td>
+                                        <td>Apple / Google</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Authentication tokens</td>
+                                        <td>On-device (secure storage)</td>
+                                        <td>Firebase (Google)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subscription status</td>
+                                        <td>On-device</td>
+                                        <td>Apple StoreKit</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>All data transmitted between the App and Firebase is encrypted in transit using TLS. iCloud data is encrypted by Apple both in transit and at rest.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Third-Party Services</h2>
+                        <p>The App integrates with the following third-party services:</p>
+                        <div class="legal-table-wrapper">
+                            <table class="legal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Purpose</th>
+                                        <th>Privacy Policy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Apple Sign In</td>
+                                        <td>Authentication</td>
+                                        <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Google Sign In / Firebase</td>
+                                        <td>Authentication &amp; Analytics</td>
+                                        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple CloudKit</td>
+                                        <td>Data sync across devices</td>
+                                        <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple App Store / StoreKit</td>
+                                        <td>In-app subscriptions</td>
+                                        <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Data Retention</h2>
                         <ul>
-                            <li>Calculate salary/dividend strategies, compound growth, and payroll projections</li>
-                            <li>Save settings, reports, and preferences across authorized devices when account features are enabled</li>
-                            <li>Provide support, improve performance, and protect service integrity</li>
+                            <li>Your account data is retained as long as you maintain an account with OptiPay.</li>
+                            <li>You may delete your account at any time from <strong>Settings &rarr; Account &rarr; Delete Account</strong>. This permanently removes all your data from our systems.</li>
+                            <li>CloudKit data deletion is governed by Apple's CloudKit data policies.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>4. Storage, Security, and Sharing</h2>
+                        <h2>7. Your Rights (PIPEDA / Canadian Privacy Law)</h2>
+                        <p>Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy legislation, you have the right to:</p>
                         <ul>
-                            <li>OptiPay is designed to minimize data collection and applies standard security controls to transmitted or stored data.</li>
-                            <li>We do not sell personal information.</li>
-                            <li>Service providers may be used only when required to operate infrastructure and support under confidentiality obligations.</li>
+                            <li><strong>Access</strong> the personal information we hold about you</li>
+                            <li><strong>Correct</strong> inaccurate personal information</li>
+                            <li><strong>Delete</strong> your account and associated data</li>
+                            <li><strong>Withdraw consent</strong> at any time by deleting the App and your account</li>
+                            <li><strong>File a complaint</strong> with the Office of the Privacy Commissioner of Canada (OPC) if you believe your privacy rights have been violated</li>
                         </ul>
+                        <p>To exercise these rights, contact us at: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>5. Professional and Regulatory Notice</h2>
-                        <p>OptiPay is a planning and calculation tool and does not replace licensed accounting, legal, or financial advice.</p>
-                        <p>Users remain responsible for validating outputs against applicable federal/provincial requirements and their own circumstances.</p>
-                        <p>Where personal information is processed in Canada, privacy practices are intended to align with PIPEDA and relevant provincial rules.</p>
+                        <h2>8. Children's Privacy</h2>
+                        <p>OptiPay is intended for adults (18+) who operate incorporated businesses in Canada. We do not knowingly collect personal information from individuals under 18. If you believe a minor has provided personal information, contact us immediately.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Retention and Deletion</h2>
-                        <ul>
-                            <li>User-requested account deletion is generally processed within 30 days unless additional retention is required for legal or security reasons.</li>
-                            <li>Encrypted backups may persist for up to 90 days before automatic removal.</li>
-                        </ul>
+                        <h2>9. Changes to This Policy</h2>
+                        <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date above and notify you in-app. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>Email: support@optipay.ca</p>
-                        <p>Company: Pureum Software</p>
+                        <h2>10. Contact Us</h2>
+                        <p>
+                            <strong>Pureum Software</strong><br>
+                            Email: <a href="mailto:support@pureum.dev">support@pureum.dev</a><br>
+                            Website: <a href="https://pureum.dev/optipay" target="_blank" rel="noopener">https://pureum.dev/optipay</a>
+                        </p>
                     </section>
                 </div>
 
+                <!-- French Block -->
                 <div class="lang-block" data-lang-block="fr">
+                    <div class="legal-meta-box">
+                        <div class="legal-meta-item"><strong>Date d'entrée en vigueur :</strong> 1er septembre 2026</div>
+                        <div class="legal-meta-item"><strong>Dernière mise à jour :</strong> 9 septembre 2026</div>
+                        <div class="legal-meta-item"><strong>Développeur :</strong> Pureum Software (<a href="https://pureum.dev" target="_blank" rel="noopener">pureum.dev</a>)</div>
+                        <div class="legal-meta-item"><strong>Contact :</strong> <a href="mailto:support@pureum.dev">support@pureum.dev</a></div>
+                    </div>
+
+                    <div class="legal-callout">
+                        <div class="legal-callout-title">⚠️ Avis important — Outil éducatif et informatif uniquement</div>
+                        <p>OptiPay est conçu <strong>à des fins éducatives et informatives uniquement</strong>. Il s'agit d'un outil d'estimation fiscale qui aide les propriétaires d'entreprises incorporées canadiennes à explorer et à comprendre les scénarios fiscaux canadiens. OptiPay ne fournit <strong>pas</strong> de conseils fiscaux, juridiques ou financiers professionnels. Tous les calculs sont des estimations basées sur les taux d'imposition canadiens accessibles au public et ne remplacent pas les conseils d'un CPA, d'un avocat fiscaliste ou d'un conseiller financier qualifié.</p>
+                    </div>
+
                     <section class="legal-section">
-                        <h2>1. Portee</h2>
-                        <p>Cette politique s applique specifiquement a OptiPay, un produit de planification fiscale canadienne et d optimisation de remuneration offert par Pureum Software.</p>
-                        <p>Pour les informations juridiques generales de l entreprise, consultez la <a href="../privacy.html" data-base-href="../privacy.html">Politique de confidentialite de Pureum Software</a>.</p>
+                        <h2>1. Introduction</h2>
+                        <p>La présente Politique de confidentialité explique comment Pureum Software (« nous », « notre ») collecte, utilise, stocke et protège vos informations lorsque vous utilisez l'application mobile <strong>OptiPay</strong> (« l'Application »). En utilisant l'Application, vous acceptez les conditions de cette Politique de confidentialité.</p>
+                        <p>OptiPay est destiné aux propriétaires d'entreprises incorporées canadiennes et aux professionnels qui souhaitent explorer des scénarios de planification fiscale. L'Application est un outil d'estimation fiscale — et non un substitut à un conseil fiscal ou juridique professionnel.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>2. Renseignements que nous traitons</h2>
+                        <h2>2. Informations que nous collectons</h2>
+
+                        <h3>2.1 Informations de compte</h3>
+                        <p>Lorsque vous vous connectez via Apple Sign In ou Google Sign In, nous recevons :</p>
                         <ul>
-                            <li>Renseignements de compte tels que l adresse courriel et les identifiants de connexion</li>
-                            <li>Donnees de planification incluant la province, les hypotheses de revenus, les soldes societaires, les objectifs de croissance, et les variables de paie</li>
-                            <li>Scenarios, resultats d optimisation, et rapports crees par l utilisateur</li>
-                            <li>Donnees techniques limitees necessaires a la fiabilite, a la securite, et au support</li>
+                            <li>Votre nom (si fourni)</li>
+                            <li>Votre adresse courriel</li>
+                            <li>Un identifiant utilisateur unique d'Apple ou Google</li>
                         </ul>
-                    </section>
+                        <p>Nous ne collectons <strong>pas</strong> de mots de passe. L'authentification est entièrement gérée par Apple et Google.</p>
 
-                    <section class="legal-section">
-                        <h2>3. Utilisation des renseignements</h2>
+                        <h3>2.2 Données financières que vous saisissez</h3>
+                        <p>L'Application stocke les données financières que vous fournissez, notamment :</p>
                         <ul>
-                            <li>Calculer les strategies salaire/dividende, la croissance composee, et les projections de paie</li>
-                            <li>Sauvegarder les reglages et preferences sur les appareils autorises lorsque les fonctions de compte sont actives</li>
-                            <li>Fournir le support et proteger la qualite du service</li>
+                            <li>Revenu net d'entreprise et revenu passif</li>
+                            <li>Préférences de salaire et de dividendes</li>
+                            <li>Estimations de cotisations REER et CELI</li>
+                            <li>Province de résidence</li>
+                            <li>Informations sur les dettes d'entreprise et les taux d'intérêt</li>
+                            <li>Soldes de comptes fiscaux (CDC, CRTG, IMRTD)</li>
+                            <li>Registres de paie et entrées de suivi des versements</li>
+                            <li>Scénarios fiscaux sauvegardés</li>
                         </ul>
-                    </section>
+                        <p>Ces données sont stockées <strong>localement sur votre appareil</strong> et, si vous avez iCloud activé, <strong>synchronisées via Apple CloudKit</strong> vers vos autres appareils.</p>
 
-                    <section class="legal-section">
-                        <h2>4. Stockage, securite et partage</h2>
+                        <h3>2.3 Données d'authentification et d'utilisation</h3>
+                        <p>Nous utilisons <strong>Firebase</strong> (Google) pour l'authentification. Firebase peut collecter :</p>
                         <ul>
-                            <li>OptiPay vise a minimiser la collecte de donnees et applique des controles de securite standards.</li>
-                            <li>Nous ne vendons pas les renseignements personnels.</li>
-                            <li>Des fournisseurs peuvent etre utilises uniquement lorsque necessaire pour l infrastructure et le support, sous obligations de confidentialite.</li>
+                            <li>Type d'appareil et système d'exploitation</li>
+                            <li>Rapports de plantages et données de performance</li>
+                            <li>Analyses d'utilisation anonymisées</li>
                         </ul>
+                        <p>Les pratiques de données de Firebase sont régies par la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>.</p>
+
+                        <h3>2.4 Données d'abonnement</h3>
+                        <p>Les achats intégrés sont gérés par l'App Store d'Apple. Nous recevons la confirmation de votre statut d'abonnement, mais nous ne recevons <strong>pas</strong> vos coordonnées bancaires.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>5. Avis professionnel et reglementaire</h2>
-                        <p>OptiPay est un outil de planification et ne remplace pas les conseils d un professionnel agree.</p>
-                        <p>Les utilisateurs demeurent responsables de valider les resultats selon leur situation fiscale.</p>
-                        <p>Lorsque des renseignements personnels sont traites au Canada, les pratiques visent la conformite avec la LPRPDE/PIPEDA et les exigences provinciales applicables.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Conservation et suppression</h2>
+                        <h2>3. Comment nous utilisons vos informations</h2>
+                        <p>Nous utilisons les informations collectées pour :</p>
                         <ul>
-                            <li>La suppression de compte demandee est generalement traitee sous 30 jours, sauf obligations legales ou de securite.</li>
-                            <li>Les sauvegardes chiffrees peuvent demeurer jusqu a 90 jours avant suppression automatique.</li>
+                            <li>Authentifier et maintenir votre compte</li>
+                            <li>Stocker et synchroniser vos données financières sur vos appareils (via CloudKit)</li>
+                            <li>Fournir des calculs d'estimation fiscale dans l'Application</li>
+                            <li>Améliorer la stabilité et les performances de l'application</li>
+                            <li>Vérifier votre statut d'abonnement pour les fonctionnalités premium</li>
                         </ul>
+                        <p><strong>Nous ne vendons pas vos données à des tiers, ne partageons pas vos données financières avec des tiers, et n'utilisons pas vos données à des fins publicitaires.</strong></p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>Email: support@optipay.ca</p>
-                        <p>Entreprise: Pureum Software</p>
+                        <h2>4. Conservation des données</h2>
+                        <p>Vos données de compte sont conservées aussi longtemps que vous maintenez un compte OptiPay. Vous pouvez supprimer votre compte à tout moment depuis <strong>Paramètres &rarr; Compte &rarr; Supprimer le compte</strong>.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. Vos droits (LPRPDE / Loi canadienne sur la protection des renseignements personnels)</h2>
+                        <p>Conformément à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) et aux lois provinciales applicables sur la protection de la vie privée, vous avez le droit d'accéder à vos informations, de les corriger, de les supprimer et de retirer votre consentement à tout moment.</p>
+                        <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. Nous contacter</h2>
+                        <p>
+                            <strong>Pureum Software</strong><br>
+                            Courriel : <a href="mailto:support@pureum.dev">support@pureum.dev</a><br>
+                            Site Web : <a href="https://pureum.dev/optipay" target="_blank" rel="noopener">https://pureum.dev/optipay</a>
+                        </p>
                     </section>
                 </div>
             </div>
 
             <footer class="legal-footer">
                 <div class="footer-links">
-                    <a href="terms.html" data-base-href="terms.html">Terms of Service</a>
-                    <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
-                    <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
-                    <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
+                    <a href="terms.html" data-base-href="terms.html" data-en="Terms of Service" data-fr="Conditions d'utilisation">Terms of Service</a>
+                    <a href="privacy.html" data-base-href="privacy.html" data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</a>
+                    <a href="../terms.html" data-base-href="../terms.html" data-en="Company Terms" data-fr="Conditions de l'entreprise">Company Terms</a>
+                    <a href="../privacy.html" data-base-href="../privacy.html" data-en="Company Privacy" data-fr="Confidentialité de l'entreprise">Company Privacy</a>
                 </div>
                 <p>&copy; 2026 OptiPay. All rights reserved.</p>
             </footer>
@@ -223,6 +398,10 @@
 
             document.querySelectorAll(".lang-block").forEach((block) => {
                 block.classList.toggle("active", block.getAttribute("data-lang-block") === finalLang);
+            });
+
+            document.querySelectorAll("[data-" + finalLang + "]").forEach((el) => {
+                el.textContent = el.getAttribute("data-" + finalLang);
             });
 
             updateLocalizedLinks(finalLang);
