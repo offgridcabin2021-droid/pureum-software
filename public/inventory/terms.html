@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory App Terms of Service</title>
-    <meta name="description" content="Inventory App specific terms of service (EN/FR/ES)">
+    <title>PureStock - Terms of Service</title>
+    <meta name="description" content="PureStock Dental Inventory Terms of Service (EN/KO/FR/ES)">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,6 +55,7 @@
             color: var(--primary-color);
             font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: 0.2px;
         }
 
         .legal-header h1 {
@@ -85,6 +86,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .lang-btn.active {
@@ -135,6 +137,18 @@
 
         .legal-section li {
             margin-bottom: 8px;
+        }
+
+        .disclaimer-box {
+            background: #F0F7FF;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-weight: 500;
         }
 
         .legal-section a {
@@ -190,161 +204,305 @@
     <main class="legal-page">
         <div class="legal-container">
             <div class="legal-header">
-                <p class="app-name">Inventory App</p>
+                <p class="app-name">PureStock (Inventory App)</p>
                 <h1>Terms of Service</h1>
-                <p class="last-updated">Last Updated: March 17, 2026</p>
+                <p class="last-updated">Last Updated: October 2, 2026</p>
             </div>
 
             <div class="language-switcher" aria-label="Language selector">
                 <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="fr">Francais</button>
-                <button class="lang-btn" data-lang="es">Espanol</button>
+                <button class="lang-btn" data-lang="ko">한국어</button>
+                <button class="lang-btn" data-lang="fr">Français</button>
+                <button class="lang-btn" data-lang="es">Español</button>
             </div>
 
             <div class="legal-content">
+                <!-- English Version -->
                 <div class="lang-block" data-lang-block="en">
                     <section class="legal-section">
                         <h2>1. Service Description</h2>
-                        <p>Inventory App provides inventory workflows for dental clinics, including item tracking, low-stock alerts, ordering, receiving, and reporting.</p>
-                        <p>For company-wide legal terms, see <a href="../terms.html" data-base-href="../terms.html">Pureum Software Terms</a>.</p>
+                        <p><strong>PureStock</strong> (Inventory App) provides intelligent dental inventory tracking and clinic supply workflows, including item tracking, barcode/QR scanning, low-stock threshold alerts, order generation, receiving management, invoice archiving, and Aura AI assistive automation.</p>
+                        <p>For corporate-wide terms, see <a href="../terms.html" data-base-href="../terms.html">Pureum Software Terms</a>.</p>
                     </section>
 
                     <section class="legal-section">
                         <h2>2. User Responsibilities</h2>
                         <ul>
-                            <li>Provide accurate account and inventory information.</li>
-                            <li>Control access for team members in your clinic account.</li>
-                            <li>Comply with local regulations applicable to your practice.</li>
+                            <li>Maintain truthful and up-to-date account and inventory records.</li>
+                            <li>Configure and maintain proper authorization and access controls for staff members within your clinic's account.</li>
+                            <li>Comply with all applicable local medical, business, and data privacy regulations.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. Prohibited Use</h2>
+                        <h2>3. Aura AI Assistive Features &amp; User Verification (Disclaimer)</h2>
+                        <p>PureStock features <strong>Aura AI</strong>, an assistive tool that translates natural language prompts into app actions using structured function parameters (Function Calling). In compliance with Apple App Store Guideline 2.5.2, Aura AI never executes arbitrary dynamic remote code; it solely invokes safe, pre-compiled native in-app methods.</p>
+
+                        <div class="disclaimer-box">
+                            <strong>Mandatory Verification Clause:</strong> Actions executed or suggested by Aura AI must be reviewed and verified under the user's supervision. Please confirm critical inventory updates and stock adjustments directly in the inventory records.
+                        </div>
+
                         <ul>
-                            <li>No unauthorized access attempts or service disruption.</li>
-                            <li>No use of the app for unlawful activity.</li>
-                            <li>No upload of patient medical records without appropriate legal controls.</li>
+                            <li><strong>Safety Safeguards &amp; Undo Functionality (Guidelines 1.2 &amp; 2.1):</strong> The app presents transparent <strong>Action Result Cards (<code>ActionResultCard</code>)</strong> detailing every automated action executed by Aura AI, accompanied by an immediate <strong>Undo (<code>Undo Last Action</code>)</strong> option. Users are solely responsible for inspecting action cards and reversing unintended changes immediately.</li>
+                            <li><strong>Voice Recognition &amp; Speech Interpretation:</strong> Pureum Software is not liable for inventory discrepancies, stock inaccuracies, or unintended modifications arising from speech recognition errors, ambient noise misinterpretations, or misaligned AI intent parsing.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>4. Subscription and Billing</h2>
-                        <p>Paid features are billed through Apple App Store terms. Plan limits and feature access may vary by subscription tier.</p>
+                        <h2>4. Healthcare &amp; Regulatory Scope (HIPAA &amp; Non-Medical Use)</h2>
+                        <div class="disclaimer-box">
+                            <strong>Non-Medical / Commercial Inventory Scope:</strong> PureStock is strictly a commercial supply and inventory tracking system. It is NOT a medical device, diagnostic tool, or Electronic Health Record (EHR) system.
+                        </div>
+                        <ul>
+                            <li><strong>No Protected Health Information (PHI):</strong> PureStock does not collect, process, or store patient health records. Users agree never to enter patient Protected Health Information (PHI) such as patient names, chart identifiers, or treatment notes into the app. HIPAA regulations regarding medical charts do not apply to commercial inventory records.</li>
+                            <li>Each clinic remains solely responsible for ensuring its operational use complies with local medical practice laws and patient privacy regulations.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>5. Account Deletion</h2>
-                        <p>You may request account deletion in-app or via support. Data is deleted within 30 days, with backup retention up to 90 days.</p>
+                        <h2>5. Prohibited Use</h2>
+                        <ul>
+                            <li>No unauthorized attempts to access or disrupt server infrastructure or cloud functions.</li>
+                            <li>No utilization of the software for unlawful or unauthorized clinical activities.</li>
+                            <li>No storage of confidential patient health records without independent legal compliance systems.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Limitation and Compliance Notice</h2>
-                        <p>This app complies with HIPAA (US) and PIPEDA (Canada).</p>
-                        <p>Inventory App is not a medical records system and is not intended to store full patient medical charts.</p>
-                        <p>Each clinic remains responsible for configuring user access, lawful use, and jurisdiction-specific obligations that apply to its workflow.</p>
+                        <h2>6. Subscription and Billing</h2>
+                        <p>Paid tiers and advanced features are billed through standard Apple App Store In-App Purchase terms. Subscriptions auto-renew unless cancelled at least 24 hours prior to the close of the current billing cycle.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>Email: support@pureum.dev</p>
+                        <h2>7. Account Deletion</h2>
+                        <p>Users may request clinic account deletion at any time in-app or via support. Production data is purged within 30 days, and encrypted backup snapshots are overwritten within 90 days.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>8. Limitation of Liability &amp; Warranty Disclaimer</h2>
+                        <p>PureStock is provided on an "as-is" and "as-available" basis without warranties of any kind. Pureum Software disclaims all liability for indirect, incidental, or consequential damages resulting from inventory discrepancies, supply stockouts, or operational delays.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>9. Contact</h2>
+                        <p>Email: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
                         <p>Company: Pureum Software</p>
                     </section>
                 </div>
 
+                <!-- Korean Version -->
+                <div class="lang-block" data-lang-block="ko">
+                    <section class="legal-section">
+                        <h2>1. 서비스 설명</h2>
+                        <p><strong>PureStock</strong> (Inventory App)은 치과 의원 및 병원을 위한 지능형 치과 자재/소모품 재고 관리 플랫폼으로, 품목 관리, 바코드/QR 스캐너, 최소 재고 부족 알림, 발주 및 입고 워크플로우, 거래명세서 관리 및 Aura AI 보조 자동화 기능을 제공합니다.</p>
+                        <p>회사 차원의 포괄적인 약관은 <a href="../terms.html" data-base-href="../terms.html">Pureum Software 서비스 약관</a>을 참고해 주세요.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>2. 이용자의 책임 및 의무</h2>
+                        <ul>
+                            <li>정확하고 최신의 계정 및 치과 자재 재고 정보를 등록하고 유지해야 합니다.</li>
+                            <li>소속 치과 클리닉 계정 내 직원들의 사용자 권한을 적절히 설정하고 관리할 책임이 있습니다.</li>
+                            <li>치과 병·의원에 적용되는 관할 지역의 법령과 규정을 준수하여 서비스를 이용하여야 합니다.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>3. Aura AI 기능 및 사용자 최종 확인 의무 (면책 조항)</h2>
+                        <p>PureStock은 프롬프트 입력을 매개변수(JSON)로 해석하여 앱 기능을 실행하는 <strong>Aura AI</strong> 보조 기능을 제공합니다. 본 기능은 Apple 앱스토어 심사 지침(Guideline 2.5.2)을 완벽히 준수하여 외부의 임의 실행 코드를 다운로드받지 않으며, 앱 내에 이미 안전하게 빌드된 네이티브 함수(예: <code>executeUpdateStock</code>, <code>executeDeleteEntity</code> 등)만을 호출합니다.</p>
+
+                        <div class="disclaimer-box">
+                            <strong>Aura AI 면책 조항 (Disclaimer):</strong> "Aura AI의 작업 결과는 사용자의 확인 하에 적용되어야 하며, 중요한 재고 변경 사항은 목록에서 최종 확인해 주세요."
+                        </div>
+
+                        <ul>
+                            <li><strong>안전장치 및 실행 취소 (Apple 지침 1.2 &amp; 2.1 준수):</strong> AI 실행 결과를 투명하게 파악할 수 있도록 실행 결과 피드백 카드(<strong>ActionResultCard</strong>)와 즉시 작업을 되돌릴 수 있는 실행 취소(<strong>Undo Last Action</strong>) 기능이 제공됩니다. 이용자는 카드 내용을 반드시 확인해야 하며, 의도치 않은 변경이 발생한 경우 즉시 실행 취소 기능을 사용해야 합니다.</li>
+                            <li><strong>음성 인식 및 자연어 해석의 한계:</strong> 주변 소음, 발음 오인, 음성 인식(STT) 오류 또는 AI 모델의 자연어 해석 차이로 인해 발생한 데이터 오차나 수량 변경에 대해 Pureum Software는 고의 또는 중대한 과실이 없는 한 법적 책임을 지지 않습니다.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>4. 의료 규제 및 미국 의료정보보호법 (HIPAA) 면책</h2>
+                        <div class="disclaimer-box">
+                            <strong>비의료 상업용 재고 앱 고지:</strong> PureStock은 순수한 치과 자재/소모품 재고(Dental Supplies)만을 다루는 상업용 재고 관리 앱입니다. 환자 진료 목적의 의료기기나 전자의무기록(EHR/EMR) 시스템이 아닙니다.
+                        </div>
+                        <ul>
+                            <li><strong>환자 개인 건강정보(PHI) 입력 금지:</strong> 본 서비스는 환자 이름, 차트번호, 진료기록 등 미국 의료정보보호법(HIPAA)상 보호 대상 건강정보(PHI)를 다루지 않으므로 HIPAA 의료기록 규제 대상이 아닙니다. 이용자는 품목 메모나 입력란에 환자 개인정보를 입력해서는 안 되며, 이를 위반하여 발생하는 모든 책임은 이용자에게 있습니다.</li>
+                            <li>각 치과는 해당 관할 지역의 의료법 및 개인정보보호 법률을 준수하여 본 소프트웨어를 합법적으로 운용해야 합니다.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>5. 금지 행위</h2>
+                        <ul>
+                            <li>시스템 리버스 엔지니어링, 인프라 공격, 비정상적 과부하 유발 행위.</li>
+                            <li>소프트웨어를 불법적이거나 비인가된 목적으로 이용하는 행위.</li>
+                            <li>환자의 기밀 의료 기록이나 비인가 개인정보를 무단 업로드하는 행위.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>6. 구독 및 결제</h2>
+                        <p>유료 기능 및 플랜은 Apple App Store의 인앱 결제(IAP) 약관에 따라 청구됩니다. 구독은 현재 청구 주기가 종료되기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>7. 계정 삭제</h2>
+                        <p>이용자는 앱 내 설정 또는 고객지원을 통해 언제든지 계정 삭제를 요청할 수 있습니다. 활성 데이터는 30일 이내에 완전히 삭제되며, 시스템 백업 사본은 최대 90일 후 안전하게 파기됩니다.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>8. 보증의 부인 및 책임 제한</h2>
+                        <p>PureStock은 "있는 그대로(AS-IS)" 제공되며, 명시적 또는 묵시적 보증을 하지 않습니다. 법령이 허용하는 최대 범위 내에서, Pureum Software는 재고 수량 오차, 공급 부족, 영업 지연 등 간접적이거나 결과적인 손해에 대해 책임을 지지 않습니다.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>9. 문의처</h2>
+                        <p>이메일: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
+                        <p>회사명: Pureum Software</p>
+                    </section>
+                </div>
+
+                <!-- French Version -->
                 <div class="lang-block" data-lang-block="fr">
                     <section class="legal-section">
                         <h2>1. Description du service</h2>
-                        <p>Inventory App fournit des flux de gestion des stocks pour les cliniques dentaires: suivi des articles, alertes de stock faible, commandes, reception et rapports.</p>
-                        <p>Pour les conditions generales, consultez les <a href="../terms.html" data-base-href="../terms.html">Conditions de Pureum Software</a>.</p>
+                        <p><strong>PureStock</strong> (Inventory App) propose des flux logistiques et de gestion des stocks pour les cabinets dentaires: suivi des articles, lecture code-barres/QR, alertes de seuil bas, commandes, reception de marchandises, archivage de factures et assistance automatisee Aura AI.</p>
+                        <p>Pour les conditions globales, consultez les <a href="../terms.html" data-base-href="../terms.html">Conditions generales de Pureum Software</a>.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>2. Responsabilites utilisateur</h2>
+                        <h2>2. Responsabilites de l'utilisateur</h2>
                         <ul>
-                            <li>Fournir des informations de compte et d'inventaire exactes.</li>
-                            <li>Controler l'acces des membres de l'equipe dans le compte clinique.</li>
-                            <li>Respecter la reglementation locale applicable a votre cabinet.</li>
+                            <li>Fournir des informations de compte et d'inventaire precises et a jour.</li>
+                            <li>Gerer l'attribution des droits d'acces aux membres du cabinet dentaire.</li>
+                            <li>Respecter les lois medicales et commerciales applicables a votre etablissement.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. Usages interdits</h2>
+                        <h2>3. Fonctions d'assistance Aura AI &amp; Clause de non-responsabilite</h2>
+                        <p>PureStock integre <strong>Aura AI</strong>, un outil d'assistance transformant les instructions naturelles en actions internes via des parametres structures (Function Calling). Conformement a la directive Apple 2.5.2, Aura AI n'execute aucun code externe dynamique; il declenche uniquement des methodes sures et precompilees dans l'application.</p>
+
+                        <div class="disclaimer-box">
+                            <strong>Clause de verification obligatoire:</strong> Les actions executees ou suggerees par Aura AI doivent etre appliquees sous la verification de l'utilisateur. Veuillez verifier les modifications importantes directement dans le registre d'inventaire.
+                        </div>
+
                         <ul>
-                            <li>Aucune tentative d'acces non autorise ni perturbation du service.</li>
-                            <li>Aucune utilisation illegale de l'application.</li>
-                            <li>Pas de televersement de dossiers medicaux patients sans controles juridiques appropries.</li>
+                            <li><strong>Securite et annulation (Directives 1.2 &amp; 2.1):</strong> L'application presente des fiches de resultat (<strong>ActionResultCard</strong>) et propose une annulation immediate (<strong>Undo Last Action</strong>). L'utilisateur est tenu de verifier les actions executees et d'utiliser l'annulation en cas d'erreur.</li>
+                            <li><strong>Reconnaissance vocale:</strong> Pureum Software decline toute responsabilite pour les ecarts causes par des erreurs de transcription ou des malentendus d'interpretation linguistique.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>4. Abonnement et facturation</h2>
-                        <p>Les fonctions payantes sont facturees via les conditions de l'App Store d'Apple. Les limites et fonctionnalites varient selon l'abonnement.</p>
+                        <h2>4. Cadre reglementaire et avis sante (HIPAA / Non-medical)</h2>
+                        <div class="disclaimer-box">
+                            <strong>Usage commercial logistique:</strong> PureStock est uniquement un systeme de gestion des fournitures dentaires. Ce n'est pas un dispositif medical ni un dossier patient informatise (DPI).
+                        </div>
+                        <ul>
+                            <li><strong>Pas de donnees patients protegees (PHI):</strong> PureStock ne traite pas de donnees medicales identifiables et n'est pas soumis aux regles HIPAA relatives aux dossiers de sante. Il est interdit d'introduire des donnees de patients dans l'application.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>5. Suppression de compte</h2>
-                        <p>Vous pouvez demander la suppression du compte via l'application ou le support. Les donnees sont supprimees sous 30 jours, avec conservation des sauvegardes jusqu'a 90 jours.</p>
+                        <h2>5. Usages interdits</h2>
+                        <ul>
+                            <li>Toute tentative d'intrusion ou perturbation de l'infrastructure.</li>
+                            <li>Toute utilisation a des fins illegales ou non conformes.</li>
+                            <li>Le televersement de dossiers cliniques ou donnees de sante sans cadre legal distinct.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Limitation et avis de conformite</h2>
-                        <p>Cette application est conforme a HIPAA (Etats-Unis) et a PIPEDA/LPRPDE (Canada).</p>
-                        <p>Inventory App n'est pas un systeme de dossiers medicaux et n'est pas concue pour stocker des dossiers cliniques complets.</p>
-                        <p>Chaque clinique reste responsable de la configuration des acces, de l'usage legal et des obligations propres a sa juridiction.</p>
+                        <h2>6. Abonnement et facturation</h2>
+                        <p>Les abonnements payants sont factures via les conditions d'achats integres d'Apple App Store. Le renouvellement est automatique sauf resiliation au moins 24 heures avant l'echeance.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>Email: support@pureum.dev</p>
+                        <h2>7. Suppression de compte</h2>
+                        <p>La suppression du compte peut etre demandee dans l'application ou par le support. Les donnees actives sont effacees sous 30 jours, et les sauvegardes ecrasees sous 90 jours.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>8. Limitation de responsabilite</h2>
+                        <p>PureStock est fourni "en l'etat". Dans la mesure permise par la loi, Pureum Software ne repond d'aucun dommage indirect, perte d'exploitation ou penurie de materiel resultant de l'usage de l'application.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>9. Contact</h2>
+                        <p>E-mail: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
                         <p>Entreprise: Pureum Software</p>
                     </section>
                 </div>
 
+                <!-- Spanish Version -->
                 <div class="lang-block" data-lang-block="es">
                     <section class="legal-section">
                         <h2>1. Descripcion del servicio</h2>
-                        <p>Inventory App ofrece flujos de inventario para clinicas dentales: seguimiento de items, alertas de bajo stock, pedidos, recepcion e informes.</p>
-                        <p>Para los terminos generales, consulta los <a href="../terms.html" data-base-href="../terms.html">Terminos de Pureum Software</a>.</p>
+                        <p><strong>PureStock</strong> (Inventory App) es una plataforma de gestion de suministros para clinicas dentales que facilita el seguimiento de articulos, escaneo de codigos QR/barras, alertas de stock bajo, pedidos, recepcion de mercancia, archivo de facturas y automatizacion con Aura AI.</p>
+                        <p>Para conocer los terminos generales, consulte los <a href="../terms.html" data-base-href="../terms.html">Terminos de Servicio de Pureum Software</a>.</p>
                     </section>
 
                     <section class="legal-section">
                         <h2>2. Responsabilidades del usuario</h2>
                         <ul>
-                            <li>Proporcionar informacion de cuenta e inventario precisa.</li>
-                            <li>Controlar el acceso de miembros del equipo en la cuenta de la clinica.</li>
-                            <li>Cumplir la normativa local aplicable a tu consulta.</li>
+                            <li>Mantener actualizados y veraces los registros de inventario y datos de cuenta.</li>
+                            <li>Administrar los niveles de acceso y permisos del personal de la clinica.</li>
+                            <li>Cumplir con las normativas comerciales y sanitarias vigentes en su jurisdiccion.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. Uso prohibido</h2>
+                        <h2>3. Funciones con Aura AI y Descargo de Responsabilidad</h2>
+                        <p>PureStock incorpora <strong>Aura AI</strong>, un asistente que interpreta comandos en lenguaje natural para activar funciones de la app mediante parametros estructurados (Function Calling). Conforme a la Directriz 2.5.2 de Apple, nunca se descarga ni ejecuta codigo remoto; unicamente se invocan funciones nativas seguras precompiladas en la aplicacion.</p>
+
+                        <div class="disclaimer-box">
+                            <strong>Clausula de verificacion obligatoria:</strong> Los resultados y acciones de Aura AI deben aplicarse bajo la supervision del usuario. Por favor, confirme los cambios criticos de stock directamente en el listado de inventario.
+                        </div>
+
                         <ul>
-                            <li>Sin intentos de acceso no autorizado ni interrupcion del servicio.</li>
-                            <li>Sin uso de la aplicacion para actividades ilegales.</li>
-                            <li>No cargar registros medicos de pacientes sin controles legales adecuados.</li>
+                            <li><strong>Mecanismos de seguridad y deshecho (Directrices 1.2 y 2.1):</strong> La aplicacion muestra tarjetas de resultado (<strong>ActionResultCard</strong>) y un boton de deshecho inmediato (<strong>Undo Last Action</strong>). El usuario es responsable de revisar los cambios y deshacerlos de inmediato en caso de error.</li>
+                            <li><strong>Reconocimiento de voz:</strong> Pureum Software no se hace responsable de discrepancias en el inventario debidas a ruidos ambientales, errores de transcripcion o interpretacion del modelo.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>4. Suscripcion y facturacion</h2>
-                        <p>Las funciones de pago se facturan bajo las condiciones de Apple App Store. Los limites y el acceso pueden variar segun el plan.</p>
+                        <h2>4. Ambito normativo y sanitario (HIPAA / Uso no medico)</h2>
+                        <div class="disclaimer-box">
+                            <strong>Uso exclusivamente comercial:</strong> PureStock es una aplicacion de logistica e inventario de suministros dentales. No es un dispositivo medico ni un sistema de historias clinicas electronicas (EHR).
+                        </div>
+                        <ul>
+                            <li><strong>Sin Informacion de Salud Protegida (PHI):</strong> No tratamos expedientes ni datos de pacientes, por lo que la ley HIPAA sobre historiales medicos no resulta aplicable. Esta prohibido introducir datos de pacientes en la aplicacion.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>5. Eliminacion de cuenta</h2>
-                        <p>Puedes solicitar la eliminacion de cuenta desde la app o por soporte. Los datos se eliminan en 30 dias, con respaldo de hasta 90 dias.</p>
+                        <h2>5. Uso prohibido</h2>
+                        <ul>
+                            <li>Cualquier intento de alteracion o acceso no autorizado a los servidores.</li>
+                            <li>Uso para fines ilegales o no autorizados.</li>
+                            <li>Carga o almacenamiento de expedientes medicos confidenciales sin sistemas de cumplimiento independientes.</li>
+                        </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Limitacion y aviso de cumplimiento</h2>
-                        <p>Esta aplicacion cumple con HIPAA (EE. UU.) y PIPEDA (Canada).</p>
-                        <p>Inventory App no es un sistema de historiales medicos ni esta destinada a almacenar expedientes clinicos completos.</p>
-                        <p>Cada clinica sigue siendo responsable de configurar accesos, del uso legal y de las obligaciones especificas de su jurisdiccion.</p>
+                        <h2>6. Suscripcion y facturacion</h2>
+                        <p>Las suscripciones de pago se gestionan a traves de Apple App Store. La renovacion es automatica a menos que se cancele al menos 24 horas antes del fin del periodo actual.</p>
                     </section>
 
                     <section class="legal-section">
-                        <h2>7. Contacto</h2>
-                        <p>Email: support@pureum.dev</p>
+                        <h2>7. Eliminacion de cuenta</h2>
+                        <p>Puede solicitar la cancelacion de su cuenta desde la app o por soporte. Los datos activos se borran en 30 dias y las copias de seguridad en un maximo de 90 dias.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>8. Limitacion de responsabilidad</h2>
+                        <p>PureStock se proporciona "tal cual". En la medida que la ley lo permita, Pureum Software no sera responsable de perdidas comerciales, desabastecimiento o danos indirectos derivados del uso de la aplicacion.</p>
+                    </section>
+
+                    <section class="legal-section">
+                        <h2>9. Contacto</h2>
+                        <p>Correo: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
                         <p>Empresa: Pureum Software</p>
                     </section>
                 </div>
@@ -358,15 +516,16 @@
             <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
             <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
             <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
-            <p style="margin-top: 14px;">&copy; 2026 Inventory App. All rights reserved.</p>
+            <p style="margin-top: 14px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        const supportedLangs = ['en', 'fr', 'es'];
+        const supportedLangs = ['en', 'ko', 'fr', 'es'];
 
         function normalizeLang(raw) {
             const value = (raw || '').toLowerCase();
+            if (value.startsWith('ko')) return 'ko';
             if (value.startsWith('fr')) return 'fr';
             if (value.startsWith('es')) return 'es';
             return 'en';
