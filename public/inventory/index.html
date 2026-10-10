@@ -249,97 +249,104 @@
                 </div>
             </div>
 
-            <!-- Denti Interactive Assistant Sheet Mockup -->
-            <div class="denti-interactive-mockup">
-                <div class="denti-sheet-header">
-                    <div class="denti-brand-tab">
-                        <div class="denti-avatar">✨</div>
+            <!-- Denti Real iOS Interface + Action Result Mockup -->
+            <div style="display: flex; gap: 24px; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+                <div style="max-width: 280px; width: 100%; flex-shrink: 0;">
+                    <img src="assets/denti_ai_screen.png" alt="Denti AI Real iOS Interface"
+                        style="width: 100%; height: auto; border-radius: 32px; box-shadow: 0 20px 45px rgba(97,82,250,0.22); border: 2.5px solid rgba(97,82,250,0.25);">
+                </div>
+
+                <div class="denti-interactive-mockup" style="max-width: 380px; flex: 1; min-width: 280px;">
+                    <div class="denti-sheet-header">
+                        <div class="denti-brand-tab">
+                            <div class="denti-avatar">✨</div>
+                            <div>
+                                <div style="font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                                    Denti AI <span class="denti-status-dot"></span>
+                                </div>
+                                <div style="font-size: 0.75rem; color: #6B7280;">Clinical Inventory Assistant</div>
+                            </div>
+                        </div>
+                        <span style="font-size: 0.78rem; background: #EDE9FE; color: #6B21A8; font-weight: 700; padding: 4px 10px; border-radius: 999px;">Doctor Active</span>
+                    </div>
+
+                    <div class="denti-sheet-body">
+                        <!-- User Prompt -->
+                        <div class="chat-bubble-user">
+                            “We used 3 boxes of Surgical Needles in Op 2, and add any low stock to To Order.”
+                        </div>
+
+                        <!-- Denti Response -->
+                        <div class="chat-bubble-denti">
+                            <div style="margin-bottom: 8px;">
+                                Got it! I've updated the count and checked your clinic thresholds:
+                            </div>
+
+                            <!-- Action Card 1: Stock Deducted -->
+                            <div class="action-result-card">
+                                <div class="action-result-header">
+                                    <span class="action-result-badge">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        Stock Updated
+                                    </span>
+                                    <button class="undo-button">↩ Undo</button>
+                                </div>
+                                <div class="action-details">
+                                    <strong>Surgical Needles 27G:</strong> -3 box (100 → 97 remaining). Audit entry logged.
+                                </div>
+                            </div>
+
+                            <!-- Action Card 2: To Order Queued -->
+                            <div class="action-result-card" style="border-left-color: #F59E0B; margin-top: 8px;">
+                                <div class="action-result-header">
+                                    <span class="action-result-badge" style="color: #D97706;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                        </svg>
+                                        Added to 'To Order'
+                                    </span>
+                                    <button class="undo-button">↩ Undo</button>
+                                </div>
+                                <div class="action-details">
+                                    <strong>Lidocaine 2% (4 left):</strong> Queued for reorder. 1 tap to email summary to Doctor.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommended Tab Chips -->
                         <div>
-                            <div style="font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
-                                Denti AI <span class="denti-status-dot"></span>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+                                Try asking Denti:
                             </div>
-                            <div style="font-size: 0.75rem; color: #6B7280;">Clinical Inventory Assistant</div>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.78rem; background: #EDE9FE; color: #6B21A8; font-weight: 700; padding: 4px 10px; border-radius: 999px;">Doctor Active</span>
-                </div>
-
-                <div class="denti-sheet-body">
-                    <!-- User Prompt -->
-                    <div class="chat-bubble-user">
-                        “We used 3 boxes of Surgical Needles in Op 2, and add any low stock to To Order.”
-                    </div>
-
-                    <!-- Denti Response -->
-                    <div class="chat-bubble-denti">
-                        <div style="margin-bottom: 8px;">
-                            Got it! I've updated the count and checked your clinic thresholds:
-                        </div>
-
-                        <!-- Action Card 1: Stock Deducted -->
-                        <div class="action-result-card">
-                            <div class="action-result-header">
-                                <span class="action-result-badge">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Stock Updated
-                                </span>
-                                <button class="undo-button">↩ Undo</button>
-                            </div>
-                            <div class="action-details">
-                                <strong>Surgical Needles 27G:</strong> -3 box (100 → 97 remaining). Audit entry logged.
-                            </div>
-                        </div>
-
-                        <!-- Action Card 2: To Order Queued -->
-                        <div class="action-result-card" style="border-left-color: #F59E0B; margin-top: 8px;">
-                            <div class="action-result-header">
-                                <span class="action-result-badge" style="color: #D97706;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                    </svg>
-                                    Added to 'To Order'
-                                </span>
-                                <button class="undo-button">↩ Undo</button>
-                            </div>
-                            <div class="action-details">
-                                <strong>Lidocaine 2% (4 left):</strong> Queued for reorder. 1 tap to email summary to Doctor.
+                            <div class="command-chips-row">
+                                <span class="cmd-chip">“Give me a clinic briefing”</span>
+                                <span class="cmd-chip">“Where is Cavitron Tip?”</span>
+                                <span class="cmd-chip">“When is autoclave cycle due?”</span>
+                                <span class="cmd-chip">“Email To Order PDF to Doctor”</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Recommended Tab Chips -->
-                    <div>
-                        <div style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
-                            Try asking Denti:
+                    <!-- Voice Bar Indicator -->
+                    <div class="mockup-voice-bar">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="voice-wave">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                            <span style="font-size: 0.8rem; color: #6B7280; font-weight: 500;">Listening for voice command...</span>
                         </div>
-                        <div class="command-chips-row">
-                            <span class="cmd-chip">“Give me a clinic briefing”</span>
-                            <span class="cmd-chip">“Where is Cavitron Tip?”</span>
-                            <span class="cmd-chip">“When is autoclave cycle due?”</span>
-                            <span class="cmd-chip">“Email To Order PDF to Doctor”</span>
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #EF4444; display: flex; align-items: center; justify-content: center;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
+                            </svg>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Voice Bar Indicator -->
-                <div class="mockup-voice-bar">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <div class="voice-wave">
-                            <div class="wave-bar"></div>
-                            <div class="wave-bar"></div>
-                            <div class="wave-bar"></div>
-                            <div class="wave-bar"></div>
-                            <div class="wave-bar"></div>
-                        </div>
-                        <span style="font-size: 0.8rem; color: #6B7280; font-weight: 500;">Listening for voice command...</span>
-                    </div>
-                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #EF4444; display: flex; align-items: center; justify-content: center;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
-                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
-                        </svg>
                     </div>
                 </div>
             </div>
