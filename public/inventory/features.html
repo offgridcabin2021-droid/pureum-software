@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - PureStock Dental Inventory &amp; Denti AI</title>
-    <meta name="description" content="Explore PureStock modules: Denti AI voice assistant, inventory master list, smart replenishment, barcode scanner, invoice receiving, and autoclave sterilization tracking.">
+    <meta name="description" content="Explore PureStock modules: Inventory master list, automated reorders, high-speed scanner, receiving & invoice archive, sterilization tracking, and security roles with integrated Denti AI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2.6">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2.7">
 </head>
 
 <body>
@@ -22,10 +21,9 @@
                 <span style="font-weight: 700; font-size: 19px; letter-spacing: -0.3px;">PureStock</span>
             </a>
             <div class="nav-links">
-                <a href="index.html#features">Features</a>
+                <a href="features.html" style="color: var(--primary-color); font-weight: 600;">Features</a>
                 <a href="index.html#denti-ai">Denti AI</a>
                 <a href="index.html#workflow">Workflow</a>
-                <a href="index.html#pricing">Pricing</a>
                 <a href="support.html">Support</a>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
@@ -41,115 +39,69 @@
 
     <div class="features-layout">
         <aside class="features-sidebar">
-            <div class="feature-nav-item active" data-target="ai" style="font-weight: 700;">
-                ✨ Denti AI
-            </div>
-            <div class="feature-nav-item" data-target="inventory">
-                Inventory
+            <div class="feature-nav-item active" data-target="inventory">
+                📋 Inventory
             </div>
             <div class="feature-nav-item" data-target="order">
-                To Order
+                🛒 To Order
             </div>
             <div class="feature-nav-item" data-target="scan">
-                Scanner
+                📷 Scanner
             </div>
             <div class="feature-nav-item" data-target="receiving">
-                Receiving
+                📦 Receiving
             </div>
             <div class="feature-nav-item" data-target="sterilization">
-                Sterilization
+                🧼 Sterilization
             </div>
             <div class="feature-nav-item" data-target="settings">
-                Settings &amp; Roles
+                ⚙️ Settings &amp; Roles
             </div>
         </aside>
 
         <main class="features-content">
-            <!-- Denti AI Section -->
-            <section id="ai" class="feature-section active">
-                <div class="page-header" style="background:transparent; padding-top: 0;">
-                    <div class="aura-badge" style="margin-bottom: 12px;">✨ Intelligent Clinical Assistant</div>
-                    <h1>Denti AI <span class="aura-gradient-text">Operatory Assistant.</span></h1>
-                    <p class="hero-subtitle">Hands-free voice recognition, natural language replenishment, and role-enforced safety guardrails.</p>
-                </div>
-                <div class="detail-layout">
-                    <div class="detail-phone-wrapper">
-                        <img src="assets/inventory_screen.png" alt="Denti AI Interface"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(97,82,250,0.18); border: 2px solid rgba(97,82,250,0.2);">
-                    </div>
-                    <div class="detail-text">
-                        <div class="detail-block">
-                            <h2>Hands-Free Voice Flow in the Operatory</h2>
-                            <ul class="feature-list">
-                                <li><strong>Gloved Hands Friendly</strong>: Tap the microphone button (🎙️) and speak naturally without having to touch device screens or remove clinical PPE.</li>
-                                <li><strong>Dental Lexicon Tuned</strong>: Understands clinical terminology, brand names (3M, Kerr, Dentsply, NSK, Terumo), gauge sizes, and packaging units.</li>
-                                <li><strong>Multilingual Support</strong>: Query and instruct in English, Korean, or mixed bilingual phrases without configuration friction.</li>
-                            </ul>
-                        </div>
-                        <div class="detail-block">
-                            <h2>Context-Aware Tab Commands</h2>
-                            <ul class="feature-list">
-                                <li><strong>Inventory Screen</strong>: <em>“Give me a clinic briefing”</em>, <em>“Where is Lidocaine and how many are left?”</em>, <em>“We used 3 boxes of 27G needles”</em>.</li>
-                                <li><strong>To Order Screen</strong>: <em>“Add low stock items to To Order”</em>, <em>“Show backordered items”</em>, <em>“Email To Order list to Doctor”</em>.</li>
-                                <li><strong>Receiving Screen</strong>: <em>“Received 5 boxes of composites”</em>, <em>“Show recent invoices and audit history”</em>.</li>
-                                <li><strong>Scanner Screen</strong>: <em>“Show items running low while scanning”</em>, <em>“Add item to reorder list”</em>.</li>
-                            </ul>
-                        </div>
-                        <div class="detail-block">
-                            <h2>Clinical Role Safeguards &amp; Undo Engine</h2>
-                            <ul class="feature-list">
-                                <li><strong>Doctor vs. Assistant Hierarchy</strong>: Assistants can record stock usage, check deliveries, and draft orders. Only verified Doctors/Admins can finalize purchase orders, edit clinic valuations, or delete records.</li>
-                                <li><strong>Visual Action Result Cards</strong>: Every action executed by Denti AI displays an immediate structured confirmation card with exact quantities and timestamps.</li>
-                                <li><strong>One-Tap Instant Undo</strong>: Made a misstatement? Tap <code>[↩ Undo Last Action]</code> to instantly reverse the last inventory update or queue change.</li>
-                            </ul>
-                        </div>
-                        <div class="detail-block">
-                            <h2>Compliance, Safety &amp; Zero PHI Architecture</h2>
-                            <ul class="feature-list">
-                                <li><strong>Apple Guideline 2.5.2 Compliance</strong>: Denti AI never downloads or runs dynamic arbitrary remote code. It maps language into structured parameters to call safe, pre-compiled native Swift methods.</li>
-                                <li><strong>Zero Data Retention</strong>: Cloud inference proxies to enterprise APIs operate under strict Zero Data Retention agreements. Clinic prompts are never used for model training.</li>
-                                <li><strong>Strictly Non-PHI</strong>: PureStock tracks dental equipment and materials only. No patient health records or charts are collected, stored, or required.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Inventory Section -->
-            <section id="inventory" class="feature-section">
+            <section id="inventory" class="feature-section active">
                 <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <div class="aura-badge" style="margin-bottom: 12px;">📋 Core Master Catalog</div>
                     <h1>The <span class="gradient-text">Master List.</span></h1>
-                    <p class="hero-subtitle">Complete visibility and control across every operatory and storage cabinet.</p>
+                    <p class="hero-subtitle">Complete visibility and control across every operatory, drawer, and central storage cabinet.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
-                        <img src="assets/inventory_screen.png" alt="Inventory Management"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="assets/inventory_screen.png" alt="Inventory Master List Screen"
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); border: 2px solid #E5E5EA;">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
                             <h2>Item Management &amp; Organization</h2>
                             <ul class="feature-list">
-                                <li><strong>Core Records</strong>: Track Name, SKU, Supplier/Company (multiple supported), Quantity, Unit, Category, and Storage Location.</li>
-                                <li><strong>Color-Coded Status Dots</strong>: Green for adequate stock, Amber for low-stock threshold alerts, and Red for items near expiration.</li>
-                                <li><strong>Smart Search &amp; Fast Filters</strong>: Instantly search by name or brand, or type <code>low</code> to isolate items requiring attention.</li>
-                                <li><strong>Integrated Denti AI</strong>: Launch the intelligent assistant right from the search bar with one tap.</li>
+                                <li><strong>Comprehensive Stock Profiles</strong>: Track Item Name, SKU, Primary and Secondary Dental Suppliers, On-Hand Quantity, Dispensing Unit (box, bottle, syringe, cassette), Category, and Operatory Location.</li>
+                                <li><strong>Color-Coded Status Dots</strong>: Green for adequate clinic stock, Orange for low-stock threshold alerts, and Red for urgent shortages or near-expiration items.</li>
+                                <li><strong>Multi-Supplier Catalogs</strong>: Group and filter instantly by leading dental brands including 3M ESPE, Hu-Friedy, NSK, Dentsply Sirona, Kerr, and GC America.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Batch &amp; Lot Number Tracking (FIFO)</h2>
+                            <h2>Integrated Denti AI Stock Assistant</h2>
                             <ul class="feature-list">
-                                <li><strong>Expiry Monitoring</strong>: Assign expiration dates to individual batches for dental bonding agents, anesthetics, and impression materials.</li>
-                                <li><strong>FIFO Usage</strong>: Enforce First-In-First-Out dispensing to eliminate expired stock waste in operatory drawers.</li>
-                                <li><strong>Purchase Pricing &amp; Memos</strong>: Track unit purchase costs and leave handover notes for clinic staff.</li>
+                                <li><strong>Hands-Free In-Operatory Querying</strong>: Ask Denti AI naturally while treating patients: <em>“How many boxes of 2% Lidocaine are left in Op 1?”</em> or <em>“We used 2 carpules of Septocaine in Operatory 3.”</em></li>
+                                <li><strong>Instant Function Execution &amp; Undo</strong>: Denti AI updates inventory numbers in real-time, displaying an <code>ActionResultCard</code> with an immediate <strong>[↩ Undo Last Action]</strong> safeguard if misspoken.</li>
+                                <li><strong>Zero PHI Guarantee</strong>: Denti AI interacts solely with material catalog codes and stock counts—never touching patient health records or diagnostic information.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Audit Trail &amp; Label Generation</h2>
+                            <h2>Batch &amp; Lot Expiry Tracking (FIFO)</h2>
                             <ul class="feature-list">
-                                <li><strong>Complete Stock History</strong>: Detailed timestamped logs of every increase, decrease, or return transaction with user identification.</li>
-                                <li><strong>Print QR / Barcode Labels</strong>: Generate printable labels compatible with A4 (2x5, 3x6, 4x8) and Avery (5160, 5163, 5167) sheet formats.</li>
-                                <li><strong>PDF Inventory Reports</strong>: Export comprehensive stock reports and valuations directly from the app.</li>
+                                <li><strong>Expiration Monitoring</strong>: Record manufacturer lot numbers and expiration dates for sensitive resins, adhesives, and hemostatic agents.</li>
+                                <li><strong>First-In, First-Out (FIFO) Dispensing</strong>: Prioritize older inventory batches to eliminate shelf expirations and costly material waste.</li>
+                                <li><strong>Purchase Pricing &amp; Handover Memos</strong>: Maintain contracted unit costs and leave operatory notes between dental assistants.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Audit History &amp; Barcode Label Printing</h2>
+                            <ul class="feature-list">
+                                <li><strong>Timestamped Transaction Audit</strong>: Every stock deduction, addition, or adjustment is permanently logged with the team member’s initials.</li>
+                                <li><strong>Custom Label Generation</strong>: Print durable QR and barcode labels formatted for standard A4 and Avery adhesive sheets (5160, 5163).</li>
                             </ul>
                         </div>
                     </div>
@@ -159,34 +111,43 @@
             <!-- To Order Section -->
             <section id="order" class="feature-section">
                 <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <div class="aura-badge" style="margin-bottom: 12px;">🛒 Automated Replenishment</div>
                     <h1>Automated <span class="gradient-text">Replenishment.</span></h1>
-                    <p class="hero-subtitle">Proactive shortage detection and streamlined doctor order approvals.</p>
+                    <p class="hero-subtitle">Proactive shortage detection, hands-free order queuing with Denti AI, and one-tap doctor approvals.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
                         <img src="assets/order_screen.png" alt="To Order Screen"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(97,82,250,0.15); border: 2px solid rgba(97,82,250,0.2);">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
-                            <h2>Automated Threshold Alerts</h2>
+                            <h2>Three-Stage Smart Ordering Pipeline</h2>
                             <ul class="feature-list">
-                                <li><strong>Zero Stockouts</strong>: When stock dips below your customized minimum threshold, items are automatically queued into the 'To Order' list.</li>
-                                <li><strong>Three-Stage Pipeline</strong>:
+                                <li><strong>Automated Threshold Detection</strong>: When stock dips below your customized minimum threshold, items automatically transition to the <strong>To Order</strong> queue.</li>
+                                <li><strong>Visual Status Indicators</strong>:
                                     <ul style="margin-top: 6px;">
-                                        <li><strong>Needs Order</strong> (Orange): Items awaiting order placement.</li>
-                                        <li><strong>Ordered</strong> (Green): Order submitted to dental supplier.</li>
-                                        <li><strong>Backordered</strong> (Red): Partially fulfilled or supplier-delayed shipments.</li>
+                                        <li><strong>Needs Order</strong> (Orange): Materials below par level requiring clinic reorder.</li>
+                                        <li><strong>Ordered</strong> (Green): Purchase submitted to supplier with expected delivery tracking.</li>
+                                        <li><strong>Backordered</strong> (Red): Supplier delays flagged immediately to plan operatory alternates.</li>
                                     </ul>
                                 </li>
+                                <li><strong>Duplicate Prevention</strong>: Prevents different operatory assistants from double-ordering identical materials during busy clinic hours.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Powered by Denti AI Assistant</h2>
+                            <ul class="feature-list">
+                                <li><strong>Search Bar ✨ Denti Button</strong>: Access clinical AI directly from the order search bar with one tap.</li>
+                                <li><strong>Conversational Reordering</strong>: Speak natural commands: <em>“Denti, add 3 boxes of bite registration and 2 boxes of dental mirrors to the order list.”</em></li>
+                                <li><strong>Backorder Audits</strong>: Ask <em>“Show all backordered items across our supply vendors”</em> for instant status breakdowns.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
                             <h2>Doctor Collaboration &amp; PDF Export</h2>
                             <ul class="feature-list">
-                                <li><strong>Email Order List to Doctor</strong>: Assistants can compile required orders and generate a clean PDF summary with one tap, opening the native iOS share sheet.</li>
-                                <li><strong>Grouped by Dental Supplier</strong>: Items are organized by company (Henry Schein, Patterson Dental, Benco, etc.) for rapid ordering.</li>
-                                <li><strong>Duplicate Prevention</strong>: Clear status tagging prevents multiple assistants from double-ordering the same material.</li>
+                                <li><strong>One-Tap Order Sheet Sharing</strong>: Export compiled purchase requisitions grouped by dental supplier (Henry Schein, Patterson, Benco) directly to the doctor via native iOS Share Sheet or Email.</li>
+                                <li><strong>Role Authorization Safeguard</strong>: Assistants can compile and stage reorders; only authenticated Doctor/Admin accounts can finalize and authorize supplier purchases.</li>
                             </ul>
                         </div>
                     </div>
@@ -196,28 +157,37 @@
             <!-- Scanner Section -->
             <section id="scan" class="feature-section">
                 <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <div class="aura-badge" style="margin-bottom: 12px;">📷 Optical Recognition</div>
                     <h1>Rapid <span class="gradient-text">Camera Scanner.</span></h1>
-                    <p class="hero-subtitle">High-speed barcode &amp; QR recognition designed for fast clinic inventory counts.</p>
+                    <p class="hero-subtitle">High-speed QR &amp; barcode scanning integrated with Denti AI for instantaneous operatory lookups.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
                         <img src="assets/scanner_screen.png" alt="Scanner Screen"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,122,255,0.15); border: 2px solid #E5E5EA;">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
-                            <h2>Instant Optical Recognition</h2>
+                            <h2>Universal Optical Code Recognition</h2>
                             <ul class="feature-list">
-                                <li><strong>Universal Format Support</strong>: Seamlessly decodes QR codes, Code 128, Code 39, EAN-13, and UPC dental manufacturer barcodes.</li>
-                                <li><strong>Low-Light Operatory Torch</strong>: Built-in flashlight toggle allows effortless scanning inside dark storage cabinets and under-counter shelves.</li>
-                                <li><strong>Direct Item Lookup</strong>: Automatically navigates to the item detail screen with full location and stock history upon scanning.</li>
+                                <li><strong>All Standard Formats</strong>: Instantly scans 2D QR codes, GS1 DataMatrix codes on dental packaging, UPC-A, EAN-13, and Code 128 barcodes.</li>
+                                <li><strong>One-Tap Scanning Initiation</strong>: Tap <strong>Start Scanning</strong> to launch the native camera viewfinder with automatic focus and haptic confirmation.</li>
+                                <li><strong>Low-Light Operatory Torch</strong>: Built-in flashlight toggle ensures reliable barcode detection inside dark supply room cabinets and beneath counters.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Configurable Quick Scan Actions</h2>
+                            <h2>Denti AI Scanner Integration</h2>
                             <ul class="feature-list">
-                                <li><strong>Rapid +/-1 Mode</strong>: Set scan action to automatically deduct (-1) when taking an item into an operatory, or add (+1) when unpacking shipments.</li>
-                                <li><strong>Scan Undo Safeguard</strong>: An immediate Undo button appears following every scan to protect against accidental double-scans.</li>
+                                <li><strong>Quick Denti Action Button</strong>: Tap the purple sparkle Denti AI button in the scanner header to run instant voice lookups.</li>
+                                <li><strong>Voice Assisted Scanning</strong>: Speak <em>“Scan and deduct 1 box for Chair 3”</em> to automatically adjust stock counts upon barcode detection without manual typing.</li>
+                                <li><strong>Accidental Scan Protection</strong>: Every scan provides an immediate floating Undo notification to revert accidental double-scans.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Rapid +/- 1 Operatory Mode</h2>
+                            <ul class="feature-list">
+                                <li><strong>Fast Checkout</strong>: Configure scan mode to automatically decrement (-1) when pulling supplies into an operatory, or increment (+1) when unpacking incoming shipments.</li>
+                                <li><strong>Direct Detail Navigation</strong>: Deep-link directly into item specifications, lot expiration dates, and supplier reorder buttons with a single scan.</li>
                             </ul>
                         </div>
                     </div>
@@ -227,29 +197,38 @@
             <!-- Receiving Section -->
             <section id="receiving" class="feature-section">
                 <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <div class="aura-badge" style="margin-bottom: 12px;">📦 Inbound Logistics</div>
                     <h1>Receiving &amp; <span class="gradient-text">Invoice Archive.</span></h1>
-                    <p class="hero-subtitle">Check in supplier deliveries and organize photographic invoice records by date.</p>
+                    <p class="hero-subtitle">Check in supplier deliveries, reconcile shipments with Denti AI, and file photographic invoices.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
                         <img src="assets/receiving_screen.png" alt="Receiving Screen"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(97,82,250,0.15); border: 2px solid rgba(97,82,250,0.2);">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
                             <h2>Delivery Check-In &amp; Reconciliation</h2>
                             <ul class="feature-list">
-                                <li><strong>Stock Check List</strong>: View all items currently pending delivery grouped by dental supplier.</li>
-                                <li><strong>One-Tap Quantity Receipt</strong>: Confirm full shipments or enter partial quantities for backordered items.</li>
-                                <li><strong>Automated Stock Updates</strong>: Receiving items automatically updates the inventory master list and records an audit log entry.</li>
+                                <li><strong>Supplier Grouped Receiving Queue</strong>: Review all pending shipments categorized by supplier (3M ESPE, NSK, Hu-Friedy, etc.) with real-time order date tags.</li>
+                                <li><strong>All / Ordered / Backorder Filter Tabs</strong>: Easily toggle between active incoming items and backordered supplier shortages with a single tap.</li>
+                                <li><strong>One-Tap Check-In</strong>: Tap any item radio circle to confirm receipt, instantly transferring quantities back into active operatory stock.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Photographic Invoice Management</h2>
+                            <h2>Denti AI Receiving Assistance</h2>
                             <ul class="feature-list">
-                                <li><strong>Snap Paper Invoices</strong>: Capture packing slips and invoices with your camera upon unpacking boxes.</li>
-                                <li><strong>Organized by Supplier &amp; Month</strong>: Invoices are automatically filed by supplier, year, and month for frictionless bookkeeper and accountant access.</li>
-                                <li><strong>Return Item Workflow</strong>: Swipe left to record supplier returns, capturing return reasons and generating credit records.</li>
+                                <li><strong>Search Bar ✨ Denti Button</strong>: Speak directly to the receiving assistant when unboxing deliveries with full hands.</li>
+                                <li><strong>Voice Receiving Dictation</strong>: <em>“Denti, received 4 boxes of Bite Registration from 3M and 6 bottles of NSK Handpiece Lubricant.”</em></li>
+                                <li><strong>Automated Stock Transfer</strong>: Denti AI updates quantities and marks order tickets as fulfilled simultaneously.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Photographic Invoice &amp; Slip Archive</h2>
+                            <ul class="feature-list">
+                                <li><strong>Snap Paper Invoices</strong>: Photograph delivery slips and supplier receipts directly upon unpacking boxes.</li>
+                                <li><strong>Organized by Supplier &amp; Billing Month</strong>: Invoices are automatically organized for bookkeeping and tax preparation.</li>
+                                <li><strong>Vendor Return Workflow</strong>: Swipe left to log supplier returns, record return reasons, and track credit memo balances.</li>
                             </ul>
                         </div>
                     </div>
@@ -261,28 +240,40 @@
                 <div class="page-header" style="background:transparent; padding-top: 0;">
                     <div class="aura-badge" style="background: #FEF3C7; color: #B45309; box-shadow: none; margin-bottom: 12px;">🔬 Clinical Compliance Module</div>
                     <h1>Sterilization &amp; <span class="gradient-text">Autoclave Logs.</span></h1>
-                    <p class="hero-subtitle">Digital compliance tracking, biological indicator test records, and instrument cycle monitoring.</p>
+                    <p class="hero-subtitle">Real-time compliance dashboard, autoclave cycle logging, and biological indicator spore test tracking.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
-                        <img src="assets/settings_screen.png" alt="Sterilization Tracking"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="assets/sterilization_screen.png" alt="Sterilization Compliance Screen"
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(235,82,179,0.18); border: 2px solid rgba(235,82,179,0.25);">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
-                            <h2>Digital Autoclave Cycle Logging</h2>
+                            <h2>Visual Compliance Overview Dashboard</h2>
                             <ul class="feature-list">
-                                <li><strong>Cycle Parameter Records</strong>: Record sterilizer unit ID, cycle date/time, load number, target temperature, and sterilization duration.</li>
-                                <li><strong>Biological Indicator (BI) Spore Tests</strong>: Log daily/weekly spore test vials with incubation start/end times and clear Pass/Fail readings.</li>
-                                <li><strong>Chemical Indicator Verification</strong>: Document Type 5/6 integrators inside cassettes and pouch loads for complete sterilization assurance.</li>
+                                <li><strong>Radial Compliance Gauge</strong>: Monitor your clinic’s overall sterilization compliance score (e.g., 66% Compliant) at a single glance.</li>
+                                <li><strong>Four Key Health Metrics</strong>:
+                                    <ul style="margin-top: 6px;">
+                                        <li><strong>Total Items</strong>: Total active instrument sets and surgical kits registered in the clinic.</li>
+                                        <li><strong>Compliant</strong>: Instruments within valid retention and sterilization shelf-life windows.</li>
+                                        <li><strong>Overdue</strong>: Urgent warning banner flagging instruments requiring immediate re-sterilization (e.g., Scaler Kit overdue).</li>
+                                        <li><strong>Due Soon</strong>: Proactive reminders for cassettes approaching sterilization expiration.</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Instrument Turnover &amp; Overdue Alerts</h2>
+                            <h2>Hands-Free Denti AI Cycle Logging</h2>
                             <ul class="feature-list">
-                                <li><strong>Cycle Turnaround Tracking</strong>: Set maximum shelf life or cycle frequency for sterilized instrument cassettes and surgical kits.</li>
-                                <li><strong>Overdue Warnings</strong>: Denti AI and visual indicators notify staff when instruments require re-sterilization prior to scheduled procedures.</li>
-                                <li><strong>Inspection-Ready Audit Export</strong>: Generate digital logs in PDF format ready to present to public health and dental regulatory inspectors.</li>
+                                <li><strong>Sterile Operatory Protocol</strong>: While wearing gloves in the sterilization bay, instruct Denti AI hands-free: <em>“Start autoclave cycle: Pouches, 30 min, 121°C, Autoclave 2.”</em></li>
+                                <li><strong>Automated Cycle Records</strong>: Denti AI records the load number, cycle type, target temperature, pressure psi, cycle duration, and operator initials.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Biological Indicator (BI) &amp; Chemical Monitoring</h2>
+                            <ul class="feature-list">
+                                <li><strong>Weekly Spore Testing Logs</strong>: Log mandatory biological indicator vial incubation start times and document clear Pass/Fail readings.</li>
+                                <li><strong>Audit-Ready PDF Export</strong>: Generate digital sterilization log reports ready to present to dental board inspectors and public health audits.</li>
                             </ul>
                         </div>
                     </div>
@@ -292,36 +283,43 @@
             <!-- Settings & Roles Section -->
             <section id="settings" class="feature-section">
                 <div class="page-header" style="background:transparent; padding-top: 0;">
+                    <div class="aura-badge" style="margin-bottom: 12px;">⚙️ Clinic Security &amp; Admin</div>
                     <h1>Practice Settings &amp; <span class="gradient-text">Security Roles.</span></h1>
-                    <p class="hero-subtitle">Role-based clinic permissions, multi-device team syncing, and annual archives.</p>
+                    <p class="hero-subtitle">Role-based user access, team management, subscription controls, and in-app account deletion.</p>
                 </div>
                 <div class="detail-layout">
                     <div class="detail-phone-wrapper">
-                        <img src="assets/settings_screen.png" alt="Settings Screen"
-                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="assets/settings_screen.png" alt="Settings & Roles Screen"
+                            style="width: 100%; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); border: 2px solid #E5E5EA;">
                     </div>
                     <div class="detail-text">
                         <div class="detail-block">
                             <h2>Role-Based Access Control (RBAC)</h2>
                             <ul class="feature-list">
-                                <li><strong>Doctor / Owner Role</strong>: Full administrative privileges, item pricing &amp; inventory valuation, supplier deletion, and order confirmation.</li>
-                                <li><strong>Assistant / Staff Role</strong>: Operatory usage recording, delivery check-ins, To Order queuing, notes, and sterilization logging.</li>
-                                <li><strong>Clinic Code Sharing</strong>: Invite team members securely via unique 6-character clinic pairing codes.</li>
+                                <li><strong>Owner / Doctor Account</strong>: Full administrative authority, manage team access, approve supply purchase budgets, and control billing.</li>
+                                <li><strong>Dental Assistant / Staff Permissions</strong>: Day-to-day operatory stock deductions, order staging, delivery check-ins, and sterilization cycle logging.</li>
+                                <li><strong>Manage Team Portal</strong>: Easily invite clinical assistants and dental hygienists via secure multi-device pairing.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-block">
+                            <h2>Denti AI Safety Guardrails</h2>
+                            <ul class="feature-list">
+                                <li><strong>Permission-Gated AI Functions</strong>: When assistants instruct Denti AI, destructive actions (permanent catalog deletions, supplier rate changes) are blocked by security guardrails.</li>
+                                <li><strong>Doctor Override</strong>: Only verified Doctor/Owner accounts can authorize supplier removals or clinic data resets.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
                             <h2>Annual Archive &amp; Year-End Reset</h2>
                             <ul class="feature-list">
-                                <li><strong>Permanent Audit Records</strong>: Archive all historical stock movements, memos, and invoice logs into encrypted annual PDF archives.</li>
-                                <li><strong>Clean Slate for New Year</strong>: Archive previous year records while preserving active inventory quantities and supplier catalogues.</li>
-                                <li><strong>Automated Reminder</strong>: System notification prompts staff to perform the annual archive on January 1st.</li>
+                                <li><strong>Annual Archive</strong>: Encrypt and archive historical audit logs, past memos, and invoices at year-end with one tap.</li>
+                                <li><strong>Clean Operational Slate</strong>: Retain live inventory catalogues while preserving complete historical records for clinic accountants.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h2>Bulk CSV Import &amp; Self-Service Deletion</h2>
+                            <h2>In-App Account Deletion (Apple Guideline 5.1.1(v))</h2>
                             <ul class="feature-list">
-                                <li><strong>CSV Template Import</strong>: Bulk upload existing clinic inventory spreadsheets with built-in format verification.</li>
-                                <li><strong>Self-Service Account Deletion (Guideline 5.1.1(v))</strong>: Users can permanently delete their account and associated cloud data directly within the app under Settings.</li>
+                                <li><strong>Direct Self-Service Deletion</strong>: In full compliance with App Store review guidelines, users can initiate permanent clinic account deletion directly within the app under Settings.</li>
+                                <li><strong>Complete Data Erasure</strong>: Production databases are permanently purged within 30 days, and encrypted backups overwritten within 90 days.</li>
                             </ul>
                         </div>
                     </div>
@@ -335,20 +333,21 @@
         <div class="container footer-content">
             <div id="download" class="footer-cta">
                 <h2>Ready to streamline your dental practice?</h2>
-                <a href="#" class="btn btn-white">Download PureStock on App Store</a>
+                <a href="index.html#download" class="btn btn-white">Download PureStock on App Store</a>
             </div>
             <div class="footer-links">
                 <p>
+                    <a href="features.html" style="color: #86868B; margin-right: 24px;">Features</a>
                     <a href="terms.html" style="color: #86868B; margin-right: 24px;">Terms of Service</a>
                     <a href="privacy.html" style="color: #86868B; margin-right: 24px;">Privacy Policy</a>
                     <a href="support.html" style="color: #86868B;">Support</a>
                 </p>
-                <p style="margin-top: 16px;">&copy; 2026 Pureum Software. All rights reserved.</p>
+                <p style="margin-top: 16px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=2.6"></script>
+    <script src="script.js?v=2.7"></script>
 </body>
 
 </html>
