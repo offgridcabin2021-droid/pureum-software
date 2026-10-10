@@ -657,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         let tabParam = urlParams.get('tab');
         if (tabParam === 'scanner') tabParam = 'scan';
-        if (tabParam === 'ai' || tabParam === 'denti-ai') tabParam = 'inventory';
+        if (tabParam === 'ai' || tabParam === 'pure-ai' || tabParam === 'pureai') tabParam = 'inventory';
         if (tabParam) {
             const targetNav = document.querySelector(`.feature-nav-item[data-target="${tabParam}"]`);
             if (targetNav) {

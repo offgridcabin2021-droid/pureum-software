@@ -26,7 +26,7 @@
 
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Denti AI & Aura Tokens */
+    /* PureAI & Aura Tokens */
     --aura-gradient: linear-gradient(135deg, #6152FA 0%, #9D4EDD 50%, #EB52B3 100%);
     --aura-glow: 0 10px 30px rgba(97, 82, 250, 0.28);
     --green-success: #34C759;
@@ -1245,7 +1245,7 @@ body {
 }
 
 /* ==========================================================================
-   Denti AI & PureStock 2.0 Modern Design System Extensions
+   PureAI & PureStock 2.0 Modern Design System Extensions
    ========================================================================== */
 
 /* Aura Gradient Elements */
@@ -1291,7 +1291,7 @@ body {
     color: white;
 }
 
-/* Denti AI Spotlight Section */
+/* PureAI Spotlight Section */
 .denti-spotlight {
     position: relative;
     padding: 100px 0;
@@ -1348,7 +1348,7 @@ body {
     margin-bottom: 28px;
 }
 
-/* Feature Pillars in Denti AI */
+/* Feature Pillars in PureAI */
 .denti-pillars {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1386,7 +1386,7 @@ body {
     line-height: 1.45;
 }
 
-/* Interactive Denti Mockup Sheet */
+/* Interactive PureAI Mockup Sheet */
 .denti-interactive-mockup {
     background: #FFFFFF;
     border-radius: 28px;
@@ -1945,7 +1945,7 @@ body {
 }
 
 /* ==========================================================================
-   REFINED DENTI AI SHOWCASE & CARDS
+   REFINED PUREAI SHOWCASE & CARDS
    ========================================================================== */
 .denti-feature-card {
     background: rgba(255, 255, 255, 0.9);
