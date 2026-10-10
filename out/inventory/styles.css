@@ -1871,19 +1871,25 @@ body {
 .iphone-frame {
     position: relative;
     width: 100%;
-    max-width: 310px;
-    background: transparent;
-    border-radius: 28px;
-    padding: 0;
-    border: none;
-    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.08);
+    max-width: 316px;
+    background: #1C1C1E;
+    border-radius: 42px;
+    padding: 7px;
+    border: 1.5px solid #38383A;
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.3),
+        0 24px 50px -10px rgba(0, 0, 0, 0.25),
+        0 8px 18px -4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     margin: 0 auto;
 }
 
 .iphone-frame:hover {
     transform: translateY(-4px);
-    box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.16), 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.3),
+        0 32px 64px -12px rgba(0, 0, 0, 0.32),
+        0 12px 24px -4px rgba(0, 0, 0, 0.14);
 }
 
 .iphone-island {
@@ -1892,10 +1898,9 @@ body {
 
 .iphone-screen {
     position: relative;
-    border-radius: 28px;
+    border-radius: 35px;
     overflow: hidden;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #000000;
     display: flex;
     width: 100%;
 }
@@ -1905,7 +1910,7 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
-    border-radius: 27px;
+    border-radius: 35px;
 }
 
 .floating-glass-pill {
