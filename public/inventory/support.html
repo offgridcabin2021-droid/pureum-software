@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Inventory App</title>
-    <meta name="description" content="Get help with Inventory App - Contact us and browse frequently asked questions">
+    <title>Support &amp; FAQ - PureStock Dental Inventory</title>
+    <meta name="description" content="PureStock Dental Inventory support, FAQs, Denti AI voice commands guide, sterilization tracking, and subscription assistance.">
 
     <!-- Google Fonts: Inter covering multiple weights -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=2.4">
+    <link rel="stylesheet" href="styles.css?v=2.6">
     <style>
         .support-page {
             padding-top: 120px;
@@ -29,11 +28,11 @@
 
         .support-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .support-header h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 700;
             margin-bottom: 16px;
             letter-spacing: -1px;
@@ -41,27 +40,32 @@
 
         .support-header p {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            max-width: 620px;
+            margin: 0 auto;
         }
 
         /* Contact Section */
         .contact-section {
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #9D4EDD 100%);
             border-radius: 24px;
             padding: 48px;
             color: white;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 56px;
+            box-shadow: 0 16px 36px rgba(0, 122, 255, 0.2);
         }
 
         .contact-section h2 {
-            font-size: 1.75rem;
-            margin-bottom: 16px;
+            font-size: 1.85rem;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .contact-section p {
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 24px;
+            font-size: 1.05rem;
         }
 
         .contact-email {
@@ -69,23 +73,26 @@
             align-items: center;
             gap: 12px;
             background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
             padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 1.25rem;
+            border-radius: 999px;
+            font-size: 1.15rem;
             font-weight: 600;
             color: white;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .contact-email:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.32);
+            transform: translateY(-2px);
         }
 
         .response-time {
-            margin-top: 20px;
+            margin-top: 18px;
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         /* FAQ Section */
@@ -94,10 +101,11 @@
         }
 
         .faq-section h2 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
             text-align: center;
+            letter-spacing: -0.6px;
         }
 
         .faq-category {
@@ -105,12 +113,15 @@
         }
 
         .faq-category h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 16px;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #E5E5EA;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .faq-item {
@@ -118,7 +129,13 @@
             border-radius: 16px;
             margin-bottom: 12px;
             box-shadow: var(--shadow-sm);
+            border: 1px solid #ECECF0;
             overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item.active {
+            border-color: #007AFF;
         }
 
         .faq-question {
@@ -127,7 +144,7 @@
             background: none;
             border: none;
             text-align: left;
-            font-size: 1rem;
+            font-size: 1.02rem;
             font-weight: 600;
             color: var(--text-primary);
             cursor: pointer;
@@ -148,7 +165,7 @@
 
         .faq-question svg {
             flex-shrink: 0;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
         .faq-item.active .faq-question svg {
@@ -158,26 +175,35 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.35s ease;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 600px;
         }
 
         .faq-answer-content {
-            padding: 0 24px 20px;
+            padding: 0 24px 22px;
             color: var(--text-secondary);
             line-height: 1.7;
+            font-size: 0.96rem;
         }
 
         .faq-answer-content ul {
             padding-left: 20px;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .faq-answer-content li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+        }
+
+        .faq-answer-content code {
+            background: #F2F2F7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #1D1D1F;
         }
 
         /* Back Link */
@@ -187,13 +213,13 @@
             gap: 8px;
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 32px;
+            font-weight: 600;
+            margin-bottom: 28px;
             transition: opacity 0.2s;
         }
 
         .back-link:hover {
-            opacity: 0.7;
+            opacity: 0.75;
         }
 
         /* Additional Help */
@@ -203,11 +229,13 @@
             padding: 40px;
             text-align: center;
             box-shadow: var(--shadow-sm);
+            border: 1px solid #ECECF0;
         }
 
         .additional-help h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .additional-help p {
@@ -228,8 +256,9 @@
             border-radius: 12px;
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: background 0.2s;
+            font-size: 0.95rem;
         }
 
         .help-link:hover {
@@ -242,7 +271,7 @@
             }
 
             .contact-section {
-                padding: 32px 24px;
+                padding: 32px 20px;
             }
 
             .contact-email {
@@ -263,14 +292,16 @@
     <!-- Navigation -->
     <nav class="navbar glass">
         <div class="container nav-container">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;"><img
-                    src="assets/logo.jpg" alt="Inventory Logo"
-                    style="height: 36px; width: auto; border-radius: 8px;"><span
-                    style="font-weight: 600; font-size: 18px;">PureStock</span></a>
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="assets/logo.jpg" alt="PureStock Logo" style="height: 36px; width: auto; border-radius: 8px;">
+                <span style="font-weight: 700; font-size: 19px; letter-spacing: -0.3px;">PureStock</span>
+            </a>
             <div class="nav-links">
                 <a href="features.html">Features</a>
+                <a href="index.html#denti-ai">Denti AI</a>
+                <a href="index.html#pricing">Pricing</a>
                 <a href="index.html#workflow">Workflow</a>
-                <a href="support.html" style="color: var(--primary-color);">Support</a>
+                <a href="support.html" style="color: var(--primary-color); font-weight: 600;">Support</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
@@ -289,18 +320,18 @@
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
-                Back to Home
+                Back to PureStock Home
             </a>
 
             <div class="support-header">
-                <h1>How can we help?</h1>
-                <p>Get in touch with our support team or find answers in our FAQ</p>
+                <h1>How can we help your dental practice?</h1>
+                <p>Get in touch with our clinic support team or find instant answers to common questions about PureStock and Denti AI.</p>
             </div>
 
             <!-- Contact Section -->
             <div class="contact-section">
-                <h2>Contact Us</h2>
-                <p>Have a question or need help? We're here for you.</p>
+                <h2>Contact PureStock Support</h2>
+                <p>Have an inquiry about your practice account, Denti AI setup, or billing?</p>
                 <a href="mailto:support@pureum.dev" class="contact-email">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -308,265 +339,239 @@
                     </svg>
                     support@pureum.dev
                 </a>
-                <p class="response-time">We typically respond within 24-48 hours</p>
+                <p class="response-time">We typically respond within 24–48 business hours</p>
             </div>
 
             <!-- FAQ Section -->
             <div class="faq-section">
                 <h2>Frequently Asked Questions</h2>
 
-                <!-- Account & Login -->
+                <!-- Denti AI Voice & Assistant -->
                 <div class="faq-category">
-                    <h3>🔐 Account & Login</h3>
+                    <h3>✨ Denti AI Voice Assistant</h3>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">How do I create an account?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">What is Denti AI and how does it help in the operatory?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                You can create an account using your email, Google Sign-In, or Apple Sign-In. Simply
-                                download the app and tap "Sign Up" on the login screen. Follow the prompts to complete
-                                your registration.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">I forgot my password. How do I reset it?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                On the login screen, tap "Forgot Password" and enter your email address. You'll receive
-                                a password reset link within a few minutes. If you signed up with Google or Apple, use
-                                those services to sign in instead.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Why can't I sign in with a different method?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <strong>Important:</strong> You must use the same sign-in method you originally
-                                registered with. Even if you use the same email address, each sign-in method creates a
-                                separate account:
+                                <strong>Denti AI</strong> is PureStock’s native voice and text clinical assistant designed specifically for dental teams. In the middle of patient procedures when wearing gloves, clinicians can simply speak natural requests such as:
                                 <ul>
-                                    <li>Signed up with <strong>Google</strong> → Must sign in with Google</li>
-                                    <li>Signed up with <strong>Apple</strong> → Must sign in with Apple</li>
-                                    <li>Signed up with <strong>Email/Password</strong> → Must sign in with
-                                        Email/Password</li>
+                                    <li><em>"Used 2 carpules of Lidocaine in Op 2"</em></li>
+                                    <li><em>"Add 3 boxes of size 2 barrier sleeves to the order list"</em></li>
+                                    <li><em>"Check if we have enough flowable composite A2 in stock"</em></li>
+                                    <li><em>"Start an autoclave cycle: Pouches, 30 min, 121°C"</em></li>
                                 </ul>
-                                <strong>Tip:</strong> If you can't remember which method you used, try each one. Your
-                                inventory data is tied to the sign-in method you originally chose.
+                                Denti AI interprets the intent and securely calls native in-app functions to update inventory, create orders, or start cycle timers hands-free.
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">How do I delete my account?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How does the Undo feature work if Denti AI mishears an instruction?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Go to Settings &gt; Delete Account within the app. Alternatively, email us at
-                                support@pureum.dev to request account deletion. Your data will be permanently deleted
-                                within 30 days of the request.
+                                In full alignment with Apple App Store Guidelines 1.2 &amp; 2.1, every action initiated by Denti AI displays an interactive <strong>Action Result Card (<code>ActionResultCard</code>)</strong> with a prominent <strong>[↩ Undo Last Action]</strong> button. If background dental noise caused a transcription inaccuracy or wrong quantity, tap <strong>Undo</strong> to instantly roll back the database transaction.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Does Denti AI collect or store patient health information (PHI)?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>No. PureStock enforces a strict Zero PHI Policy.</strong> PureStock is an administrative supply management and sterilization tracking application, NOT an Electronic Health Record (EHR) or diagnostic tool. Denti AI only processes dental material SKUs, quantities, and equipment cycles. Patient names, chart numbers, and treatment records are never requested, processed, or stored.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Are there role-based safety guardrails for dental assistants?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes. PureStock separates team responsibilities into <strong>Doctor / Clinic Admin</strong> and <strong>Dental Assistant / Staff</strong> roles. While staff can decrement inventory, request orders, and log sterilization runs, high-impact actions (such as permanent item deletions, vendor contract rate modifications, and staff role promotions) are blocked by Denti AI guardrails unless authenticated by a Doctor.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Features & Usage -->
+                <!-- Subscriptions & Free Trial -->
                 <div class="faq-category">
-                    <h3>📱 Features & Usage</h3>
+                    <h3>💳 Subscriptions &amp; Apple In-App Billing</h3>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">How do I scan barcodes?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How does the 7-day free trial work?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Navigate to the Scanner tab and point your camera at a barcode. The app will
-                                automatically detect and scan 1D and 2D barcodes. Make sure to allow camera access when
-                                prompted.
+                                Eligible new subscribers receive 7 days of complimentary, full-featured access to PureStock. You will not be charged during the trial period. If you decide not to continue, simply cancel at least 24 hours before the 7-day trial ends to avoid being billed.
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">How do low-stock alerts work?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">What are the subscription plans and pricing?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                When you add or edit an item, you can set a minimum stock threshold. When the quantity
-                                falls below this level, the item will be highlighted in red and appear in the "To Order"
-                                tab automatically.
+                                PureStock offers two straightforward auto-renewable subscription tiers via the Apple App Store:
+                                <ul>
+                                    <li><strong>Standard Tier:</strong> $19.99 USD / month (or $189.99 USD / year). Includes real-time multi-device cloud sync, barcode/QR scanner, order tracking, invoice archiving, and core Denti AI commands.</li>
+                                    <li><strong>Premium Tier:</strong> $29.99 USD / month (or $289.99 USD / year). Includes all Standard features plus unlimited Denti AI assistant actions, complete Autoclave Sterilization &amp; Biological Indicator (BI) logs, multi-operatory permission controls, and audit trails.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">Can I export my inventory data?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How do I cancel or change my subscription?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Yes! Go to Settings > Export Data. You can export your inventory in CSV or PDF format.
-                                The export includes all item details, quantities, and categories.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How do I import inventory from a spreadsheet?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Go to Settings > Import Data and select your CSV file. Make sure your CSV follows our
-                                template format. You can download the CSV template from the same screen. Pro tip: Use AI
-                                tools to check your CSV format before importing!
+                                Subscriptions are managed directly through Apple StoreKit. You can manage or cancel your subscription at any time using your iOS device:
+                                <ol style="padding-left: 20px; margin-top: 8px;">
+                                    <li>Open the <strong>Settings</strong> app on your iPhone or iPad.</li>
+                                    <li>Tap your <strong>Apple Account name</strong> at the top.</li>
+                                    <li>Tap <strong>Subscriptions</strong>.</li>
+                                    <li>Select <strong>PureStock</strong> and tap <strong>Cancel Subscription</strong>.</li>
+                                </ol>
+                                Once canceled, you will continue to have access until the end of your current billing or trial period.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Data & Sync -->
+                <!-- Sterilization & Autoclaves -->
                 <div class="faq-category">
-                    <h3>☁️ Data & Sync</h3>
+                    <h3>🧼 Sterilization &amp; Autoclave Tracking</h3>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">Is my data synced across devices?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How do I record autoclave cycles?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Yes! When you sign in with your account, your inventory data is automatically synced
-                                across all your devices in real-time. Any changes you make on one device will appear on
-                                others within seconds.
+                                Tap the <strong>Sterilization</strong> tab or tell Denti AI to start a cycle. Choose your autoclave unit, cycle program (e.g., Pouches, Wrapped Cassettes, Unwrapped, Liquid), and enter temperature, pressure (psi), cycle duration, and operator initials. PureStock maintains an audit-ready log for dental board and health authority inspections.
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">My data isn't syncing. What should I do?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">Can I track weekly biological spore tests (BI)?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Try these steps:
-                                <ul>
-                                    <li>Check your internet connection</li>
-                                    <li>Pull down to refresh the inventory list</li>
-                                    <li>Sign out and sign back in</li>
-                                    <li>Force close and reopen the app</li>
-                                </ul>
-                                If the problem persists, contact us at support@pureum.dev.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Is my data backed up?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Yes, your data is stored securely in the cloud and backed up regularly. We use Firebase,
-                                a Google Cloud platform, with industry-standard encryption and security measures. We
-                                recommend also exporting your data periodically for your own records.
+                                Yes. PureStock includes a dedicated Biological Indicator (BI) section where staff can record weekly spore test incubation start times, results (Pass/Negative or Fail/Positive), and automatic reminders when a scheduled test is due.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Troubleshooting -->
+                <!-- Account & In-App Deletion -->
                 <div class="faq-category">
-                    <h3>🔧 Troubleshooting</h3>
+                    <h3>🔐 Account &amp; In-App Deletion</h3>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">The app keeps crashing. What should I do?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How do I permanently delete my account and practice data?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Try these solutions:
+                                In accordance with Apple App Store Guideline 5.1.1(v), PureStock provides a direct in-app account deletion mechanism:
                                 <ul>
-                                    <li>Make sure you have the latest version of the app</li>
-                                    <li>Restart your device</li>
-                                    <li>Delete and reinstall the app (your data is saved in the cloud)</li>
+                                    <li>Open PureStock and tap <code>Settings &gt; Account Deletion</code>.</li>
+                                    <li>Review the confirmation dialog and confirm deletion.</li>
+                                    <li>All active inventory items, operatory logs, invoice records, and sterilization cycles are permanently removed from production servers within 30 days. Encrypted backups are completely purged within 90 days.</li>
                                 </ul>
-                                If crashes continue, email us with details about when the crash occurs.
+                                Alternatively, you can contact <a href="mailto:support@pureum.dev">support@pureum.dev</a> with your registered email to request manual account termination.
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="faq-question-text">Camera/scanner isn't working</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <span class="faq-question-text">How do multiple clinic devices sync inventory?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Make sure you've granted camera permission to the app. Go to your device Settings >
-                                Privacy > Camera and ensure Inventory is enabled. If the issue persists, try restarting
-                                the app.
+                                PureStock synchronizes in real time across all authenticated iOS devices in your dental clinic using secure Firebase Cloud Firestore with AES-256 encryption. Changes made in Operatory 1 immediately appear on front desk iPads and supply room devices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barcode & Inventory Management -->
+                <div class="faq-category">
+                    <h3>📦 Scanner &amp; Inventory Management</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Which barcodes are supported?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                PureStock supports all standard 1D linear barcodes (UPC-A, EAN-13, Code 128, Code 39) as well as 2D QR codes and GS1 DataMatrix codes commonly printed on dental packaging and manufacturer lots.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Can I import and export my inventory via CSV?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes. Go to <code>Settings &gt; Data Management</code> to export your complete inventory into CSV or printable PDF format. You can also import initial inventory catalogues via CSV using our pre-formatted spreadsheet template.
                             </div>
                         </div>
                     </div>
@@ -576,9 +581,10 @@
             <!-- Additional Help -->
             <div class="additional-help">
                 <h3>Still need help?</h3>
-                <p>Check out these resources or contact our support team directly.</p>
+                <p>Explore our deep-dive module guides or review our legal documentation.</p>
                 <div class="help-links">
-                    <a href="features.html" class="help-link">Features Guide</a>
+                    <a href="features.html" class="help-link">Features Deep Dive</a>
+                    <a href="index.html#pricing" class="help-link">Subscription Pricing</a>
                     <a href="terms.html" class="help-link">Terms of Service</a>
                     <a href="privacy.html" class="help-link">Privacy Policy</a>
                 </div>
@@ -590,21 +596,22 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-cta">
-                <h2>Ready to organize your practice?</h2>
-                <a href="#" class="btn btn-white">Download for iOS</a>
+                <h2>Ready to streamline your dental practice?</h2>
+                <a href="index.html#download" class="btn btn-white">Download for iOS</a>
             </div>
             <div class="footer-links">
                 <p>
-                    <a href="terms.html" style="color: #86868B; margin-right: 24px;">Terms of Service</a>
-                    <a href="privacy.html" style="color: #86868B; margin-right: 24px;">Privacy Policy</a>
+                    <a href="features.html" style="color: #86868B; margin-right: 20px;">Features</a>
+                    <a href="terms.html" style="color: #86868B; margin-right: 20px;">Terms of Service</a>
+                    <a href="privacy.html" style="color: #86868B; margin-right: 20px;">Privacy Policy</a>
                     <a href="support.html" style="color: #86868B;">Support</a>
                 </p>
-                <p style="margin-top: 16px;">&copy; 2026 Inventory App. All rights reserved.</p>
+                <p style="margin-top: 16px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=2.5"></script>
+    <script src="script.js?v=2.6"></script>
     <script>
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {

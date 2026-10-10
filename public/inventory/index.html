@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory - Smart Dental Inventory Management</title>
+    <title>PureStock - Dental Inventory & Sterilization Manager</title>
     <meta name="description"
-        content="Streamline your dental practice inventory with smart tracking, one-tap ordering, and instant scanning.">
+        content="PureStock & Denti AI modernize your dental practice. Track clinical supplies, automate reorders, log sterilization cycles, and prevent expired stock in real time.">
 
     <!-- Google Fonts: Inter covering multiple weights -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=2.4">
+    <link rel="stylesheet" href="styles.css?v=2.6">
 </head>
 
 <body>
@@ -22,20 +22,26 @@
     <!-- Navigation -->
     <nav class="navbar glass">
         <div class="container nav-container">
-            <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;"><img src="assets/logo.jpg"
-                    alt="Inventory Logo" style="height: 36px; width: auto; border-radius: 8px;"><span
-                    style="font-weight: 600; font-size: 18px;">PureStock</span></a>
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="assets/logo.jpg" alt="PureStock Logo" style="height: 36px; width: auto; border-radius: 8px;">
+                <span style="font-weight: 700; font-size: 19px; letter-spacing: -0.3px;">PureStock</span>
+            </a>
             <div class="nav-links">
                 <a href="features.html">Features</a>
+                <a href="#denti-ai">Denti AI</a>
+                <a href="#modules">Modules</a>
                 <a href="#workflow">Workflow</a>
+                <a href="#pricing">Pricing</a>
                 <a href="support.html">Support</a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <a href="#download" class="btn btn-primary" style="padding: 9px 18px; font-size: 0.88rem;">App Store</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -43,82 +49,120 @@
     <header class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="badge">Version 2.0 Available Now</div>
-                <h1>Inventory management <br><span class="gradient-text">reimagined.</span></h1>
-                <p class="hero-subtitle">Effortlessly track your dental inventory with real-time insights, AI‑powered
-                    scanning, instant low‑stock alerts, and one‑tap reordering—all in a sleek, secure platform.</p>
-                <div class="hero-actions">
-                    <a href="#" class="btn btn-primary">Download App</a>
+                <div class="badge" style="display: inline-flex; align-items: center; gap: 6px;">
+                    <span style="color: #6152FA;">✨</span> PureStock 2.0 with Denti AI
                 </div>
-                <div class="trust-badges">
-                    <span>Trusted by top clinics</span>
-                    <!-- Placeholder for trust icons if needed -->
+                <h1>Dental inventory &amp; compliance <br><span class="aura-gradient-text">reimagined with AI.</span></h1>
+                <p class="hero-subtitle">Say goodbye to mid-procedure stockouts, expired composite materials, and messy paper clipboards. PureStock puts complete control of your dental consumables, autoclave sterilization tracking, and intelligent replenishment right on your iPhone.</p>
+                
+                <div class="hero-actions" style="display: flex; gap: 14px; flex-wrap: wrap;">
+                    <a href="#download" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.73-.95 2.76.99.08 2.05-.51 2.67-1.26z"/>
+                        </svg>
+                        Download on App Store
+                    </a>
+                    <a href="#denti-ai" class="btn btn-secondary" style="border: 1px solid rgba(0,0,0,0.12); padding: 12px 20px;">
+                        Explore Denti AI ✨
+                    </a>
+                </div>
+                
+                <div class="trust-badges" style="margin-top: 24px; display: flex; align-items: center; gap: 16px; font-size: 0.88rem; color: var(--text-secondary);">
+                    <span>✓ 7-Day Free Trial</span>
+                    <span>•</span>
+                    <span>✓ Zero PHI / HIPAA-Safe</span>
+                    <span>•</span>
+                    <span>✓ Multi-Device Cloud Sync</span>
                 </div>
             </div>
 
             <div class="hero-visual">
-                <!-- Abstract representation of the app interface -->
-                <div class="app-mockup glass-panel float-animation">
+                <!-- Interactive PureStock App Mockup -->
+                <div class="app-mockup glass-panel float-animation" style="position: relative;">
                     <div class="mockup-header">
-                        <h2>Inventory</h2>
-                        <div class="mockup-search">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                            <span>Search items or type 'low'...</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h2 style="font-size: 1.3rem; font-weight: 800; margin: 0;">Inventory</h2>
+                            <span style="font-size: 0.75rem; background: #EEF2FF; color: #4F46E5; padding: 3px 10px; border-radius: 999px; font-weight: 700;">Operatory Active</span>
                         </div>
-                        <div class="mockup-tags">
-                            <span class="tag active">All</span>
-                            <span class="tag">3M</span>
-                            <span class="tag">3M ESPE</span>
-                            <span class="tag">Bausch</span>
+                        
+                        <!-- Search Bar with Denti Button -->
+                        <div class="mockup-search" style="display: flex; align-items: center; justify-content: space-between; background: #F3F4F6; padding: 8px 14px; border-radius: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                <span style="font-size: 0.85rem; color: #6B7280;">Search items or type 'low'...</span>
+                            </div>
+                            <span class="aura-badge" style="padding: 3px 10px; font-size: 0.75rem; cursor: pointer;">✨ Denti</span>
+                        </div>
+
+                        <div class="mockup-tags" style="margin-top: 10px;">
+                            <span class="tag active">All Items</span>
+                            <span class="tag">Anesthetics</span>
+                            <span class="tag">Restorative</span>
+                            <span class="tag">PPE</span>
                         </div>
                     </div>
-                    <div class="mockup-list">
-                        <!-- Item 1 -->
+
+                    <div class="mockup-list" style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;">
+                        <!-- Item 1: Normal In-Stock -->
                         <div class="mockup-item">
-                            <div class="item-icon blue-gradient"></div>
+                            <div class="item-icon blue-gradient" style="display: flex; align-items: center; justify-content: center; color: white; font-size: 0.75rem; font-weight: 700;">SN</div>
                             <div class="item-details">
                                 <div class="item-name">Surgical Needles 27G</div>
-                                <div class="item-brand">Terumo</div>
+                                <div class="item-brand">Terumo • Cabinet B (Op 1)</div>
                             </div>
                             <div class="item-stat">
-                                <span class="stat-value">100</span>
+                                <span class="stat-value" style="color: #10B981; font-weight: 700;">100</span>
                                 <span class="stat-unit">box</span>
                             </div>
                         </div>
-                        <!-- Item 2 -->
+
+                        <!-- Item 2: Normal In-Stock -->
                         <div class="mockup-item">
-                            <div class="item-icon blue-gradient"></div>
+                            <div class="item-icon blue-gradient" style="display: flex; align-items: center; justify-content: center; color: white; font-size: 0.75rem; font-weight: 700;">MB</div>
                             <div class="item-details">
                                 <div class="item-name">Microbrush Fine</div>
-                                <div class="item-brand">Microbrush</div>
+                                <div class="item-brand">Microbrush • Dispensing Rm</div>
                             </div>
                             <div class="item-stat">
-                                <span class="stat-value">400</span>
-                                <span class="stat-unit">box</span>
+                                <span class="stat-value" style="color: #10B981; font-weight: 700;">400</span>
+                                <span class="stat-unit">pack</span>
                             </div>
                         </div>
-                        <!-- Item 3 Low Stock -->
-                        <div class="mockup-item">
+
+                        <!-- Item 3: Low Stock Alert -->
+                        <div class="mockup-item" style="border: 1px solid rgba(245, 158, 11, 0.3); background: rgba(254, 243, 199, 0.4);">
                             <div class="item-icon alert-gradient">
-                                <div class="alert-dot"></div>
+                                <div class="alert-dot" style="background: #F59E0B;"></div>
                             </div>
                             <div class="item-details">
-                                <div class="item-name">Handpiece Lubricant</div>
-                                <div class="item-brand">NSK</div>
+                                <div class="item-name" style="font-weight: 700;">Lidocaine 2% 1:100k</div>
+                                <div class="item-brand" style="color: #D97706; font-weight: 600;">⚠️ 4 left • Threshold is 6 (Needs Order)</div>
                             </div>
-                            <div class="item-stat alert-bg">
-                                <span class="stat-value alert-text">6</span>
-                                <span class="stat-unit alert-text">bottle</span>
+                            <div class="item-stat alert-bg" style="background: #FEF3C7;">
+                                <span class="stat-value alert-text" style="color: #B45309;">4</span>
+                                <span class="stat-unit alert-text" style="color: #B45309;">box</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Expiry Tracking Item -->
+                        <div class="mockup-item" style="border: 1px solid rgba(239, 68, 68, 0.2); background: rgba(254, 242, 242, 0.4);">
+                            <div class="item-icon" style="background: #EF4444; border-radius: 8px;"></div>
+                            <div class="item-details">
+                                <div class="item-name">Filtek Supreme Composite</div>
+                                <div class="item-brand" style="color: #DC2626;">Lot #4882 • Expires in 14 days</div>
+                            </div>
+                            <div class="item-stat" style="background: #FEE2E2;">
+                                <span class="stat-value" style="color: #DC2626;">2</span>
+                                <span class="stat-unit" style="color: #DC2626;">syr</span>
                             </div>
                         </div>
 
                         <!-- Floating Scan Button -->
-                        <div class="mockup-fab">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <div class="mockup-fab" title="Quick Scan" style="background: #007AFF;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                                 <rect x="3" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="14" width="7" height="7"></rect>
@@ -126,95 +170,281 @@
                             </svg>
                         </div>
                     </div>
+
+                    <!-- Overlay Voice Assistant Notification -->
+                    <div style="position: absolute; bottom: -24px; left: 16px; right: 16px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(16px); border: 1.5px solid rgba(97, 82, 250, 0.3); border-radius: 16px; padding: 12px 16px; box-shadow: 0 16px 36px rgba(97, 82, 250, 0.2); display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 32px; height: 32px; border-radius: 10px; background: var(--aura-gradient); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; flex-shrink: 0;">✨</div>
+                        <div style="font-size: 0.82rem; line-height: 1.35; color: #1F2937;">
+                            <strong style="color: #6152FA;">Denti AI Voice:</strong> “Checked Lidocaine: 4 boxes left in Op 1. Added to <em>To Order</em> queue.”
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Features Grid -->
-    <section id="features" class="section">
+    <!-- Denti AI Spotlight Section -->
+    <section id="denti-ai" class="denti-spotlight">
+        <div class="container denti-container">
+            <div class="denti-content">
+                <span class="denti-pill">
+                    <span>✨</span> CLINICAL VOICE &amp; TEXT ASSISTANT
+                </span>
+                <h2>Operatory flow, <br><span class="aura-gradient-text">completely hands-free.</span></h2>
+                <p class="denti-lead">
+                    Wearing surgical gloves and PPE? Denti AI understands clinical dental vocabulary in real time. Simply speak or type to look up stock, log supplies used, trigger reorders, and check autoclave cycle due dates.
+                </p>
+
+                <div class="denti-pillars">
+                    <div class="pillar-card">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6152FA" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                            Voice-First &amp; Multilingual
+                        </h4>
+                        <p>Speech recognition tailored for dental consumables, brands, and mixed language commands.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6152FA" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Role Safeguards (Doctor vs Staff)
+                        </h4>
+                        <p>Assistants log usage and draft orders; only Doctors/Owners can finalize purchase orders or delete stock.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6152FA" stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                            Action Cards &amp; 1-Tap Undo
+                        </h4>
+                        <p>Every change generates a clear confirmation card. Made a typo? Tap "Undo Last Action" in one click.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6152FA" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Zero PHI &amp; HIPAA-Safe
+                        </h4>
+                        <p>PureStock tracks inventory only. No patient records are stored, and prompts are never used to train models.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+                    <a href="features.html?tab=ai" class="aura-btn">
+                        <span>✨</span> Explore All Denti AI Commands
+                    </a>
+                    <span style="font-size: 0.85rem; color: var(--text-secondary);">Safe Function Calling • Zero Remote Code Execution</span>
+                </div>
+            </div>
+
+            <!-- Denti Interactive Assistant Sheet Mockup -->
+            <div class="denti-interactive-mockup">
+                <div class="denti-sheet-header">
+                    <div class="denti-brand-tab">
+                        <div class="denti-avatar">✨</div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                                Denti AI <span class="denti-status-dot"></span>
+                            </div>
+                            <div style="font-size: 0.75rem; color: #6B7280;">Clinical Inventory Assistant</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.78rem; background: #EDE9FE; color: #6B21A8; font-weight: 700; padding: 4px 10px; border-radius: 999px;">Doctor Active</span>
+                </div>
+
+                <div class="denti-sheet-body">
+                    <!-- User Prompt -->
+                    <div class="chat-bubble-user">
+                        “We used 3 boxes of Surgical Needles in Op 2, and add any low stock to To Order.”
+                    </div>
+
+                    <!-- Denti Response -->
+                    <div class="chat-bubble-denti">
+                        <div style="margin-bottom: 8px;">
+                            Got it! I've updated the count and checked your clinic thresholds:
+                        </div>
+
+                        <!-- Action Card 1: Stock Deducted -->
+                        <div class="action-result-card">
+                            <div class="action-result-header">
+                                <span class="action-result-badge">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Stock Updated
+                                </span>
+                                <button class="undo-button">↩ Undo</button>
+                            </div>
+                            <div class="action-details">
+                                <strong>Surgical Needles 27G:</strong> -3 box (100 → 97 remaining). Audit entry logged.
+                            </div>
+                        </div>
+
+                        <!-- Action Card 2: To Order Queued -->
+                        <div class="action-result-card" style="border-left-color: #F59E0B; margin-top: 8px;">
+                            <div class="action-result-header">
+                                <span class="action-result-badge" style="color: #D97706;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                    </svg>
+                                    Added to 'To Order'
+                                </span>
+                                <button class="undo-button">↩ Undo</button>
+                            </div>
+                            <div class="action-details">
+                                <strong>Lidocaine 2% (4 left):</strong> Queued for reorder. 1 tap to email summary to Doctor.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Tab Chips -->
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+                            Try asking Denti:
+                        </div>
+                        <div class="command-chips-row">
+                            <span class="cmd-chip">“Give me a clinic briefing”</span>
+                            <span class="cmd-chip">“Where is Cavitron Tip?”</span>
+                            <span class="cmd-chip">“When is autoclave cycle due?”</span>
+                            <span class="cmd-chip">“Email To Order PDF to Doctor”</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Bar Indicator -->
+                <div class="mockup-voice-bar">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="voice-wave">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; color: #6B7280; font-weight: 500;">Listening for voice command...</span>
+                    </div>
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #EF4444; display: flex; align-items: center; justify-content: center;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Six Core Modules Grid -->
+    <section id="modules" class="section">
         <div class="container">
-            <div class="section-header">
-                <h2>Designed for efficiency.</h2>
-                <p>Five powerful modules to manage your entire practice.</p>
+            <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 30px;">
+                <span style="color: #007AFF; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">Engineered for Clinical Precision</span>
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin: 10px 0 16px;">Six modules to power your entire practice.</h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary);">Everything from stock monitoring and smart reorders to autoclave sterilization compliance.</p>
             </div>
 
             <div class="features-grid">
-                <!-- Feature 1: Inventory -->
+                <!-- Module 1: Denti AI (Featured) -->
+                <a href="features.html?tab=ai" class="feature-card-link">
+                    <div class="feature-card highlight-ai">
+                        <span class="feature-tag-pill tag-new">✨ New • AI</span>
+                        <div class="icon-box" style="background: var(--aura-gradient); color: white;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Denti AI Assistant</h3>
+                        <p>Conversational search, hands-free voice logging, tab-aware commands, and instant action undo.</p>
+                    </div>
+                </a>
+
+                <!-- Module 2: Inventory -->
                 <a href="features.html?tab=inventory" class="feature-card-link">
                     <div class="feature-card">
+                        <span class="feature-tag-pill tag-essential">Essential</span>
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>Inventory</h3>
-                        <p>Smart filters, visual stock levels, and critical alerts.</p>
+                        <h3>Inventory Master List</h3>
+                        <p>Track multi-company supplies, operatory locations, purchase prices, and batch-level FIFO expiry dates.</p>
                     </div>
                 </a>
 
-                <!-- Feature 2: To Order -->
+                <!-- Module 3: To Order -->
                 <a href="features.html?tab=order" class="feature-card-link">
                     <div class="feature-card">
+                        <span class="feature-tag-pill" style="background: #FEF3C7; color: #D97706;">Smart Alerts</span>
                         <div class="icon-box alert-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="9" cy="21" r="1"></circle>
                                 <circle cx="20" cy="21" r="1"></circle>
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
                         </div>
-                        <h3>To Order</h3>
-                        <p>One-tap ordering and backorder tracking.</p>
+                        <h3>To Order &amp; Reorders</h3>
+                        <p>Automated shortage detection, Needs Order / Backorder / Ordered pipeline, and 1-tap PDF export.</p>
                     </div>
                 </a>
 
-                <!-- Feature 5: Scanner -->
+                <!-- Module 4: Scanner -->
                 <a href="features.html?tab=scan" class="feature-card-link">
                     <div class="feature-card">
+                        <span class="feature-tag-pill" style="background: #F3E8FF; color: #7E22CE;">Fast Camera</span>
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M3 3h18v18H3zM7 7h3v3H7zm7 0h3v3h-3zm0 7h3v3h-3zM7 14h3v3H7z"></path>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
                             </svg>
                         </div>
-                        <h3>Scanner</h3>
-                        <p>Instant barcode lookup and fast add.</p>
+                        <h3>QR &amp; Barcode Scanner</h3>
+                        <p>Ultra-fast camera barcode lookup, customizable rapid count actions (+1 / -1 / Manual), and flash support.</p>
                     </div>
                 </a>
 
-                <!-- Feature 3: Receiving -->
+                <!-- Module 5: Receiving & Invoices -->
                 <a href="features.html?tab=receiving" class="feature-card-link">
                     <div class="feature-card">
+                        <span class="feature-tag-pill" style="background: #E0E7FF; color: #3730A3;">Logistics</span>
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20 6L9 17l-5-5"></path>
                             </svg>
                         </div>
-                        <h3>Receiving</h3>
-                        <p>Check in packages and verify invoices instantly.</p>
+                        <h3>Receiving &amp; Invoices</h3>
+                        <p>Check in deliveries, resolve backorders, capture invoice photos, and auto-archive by clinic year/month.</p>
                     </div>
                 </a>
 
-                <!-- Feature 4: Settings -->
-                <a href="features.html?tab=settings" class="feature-card-link">
+                <!-- Module 6: Sterilization & Compliance -->
+                <a href="features.html?tab=sterilization" class="feature-card-link">
                     <div class="feature-card">
-                        <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                                </path>
+                        <span class="feature-tag-pill tag-compliance">Compliance</span>
+                        <div class="icon-box" style="background: #FEF3C7; color: #B45309;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
                         </div>
-                        <h3>Settings</h3>
-                        <p>User roles, clinic codes, and notifications.</p>
+                        <h3>Sterilization &amp; Autoclaves</h3>
+                        <p>Log autoclave cycles, record Biological Indicator (BI) test results, and track instrument cycle due dates.</p>
                     </div>
                 </a>
             </div>
@@ -222,45 +452,29 @@
     </section>
 
     <!-- Workflow Deep Dive -->
-    <section id="workflow" class="deep-dive section">
+    <section id="workflow" class="deep-dive section" style="background: #F9FAFB;">
         <div class="container">
             <div class="section-header">
-                <h2>A complete workflow.</h2>
-                <p>From stock check to delivery, every step is covered.</p>
+                <h2>A complete operatory workflow.</h2>
+                <p>From low-stock alert to patient chairside, every touchpoint is streamlined.</p>
             </div>
 
             <div class="split-view">
                 <div class="deep-dive-content">
-                    <h3>1. Monitor</h3>
-                    <p>The <strong>Inventory Tab</strong> is your command center. Use the 'Low' filter to instantly
-                        isolate items that need attention. Visual red indicators ensure you never miss a shortage.</p>
+                    <h3>1. Monitor &amp; Detect</h3>
+                    <p>The <strong>Inventory Tab</strong> serves as your practice command center. Visual color badges immediately identify items below safe thresholds or near expiration.</p>
 
-                    <h3>2. Order</h3>
-                    <p>Found a low item? Add it to your <strong>To Order</strong> list with one tap. When you're ready,
-                        export the list or place the order directly. The 'Ordered' status prevents double-ordering.</p>
+                    <h3>2. Order &amp; Doctor Sign-Off</h3>
+                    <p>Low stock items auto-populate the <strong>To Order</strong> list. Assistants compile requirements and tap <em>"Email Order List to Doctor"</em> to share professional PDF summaries for one-tap approval.</p>
 
-                    <h3>3. Receive</h3>
-                    <p>When packages arrive, switch to the <strong>Receiving Tab</strong>. Scan the incoming boxes to
-                        instantly update your stock levels and close out the order.</p>
+                    <h3>3. Receive &amp; Archive Invoices</h3>
+                    <p>When packages arrive, use <strong>Receiving</strong> to check in quantities and snap invoice photos. Invoices are automatically organized by supplier and date for effortless accounting.</p>
 
-                    <div class="workflow-highlight">
-                        <div class="highlight-item">
-                            <span class="highlight-label">Search</span>
-                            <span class="highlight-desc">Brand & category filtering</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-label">Scan</span>
-                            <span class="highlight-desc">Camera-based barcode lookup</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-label">Track</span>
-                            <span class="highlight-desc">Live quantity updates</span>
-                        </div>
-                    </div>
+                    <h3>4. Sterilize &amp; Stay Compliant</h3>
+                    <p>Maintain digital sterilization logs with autoclave run numbers, temperatures, and BI spore testing records for peace of mind during health audits.</p>
                 </div>
 
                 <div class="deep-dive-visual">
-                    <!-- Workflow Visualization -->
                     <div class="workflow-card-stack">
                         <div class="wf-card c1 glass">
                             <div class="card-header">
@@ -268,32 +482,148 @@
                                 <span>Low Stock Alert</span>
                             </div>
                             <div class="card-body">
-                                <strong>Handpiece Lubricant</strong>
-                                <small>6 bottles remaining</small>
+                                <strong>Lidocaine 2% 1:100k</strong>
+                                <small>4 boxes remaining (Min: 6)</small>
                             </div>
                         </div>
                         <div class="wf-card c2 glass">
                             <div class="card-header">
                                 <span class="dot blue"></span>
-                                <span>To Order List</span>
+                                <span>To Order Queue</span>
                             </div>
                             <div class="card-body">
-                                <strong>+ 12 Bottles</strong>
-                                <small>Added to queue</small>
+                                <strong>+ 10 Boxes Queued</strong>
+                                <small>PDF sent for Doctor approval</small>
                             </div>
                         </div>
                         <div class="wf-card c3 glass">
                             <div class="card-header">
                                 <span class="dot green"></span>
-                                <span>Received</span>
+                                <span>Delivered &amp; Verified</span>
                             </div>
                             <div class="card-body">
-                                <strong>Stock Updated</strong>
-                                <small>New Total: 18</small>
+                                <strong>Invoice Photo Captured</strong>
+                                <small>Stock Updated to 14 boxes</small>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Subscriptions Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <div class="pricing-trial-banner">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>7-Day Free Trial Included on All Plans</span>
+                </div>
+                <h2>Transparent, Practice-Friendly Pricing</h2>
+                <p>Choose the plan that fits your clinic size. Manage supplies and sterilization seamlessly across all devices.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Standard Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-desc">Essential inventory management and real-time alerts for solo dental practices.</div>
+                    <div class="plan-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">19.99</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <div class="plan-yearly-option">or $189.99 billed annually (save 20%)</div>
+                    
+                    <ul class="plan-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Up to 300 inventory items
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            2 team members (Doctor &amp; Assistant)
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Real-time cloud sync &amp; low stock alerts
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            QR &amp; Barcode scanner with rapid +/-1 actions
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Denti AI search &amp; voice inventory commands
+                        </li>
+                    </ul>
+
+                    <a href="#download" class="pricing-btn btn-outline">Start 7-Day Free Trial</a>
+                </div>
+
+                <!-- Premium Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="plan-name" style="color: #007AFF;">Premium</div>
+                    <div class="plan-desc">Unlimited capacity, autoclave compliance, and annual reporting for modern clinics.</div>
+                    <div class="plan-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">29.99</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <div class="plan-yearly-option">or $289.99 billed annually (save 20%)</div>
+                    
+                    <ul class="plan-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <strong>Unlimited</strong> inventory items &amp; categories
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <strong>Unlimited</strong> staff team members
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <strong>Sterilization Tracking</strong> &amp; autoclave cycle logs
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Annual PDF archive &amp; valuation auditing
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Invoice photo archiving &amp; PDF export
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Priority clinical support
+                        </li>
+                    </ul>
+
+                    <a href="#download" class="pricing-btn btn-primary" style="background: #007AFF;">Start 7-Day Free Trial</a>
+                </div>
+            </div>
+
+            <!-- Apple Subscription Terms (Guideline 3.1.2) -->
+            <p style="text-align: center; font-size: 0.8rem; color: #9CA3AF; margin-top: 30px; max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+                Subscriptions are billed to your Apple ID account at confirmation of purchase and automatically renew unless canceled at least 24 hours before the end of the current period. You can manage or cancel your subscription at any time in your Apple ID Account Settings.
+            </p>
+
+            <!-- Medical & Regulatory Disclaimer Box -->
+            <div class="medical-disclaimer-box">
+                <h4>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    Clinical Operational Tool Notice (Medical Disclaimer)
+                </h4>
+                <p>
+                    PureStock and Denti AI are clinical operational, supply chain, and sterilization record management tools created by Pureum Software. PureStock is <strong>NOT</strong> an Electronic Health Record (EHR) system, medical device, or diagnostic instrument. PureStock does not collect, store, or process patient medical records or Protected Health Information (PHI).
+                </p>
             </div>
         </div>
     </section>
@@ -302,8 +632,14 @@
     <footer class="footer">
         <div class="container footer-content">
             <div id="download" class="footer-cta">
-                <h2>Ready to organize your practice?</h2>
-                <a href="#" class="btn btn-white">Download for iOS</a>
+                <h2>Ready to modernize your dental practice?</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px; font-size: 1.05rem;">Join forward-thinking dental teams managing inventory and sterilization with ease.</p>
+                <a href="#" class="btn btn-white" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.73-.95 2.76.99.08 2.05-.51 2.67-1.26z"/>
+                    </svg>
+                    Download PureStock for iOS
+                </a>
             </div>
             <div class="footer-links">
                 <p>
@@ -311,14 +647,12 @@
                     <a href="privacy.html" style="color: #86868B; margin-right: 24px;">Privacy Policy</a>
                     <a href="support.html" style="color: #86868B;">Support</a>
                 </p>
-                <p style="margin-top: 16px;">&copy; 2026 Inventory App. All rights reserved.</p>
+                <p style="margin-top: 16px;">&copy; 2026 Pureum Software. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-
-
-    <script src="script.js?v=2.5"></script>
+    <script src="script.js?v=2.6"></script>
 </body>
 
 </html>

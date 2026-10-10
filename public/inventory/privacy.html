@@ -235,18 +235,19 @@
                         <ul>
                             <li><strong>Account Credentials:</strong> Email address, user ID, clinic membership identifier, and role privileges.</li>
                             <li><strong>Inventory Records:</strong> Item titles, SKUs, physical stock quantities, units, storage locations, expiration dates, reorder thresholds, and transaction history.</li>
+                            <li><strong>Sterilization &amp; Autoclave Compliance Records:</strong> Sterilizer unit identifiers, cycle load numbers, exposure temperatures/durations, biological indicator (BI) spore test pass/fail results, and instrument cycle turnaround dates.</li>
                             <li><strong>Operational Documents:</strong> Photos and files of supplier invoices and packing slips voluntarily uploaded by users for clinic record-keeping.</li>
-                            <li><strong>Microphone &amp; Speech Recognition (Guideline 5.1.1):</strong> When you choose to utilize voice input for Aura AI, the app requests microphone permission (<code>NSMicrophoneUsageDescription</code>) and speech recognition permission (<code>NSSpeechRecognitionUsageDescription</code>). Audio data is processed in real time solely to transcribe voice into text prompts. PureStock never conducts background listening, continuous ambient audio capture, or permanent storage of audio recordings.</li>
+                            <li><strong>Microphone &amp; Speech Recognition (Guideline 5.1.1):</strong> When you choose to utilize voice input for Denti AI, the app requests microphone permission (<code>NSMicrophoneUsageDescription</code>) and speech recognition permission (<code>NSSpeechRecognitionUsageDescription</code>). Audio data is processed in real time solely to transcribe voice into text prompts via the native iOS Speech framework and ephemeral processing buffers. PureStock never conducts background listening, continuous ambient audio capture, or permanent storage of audio recordings.</li>
                             <li><strong>AI Prompts &amp; Operational Commands:</strong> User prompts submitted via text or speech to automate inventory actions.</li>
                             <li><strong>Usage &amp; Diagnostics:</strong> Crash logs, diagnostic telemetry, and performance metrics required to ensure application stability.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. AI Processing &amp; Third-Party Services (Aura AI &amp; Google Gemini)</h2>
-                        <p>PureStock incorporates <strong>Aura AI</strong> to allow users to interact with and manage inventory workflows using natural language prompts.</p>
+                        <h2>3. AI Processing &amp; Third-Party Services (Denti AI &amp; Google Gemini)</h2>
+                        <p>PureStock incorporates <strong>Denti AI</strong> to allow users to interact with and manage inventory workflows using natural language prompts.</p>
                         <ul>
-                            <li><strong>Safe Function Calling (Guideline 2.5.2):</strong> Aura AI does not execute arbitrary remote code. It interprets user prompts into structured parameters (JSON) to invoke safe, pre-compiled native functions built directly within the application (e.g., updating stock quantities, adding items, managing alerts).</li>
+                            <li><strong>Safe Function Calling (Guideline 2.5.2):</strong> Denti AI does not execute arbitrary remote code. It interprets user prompts into structured parameters (JSON) to invoke safe, pre-compiled native functions built directly within the application (e.g., updating stock quantities, adding items, managing alerts).</li>
                             <li><strong>Zero Data Retention Policy:</strong> AI prompts are transmitted through secure Firebase Cloud Function proxies to the Google Gemini API. Under commercial enterprise API agreements, customer prompts and inventory records are governed by a strict Zero Data Retention policy and are never used to train or improve underlying AI models.</li>
                         </ul>
                     </section>
@@ -267,17 +268,18 @@
                         <h2>5. How Data Is Used</h2>
                         <ul>
                             <li>Managing dental inventory levels, low-stock notifications, supply reorders, and receiving workflows.</li>
-                            <li>Executing requested inventory updates and search functions via Aura AI.</li>
+                            <li>Executing requested inventory updates and search functions via Denti AI.</li>
                             <li>Synchronizing inventory records across authorized clinic devices in real time.</li>
                             <li>Providing user support, issue troubleshooting, and continuous service enhancement.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Security, Storage &amp; Account Deletion</h2>
+                        <h2>6. Security, Storage &amp; In-App Account Deletion (Guideline 5.1.1(v))</h2>
                         <ul>
                             <li>All data transmissions are encrypted using standard TLS/HTTPS, and cloud data is protected by industry-standard cloud security protocols.</li>
-                            <li>Users may request full account and data deletion at any time in-app or by contacting support. Upon verification, active data is purged within 30 days, and encrypted system backups are overwritten within 90 days.</li>
+                            <li><strong>In-App Self-Service Deletion:</strong> In strict compliance with Apple App Store Review Guideline 5.1.1(v), users can permanently delete their user account, credentials, and associated clinic data directly within the iOS app by visiting <strong>Settings &gt; Account Deletion</strong>.</li>
+                            <li>Upon confirmed deletion, authentication access is immediately terminated, active cloud production records are permanently expunged within 30 days, and encrypted system backups are overwritten within 90 days.</li>
                             <li>Access to production infrastructure is strictly restricted based on role and operational necessity.</li>
                         </ul>
                     </section>
@@ -302,16 +304,17 @@
                         <ul>
                             <li><strong>계정 정보:</strong> 이메일 주소, 로그인 식별자, 소속 치과 클리닉 코드 및 사용자 역할 권한.</li>
                             <li><strong>재고 데이터:</strong> 품목명, 카테고리, 수량, 단위, 보관 위치, 유통기한, 최소 재고 알림 기준값 및 입출고 이력.</li>
+                            <li><strong>소독 및 멸균 일지 데이터:</strong> 오토클레이브 멸균기 식별자, 가동 일시, 로드 번호, 멸균 온도/시간, 생물학적 인디케이터(BI) 포자 검사 판독 결과 및 기구 재소독 주기 데이터.</li>
                             <li><strong>운영 문서:</strong> 사용자가 입고 확인 및 관리를 위해 업로드한 거래명세서 및 영수증 이미지.</li>
-                            <li><strong>마이크 및 음성 인식 권한 (Apple 지침 5.1.1):</strong> 사용자가 Aura AI 음성 명령 기능을 사용할 때 마이크 권한(<code>NSMicrophoneUsageDescription</code>)과 음성 인식 권한(<code>NSSpeechRecognitionUsageDescription</code>)을 요청합니다. 음성 데이터는 사용자가 직접 음성 입력을 켰을 때 실시간 텍스트 변환(Speech-to-Text)을 위해서만 일시적으로 처리되며, 백그라운드 상시 도청이나 음성 파일의 영구 저장, 생체 프로파일링에는 일절 사용되지 않습니다.</li>
-                            <li><strong>AI 프롬프트 및 명령:</strong> Aura AI를 통해 재고 작업을 실행하기 위해 입력된 텍스트 및 음성 변환 프롬프트.</li>
+                            <li><strong>마이크 및 음성 인식 권한 (Apple 지침 5.1.1):</strong> 사용자가 Denti AI 음성 명령 기능을 사용할 때 마이크 권한(<code>NSMicrophoneUsageDescription</code>)과 음성 인식 권한(<code>NSSpeechRecognitionUsageDescription</code>)을 요청합니다. 음성 데이터는 iOS 내장 Speech 프레임워크와 일시적 버퍼를 통해 실시간 텍스트 변환(Speech-to-Text)에만 일시적으로 사용되며, 백그라운드 상시 도청이나 음성 파일의 영구 저장, 생체 프로파일링에는 일절 사용되지 않습니다.</li>
+                            <li><strong>AI 프롬프트 및 명령:</strong> Denti AI를 통해 재고 작업을 실행하기 위해 입력된 텍스트 및 음성 변환 프롬프트.</li>
                             <li><strong>진단 및 사용 로그:</strong> 서비스 안정성 유지, 크래시 진단 및 앱 성능 모니터링을 위한 필수 기술 데이터.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. AI 처리 및 서드파티 AI 정책 (Aura AI &amp; Google Gemini)</h2>
-                        <p>PureStock은 프롬프트를 통해 재고 업무를 빠르고 간편하게 처리할 수 있도록 <strong>Aura AI</strong> 기능을 지원합니다.</p>
+                        <h2>3. AI 처리 및 서드파티 AI 정책 (Denti AI &amp; Google Gemini)</h2>
+                        <p>PureStock은 프롬프트를 통해 재고 업무를 빠르고 간편하게 처리할 수 있도록 <strong>Denti AI</strong> 기능을 지원합니다.</p>
                         <ul>
                             <li><strong>안전한 함수 호출 (Function Calling / Apple 지침 2.5.2 준수):</strong> 외부에서 임의의 실행 코드를 동적으로 다운로드받아 실행하지 않습니다. AI는 사용자의 요청을 분석하여 매개변수(JSON)만 생성하며, 앱 내부에 미리 안전하게 빌드된 네이티브 함수(예: 재고 수량 수정, 품목 추가, 주문 알림 등록 등)만을 실행합니다.</li>
                             <li><strong>데이터 미저장 정책 (Zero Data Retention):</strong> AI 요청은 보안 Firebase Cloud Function 프록시를 통해 Google Gemini API로 전송됩니다. 상용 API 보안 정책에 따라 고객의 재고 데이터 및 프롬프트는 AI 모델 학습에 일절 활용되지 않으며, 데이터 미저장(Zero Data Retention) 원칙이 철저하게 보장됩니다.</li>
@@ -334,17 +337,18 @@
                         <h2>5. 데이터 이용 목적</h2>
                         <ul>
                             <li>실시간 재고 추적, 부족 알림 발송, 발주 및 입고 워크플로우 관리.</li>
-                            <li>Aura AI를 통한 프롬프트 기반 재고 자동화 명령 처리.</li>
+                            <li>Denti AI를 통한 프롬프트 기반 재고 자동화 명령 처리.</li>
                             <li>인증된 치과 클리닉 기기 간 실시간 데이터 동기화 및 백업.</li>
                             <li>고객 지원, 오류 진단 및 전반적인 서비스 품질 향상.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. 보안 및 데이터 보관/파기</h2>
+                        <h2>6. 보안 및 인앱 계정 삭제 (Apple 지침 5.1.1(v) 준수)</h2>
                         <ul>
                             <li>모든 네트워크 전송은 TLS/HTTPS 표준 암호화 통신을 사용하며, 클라우드 접근 제어를 통해 보호됩니다.</li>
-                            <li>계정 삭제 요청 시 30일 이내에 활성 데이터가 영구 삭제되며, 백업 사본은 최대 90일 내에 안전하게 덮어쓰기 파기됩니다.</li>
+                            <li><strong>인앱 셀프서비스 계정 삭제:</strong> 이용자는 Apple 앱스토어 심사 지침(Guideline 5.1.1(v))에 따라 앱 내 <strong>설정 &gt; 계정 삭제 (Settings &gt; Account Deletion)</strong> 메뉴를 통해 언제든지 즉시 직접 셀프서비스로 계정 및 클리닉 연동 데이터를 영구 삭제할 수 있습니다.</li>
+                            <li>삭제 실행 즉시 계정 자격 증명과 클라우드 접근이 차단되며, 활성 운영 데이터는 30일 이내에 완전히 영구 파기되고, 암호화된 백업 복제본은 최대 90일 내에 안전하게 덮어쓰기 파기됩니다.</li>
                             <li>운영 시스템에 대한 접근은 담당자의 역할과 운영상 필요에 따라 엄격히 제한됩니다.</li>
                         </ul>
                     </section>
@@ -369,18 +373,19 @@
                         <ul>
                             <li><strong>Donnees de compte:</strong> Adresse e-mail, identifiant utilisateur, code de clinique et autorisations.</li>
                             <li><strong>Donnees d'inventaire:</strong> Noms d'articles, quantites, references (SKU), emplacements, dates d'expiration, seuils d'alerte et historique des mouvements.</li>
+                            <li><strong>Registres de sterilisation et d'autoclave:</strong> Identifiants d'autoclaves, numeros de charge, parametres de cycle, resultats d'indicateurs biologiques (BI) et dates de rotation des instruments.</li>
                             <li><strong>Documents operationnels:</strong> Photos de factures et bons de livraison televerses pour la gestion interne.</li>
-                            <li><strong>Microphone et reconnaissance vocale (Directive 5.1.1):</strong> Lors de l'utilisation des commandes vocales avec Aura AI, l'application demande l'acces au microphone (<code>NSMicrophoneUsageDescription</code>) et a la reconnaissance vocale (<code>NSSpeechRecognitionUsageDescription</code>). Les donnees audio sont traitees en temps reel uniquement pour la transcription et ne font l'objet d'aucune ecoute en arriere-plan ni d'aucun stockage permanent.</li>
+                            <li><strong>Microphone et reconnaissance vocale (Directive 5.1.1):</strong> Lors de l'utilisation des commandes vocales avec Denti AI, l'application demande l'acces au microphone (<code>NSMicrophoneUsageDescription</code>) et a la reconnaissance vocale (<code>NSSpeechRecognitionUsageDescription</code>). Les donnees audio sont traitees en temps reel uniquement pour la transcription via le framework natif iOS Speech et ne font l'objet d'aucune ecoute en arriere-plan ni d'aucun stockage permanent.</li>
                             <li><strong>Invites et commandes AI:</strong> Instructions saisies par texte ou voix pour automatiser les operations d'inventaire.</li>
                             <li><strong>Donnees de diagnostic:</strong> Journaux de plantage et metriques techniques pour assurer la stabilite de l'application.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. Traitement AI &amp; Services tiers (Aura AI &amp; Google Gemini)</h2>
-                        <p>PureStock integre l'assistant <strong>Aura AI</strong> pour simplifier la gestion des stocks via le langage naturel.</p>
+                        <h2>3. Traitement AI &amp; Services tiers (Denti AI &amp; Google Gemini)</h2>
+                        <p>PureStock integre l'assistant <strong>Denti AI</strong> pour simplifier la gestion des stocks via le langage naturel.</p>
                         <ul>
-                            <li><strong>Appels de fonctions securises (Directive 2.5.2):</strong> Aura AI n'execute aucun code distant. L'IA extrait des parametres structures (JSON) pour appeler exclusivement des fonctions precompilees natives et sures dans l'application.</li>
+                            <li><strong>Appels de fonctions securises (Directive 2.5.2):</strong> Denti AI n'execute aucun code distant. L'IA extrait des parametres structures (JSON) pour appeler exclusivement des fonctions precompilees natives et sures dans l'application.</li>
                             <li><strong>Politique de non-retention des donnees (Zero Data Retention):</strong> Les requetes sont acheminees via un proxy Cloud Function securise vers l'API Google Gemini. Dans le cadre des accords pour entreprises, vos donnees d'inventaire et invites ne sont pas conservees ni utilisees pour entrainer les modeles d'IA.</li>
                         </ul>
                     </section>
@@ -401,17 +406,18 @@
                         <h2>5. Utilisation des donnees</h2>
                         <ul>
                             <li>Gestion des niveaux de stock, alertes, commandes et receptions.</li>
-                            <li>Execution des commandes d'inventaire via Aura AI.</li>
+                            <li>Execution des commandes d'inventaire via Denti AI.</li>
                             <li>Synchronisation en temps reel entre les appareils autorises de la clinique.</li>
                             <li>Assistance utilisateur et fiabilisation continue du service.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Securite et conservation</h2>
+                        <h2>6. Securite &amp; Suppression de compte dans l'app (Directive 5.1.1(v))</h2>
                         <ul>
                             <li>Chiffrement TLS/HTTPS pour tous les transferts et controles stricts de securite cloud.</li>
-                            <li>Suppression des donnees de compte sous 30 jours suite a une demande, avec ecrasement des sauvegardes sous 90 jours.</li>
+                            <li><strong>Suppression libre-service dans l'application:</strong> Conformement a la directive Apple 5.1.1(v), les utilisateurs peuvent supprimer definitivement leur compte et les donnees cliniques associees directement depuis l'application via <strong>Settings &gt; Account Deletion</strong>.</li>
+                            <li>Les donnees de production actives sont effacees sous 30 jours, et les sauvegardes ecrasees sous 90 jours maximum.</li>
                         </ul>
                     </section>
 
@@ -435,18 +441,19 @@
                         <ul>
                             <li><strong>Datos de cuenta:</strong> Correo electronico, identificador de usuario, codigo de clinica y roles de acceso.</li>
                             <li><strong>Registros de inventario:</strong> Nombre de articulos, cantidades, codigos SKU, ubicaciones, fechas de caducidad, niveles de alerta e historial de movimientos.</li>
+                            <li><strong>Registros de esterilizacion y autoclave:</strong> Identificadores de autoclaves, numeros de carga, parametros de ciclo, resultados de indicadores biologicos (BI) y fechas de ciclo de instrumental.</li>
                             <li><strong>Documentos operativos:</strong> Fotografias de facturas y albaranes cargados por la clinica.</li>
-                            <li><strong>Microfono y reconocimiento de voz (Directriz 5.1.1):</strong> Al utilizar comandos de voz con Aura AI, se solicitan permisos de microfono (<code>NSMicrophoneUsageDescription</code>) y reconocimiento de voz (<code>NSSpeechRecognitionUsageDescription</code>). El audio se procesa en tiempo real unicamente para transcripcion y nunca se realiza escucha en segundo plano ni grabacion permanente.</li>
+                            <li><strong>Microfono y reconocimiento de voz (Directriz 5.1.1):</strong> Al utilizar comandos de voz con Denti AI, se solicitan permisos de microfono (<code>NSMicrophoneUsageDescription</code>) y reconocimiento de voz (<code>NSSpeechRecognitionUsageDescription</code>). El audio se procesa en tiempo real unicamente para transcripcion a traves del framework nativo iOS Speech y nunca se realiza escucha en segundo plano ni grabacion permanente.</li>
                             <li><strong>Prompts y comandos de IA:</strong> Mensajes de texto o voz ingresados para automatizar tareas de inventario.</li>
                             <li><strong>Diagnostico y uso:</strong> Registros de fallos y rendimiento esenciales para la estabilidad del servicio.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>3. Procesamiento con IA y Politica de Terceros (Aura AI &amp; Google Gemini)</h2>
-                        <p>PureStock integra <strong>Aura AI</strong> para permitir la administracion del inventario mediante lenguaje natural.</p>
+                        <h2>3. Procesamiento con IA y Politica de Terceros (Denti AI &amp; Google Gemini)</h2>
+                        <p>PureStock integra <strong>Denti AI</strong> para permitir la administracion del inventario mediante lenguaje natural.</p>
                         <ul>
-                            <li><strong>Llamadas a funciones seguras (Directriz 2.5.2):</strong> Aura AI no ejecuta codigo remoto descargado. Procesa las solicitudes en parametros JSON para invocar funciones nativas precompiladas y seguras dentro de la aplicacion.</li>
+                            <li><strong>Llamadas a funciones seguras (Directriz 2.5.2):</strong> Denti AI no ejecuta codigo remoto descargado. Procesa las solicitudes en parametros JSON para invocar funciones nativas precompiladas y seguras dentro de la aplicacion.</li>
                             <li><strong>Politica de Cero Retencion de Datos (Zero Data Retention):</strong> Las solicitudes se envian mediante un proxy seguro de Firebase Cloud Functions a la API comercial de Google Gemini, garantizando que sus datos y prompts no se utilicen para entrenar modelos de IA.</li>
                         </ul>
                     </section>
@@ -467,17 +474,18 @@
                         <h2>5. Uso de los datos</h2>
                         <ul>
                             <li>Gestion de stock, alertas de reposicion, pedidos y recepcion de mercancia.</li>
-                            <li>Ejecucion de comandos de inventario mediante Aura AI.</li>
+                            <li>Ejecucion de comandos de inventario mediante Denti AI.</li>
                             <li>Sincronizacion en la nube entre dispositivos autorizados de la clinica.</li>
                             <li>Soporte tecnico, correccion de errores y optimizacion del sistema.</li>
                         </ul>
                     </section>
 
                     <section class="legal-section">
-                        <h2>6. Seguridad y retencion</h2>
+                        <h2>6. Seguridad y eliminacion de cuenta en la app (Directriz 5.1.1(v))</h2>
                         <ul>
                             <li>Transmision cifrada con TLS/HTTPS y estrictos controles de seguridad cloud.</li>
-                            <li>Eliminacion definitiva de datos activos en 30 dias tras solicitud de baja; respaldos borrados en un maximo de 90 dias.</li>
+                            <li><strong>Eliminacion de cuenta en autoservicio:</strong> Conforme a la Directriz 5.1.1(v) de Apple, los usuarios pueden eliminar de forma permanente su cuenta y datos de la clinica directamente en la aplicacion en <strong>Settings &gt; Account Deletion</strong>.</li>
+                            <li>Los datos activos se borran de inmediato en un plazo maximo de 30 dias y las copias de seguridad en un maximo de 90 dias.</li>
                         </ul>
                     </section>
 
