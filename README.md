@@ -12,34 +12,32 @@ Official website and product showcase for Pureum Software.
 
 ---
 
-## 🚀 Cloudflare Pages 자동 배포 안내
+## 🚀 Cloudflare Pages 배포 안내
 
-이 프로젝트는 **GitHub (`offgridcabin2021-droid/pureum-software`)의 `main` 브랜치와 Cloudflare Pages가 연동**되어 있습니다.  
-따라서 코드를 빌드하고 GitHub에 푸시하면 별도의 수동 작업 없이 **Cloudflare 서버가 자동으로 감지하여 `pureum.dev`에 최신 상태로 자동 배포**됩니다.
+이 프로젝트는 Cloudflare Pages 프로젝트 `pureum-software`에 **Direct Upload(Wrangler CLI)** 방식으로 배포됩니다.  
+Next.js 정적 내보내기 결과물(`out/`)을 Cloudflare Pages로 직접 배포하여 **`pureum.dev`에 즉시 실시간 배포**됩니다.
 
-### 📋 배포 절차 (3단계)
+### 📋 원클릭 배포 (권장)
 
-#### 1. 정적 파일 빌드
-Next.js 정적 내보내기(`output: 'export'`)를 실행하여 최신 웹 페이지 결과물을 `out/` 폴더에 생성합니다:
+다음 명령어 하나로 **Next.js 정적 빌드 + Cloudflare Pages 실시간 배포**가 자동으로 완료됩니다:
+
 ```bash
-npm run build
+npm run deploy
 ```
 
-#### 2. Git 변경 사항 추가 및 커밋
-수정된 소스 코드와 새로 빌드된 `out/` 폴더 결과물을 커밋합니다:
+> **참고**: `npm run deploy`는 내부적으로 `next build && wrangler pages deploy out --project-name pureum-software`를 실행하며, 실행 즉시 수 초 내에 `https://pureum.dev`에 반영됩니다.
+
+---
+
+### 📋 GitHub 버전 관리 및 백업
+
+소스 코드와 결과물을 GitHub에 커밋 및 푸시하여 버전을 관리합니다:
+
 ```bash
 git add .
 git commit -m "feat: 업데이트 내용 요약"
-```
-
-#### 3. GitHub `main` 브랜치로 푸시
-```bash
 git push origin main
 ```
-
-#### 4. 배포 완료 확인
-- 푸시가 완료되면 **약 30초~1분 이내**에 Cloudflare Pages가 빌드를 배포합니다.
-- [https://pureum.dev](https://pureum.dev)에 접속하여 업데이트가 정상 반영되었는지 확인합니다.
 
 ---
 
