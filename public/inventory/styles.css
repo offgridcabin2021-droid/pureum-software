@@ -558,6 +558,58 @@ body {
     display: none;
 }
 
+/* Module Card Styling */
+.module-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+.module-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.module-card-arrow {
+    margin-top: auto;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+/* Simplified icons */
+.icon-simple {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+@media (max-width: 767px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .module-card {
+        padding: 20px;
+    }
+}
+
 .feature-card-link {
     /* flex: 1; not needed for grid */
     min-width: 0;
@@ -878,13 +930,11 @@ body {
 .detail-phone-wrapper {
     position: sticky;
     top: 100px;
-    background: #fff;
-    border-radius: 40px;
-    box-shadow: var(--shadow-lg);
-    border: 8px solid white;
-    overflow: hidden;
-    line-height: 0;
-    max-width: 380px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -1801,10 +1851,17 @@ body {
 }
 
 /* ==========================================================================
-   AUTHENTIC APPLE IPHONE DEVICE MOCKUP FRAME
+   CLEAN APP SCREENSHOT PRESENTATION (NO BLACK HARDWARE BEZEL)
    ========================================================================== */
 .phone-mockup-wrap {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1815,45 +1872,30 @@ body {
     position: relative;
     width: 100%;
     max-width: 310px;
-    background: #0D0D0E;
-    border-radius: 48px;
-    padding: 10px;
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-        0 25px 60px -15px rgba(0, 0, 0, 0.25),
-        0 10px 25px -5px rgba(97, 82, 250, 0.15);
-    border: 3px solid #28282B;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    background: transparent;
+    border-radius: 28px;
+    padding: 0;
+    border: none;
+    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     margin: 0 auto;
 }
 
 .iphone-frame:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.18) inset,
-        0 35px 75px -15px rgba(0, 0, 0, 0.32),
-        0 15px 35px -5px rgba(97, 82, 250, 0.22);
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.16), 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .iphone-island {
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 22px;
-    background: #000000;
-    border-radius: 20px;
-    z-index: 15;
-    pointer-events: none;
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.15);
+    display: none !important;
 }
 
 .iphone-screen {
     position: relative;
-    border-radius: 38px;
+    border-radius: 28px;
     overflow: hidden;
-    background: #000000;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     width: 100%;
 }
@@ -1863,6 +1905,7 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
+    border-radius: 27px;
 }
 
 .floating-glass-pill {
