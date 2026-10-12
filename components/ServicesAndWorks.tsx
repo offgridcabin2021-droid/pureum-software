@@ -204,9 +204,9 @@ const ServicesAndWorks: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-black transition-colors"
-                  title="App Store"
+                  title="App Store (iOS)"
                 >
-                  <Icon icon="solar:smartphone-bold" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-base" />
                 </a>
               </div>
             </div>
@@ -217,7 +217,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8DBD32] to-[#5C8518] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:clipboard-list-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    Dental Tech
+                    iOS App
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5C8518] transition-colors">
@@ -238,8 +238,11 @@ const ServicesAndWorks: React.FC = () => {
                   View Work
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
-                <span className="text-[9px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
-                  iOS Ready
+                <span
+                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  title="iOS App"
+                >
+                  <Icon icon="ri:apple-fill" className="text-base" />
                 </span>
               </div>
             </div>
@@ -250,7 +253,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:card-2-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    Fintech
+                    iOS App
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
@@ -271,8 +274,11 @@ const ServicesAndWorks: React.FC = () => {
                   View Work
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
-                <span className="text-[9px] text-blue-600 font-semibold bg-blue-100 px-1.5 py-0.5 rounded">
-                  Web & Mobile
+                <span
+                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  title="iOS App"
+                >
+                  <Icon icon="ri:apple-fill" className="text-base" />
                 </span>
               </div>
             </div>
@@ -283,7 +289,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:leaf-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS Utility
+                    iOS App
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors">
@@ -304,8 +310,11 @@ const ServicesAndWorks: React.FC = () => {
                   View Work
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
-                <span className="text-[9px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
-                  iOS Push
+                <span
+                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  title="iOS App"
+                >
+                  <Icon icon="ri:apple-fill" className="text-base" />
                 </span>
               </div>
             </div>
@@ -424,7 +433,17 @@ const ServicesAndWorks: React.FC = () => {
             </div>
 
             {/* Card 9: Retirement Calculator Plus */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div
+              onClick={() =>
+                setComingSoonData({
+                  title: 'Retirement Calc Plus',
+                  category: 'Fintech iOS',
+                  description:
+                    'iOS app for smart retirement planning & compound growth is currently under active development. Stay tuned or contact us for early access!',
+                })
+              }
+              className="cursor-pointer group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#4F46E5] to-[#3730A3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
@@ -442,10 +461,10 @@ const ServicesAndWorks: React.FC = () => {
 
               <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
                 <button
-                  onClick={() => setIsModalOpen(true)}
+                  type="button"
                   className="text-xs font-bold text-gray-800 hover:text-indigo-600 flex items-center gap-1 transition-colors"
                 >
-                  Learn More
+                  Coming Soon
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </button>
                 <span className="text-[9px] text-indigo-700 font-semibold bg-indigo-100 px-1.5 py-0.5 rounded">
@@ -455,7 +474,17 @@ const ServicesAndWorks: React.FC = () => {
             </div>
 
             {/* Card 10: SEO Rank Monitor */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div
+              onClick={() =>
+                setComingSoonData({
+                  title: 'SEO Rank Monitor',
+                  category: 'SEO Tool & Analytics',
+                  description:
+                    'Real-time Google search ranking & local GEO keyword tracking tool is currently under active development. Contact us for early beta access!',
+                })
+              }
+              className="cursor-pointer group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#F59E0B] to-[#D97706] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:magnifer-bug-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
@@ -473,10 +502,10 @@ const ServicesAndWorks: React.FC = () => {
 
               <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
                 <button
-                  onClick={() => setIsModalOpen(true)}
+                  type="button"
                   className="text-xs font-bold text-gray-800 hover:text-amber-600 flex items-center gap-1 transition-colors"
                 >
-                  Learn More
+                  Coming Soon
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </button>
                 <span className="text-[9px] text-amber-700 font-semibold bg-amber-100 px-1.5 py-0.5 rounded">
