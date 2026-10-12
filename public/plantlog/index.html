@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlantLog – Smart Plant Care & Watering Reminders for iOS</title>
+  <meta name="description" content="PlantLog is an elegant iOS plant care tracker with smart push notifications, photo logs, and 100% on-device private storage. Never forget to water a plant again.">
+  <link rel="icon" type="image/png" href="assets/app-icon-512.png">
+  <link rel="apple-touch-icon" href="assets/app-icon-512.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/app-icon.png" alt="PlantLog Logo" class="brand-icon">
+        <span class="brand-name">PlantLog</span>
+        <span class="brand-badge">iOS App</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+
+      <a href="support.html" class="nav-cta">
+        <span class="iconify" data-icon="solar:chat-round-line-bold"></span>
+        Support
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="iconify" data-icon="solar:leaf-bold"></span>
+        Built for iOS 17+ & SwiftData
+      </div>
+      <h1 class="hero-title">
+        Peaceful, Mindful<br>
+        <span>Plant Care on iOS.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Never let an indoor plant wither again. Schedule customized watering intervals, log growth photo journals, and receive smart local reminders — 100% privately on your device.
+      </p>
+
+      <div class="hero-actions">
+        <a href="support.html" class="btn-primary">
+          <span class="iconify" data-icon="solar:smart-home-angle-bold" style="font-size: 1.25rem;"></span>
+          Explore Features & Guides
+        </a>
+        <a href="privacy.html" class="btn-secondary">
+          <span class="iconify" data-icon="solar:shield-check-bold" style="font-size: 1.2rem; color: var(--primary);"></span>
+          100% Private (No Ads)
+        </a>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div style="max-width: 780px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px 30px; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 24px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <img src="assets/app-icon.png" alt="App Icon" style="width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 8px 20px rgba(70,121,84,0.25);">
+          <div style="text-align: left;">
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--forest); margin: 0;">PlantLog</h2>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 2px 0 0;">Native iOS Botanical Journal</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 28px; text-align: left;">
+          <div>
+            <div style="font-size: 1.35rem; font-weight: 800; color: var(--primary);">Zero</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Account Tracking</div>
+          </div>
+          <div style="border-left: 1px solid var(--border); padding-left: 24px;">
+            <div style="font-size: 1.35rem; font-weight: 800; color: var(--forest);">100%</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">On-Device SwiftData</div>
+          </div>
+          <div style="border-left: 1px solid var(--border); padding-left: 24px;">
+            <div style="font-size: 1.35rem; font-weight: 800; color: var(--sage);">.plantlog</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Full Backup Export</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section" id="features">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-label">Mindful Botanics</span>
+        <h2 class="section-title">Designed for Flourishing Plants</h2>
+        <p class="section-desc">
+          Every detail is crafted with care — combining native iOS elegance with thoughtful plant care utility.
+        </p>
+      </div>
+
+      <div class="grid-3">
+
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: var(--primary-light); color: var(--primary);">
+            <span class="iconify" data-icon="solar:bell-bold"></span>
+          </div>
+          <h3 class="card-title">Smart Local Push Reminders</h3>
+          <p class="card-desc">
+            Receive watering alerts at your preferred morning or evening hour. If today is too busy, tap <strong>"Remind me tomorrow"</strong> to snooze without breaking your routine.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: #E0F2FE; color: #0284C7;">
+            <span class="iconify" data-icon="solar:waterdrops-bold"></span>
+          </div>
+          <h3 class="card-title">Custom Watering Cadence</h3>
+          <p class="card-desc">
+            Cacti need monthly attention while ferns need weekly care. Define precise interval days for each specimen and track their real-time hydration state: Hydrated, Thirsty, or Overdue.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: #FEF3C7; color: #D97706;">
+            <span class="iconify" data-icon="solar:camera-bold"></span>
+          </div>
+          <h3 class="card-title">Photo Log & Growth Tracking</h3>
+          <p class="card-desc">
+            Document your botanical journey with photos, nicknames, and adoption days. Watch how your monstera or fiddle leaf fig thrives over the seasons.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: #ECFDF5; color: #059669;">
+            <span class="iconify" data-icon="solar:home-smile-bold"></span>
+          </div>
+          <h3 class="card-title">Room & Location Sorting</h3>
+          <p class="card-desc">
+            Organize by rooms (Living Room, Kitchen, Balcony, Bedroom, Office) or define custom locations. Never wonder which corner of the house needs watering next.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: #F3E8FF; color: #7C3AED;">
+            <span class="iconify" data-icon="solar:shield-check-bold"></span>
+          </div>
+          <h3 class="card-title">Absolute Data Sovereignty</h3>
+          <p class="card-desc">
+            Your photos and notes never touch our servers. Stored natively on your device via SwiftData with zero advertising, zero trackers, and zero telemetry.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <div class="card-icon" style="background: #FEE2E2; color: #DC2626;">
+            <span class="iconify" data-icon="solar:arrow-left-arrow-right-bold"></span>
+          </div>
+          <h3 class="card-title">Single-File Backup & Transfer</h3>
+          <p class="card-desc">
+            Export all plants, history, and photos into a portable <code>.plantlog</code> file. Seamlessly AirDrop or sync to another device whenever you upgrade your phone.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Support & Privacy Callout -->
+  <section style="padding: 20px 0 80px;">
+    <div class="container">
+      <div class="contact-card" style="background: linear-gradient(135deg, var(--forest) 0%, #2A4834 100%);">
+        <h3>Have Questions or Need Help?</h3>
+        <p>
+          Learn how to get the most out of PlantLog, check our privacy standards, or contact our support team.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="support.html" class="contact-email-btn">
+            <span class="iconify" data-icon="solar:question-circle-bold" style="font-size: 1.25rem;"></span>
+            Visit Support & FAQ
+          </a>
+          <a href="privacy.html" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); color: #FFFFFF; padding: 14px 24px; border-radius: var(--radius-full); font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.25);">
+            <span class="iconify" data-icon="solar:shield-bold"></span>
+            Read Privacy Policy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/app-icon.png" alt="PlantLog" class="brand-icon">
+          <span class="brand-name">PlantLog</span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="support.html">Support & FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 PlantLog. A craft product by <a href="/" class="pureum-brand-link">Pureum Software</a>.</span>
+        <span>Built with care in Toronto, Ontario, Canada.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

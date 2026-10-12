@@ -97,7 +97,7 @@ const TechStackAndFooter: React.FC = () => {
             Have an innovative app concept or need an enterprise web application? Let's turn your vision into reality.
           </p>
           <a
-            href="mailto:info@pureum.dev"
+            href="mailto:pureumsoftware@gmail.com"
             className="inline-flex items-center gap-3 px-8 py-4 bg-[#007AFF] hover:bg-blue-600 text-white font-bold text-sm tracking-wider uppercase rounded-full transition-all duration-300 shadow-lg shadow-[#007AFF]/30 hover:scale-105"
           >
             Get In Touch
@@ -127,7 +127,7 @@ const TechStackAndFooter: React.FC = () => {
             </span>
           </div>
           <meta itemProp="url" content="https://pureum.dev" />
-          <meta itemProp="email" content="info@pureum.dev" />
+          <meta itemProp="email" content="pureumsoftware@gmail.com" />
         </div>
 
         <div className="flex gap-6 text-sm text-gray-500">
@@ -137,7 +137,7 @@ const TechStackAndFooter: React.FC = () => {
           <a href="/privacy.html" className="hover:text-[#007AFF] transition-colors">
             Privacy Policy
           </a>
-          <a href="mailto:info@pureum.dev" className="hover:text-[#007AFF] transition-colors" itemProp="email">
+          <a href="mailto:pureumsoftware@gmail.com" className="hover:text-[#007AFF] transition-colors" itemProp="email">
             Contact Us
           </a>
         </div>

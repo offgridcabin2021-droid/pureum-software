@@ -103,7 +103,7 @@ const jsonLd = {
       image: "https://pureum.dev/pureum-logo.jpg",
       description:
         "Toronto-based software agency specializing in iOS & Android app development, SEO & GEO optimization, AI automation, and full-stack web engineering.",
-      email: "info@pureum.dev",
+      email: "pureumsoftware@gmail.com",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Toronto",

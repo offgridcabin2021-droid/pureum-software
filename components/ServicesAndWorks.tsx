@@ -3,13 +3,26 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import SignupModal from './SignupModal';
+import ComingSoonModal from './ComingSoonModal';
 
 const ServicesAndWorks: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [comingSoonData, setComingSoonData] = useState<{
+    title: string;
+    category?: string;
+    description?: string;
+  } | null>(null);
 
   return (
     <section className="bg-[#050505] py-16 px-4 sm:px-6 md:px-12 lg:px-16 scroll-mt-20" id="services" aria-label="Services and portfolio">
       <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ComingSoonModal
+        isOpen={!!comingSoonData}
+        title={comingSoonData?.title || ''}
+        category={comingSoonData?.category}
+        description={comingSoonData?.description}
+        onClose={() => setComingSoonData(null)}
+      />
 
       {/* Main White Card Container (Matching Reference Design) */}
       <div className="max-w-[1440px] mx-auto bg-white rounded-[2.5rem] md:rounded-[3rem] p-6 sm:p-10 md:p-14 text-gray-900 shadow-2xl">
@@ -62,7 +75,7 @@ const ServicesAndWorks: React.FC = () => {
               </p>
             </div>
             <a
-              href="mailto:info@pureum.dev"
+              href="mailto:pureumsoftware@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 w-fit shadow-md hover:shadow-lg"
             >
               Explore Capabilities
@@ -86,7 +99,7 @@ const ServicesAndWorks: React.FC = () => {
 
             <div className="relative z-10">
               <a
-                href="mailto:info@pureum.dev"
+                href="mailto:pureumsoftware@gmail.com"
                 className="inline-flex items-center gap-3 px-6 py-3.5 bg-white text-black hover:bg-gray-100 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md hover:scale-105"
               >
                 Start a Project
@@ -111,7 +124,7 @@ const ServicesAndWorks: React.FC = () => {
               </span>
             </div>
             <a
-              href="mailto:info@pureum.dev"
+              href="mailto:pureumsoftware@gmail.com"
               className="text-xs font-bold tracking-wider uppercase text-gray-500 hover:text-black transition-colors flex items-center gap-2"
             >
               Request Custom Build
@@ -159,135 +172,7 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 2: Retirement Calculator Plus */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#4F46E5] to-[#3730A3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
-                  Retirement Calc Plus
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  iOS app for smart retirement planning & compound growth.
-                </p>
-              </div>
-
-              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="text-xs font-bold text-gray-800 hover:text-indigo-600 flex items-center gap-1 transition-colors"
-                >
-                  Learn More
-                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </button>
-                <span className="text-[9px] text-indigo-700 font-semibold bg-indigo-100 px-1.5 py-0.5 rounded">
-                  Fintech iOS
-                </span>
-              </div>
-            </div>
-
-            {/* Card 3: MoneyPilot */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#0284C7] to-[#0369A1] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:file-left-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-sky-600 transition-colors">
-                  MoneyPilot
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  iOS expense app parsing CSV files to auto-budget.
-                </p>
-              </div>
-
-              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <a
-                  href="/moneypilot/index.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-gray-800 hover:text-sky-600 flex items-center gap-1 transition-colors"
-                >
-                  View Demo
-                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </a>
-                <span className="text-[9px] text-sky-700 font-semibold bg-sky-100 px-1.5 py-0.5 rounded">
-                  CSV Budget
-                </span>
-              </div>
-            </div>
-
-            {/* Card 4: PlantLog */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:leaf-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS Utility
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors">
-                  PlantLog
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  iOS plant care app with smart push notifications.
-                </p>
-              </div>
-
-              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="text-xs font-bold text-gray-800 hover:text-emerald-600 flex items-center gap-1 transition-colors"
-                >
-                  Learn More
-                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </button>
-                <span className="text-[9px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
-                  iOS Push
-                </span>
-              </div>
-            </div>
-
-            {/* Card 5: AI Receptionist */}
-            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:user-speak-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    AI Automation
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-violet-600 transition-colors">
-                  AI Receptionist
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  Voice & chat AI receptionist for 24/7 patient booking.
-                </p>
-              </div>
-
-              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="text-xs font-bold text-gray-800 hover:text-violet-600 flex items-center gap-1 transition-colors"
-                >
-                  Request Demo
-                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </button>
-                <span className="text-[9px] text-violet-700 font-semibold bg-violet-100 px-1.5 py-0.5 rounded">
-                  AI Voice
-                </span>
-              </div>
-            </div>
-
-            {/* ROW 2 */}
-
-            {/* Card 6: PathLog */}
+            {/* Card 2: PathLog */}
             <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#1A5DFF] to-[#0A3BB3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
@@ -326,38 +211,40 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 7: Doctor Note */}
+            {/* Card 3: PureStock */}
             <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#5236AA] to-[#341F7B] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:document-medicine-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8DBD32] to-[#5C8518] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:clipboard-list-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    AI Clinical
+                    Dental Tech
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5236AA] transition-colors">
-                  Doctor Note
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5C8518] transition-colors">
+                  PureStock
                 </h3>
                 <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  Automated clinical medical documentation & notes.
+                  Dental clinic inventory system for stock levels.
                 </p>
               </div>
 
               <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="text-xs font-bold text-gray-800 hover:text-[#5236AA] flex items-center gap-1 transition-colors"
+                <a
+                  href="/inventory/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-gray-800 hover:text-[#5C8518] flex items-center gap-1 transition-colors"
                 >
-                  Try Demo
+                  View Work
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </button>
-                <span className="text-[9px] text-purple-600 font-semibold bg-purple-100 px-1.5 py-0.5 rounded">
-                  Live Preview
+                </a>
+                <span className="text-[9px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
+                  iOS Ready
                 </span>
               </div>
             </div>
 
-            {/* Card 8: OptiPay */}
+            {/* Card 4: OptiPay */}
             <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] overflow-hidden mb-4 flex items-center justify-center shadow-md">
@@ -390,35 +277,179 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 9: PureStock */}
+            {/* Card 5: PlantLog */}
             <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8DBD32] to-[#5C8518] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:clipboard-list-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:leaf-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    Dental Tech
+                    iOS Utility
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5C8518] transition-colors">
-                  PureStock
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors">
+                  PlantLog
                 </h3>
                 <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  Dental clinic inventory system for stock levels.
+                  iOS plant care app with smart push notifications.
                 </p>
               </div>
 
               <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
                 <a
-                  href="/inventory/index.html"
+                  href="/plantlog/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-bold text-gray-800 hover:text-[#5C8518] flex items-center gap-1 transition-colors"
+                  className="text-xs font-bold text-gray-800 hover:text-emerald-600 flex items-center gap-1 transition-colors"
                 >
                   View Work
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
                 <span className="text-[9px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">
-                  iOS Ready
+                  iOS Push
+                </span>
+              </div>
+            </div>
+
+            {/* Card 6: Doctor Note */}
+            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#5236AA] to-[#341F7B] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:document-medicine-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
+                    AI Clinical
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5236AA] transition-colors">
+                  Doctor Note
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
+                  Automated clinical medical documentation & notes.
+                </p>
+              </div>
+
+              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-xs font-bold text-gray-800 hover:text-[#5236AA] flex items-center gap-1 transition-colors"
+                >
+                  Try Demo
+                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
+                </button>
+                <span className="text-[9px] text-purple-600 font-semibold bg-purple-100 px-1.5 py-0.5 rounded">
+                  Live Preview
+                </span>
+              </div>
+            </div>
+
+            {/* Card 7: AI Receptionist */}
+            <div
+              onClick={() =>
+                setComingSoonData({
+                  title: 'AI Receptionist',
+                  category: 'AI Automation',
+                  description:
+                    'Voice & chat AI receptionist for 24/7 patient booking is currently under development. Stay tuned for our upcoming release!',
+                })
+              }
+              className="cursor-pointer group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <div>
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:user-speak-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
+                    AI Automation
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-violet-600 transition-colors">
+                  AI Receptionist
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
+                  Voice & chat AI receptionist for 24/7 patient booking.
+                </p>
+              </div>
+
+              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
+                <button
+                  type="button"
+                  className="text-xs font-bold text-gray-800 hover:text-violet-600 flex items-center gap-1 transition-colors"
+                >
+                  Coming Soon
+                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
+                </button>
+                <span className="text-[9px] text-violet-700 font-semibold bg-violet-100 px-1.5 py-0.5 rounded">
+                  AI Voice
+                </span>
+              </div>
+            </div>
+
+            {/* Card 8: MoneyPilot */}
+            <div
+              onClick={() =>
+                setComingSoonData({
+                  title: 'MoneyPilot',
+                  category: 'iOS Expense App',
+                  description:
+                    'MoneyPilot smart CSV expense & budget parser is currently under development and coming soon to iOS, Android & Web.',
+                })
+              }
+              className="cursor-pointer group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <div>
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#0284C7] to-[#0369A1] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:file-left-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
+                    iOS App
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-sky-600 transition-colors">
+                  MoneyPilot
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
+                  iOS expense app parsing CSV files to auto-budget.
+                </p>
+              </div>
+
+              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
+                <button
+                  type="button"
+                  className="text-xs font-bold text-gray-800 hover:text-sky-600 flex items-center gap-1 transition-colors"
+                >
+                  Coming Soon
+                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
+                </button>
+                <span className="text-[9px] text-sky-700 font-semibold bg-sky-100 px-1.5 py-0.5 rounded">
+                  CSV Budget
+                </span>
+              </div>
+            </div>
+
+            {/* Card 9: Retirement Calculator Plus */}
+            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#4F46E5] to-[#3730A3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
+                    iOS App
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
+                  Retirement Calc Plus
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
+                  iOS app for smart retirement planning & compound growth.
+                </p>
+              </div>
+
+              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-xs font-bold text-gray-800 hover:text-indigo-600 flex items-center gap-1 transition-colors"
+                >
+                  Learn More
+                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
+                </button>
+                <span className="text-[9px] text-indigo-700 font-semibold bg-indigo-100 px-1.5 py-0.5 rounded">
+                  Fintech iOS
                 </span>
               </div>
             </div>

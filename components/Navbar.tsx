@@ -44,7 +44,7 @@ const Navbar = () => {
             Our Works
           </a>
           <a
-            href="mailto:info@pureum.dev"
+            href="mailto:pureumsoftware@gmail.com"
             className="px-4 py-2 bg-white/5 hover:bg-[#007AFF] text-white rounded-full transition-all duration-300 font-semibold"
           >
             Contact
