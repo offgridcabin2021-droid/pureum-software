@@ -319,7 +319,43 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 6: Doctor Note */}
+            {/* Card 6: RetireWise */}
+            <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#002439] to-[#0066FF] overflow-hidden mb-4 flex items-center justify-center shadow-md">
+                  <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
+                    Fintech iOS
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                  RetireWise
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
+                  Smart Canadian retirement & corporate wealth planner with CRA 2026 tax engine.
+                </p>
+              </div>
+
+              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
+                <a
+                  href="/retirewise/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-gray-800 hover:text-blue-600 flex items-center gap-1 transition-colors"
+                >
+                  View Work
+                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
+                </a>
+                <span
+                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  title="iOS App"
+                >
+                  <Icon icon="ri:apple-fill" className="text-base" />
+                </span>
+              </div>
+            </div>
+
+            {/* Card 7: Doctor Note */}
             <div className="group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#5236AA] to-[#341F7B] overflow-hidden mb-4 flex items-center justify-center shadow-md">
@@ -350,7 +386,7 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 7: AI Receptionist */}
+            {/* Card 8: AI Receptionist */}
             <div
               onClick={() =>
                 setComingSoonData({
@@ -391,7 +427,7 @@ const ServicesAndWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 8: MoneyPilot */}
+            {/* Card 9: MoneyPilot */}
             <div
               onClick={() =>
                 setComingSoonData({
@@ -428,47 +464,6 @@ const ServicesAndWorks: React.FC = () => {
                 </button>
                 <span className="text-[9px] text-sky-700 font-semibold bg-sky-100 px-1.5 py-0.5 rounded">
                   CSV Budget
-                </span>
-              </div>
-            </div>
-
-            {/* Card 9: Retirement Calculator Plus */}
-            <div
-              onClick={() =>
-                setComingSoonData({
-                  title: 'Retirement Calc Plus',
-                  category: 'Fintech iOS',
-                  description:
-                    'iOS app for smart retirement planning & compound growth is currently under active development. Stay tuned or contact us for early access!',
-                })
-              }
-              className="cursor-pointer group bg-[#F4F6FB] border border-gray-200/60 rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <div>
-                <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#4F46E5] to-[#3730A3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
-                  <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
-                  Retirement Calc Plus
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed mb-4 font-normal">
-                  iOS app for smart retirement planning & compound growth.
-                </p>
-              </div>
-
-              <div className="pt-2.5 border-t border-gray-200/60 flex items-center justify-between">
-                <button
-                  type="button"
-                  className="text-xs font-bold text-gray-800 hover:text-indigo-600 flex items-center gap-1 transition-colors"
-                >
-                  Coming Soon
-                  <Icon icon="solar:arrow-right-linear" className="text-xs" />
-                </button>
-                <span className="text-[9px] text-indigo-700 font-semibold bg-indigo-100 px-1.5 py-0.5 rounded">
-                  Fintech iOS
                 </span>
               </div>
             </div>

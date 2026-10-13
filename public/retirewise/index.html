@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetireWise – Smart Canadian Retirement & Corporate Wealth Planner</title>
+  <meta name="description" content="RetireWise simplifies Canadian retirement planning, CRA 2026 tax engine simulations, OAS clawback shields, CPP optimization, and corporate dividend drawdowns.">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/app-icon.png" alt="RetireWise Logo" class="brand-icon">
+        <span class="brand-name">RetireWise</span>
+        <span class="brand-badge">Fintech iOS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#overview" class="active">Overview</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+        <li><a href="#why-canadian">Why RetireWise</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="tos.html">Terms</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#pricing" class="btn-nav-cta">
+          <span class="iconify" data-icon="ri:apple-fill"></span>
+          Get RetireWise
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="overview">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-content">
+        
+        <div class="hero-badge-wrap">
+          <span class="hero-badge-flag">🇨🇦</span>
+          <span class="hero-badge-text">Built for Canada · CRA 2026 Tax Engine · 100% Private</span>
+        </div>
+
+        <h1 class="hero-title">
+          Retirement planning without the <span class="highlight">guesswork, tax shocks,</span> or sleepless nights.
+        </h1>
+
+        <p class="hero-subtitle">
+          Designed specifically for Canadian families, incorporated professionals, and wealth advisors. RetireWise coordinates CRA tax brackets, OAS clawback shields, CPP timing, and corporate dividend streams into one clear, lifelong roadmap.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#simulator" class="btn-primary">
+            <span class="iconify" data-icon="solar:chart-line-uptrend-bold"></span>
+            Test Live Simulator
+          </a>
+          <a href="#pricing" class="btn-secondary">
+            <span class="iconify" data-icon="solar:crown-bold" style="color: var(--advisor-gold);"></span>
+            View Pro & Advisor Tiers
+          </a>
+        </div>
+
+        <div class="hero-badges-row">
+          <span><span class="iconify" data-icon="solar:shield-check-bold" style="color: var(--success);"></span> Zero Tracking or Data Selling</span>
+          <span><span class="iconify" data-icon="solar:refresh-bold" style="color: var(--electric-blue);"></span> Real-Time 30-Year Cash Flow</span>
+          <span><span class="iconify" data-icon="solar:document-text-bold" style="color: var(--advisor-gold);"></span> Executive A4 PDF Reports</span>
+        </div>
+
+        <!-- Interactive Simulator Card -->
+        <div class="simulator-preview-wrapper" id="simulator">
+          <div class="simulator-card">
+            
+            <div class="simulator-header">
+              <div class="sim-title-group">
+                <h3>Interactive Retirement & Tax Simulator</h3>
+                <p>Adjust variables below to see real-time wealth accumulation and tax-aware drawdowns.</p>
+              </div>
+
+              <div class="sim-strategy-switch">
+                <button type="button" class="strategy-tab active" id="tab-oas" onclick="setSimStrategy('oas')">
+                  🛡️ OAS Protector
+                </button>
+                <button type="button" class="strategy-tab" id="tab-wealth" onclick="setSimStrategy('wealth')">
+                  📈 Wealth Maximizer
+                </button>
+              </div>
+            </div>
+
+            <div class="simulator-grid">
+              
+              <!-- Left Column: Inputs -->
+              <div class="sim-inputs-col">
+                
+                <div class="input-slider-group">
+                  <label for="input-cur-age">
+                    <span>Current Age</span>
+                    <span class="val-display" id="val-cur-age">38 yrs</span>
+                  </label>
+                  <input type="range" class="range-slider" id="input-cur-age" min="25" max="65" value="38" oninput="updateSim()">
+                </div>
+
+                <div class="input-slider-group">
+                  <label for="input-ret-age">
+                    <span>Target Retirement Age</span>
+                    <span class="val-display" id="val-ret-age">62 yrs</span>
+                  </label>
+                  <input type="range" class="range-slider" id="input-ret-age" min="50" max="75" value="62" oninput="updateSim()">
+                </div>
+
+                <div class="input-slider-group">
+                  <label for="input-savings">
+                    <span>Current Portfolio (RRSP, TFSA, Non-Reg)</span>
+                    <span class="val-display" id="val-savings">$250,000</span>
+                  </label>
+                  <input type="range" class="range-slider" id="input-savings" min="20000" max="1500000" step="10000" value="250000" oninput="updateSim()">
+                </div>
+
+                <div class="input-slider-group">
+                  <label for="input-monthly">
+                    <span>Monthly Savings Contribution</span>
+                    <span class="val-display" id="val-monthly">$1,500 / mo</span>
+                  </label>
+                  <input type="range" class="range-slider" id="input-monthly" min="200" max="8000" step="100" value="1500" oninput="updateSim()">
+                </div>
+
+                <div class="input-slider-group">
+                  <label for="input-spending">
+                    <span>Target Annual Retirement Spending</span>
+                    <span class="val-display" id="val-spending">$75,000 / yr</span>
+                  </label>
+                  <input type="range" class="range-slider" id="input-spending" min="35000" max="180000" step="5000" value="75000" oninput="updateSim()">
+                </div>
+
+              </div>
+
+              <!-- Right Column: Real-time Output -->
+              <div class="sim-results-col">
+                <div>
+                  <div class="result-badge" id="strategy-badge">
+                    <span class="iconify" data-icon="solar:star-fall-minimalistic-bold"></span>
+                    Strategy: OAS Recovery Shield
+                  </div>
+
+                  <div class="result-stat-card">
+                    <div class="result-stat-label">Projected Nest Egg at Retirement</div>
+                    <div class="result-stat-value" id="res-nest-egg">$1,842,500</div>
+                  </div>
+
+                  <div class="result-subgrid">
+                    <div>
+                      <div class="result-substat-label">Safe Monthly Drawdown</div>
+                      <div class="result-substat-value" id="res-monthly-draw">$7,420</div>
+                    </div>
+                    <div>
+                      <div class="result-substat-label">Est. Lifetime Tax Saved</div>
+                      <div class="result-substat-value" id="res-tax-saved">$148,200</div>
+                    </div>
+                    <div>
+                      <div class="result-substat-label">OAS Clawback Risk</div>
+                      <div class="result-substat-value" id="res-clawback" style="color: #4ADE80;">0% (Shielded)</div>
+                    </div>
+                    <div>
+                      <div class="result-substat-label">Final Estate Projection (Age 90)</div>
+                      <div class="result-substat-value" id="res-estate">$680,000</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-disclaimer">
+                  * Live model assumes 6.5% pre-retirement growth, 2.3% inflation indexing, and blended Canadian CRA/Provincial tax sequencing. Open the iOS app for exact multi-account precision.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points / Empathy Section -->
+  <section class="empathy-section" id="why-canadian">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-eyebrow">Real Challenges · Real Clarity</span>
+        <h2 class="section-title">Why Canadian retirement is uniquely stressful.</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Generic retirement calculators fail Canadians because they ignore the complex interlock between CRA tax brackets, government pensions, and corporate entities.
+        </p>
+      </div>
+
+      <div class="empathy-grid">
+        
+        <!-- Pain Point 1 -->
+        <div class="empathy-card">
+          <div class="empathy-icon-box icon-clawback">
+            <span class="iconify" data-icon="solar:hand-money-bold"></span>
+          </div>
+          <h3>The OAS Clawback Trap</h3>
+          <p>
+            You spent 40 years paying into the Canadian tax system, only to have your Old Age Security pension clawed back by up to 100% once your net income crosses $90,000.
+          </p>
+          <div class="empathy-solution">
+            <span class="iconify" data-icon="solar:check-circle-bold"></span>
+            RetireWise sequences TFSA and non-registered draws to shield your OAS pension.
+          </div>
+        </div>
+
+        <!-- Pain Point 2 -->
+        <div class="empathy-card">
+          <div class="empathy-icon-box icon-corp">
+            <span class="iconify" data-icon="solar:buildings-bold"></span>
+          </div>
+          <h3>The Incorporated Professional Dilemma</h3>
+          <p>
+            Doctors, dentists, contractors, and business owners have retained earnings locked in holding companies. Drawing T4 salary vs eligible vs tax-free capital dividends is a constant guessing game.
+          </p>
+          <div class="empathy-solution">
+            <span class="iconify" data-icon="solar:check-circle-bold"></span>
+            Full corporate chain modeling for CDA, GRIP, and RDTOH tax recovery.
+          </div>
+        </div>
+
+        <!-- Pain Point 3 -->
+        <div class="empathy-card">
+          <div class="empathy-icon-box icon-estate">
+            <span class="iconify" data-icon="solar:danger-triangle-bold"></span>
+          </div>
+          <h3>The 53% Terminal Tax Cliff</h3>
+          <p>
+            Leaving millions in an RRSP/RRIF might seem prudent—until death triggers an immediate tax deemed disposition, handing over up to half your life savings to the government instead of your heirs.
+          </p>
+          <div class="empathy-solution">
+            <span class="iconify" data-icon="solar:check-circle-bold"></span>
+            Wealth Maximizer strategically draws down registered accounts to maximize your legacy.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Detailed Features Grid -->
+  <section class="features-section" id="features">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-eyebrow">Engineered for Excellence</span>
+        <h2 class="section-title">Everything you need for multi-decade peace of mind.</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          RetireWise brings institutional wealth management modeling right to your iPhone and iPad.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:calculator-minimalistic-bold"></span>
+          </div>
+          <h4>CRA 2026 Tax Engine</h4>
+          <p>
+            Accurate Federal and Provincial brackets across all 10 provinces. Differentiates eligible dividends, non-eligible dividends, capital gains inclusions, and personal tax credits.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:calendar-badge-clock-bold"></span>
+          </div>
+          <h4>30-Year Cash Flow Audit</h4>
+          <p>
+            Year-by-year visibility into account balances, annual inflation-adjusted spending, minimum RRIF drawdowns, and CPP/OAS timing from age 60 through 95+.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:compass-bold"></span>
+          </div>
+          <h4>Dual Optimization Modes</h4>
+          <p>
+            Toggle between <strong>OAS Protector</strong> (minimizing pension clawback) and <strong>Wealth Maximizer</strong> (minimizing lifetime and terminal estate taxation) with a single tap.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:document-medicine-bold"></span>
+          </div>
+          <h4>Corporate Owner-Manager Module</h4>
+          <p>
+            Calculate corporate tax, passive investment surtaxes, payroll costs, and take-home cash. Tap into your CDA balance for 100% tax-free distributions.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:printer-bold"></span>
+          </div>
+          <h4>Executive A4 PDF Client Reports</h4>
+          <p>
+            Generate publication-grade multi-page client binders with executive summaries, withdrawal waterfall charts, and tax audits ready for presentation.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle">
+            <span class="iconify" data-icon="solar:shield-keyhole-bold"></span>
+          </div>
+          <h4>100% Local & Encrypted</h4>
+          <p>
+            Your net worth is nobody else's business. No account required, no ad tracking, and optional end-to-end encrypted iCloud synchronization under your Apple ID.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Deep Dive Corporate Banner -->
+  <section class="deep-dive-section">
+    <div class="container">
+      <div class="deep-dive-card">
+        
+        <div class="deep-dive-text">
+          <span style="color: var(--advisor-gold); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">
+            For Advisors & Incorporated Professionals
+          </span>
+          <h3>End-to-End Corporate & Personal Integration</h3>
+          <p>
+            Most tools look only at personal tax, completely blind to the corporate cash flow that fuels it. RetireWise connects your corporation’s balance sheet with your personal family lifestyle.
+          </p>
+          <ul class="deep-dive-features">
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              CDA (Capital Dividend Account) tax-free payout sequencing
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              GRIP and RDTOH refund balance simulations
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Side-by-side Salary vs Dividend take-home comparison
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Multi-Client portfolio management for CPAs and CFPs
+            </li>
+          </ul>
+          <a href="#pricing" class="btn-primary" style="background: var(--advisor-gold); color: #001726;">
+            <span class="iconify" data-icon="solar:crown-bold"></span>
+            Explore Advisor Unlimited
+          </a>
+        </div>
+
+        <!-- Visual Table Snapshot -->
+        <div class="breakdown-table-preview">
+          <div style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF; margin-bottom: 12px; display: flex; justify-content: space-between;">
+            <span>30-Year Cash Flow Projection (Sample)</span>
+            <span style="color: var(--advisor-gold); font-size: 0.75rem;">CRA 2026 Aligned</span>
+          </div>
+          <div class="breakdown-header-row">
+            <span>Age</span>
+            <span>Total Assets</span>
+            <span>Net Drawdown</span>
+            <span>Est. Tax</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Age 62</span>
+            <span>$1,842,500</span>
+            <span>$75,000</span>
+            <span>$6,420 (TFSA/CDA)</span>
+          </div>
+          <div class="breakdown-row highlighted">
+            <span>Age 65</span>
+            <span>$1,984,000</span>
+            <span>$79,600 (CPP/OAS)</span>
+            <span>$8,100 (OAS Shield)</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Age 71</span>
+            <span>$2,120,000</span>
+            <span>$86,200 (RRIF)</span>
+            <span>$12,400 (Smooth)</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Age 80</span>
+            <span>$1,740,000</span>
+            <span>$94,500</span>
+            <span>$15,800</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Age 90</span>
+            <span>$890,000</span>
+            <span>$105,000</span>
+            <span>$18,200 (Legacy Intact)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      
+      <div class="pricing-header">
+        <span class="section-eyebrow">Fair & Transparent</span>
+        <h2 class="section-title">Invest in a lifetime of financial confidence.</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Choose the plan that fits your journey. Manage your own household or empower your entire financial advisory practice.
+        </p>
+
+        <div class="billing-toggle-wrap">
+          <span class="billing-label">Monthly</span>
+          <div class="billing-switch annual" id="billingSwitch" onclick="toggleBillingCycle()">
+            <div class="billing-switch-thumb"></div>
+          </div>
+          <span class="billing-label">Annual</span>
+          <span class="save-badge">Save ~33%</span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Card 1: Personal Pro -->
+        <div class="pricing-card featured">
+          <div class="featured-pill">Most Popular for Families</div>
+          <h3 class="pricing-tier-name">Personal Pro</h3>
+          <p class="pricing-tier-desc">Comprehensive retirement & wealth planning for Canadian individuals and couples.</p>
+          
+          <div class="pricing-amount">
+            <span class="price-val" id="price-pro">$79.99</span>
+            <span class="price-period" id="period-pro">/ year ($6.66/mo)</span>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Full Retirement Planner & Net Worth Projections
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              30-Year Year-by-Year Cash Flow Breakdown
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Tax-Aware Strategies (OAS Protector & Wealth Maximizer)
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Encrypted Apple iCloud Sync & Device Backup
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
+              Household Plan Management & Unlimited Scenario Testing
+            </li>
+          </ul>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="btn-tier btn-pro">
+            Get Personal Pro
+          </a>
+        </div>
+
+        <!-- Card 2: Advisor Unlimited -->
+        <div class="pricing-card advisor-card">
+          <h3 class="pricing-tier-name" style="color: var(--primary-navy);">
+            Advisor Unlimited
+          </h3>
+          <p class="pricing-tier-desc">Designed for Financial Planners (CFP®), CPAs, and Family Wealth Offices.</p>
+          
+          <div class="pricing-amount">
+            <span class="price-val" id="price-advisor">$249.99</span>
+            <span class="price-period" id="period-advisor">/ year ($20.83/mo)</span>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li>
+              <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
+              <strong>Unlimited Client Portfolio Management</strong> (No limits)
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
+              <strong>Executive A4 Multi-Page PDF Client Reports</strong> with custom branding
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
+              Full Corporate Owner-Manager Payout Optimization (CDA/GRIP/RDTOH)
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
+              Full CRA 2026 Tax Engine & Clawback Modeling
+            </li>
+            <li>
+              <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
+              Multi-Client Cloud Sync & Automatic Encrypted Backup
+            </li>
+          </ul>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="btn-tier btn-advisor">
+            Get Advisor Unlimited
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+        <span class="section-eyebrow">Real User Stories</span>
+        <h2 class="section-title">Trusted across Canada.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "As an incorporated physician in Toronto, balancing medicine and corporate dividends was an annual headache. RetireWise showed me and my accountant the exact salary-to-dividend mix in ten minutes."
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="author-avatar">ML</div>
+            <div class="author-info">
+              <h5>Dr. Marcus L.</h5>
+              <p>MD, Incorporated Physician · Toronto, ON</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "We were terrified of the OAS clawback eating away our pensions. The OAS Protector sequence showed us how using our TFSA earlier saves over $35,000 in clawbacks. Outstanding clarity."
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="author-avatar">SD</div>
+            <div class="author-info">
+              <h5>Sarah & David K.</h5>
+              <p>Retired Educators · Vancouver, BC</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "The executive A4 PDF reports alone are worth five times the price. My clients immediately understand the visual 30-year cash flow table. It has transformed my discovery meetings."
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="author-avatar">EV</div>
+            <div class="author-info">
+              <h5>Elena V., CFP®</h5>
+              <p>Senior Wealth Planner · Calgary, AB</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Call to Action Banner -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-box">
+        <h2>Start your confident retirement plan today.</h2>
+        <p>
+          Eliminate the tax surprises and secure your financial independence. Available on iPhone and iPad.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="#simulator" class="btn-primary" style="background: #FFFFFF; color: var(--primary-navy);">
+            <span class="iconify" data-icon="solar:chart-2-bold"></span>
+            Test Live Simulator
+          </a>
+          <a href="support.html" class="btn-secondary" style="background: rgba(255, 255, 255, 0.12); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.25);">
+            <span class="iconify" data-icon="solar:question-circle-bold"></span>
+            Have Questions? Ask Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>
+            <img src="assets/app-icon.png" alt="RetireWise" style="width: 26px; height: 26px; border-radius: 6px;">
+            RetireWise
+          </h4>
+          <p>
+            Smart Canadian retirement, wealth sequencing, and CRA tax optimization engine for individuals and financial advisors.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#simulator">Simulator</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal & Trust</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+            <li><a href="support.html">Help & FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="https://pureum.dev">Pureum Software</a></li>
+            <li><a href="mailto:support@pureum.dev">support@pureum.dev</a></li>
+            <li>Toronto, ON, Canada</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Pureum Software. All rights reserved.</p>
+        <p>RetireWise is a trademark of Pureum Software.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Live Simulator Logic
+    let currentStrategy = 'oas'; // 'oas' or 'wealth'
+    let isAnnualBilling = true;
+
+    function setSimStrategy(strategy) {
+      currentStrategy = strategy;
+      document.getElementById('tab-oas').classList.toggle('active', strategy === 'oas');
+      document.getElementById('tab-wealth').classList.toggle('active', strategy === 'wealth');
+      
+      const badge = document.getElementById('strategy-badge');
+      if (strategy === 'oas') {
+        badge.innerHTML = '<span class="iconify" data-icon="solar:shield-check-bold"></span> Strategy: OAS Recovery Shield';
+        badge.style.color = '#7DD3FC';
+      } else {
+        badge.innerHTML = '<span class="iconify" data-icon="solar:graph-new-up-bold"></span> Strategy: Wealth Maximizer (RRIF Melt)';
+        badge.style.color = '#FDE047';
+      }
+      updateSim();
+    }
+
+    function formatCurrency(val) {
+      return '$' + Math.round(val).toLocaleString('en-CA');
+    }
+
+    function updateSim() {
+      const curAge = parseInt(document.getElementById('input-cur-age').value);
+      let retAge = parseInt(document.getElementById('input-ret-age').value);
+      if (retAge <= curAge) {
+        retAge = curAge + 1;
+        document.getElementById('input-ret-age').value = retAge;
+      }
+      const savings = parseFloat(document.getElementById('input-savings').value);
+      const monthly = parseFloat(document.getElementById('input-monthly').value);
+      const spending = parseFloat(document.getElementById('input-spending').value);
+
+      document.getElementById('val-cur-age').textContent = curAge + ' yrs';
+      document.getElementById('val-ret-age').textContent = retAge + ' yrs';
+      document.getElementById('val-savings').textContent = formatCurrency(savings);
+      document.getElementById('val-monthly').textContent = formatCurrency(monthly) + ' / mo';
+      document.getElementById('val-spending').textContent = formatCurrency(spending) + ' / yr';
+
+      const yearsToRetire = retAge - curAge;
+      const rate = 0.065; // 6.5% return
+      const monthlyRate = rate / 12;
+      const months = yearsToRetire * 12;
+
+      // Compound current portfolio
+      const fvLump = savings * Math.pow(1 + rate, yearsToRetire);
+      // Future value of monthly contributions
+      const fvAnnuity = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+      const nestEgg = fvLump + fvAnnuity;
+
+      // Drawdown calculation: 4% safe withdrawal rule + CPP/OAS base support
+      const safeAnnualDrawdown = nestEgg * 0.042;
+      const cppOasBase = (retAge >= 65) ? 22000 : 16000;
+      const totalAnnualIncome = safeAnnualDrawdown + cppOasBase;
+      const monthlyTakeHome = totalAnnualIncome / 12;
+
+      // Tax savings estimation based on strategy
+      let taxSaved = 0;
+      let clawbackRisk = '0% (Shielded)';
+      let clawbackColor = '#4ADE80';
+      let estate = 0;
+
+      if (currentStrategy === 'oas') {
+        taxSaved = (spending * 0.08) * (85 - retAge) * 0.95;
+        clawbackRisk = '0% (Shielded)';
+        clawbackColor = '#4ADE80';
+        estate = nestEgg * 0.42;
+      } else {
+        // Wealth Maximizer draws RRIF early, saving terminal estate tax
+        taxSaved = (nestEgg * 0.14);
+        clawbackRisk = 'Minimal (Smooth RRIF)';
+        clawbackColor = '#38BDF8';
+        estate = nestEgg * 0.58;
+      }
+
+      document.getElementById('res-nest-egg').textContent = formatCurrency(nestEgg);
+      document.getElementById('res-monthly-draw').textContent = formatCurrency(monthlyTakeHome);
+      document.getElementById('res-tax-saved').textContent = formatCurrency(taxSaved);
+      
+      const clawEl = document.getElementById('res-clawback');
+      clawEl.textContent = clawbackRisk;
+      clawEl.style.color = clawbackColor;
+
+      document.getElementById('res-estate').textContent = formatCurrency(estate);
+    }
+
+    // Pricing Billing Cycle Toggle
+    function toggleBillingCycle() {
+      isAnnualBilling = !isAnnualBilling;
+      const switcher = document.getElementById('billingSwitch');
+      switcher.classList.toggle('annual', isAnnualBilling);
+
+      if (isAnnualBilling) {
+        document.getElementById('price-pro').textContent = '$79.99';
+        document.getElementById('period-pro').textContent = '/ year ($6.66/mo)';
+        document.getElementById('price-advisor').textContent = '$249.99';
+        document.getElementById('period-advisor').textContent = '/ year ($20.83/mo)';
+      } else {
+        document.getElementById('price-pro').textContent = '$9.99';
+        document.getElementById('period-pro').textContent = '/ month';
+        document.getElementById('price-advisor').textContent = '$29.99';
+        document.getElementById('period-advisor').textContent = '/ month';
+      }
+    }
+
+    // Initialize on load
+    updateSim();
+  </script>
+
+</body>
+</html>
