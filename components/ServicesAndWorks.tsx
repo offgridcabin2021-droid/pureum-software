@@ -178,7 +178,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#1A5DFF] to-[#0A3BB3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:map-point-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
+                    Travel & Maps
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#007AFF] transition-colors">
@@ -217,7 +217,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8DBD32] to-[#5C8518] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:clipboard-list-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
+                    Dental Inventory
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#5C8518] transition-colors">
@@ -253,7 +253,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:card-2-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
+                    Tax & Payroll
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
@@ -289,7 +289,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:leaf-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
+                    Plant Care
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors">
@@ -325,7 +325,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#002439] to-[#0066FF] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    Fintech iOS
+                    Retirement & Wealth
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
@@ -432,7 +432,7 @@ const ServicesAndWorks: React.FC = () => {
               onClick={() =>
                 setComingSoonData({
                   title: 'MoneyPilot',
-                  category: 'iOS Expense App',
+                  category: 'Smart Budgeting',
                   description:
                     'MoneyPilot smart CSV expense & budget parser is currently under development and coming soon to iOS, Android & Web.',
                 })
@@ -443,7 +443,7 @@ const ServicesAndWorks: React.FC = () => {
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#0284C7] to-[#0369A1] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:file-left-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
-                    iOS App
+                    Smart Budget
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-sky-600 transition-colors">
