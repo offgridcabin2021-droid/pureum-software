@@ -40,12 +40,30 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Portfolio: OptiPay Demo -->
+  <!-- Portfolio: OptiPay Demo & Legal -->
   <url>
     <loc>https://pureum.dev/optipay/index.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pureum.dev/optipay/disclaimer.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pureum.dev/optipay/terms.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pureum.dev/optipay/privacy.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Portfolio: PureStock / Inventory Demo -->
