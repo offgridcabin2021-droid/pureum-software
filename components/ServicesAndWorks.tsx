@@ -177,6 +177,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#1A5DFF] to-[#0A3BB3] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:map-point-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Travel & Maps
                   </div>
@@ -203,10 +207,11 @@ const ServicesAndWorks: React.FC = () => {
                   href="https://apps.apple.com/ca/app/pathlog/id6764615274"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-black transition-colors"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-white hover:bg-gray-100 px-2 py-0.5 rounded-md border border-gray-200/80 shadow-xs transition-colors"
                   title="App Store (iOS)"
                 >
-                  <Icon icon="ri:apple-fill" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-xs text-black" />
+                  <span>iOS</span>
                 </a>
               </div>
             </div>
@@ -216,6 +221,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#8DBD32] to-[#5C8518] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:clipboard-list-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Dental Inventory
                   </div>
@@ -239,10 +248,11 @@ const ServicesAndWorks: React.FC = () => {
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
                 <span
-                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shadow-xs cursor-default"
                   title="iOS App"
                 >
-                  <Icon icon="ri:apple-fill" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-xs text-black" />
+                  <span>iOS</span>
                 </span>
               </div>
             </div>
@@ -252,6 +262,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:card-2-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Tax & Payroll
                   </div>
@@ -275,10 +289,11 @@ const ServicesAndWorks: React.FC = () => {
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
                 <span
-                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shadow-xs cursor-default"
                   title="iOS App"
                 >
-                  <Icon icon="ri:apple-fill" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-xs text-black" />
+                  <span>iOS</span>
                 </span>
               </div>
             </div>
@@ -288,6 +303,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:leaf-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Plant Care
                   </div>
@@ -311,10 +330,11 @@ const ServicesAndWorks: React.FC = () => {
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
                 <span
-                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shadow-xs cursor-default"
                   title="iOS App"
                 >
-                  <Icon icon="ri:apple-fill" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-xs text-black" />
+                  <span>iOS</span>
                 </span>
               </div>
             </div>
@@ -324,6 +344,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#002439] to-[#0066FF] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:calculator-minimalistic-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Retirement & Wealth
                   </div>
@@ -347,10 +371,11 @@ const ServicesAndWorks: React.FC = () => {
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </a>
                 <span
-                  className="text-gray-400 hover:text-black transition-colors cursor-default"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shadow-xs cursor-default"
                   title="iOS App"
                 >
-                  <Icon icon="ri:apple-fill" className="text-base" />
+                  <Icon icon="ri:apple-fill" className="text-xs text-black" />
+                  <span>iOS</span>
                 </span>
               </div>
             </div>
@@ -442,6 +467,10 @@ const ServicesAndWorks: React.FC = () => {
               <div>
                 <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-[#0284C7] to-[#0369A1] overflow-hidden mb-4 flex items-center justify-center shadow-md">
                   <Icon icon="solar:file-left-bold" className="text-5xl text-white group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white flex items-center gap-1 shadow-sm">
+                    <Icon icon="ri:apple-fill" className="text-[10px]" />
+                    <span>iOS</span>
+                  </div>
                   <div className="absolute top-2.5 right-2.5 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                     Smart Budget
                   </div>
@@ -462,8 +491,9 @@ const ServicesAndWorks: React.FC = () => {
                   Coming Soon
                   <Icon icon="solar:arrow-right-linear" className="text-xs" />
                 </button>
-                <span className="text-[9px] text-sky-700 font-semibold bg-sky-100 px-1.5 py-0.5 rounded">
-                  CSV Budget
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold text-sky-800 bg-sky-100 px-2 py-0.5 rounded-md">
+                  <Icon icon="ri:apple-fill" className="text-xs text-sky-900" />
+                  <span>iOS</span>
                 </span>
               </div>
             </div>
