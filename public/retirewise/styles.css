@@ -864,14 +864,14 @@ header.site-header {
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   max-width: 860px;
-  margin: 40px auto 0;
+  margin: 54px auto 0;
 }
 
 .pricing-card {
   background: var(--bg-main);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
-  padding: 38px 32px;
+  padding: 42px 32px 38px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -884,27 +884,50 @@ header.site-header {
   box-shadow: 0 16px 36px rgba(0, 102, 255, 0.12);
 }
 
+.pricing-card.advisor-card {
+  background: #FFFFFF;
+  border: 1.5px solid #FCD34D;
+  box-shadow: 0 16px 36px rgba(217, 119, 6, 0.08);
+}
+
 .featured-pill {
   position: absolute;
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
+  width: max-content;
+  max-width: 92%;
   background: var(--electric-blue);
   color: #FFFFFF;
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   padding: 6px 16px;
   border-radius: var(--radius-full);
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35);
-  white-space: nowrap;
+  white-space: nowrap !important;
   line-height: 1;
   z-index: 10;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
+}
+
+.featured-pill span {
+  white-space: nowrap !important;
+}
+
+.featured-pill.advisor-pill {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.16);
+}
+
+.featured-pill.advisor-pill .iconify {
+  color: #B45309;
 }
 
 .pricing-tier-name {
@@ -1405,6 +1428,13 @@ footer.site-footer {
   .testimonials-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
+    margin-top: 48px;
+    gap: 36px;
+  }
+  .featured-pill {
+    font-size: 0.68rem;
+    padding: 5px 14px;
+    max-width: 95%;
   }
   .footer-grid {
     grid-template-columns: 1fr;
