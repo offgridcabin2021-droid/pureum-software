@@ -434,30 +434,30 @@
             <div class="billing-switch-thumb"></div>
           </div>
           <span class="billing-label">Annual</span>
-          <span class="save-badge">Save ~33%</span>
+          <span class="save-badge">Save up to ~83%</span>
         </div>
       </div>
 
       <div class="pricing-grid">
 
-        <!-- Card 1: Personal Pro -->
+        <!-- Card 1: RetireWise Pro -->
         <div class="pricing-card featured">
           <div class="featured-pill">
-            <span class="iconify" data-icon="solar:star-bold" style="font-size: 11px;"></span>
-            <span>Most Popular</span>
+            <span class="iconify" data-icon="solar:sparkler-bold" style="font-size: 11px;"></span>
+            <span>Premium Retirement Intelligence</span>
           </div>
-          <h3 class="pricing-tier-name">Personal Pro</h3>
-          <p class="pricing-tier-desc">Comprehensive retirement & wealth planning for Canadian individuals and couples.</p>
+          <h3 class="pricing-tier-name">RetireWise Pro</h3>
+          <p class="pricing-tier-desc">Comprehensive Canadian retirement projections &amp; tax-optimized wealth clarity.</p>
           
           <div class="pricing-amount">
-            <span class="price-val" id="price-pro">$79.99</span>
-            <span class="price-period" id="period-pro">/ year ($6.66/mo)</span>
+            <span class="price-val" id="price-pro">$19.99</span>
+            <span class="price-period" id="period-pro">/ year <span class="badge-sub-pill" style="font-size: 0.72rem; font-weight: 800; background: #002439; color: #fff; padding: 2px 7px; border-radius: 99px; margin-left: 4px;">Best Value</span></span>
           </div>
 
           <ul class="pricing-features-list">
             <li>
               <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
-              Full Retirement Planner & Net Worth Projections
+              Full Retirement Planner &amp; Net Worth Projections
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
@@ -465,60 +465,64 @@
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
-              Tax-Aware Strategies (OAS Protector & Wealth Maximizer)
+              Tax-Aware Strategies (OAS Protector &amp; Wealth Max)
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
-              Encrypted Apple iCloud Sync & Device Backup
+              Encrypted Cloud Sync &amp; Device Backup
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:check-circle-bold"></span>
-              Household Plan Management & Unlimited Scenario Testing
+              Personal Plan Management &amp; Scenario Testing
             </li>
           </ul>
 
           <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="btn-tier btn-pro">
-            Get Personal Pro
+            Subscribe to RetireWise Pro &rarr;
           </a>
         </div>
 
         <!-- Card 2: Advisor Unlimited -->
         <div class="pricing-card advisor-card">
+          <div class="featured-pill" style="background: rgba(184, 134, 11, 0.14); color: #B45309; border: 1px solid rgba(184, 134, 11, 0.35); box-shadow: none;">
+            <span class="iconify" data-icon="solar:crown-bold" style="font-size: 11px; color: #B45309;"></span>
+            <span>Advisor Professional Suite</span>
+          </div>
           <h3 class="pricing-tier-name" style="color: var(--primary-navy);">
             Advisor Unlimited
           </h3>
-          <p class="pricing-tier-desc">Designed for Financial Planners (CFP®), CPAs, and Family Wealth Offices.</p>
+          <p class="pricing-tier-desc">Unlimited client management &amp; executive A4 PDF reports for professionals.</p>
           
           <div class="pricing-amount">
-            <span class="price-val" id="price-advisor">$249.99</span>
-            <span class="price-period" id="period-advisor">/ year ($20.83/mo)</span>
+            <span class="price-val" id="price-advisor">$499.99</span>
+            <span class="price-period" id="period-advisor">/ year <span class="badge-sub-pill" style="font-size: 0.72rem; font-weight: 800; background: #002439; color: #fff; padding: 2px 7px; border-radius: 99px; margin-left: 4px;">Save ~48%</span></span>
           </div>
 
           <ul class="pricing-features-list">
             <li>
               <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
-              <strong>Unlimited Client Portfolio Management</strong> (No limits)
+              <strong>Unlimited Client Portfolio Management</strong>
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
-              <strong>Executive A4 Multi-Page PDF Client Reports</strong> with custom branding
+              <strong>Executive A4 Multi-Page PDF Client Reports</strong>
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
-              Full Corporate Owner-Manager Payout Optimization (CDA/GRIP/RDTOH)
+              Unlimited Plan Scenarios (No monthly limit)
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
-              Full CRA 2026 Tax Engine & Clawback Modeling
+              Full CRA 2026 Tax Engine &amp; Clawback Modeling
             </li>
             <li>
               <span class="iconify check-icon" data-icon="solar:crown-bold"></span>
-              Multi-Client Cloud Sync & Automatic Encrypted Backup
+              Multi-Client Cloud Sync &amp; Automatic Backup
             </li>
           </ul>
 
           <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="btn-tier btn-advisor">
-            Get Advisor Unlimited
+            Subscribe to Advisor Unlimited &rarr;
           </a>
         </div>
 
@@ -759,14 +763,14 @@
       switcher.classList.toggle('annual', isAnnualBilling);
 
       if (isAnnualBilling) {
-        document.getElementById('price-pro').textContent = '$79.99';
-        document.getElementById('period-pro').textContent = '/ year ($6.66/mo)';
-        document.getElementById('price-advisor').textContent = '$249.99';
-        document.getElementById('period-advisor').textContent = '/ year ($20.83/mo)';
+        document.getElementById('price-pro').textContent = '$19.99';
+        document.getElementById('period-pro').innerHTML = '/ year <span class="badge-sub-pill" style="font-size: 0.72rem; font-weight: 800; background: #002439; color: #fff; padding: 2px 7px; border-radius: 99px; margin-left: 4px;">Best Value</span>';
+        document.getElementById('price-advisor').textContent = '$499.99';
+        document.getElementById('period-advisor').innerHTML = '/ year <span class="badge-sub-pill" style="font-size: 0.72rem; font-weight: 800; background: #002439; color: #fff; padding: 2px 7px; border-radius: 99px; margin-left: 4px;">Save ~48%</span>';
       } else {
         document.getElementById('price-pro').textContent = '$9.99';
         document.getElementById('period-pro').textContent = '/ month';
-        document.getElementById('price-advisor').textContent = '$29.99';
+        document.getElementById('price-advisor').textContent = '$79.99';
         document.getElementById('period-advisor').textContent = '/ month';
       }
     }

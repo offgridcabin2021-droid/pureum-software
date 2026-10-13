@@ -939,6 +939,20 @@ header.site-header {
   font-size: 0.95rem;
   color: var(--text-muted);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-sub-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  margin-left: 6px;
+  display: inline-block;
+  line-height: 1.2;
 }
 
 .pricing-features-list {
