@@ -376,7 +376,7 @@ PathLog는 로컬 우선 앱이다.
 웹사이트를 만들 때는 아래 순서가 가장 자연스럽다.
 
 1. Hero: PathLog 한줄 소개와 핵심 가치
-2. Features: 여행, 트레일, KML, AI, Health, Plant ID
+2. Features: 여행, 트레일, KML, AI, Health, Offline Satellite Maps
 3. How it works: 일정 만들기, 지도에서 수정하기, KML로 공유하기
 4. Explore Cities: 추천 도시 카드 소개
 5. Import/Export: KML 가져오기와 내보내기

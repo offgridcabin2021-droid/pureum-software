@@ -107,10 +107,10 @@ If the file was previously exported from PathLog, the app automatically restores
 ## 💳 Standard Plan & Free Version (Standard 요금제 및 무료 버전)
 
 ### Q: What are the Standard plan limits?
-**A:** With the Standard (paid) plan, Travel and Trail imports/saves are unlimited. Plant ID searches can be used up to 10 times per day.
+**A:** With the Standard (paid) plan, Travel and Trail imports/saves are unlimited. and you can generate up to 50 AI itineraries per day.
 
 > **Q: Standard 플랜 제한은 어떻게 되나요?**
-> **A:** Standard(유료) 요금제에서는 Travel과 Trail 가져오기 및 저장이 무제한입니다. 식물 식별(Plant ID)은 하루 최대 10회 사용할 수 있습니다.
+> **A:** Standard(유료) 요금제에서는 Travel과 Trail 가져오기 및 저장이 무제한입니다. 스마트 AI 여행 일정을 하루 최대 50회까지 생성할 수 있습니다.
 
 ---
 

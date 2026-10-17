@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathLog – KML Trip & Trail Map Planner</title>
-    <meta name="description" content="Plan trips and trails by importing KML files. Ask AI to generate your travel KML or create trail routes in Google Earth, then edit stops on an interactive map.">
+    <title>PathLog – AI Travel Itinerary Planner & KML Trail Maps</title>
+    <meta name="description" content="Generate smart multi-day travel itineraries with AI. Import and export GPS trails with KML, customize stops on an interactive map, and navigate with turn-by-turn directions.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,12 @@
             --blue: #1A5DFF;
             --blue-light: #5B8FFF;
             --blue-dark: #0040D0;
-            --indigo: #3730A3;
+            --purple: #7C3AED;
+            --purple-light: #8B5CF6;
+            --green: #059669;
+            --green-light: #10B981;
+            --amber: #D97706;
+            --amber-light: #F59E0B;
             --bg: #F8FAFF;
             --bg-card: #FFFFFF;
             --text: #1C1C1E;
@@ -35,6 +40,7 @@
             background: var(--bg);
             color: var(--text);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         a { text-decoration: none; color: inherit; }
@@ -49,8 +55,8 @@
             justify-content: space-between;
             padding: 0 clamp(20px, 5vw, 60px);
             height: 68px;
-            background: rgba(248, 250, 255, 0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(248, 250, 255, 0.92);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -59,25 +65,25 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text);
         }
 
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--blue-light), var(--blue));
             border-radius: 10px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .nav-links { display: flex; gap: 28px; }
+        .nav-links { display: flex; gap: 26px; }
         .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; }
         .nav-links a:hover { color: var(--blue); }
-        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
         .lang-select {
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -86,7 +92,11 @@
             font-size: 0.82rem;
             padding: 6px 10px;
             font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
         }
+        .lang-select:focus { border-color: var(--blue); }
 
         .btn {
             display: inline-flex;
@@ -113,7 +123,7 @@
             color: var(--text);
             border: 1.5px solid var(--border);
         }
-        .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+        .btn-secondary:hover { border-color: var(--blue); color: var(--blue); background: #F8FAFF; }
 
         .app-store-badge-link {
             display: inline-block;
@@ -123,7 +133,7 @@
         }
         .app-store-badge-link:hover {
             transform: translateY(-2px) scale(1.02);
-            filter: brightness(1.1);
+            filter: brightness(1.08);
         }
         .app-store-badge-link img {
             display: block;
@@ -133,7 +143,7 @@
 
         /* ── Hero ── */
         .hero {
-            padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 60px) clamp(48px, 8vw, 80px);
+            padding: clamp(60px, 8vw, 110px) clamp(20px, 5vw, 60px) clamp(40px, 6vw, 70px);
             display: flex;
             align-items: center;
             gap: 60px;
@@ -141,246 +151,452 @@
             margin: 0 auto;
         }
 
-        .hero-content { flex: 1; }
+        .hero-content { flex: 1.1; }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             background: rgba(26, 93, 255, 0.08);
             color: var(--blue);
             padding: 6px 14px;
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             letter-spacing: 0.02em;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.4rem, 4.6vw, 3.8rem);
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.12;
             letter-spacing: -0.03em;
             margin-bottom: 20px;
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, var(--blue-light), var(--blue));
+            background: linear-gradient(135deg, #1A5DFF 0%, #7C3AED 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             color: var(--text-secondary);
             line-height: 1.7;
-            max-width: 460px;
-            margin-bottom: 36px;
+            max-width: 500px;
+            margin-bottom: 34px;
         }
 
-        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
         .hero-visual {
-            flex: 1;
-            max-width: 460px;
+            flex: 0.9;
+            max-width: 440px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
-        /* Phone mockup */
+        /* Hero Video Mockup */
+        .hero-phone-wrap {
+            position: relative;
+            width: 250px;
+        }
+
         .phone-mockup {
-            width: 220px;
+            width: 100%;
             background: #1C1C1E;
-            border-radius: 29px;
-            padding: 5px;
-            box-shadow: 0 32px 80px rgba(26, 93, 255, 0.2), 0 8px 32px rgba(0,0,0,0.15);
+            border-radius: 36px;
+            padding: 7px;
+            box-shadow: 0 32px 80px rgba(26, 93, 255, 0.22), 0 8px 32px rgba(0,0,0,0.18);
             position: relative;
         }
 
         .phone-screen {
-            background: #F8FAFF;
-            border-radius: 24px;
+            background: #000;
+            border-radius: 30px;
             overflow: hidden;
-            aspect-ratio: 9/19;
+            aspect-ratio: 9/19.5;
             display: flex;
             flex-direction: column;
         }
 
-        .phone-statusbar {
-            background: var(--blue);
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .phone-statusbar-dot {
-            width: 10px;
-            height: 10px;
-            background: rgba(255,255,255,0.5);
-            border-radius: 50%;
-        }
-
-        .phone-map {
-            flex: 1;
-            background: linear-gradient(160deg, #D4E4FF 0%, #EEF4FF 50%, #D8E8FF 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-route {
+        .floating-pill-hero {
             position: absolute;
-            inset: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 6px;
+            z-index: 10;
+            border: 1px solid rgba(255,255,255,0.8);
+            animation: floatSlow 3.5s ease-in-out infinite alternate;
         }
+        .floating-pill-hero.left { bottom: 15%; left: -36px; }
+        .floating-pill-hero.right { top: 18%; right: -28px; animation-delay: 1.8s; }
 
-        .map-route svg { width: 80%; opacity: 0.5; }
-
-        .map-pin {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            background: var(--blue);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            box-shadow: 0 2px 8px rgba(26, 93, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        @keyframes floatSlow {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
         }
-
-        .map-pin::after {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            transform: rotate(45deg);
-        }
-
-        .map-pin-1 { top: 20%; left: 30%; }
-        .map-pin-2 { top: 45%; left: 55%; background: var(--indigo); }
-        .map-pin-3 { top: 65%; left: 35%; background: #059669; }
-
-        .phone-bottom {
-            background: #fff;
-            padding: 10px 12px 8px;
-            border-top: 1px solid var(--border);
-        }
-
-        .stats-row {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 8px;
-        }
-
-        .stat-item { text-align: center; }
-        .stat-value { font-size: 0.85rem; font-weight: 700; color: var(--text); }
-        .stat-label { font-size: 0.6rem; color: var(--text-secondary); }
-
-        .tabbar {
-            display: flex;
-            justify-content: space-around;
-            border-top: 1px solid var(--border);
-            padding-top: 6px;
-        }
-
-        .tab { font-size: 0.55rem; color: var(--text-secondary); text-align: center; }
-        .tab.active { color: var(--blue); font-weight: 600; }
 
         /* ── Sections ── */
-        .section { padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 60px); }
+        .section { padding: clamp(52px, 8vw, 96px) clamp(20px, 5vw, 60px); }
         .container { max-width: 1200px; margin: 0 auto; }
 
-        .section-header { text-align: center; margin-bottom: clamp(32px, 5vw, 56px); }
-        .section-header h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
-        .section-header p { font-size: 1.05rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto; line-height: 1.6; }
+        .section-header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .section-header .eyebrow {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .section-header h2 { font-size: clamp(1.85rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+        .section-header p { font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.65; }
+
+        /* ── App Showcase Section ── */
+        .showcase-section {
+            background: linear-gradient(180deg, #F8FAFF 0%, #EFF4FF 50%, #F8FAFF 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .showcase-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .showcase-tab {
+            background: #fff;
+            border: 1.5px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 100px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .showcase-tab:hover {
+            border-color: var(--blue-light);
+            color: var(--blue);
+            transform: translateY(-1px);
+        }
+        .showcase-tab.active {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+            box-shadow: 0 4px 16px rgba(26, 93, 255, 0.28);
+        }
+        .showcase-tab.active[data-theme="ai"] {
+            background: var(--purple);
+            border-color: var(--purple);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+        }
+        .showcase-tab.active[data-theme="trips"] {
+            background: #2563EB;
+            border-color: #2563EB;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+        }
+        .showcase-tab.active[data-theme="map"] {
+            background: #0284C7;
+            border-color: #0284C7;
+            box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3);
+        }
+        .showcase-tab.active[data-theme="trail"] {
+            background: var(--amber);
+            border-color: var(--amber);
+            box-shadow: 0 4px 16px rgba(217, 119, 6, 0.3);
+        }
+        .showcase-tab.active[data-theme="kml"] {
+            background: var(--green);
+            border-color: var(--green);
+            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
+        }
+
+        /* Showcase Spotlight Frame */
+        .showcase-spotlight {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: clamp(32px, 5vw, 56px);
+            box-shadow: 0 20px 60px rgba(26, 93, 255, 0.08);
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: clamp(32px, 5vw, 64px);
+            align-items: center;
+            margin-bottom: 48px;
+            transition: all 0.35s ease;
+        }
+
+        .showcase-info h3 {
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .showcase-info .tagline {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+        .showcase-info p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .showcase-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .showcase-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .showcase-bullet-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(26, 93, 255, 0.1);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .showcase-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .showcase-img-wrap {
+            max-width: 320px;
+            width: 100%;
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);
+            border: 4px solid #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .showcase-img-wrap:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 32px 70px rgba(0,0,0,0.22);
+        }
+        .showcase-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Gallery Carousel Strip */
+        .gallery-strip-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .gallery-strip-header h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .gallery-strip-hint {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(26, 93, 255, 0.12);
+            border-color: var(--blue-light);
+        }
+        .gallery-card.active {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 2px var(--blue), 0 12px 30px rgba(26, 93, 255, 0.15);
+        }
+        .gallery-thumb-wrap {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 9/19;
+            background: #eee;
+        }
+        .gallery-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-card-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text);
+        }
 
         /* ── Feature Cards ── */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
         }
 
         .feature-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 28px;
-            transition: box-shadow 0.2s, transform 0.2s;
+            padding: 30px;
+            transition: box-shadow 0.25s, transform 0.25s;
         }
 
-        .feature-card:hover { box-shadow: 0 8px 32px rgba(26, 93, 255, 0.1); transform: translateY(-2px); }
+        .feature-card:hover { box-shadow: 0 12px 36px rgba(26, 93, 255, 0.1); transform: translateY(-3px); }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, rgba(91, 143, 255, 0.15), rgba(26, 93, 255, 0.1));
-            border-radius: 14px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(91, 143, 255, 0.18), rgba(26, 93, 255, 0.08));
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 16px;
+            font-size: 1.55rem;
+            margin-bottom: 18px;
         }
 
-        .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-        .feature-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; }
 
-        /* ── Mode Cards ── */
+        /* ── Mode Cards with Embedded Screenshots ── */
         .mode-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 28px;
         }
 
         .mode-card {
             border-radius: var(--radius);
-            padding: 36px;
+            padding: 38px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 28px;
         }
 
         .mode-card-travel {
-            background: linear-gradient(135deg, #EDF2FF, #DDE9FF);
-            border: 1px solid rgba(26, 93, 255, 0.15);
+            background: linear-gradient(145deg, #F0F4FF, #DDE8FF);
+            border: 1px solid rgba(26, 93, 255, 0.2);
         }
 
         .mode-card-trail {
-            background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
-            border: 1px solid rgba(5, 150, 105, 0.15);
+            background: linear-gradient(145deg, #ECFDF5, #D1FAE5);
+            border: 1px solid rgba(5, 150, 105, 0.2);
         }
 
         .mode-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
             margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .mode-badge-blue { background: rgba(26, 93, 255, 0.12); color: var(--blue); }
-        .mode-badge-green { background: rgba(5, 150, 105, 0.12); color: #059669; }
+        .mode-badge-blue { background: rgba(26, 93, 255, 0.14); color: var(--blue); }
+        .mode-badge-green { background: rgba(5, 150, 105, 0.14); color: #059669; }
 
-        .mode-card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+        .mode-card h3 { font-size: 1.7rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
         .mode-card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; }
 
-        .mode-features { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+        .mode-features { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 9px; }
         .mode-features li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; }
         .mode-features li::before { content: '✓'; font-weight: 800; font-size: 0.85rem; }
         .mode-card-travel .mode-features li::before { color: var(--blue); }
         .mode-card-trail .mode-features li::before { color: #059669; }
+
+        .mode-preview-box {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        .mode-preview-thumb {
+            width: 100px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .mode-preview-thumb:hover { transform: scale(1.04); }
+        .mode-preview-thumb img { width: 100%; height: auto; display: block; }
+        .mode-preview-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+        .mode-preview-text span { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; display: block; }
 
         /* ── How it works ── */
         .steps-container {
@@ -403,7 +619,7 @@
         .step {
             flex: 1;
             text-align: center;
-            padding: 0 16px;
+            padding: 0 18px;
         }
 
         .step-number {
@@ -417,104 +633,12 @@
             justify-content: center;
             font-size: 1.25rem;
             font-weight: 800;
-            margin: 0 auto 16px;
+            margin: 0 auto 18px;
             box-shadow: 0 4px 16px rgba(26, 93, 255, 0.3);
         }
 
-        .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-        .step p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
-
-        /* ── KML Section ── */
-        .kml-section {
-            background: linear-gradient(135deg, #EDF2FF 0%, #F8FAFF 50%, #EEF3FF 100%);
-            border-radius: var(--radius);
-            padding: clamp(40px, 6vw, 72px);
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .kml-content { flex: 1; }
-        .kml-content h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
-        .kml-content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; max-width: 440px; margin-bottom: 28px; }
-
-        .kml-visual {
-            flex: 1;
-            max-width: 380px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .kml-pill {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .kml-pill-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .kml-pill strong { display: block; font-weight: 600; font-size: 0.875rem; }
-        .kml-pill span { font-size: 0.8rem; color: var(--text-secondary); }
-
-        /* ── CTA ── */
-        .cta-section {
-            text-align: center;
-            padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 60px);
-        }
-
-        .cta-box {
-            max-width: 640px;
-            margin: 0 auto;
-        }
-
-        .cta-box h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
-        .cta-box p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.6; }
-
-        /* ── Footer ── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 32px clamp(20px, 5vw, 60px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        footer p { font-size: 0.85rem; color: var(--text-secondary); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 0.85rem; color: var(--text-secondary); transition: color 0.2s; }
-        .footer-links a:hover { color: var(--blue); }
-
-        /* ── Responsive ── */
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero p { max-width: 100%; }
-            .hero-actions { justify-content: center; }
-            .hero-visual { max-width: 260px; }
-            .mode-grid { grid-template-columns: 1fr; }
-            .kml-section { flex-direction: column; }
-            .kml-visual { max-width: 100%; }
-            .steps-container { flex-direction: column; align-items: center; gap: 32px; }
-            .steps-container::before { display: none; }
-            .step { max-width: 320px; }
-        }
+        .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .step p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
 
         /* ── Cities ── */
         .cities-grid {
@@ -542,52 +666,221 @@
         .city-tag { font-size: 0.8rem; color: var(--text-secondary); }
         .cities-note { text-align: center; font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px; }
 
+        /* ── KML Section with Embedded Screenshot ── */
+        .kml-section {
+            background: linear-gradient(135deg, #EEF4FF 0%, #F8FAFF 50%, #ECFDF5 100%);
+            border-radius: var(--radius);
+            padding: clamp(36px, 5vw, 64px);
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.8fr;
+            gap: 36px;
+            align-items: center;
+            border: 1px solid rgba(26,93,255,0.12);
+        }
+
+        .kml-content h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+        .kml-content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+
+        .kml-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .kml-pill {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .kml-pill-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .kml-pill strong { display: block; font-weight: 600; font-size: 0.875rem; }
+        .kml-pill span { font-size: 0.8rem; color: var(--text-secondary); }
+
+        .kml-mockup-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .kml-mockup-img {
+            max-width: 220px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            border: 3px solid #fff;
+            cursor: pointer;
+            transition: transform 0.25s;
+        }
+        .kml-mockup-img:hover { transform: scale(1.03); }
+
         /* ── Pricing ── */
         .pricing-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            max-width: 720px;
+            gap: 28px;
+            max-width: 780px;
             margin: 0 auto;
         }
         .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 32px;
+            padding: 36px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
         .pricing-card-featured {
             border-color: var(--blue);
-            box-shadow: 0 0 0 1px var(--blue), 0 8px 32px rgba(26,93,255,0.12);
+            box-shadow: 0 0 0 1px var(--blue), 0 12px 36px rgba(26,93,255,0.14);
+            position: relative;
         }
         .plan-badge {
             display: inline-block;
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue-light), var(--blue));
             color: #fff;
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 100px;
             letter-spacing: 0.04em;
             width: fit-content;
         }
-        .plan-label { font-size: 1.3rem; font-weight: 800; }
-        .plan-price { font-size: 1rem; color: var(--text-secondary); }
-        .plan-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .plan-features li { font-size: 0.9rem; font-weight: 500; }
+        .plan-label { font-size: 1.35rem; font-weight: 800; }
+        .plan-price { font-size: 1.05rem; color: var(--text-secondary); font-weight: 600; }
+        .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .plan-features li { font-size: 0.92rem; font-weight: 500; }
 
-        @media (max-width: 600px) {
+        /* ── CTA ── */
+        .cta-section {
+            text-align: center;
+            padding: clamp(52px, 8vw, 100px) clamp(20px, 5vw, 60px);
+            background: linear-gradient(180deg, #fff 0%, #F8FAFF 100%);
+        }
+
+        .cta-box {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .cta-box p { font-size: 1.08rem; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.6; }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 34px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        footer p { font-size: 0.88rem; color: var(--text-secondary); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.88rem; color: var(--text-secondary); transition: color 0.2s; }
+        .footer-links a:hover { color: var(--blue); }
+
+        /* ── Lightbox Modal ── */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox-modal.active { display: flex; }
+        .lightbox-content {
+            position: relative;
+            max-width: 480px;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -46px;
+            right: 0;
+            color: #fff;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.4); }
+
+        /* ── Responsive ── */
+        @media (max-width: 960px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero p { max-width: 100%; margin-left: auto; margin-right: auto; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { max-width: 300px; }
+            .floating-pill-hero.left { left: -10px; }
+            .floating-pill-hero.right { right: -10px; }
+
+            .showcase-spotlight { grid-template-columns: 1fr; text-align: center; }
+            .showcase-bullets { align-items: center; }
+            .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+
+            .mode-grid { grid-template-columns: 1fr; }
+            .kml-section { grid-template-columns: 1fr; text-align: center; }
+            .kml-content p { margin-left: auto; margin-right: auto; }
+            .kml-visual { max-width: 100%; }
+
+            .steps-container { flex-direction: column; align-items: center; gap: 32px; }
+            .steps-container::before { display: none; }
+            .step { max-width: 320px; }
+        }
+
+        @media (max-width: 640px) {
             .nav-links { display: none; }
             .lang-select { font-size: 0.75rem; padding: 5px 8px; }
-            .phone-mockup { width: 180px; }
+            .gallery-strip { grid-template-columns: repeat(2, 1fr); }
             .cities-grid { grid-template-columns: repeat(3, 1fr); }
             .pricing-grid { grid-template-columns: 1fr; }
+            .mode-preview-box { flex-direction: column; text-align: center; }
+            .mode-preview-thumb { width: 140px; }
         }
+
         @media (max-width: 420px) {
             .cities-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-strip { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -597,12 +890,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a href="/" class="logo">
-            <div class="logo-icon" style="background: none;">
-                <img src="assets/pathlog-logo.jpg" alt="PathLog Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            <div class="logo-icon">
+                <img src="assets/pathlog-logo.jpg" alt="PathLog Logo" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span>PathLog</span>
         </a>
         <div class="nav-links">
+            <a href="#showcase">Preview</a>
             <a href="#features">Features</a>
             <a href="#modes">Modes</a>
             <a href="#explore">Cities</a>
@@ -626,40 +920,137 @@
     <div class="container">
         <div class="hero">
             <div class="hero-content">
-                <div class="badge">🗺️ iOS App — Travel & Trail</div>
-                <h1>Your trips,<br><span class="gradient-text">mapped with KML & AI.</span></h1>
-                <p>PathLog lets you import day-by-day travel itineraries from AI (via KML) or trails from Google Earth, edit stops on a live map, and export them back as KML.</p>
-                <div class="hero-actions" style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                <div class="badge">🗺️ iOS App — AI Travel &amp; Trail Planner v2</div>
+                <h1>Tell AI where.<br><span class="gradient-text">Get your itinerary in seconds.</span></h1>
+                <p>The complete travel &amp; trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live interactive maps, and track your daily steps.</p>
+                <div class="hero-actions">
                     <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
                         <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 48px;">
                     </a>
-                    <a href="#features" class="btn btn-secondary" style="height: 48px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border-radius: 100px; padding: 0 28px;">See Features</a>
+                    <a href="#showcase" class="btn btn-secondary" style="height: 48px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border-radius: 100px; padding: 0 26px;">Explore Screenshots</a>
                 </div>
             </div>
 
             <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="phone-screen">
-                        <video src="assets/PathLog.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+                <div class="hero-phone-wrap">
+                    <div class="floating-pill-hero left">✨ 50 AI trips/day</div>
+                    <div class="floating-pill-hero right">🥾 Google Earth KML</div>
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <video src="assets/PathLog.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- App Showcase Section -->
+    <section class="section showcase-section" id="showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Interactive Preview</span>
+                <h2>Inside <span class="gradient-text">PathLog with AI Planner</span></h2>
+                <p>From AI-generated multi-day itineraries to live map editing and Google Earth trail tracking — explore the 5 core workflows.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="showcase-tabs">
+                <button class="showcase-tab active" data-index="0" data-theme="ai">
+                    <span>✨</span> <span class="tab-label">AI Planner</span>
+                </button>
+                <button class="showcase-tab" data-index="1" data-theme="trips">
+                    <span>✈️</span> <span class="tab-label">My Trips</span>
+                </button>
+                <button class="showcase-tab" data-index="2" data-theme="map">
+                    <span>🗺️</span> <span class="tab-label">Live Map</span>
+                </button>
+                <button class="showcase-tab" data-index="3" data-theme="trail">
+                    <span>🥾</span> <span class="tab-label">Trail Logger</span>
+                </button>
+                <button class="showcase-tab" data-index="4" data-theme="kml">
+                    <span>📂</span> <span class="tab-label">Google Earth KML</span>
+                </button>
+            </div>
+
+            <!-- Spotlight Card -->
+            <div class="showcase-spotlight" id="spotlight-card">
+                <div class="showcase-info">
+                    <div class="badge" id="spotlight-badge" style="background: rgba(124, 58, 237, 0.1); color: var(--purple);">✨ AI Itinerary Generation</div>
+                    <h3 id="spotlight-title">Tell AI where. Get your itinerary!</h3>
+                    <div class="tagline" id="spotlight-tagline" style="color: var(--purple);">Type a destination — a day-by-day plan in seconds.</div>
+                    <p id="spotlight-desc">Describe where you want to go or tap quick-start cities like Seoul, Paris, Rome, or Tokyo. PathLog's built-in AI drafts a comprehensive multi-day itinerary with verified coordinates and local landmarks.</p>
+                    <ul class="showcase-bullets" id="spotlight-bullets">
+                        <li><span class="showcase-bullet-icon">✓</span> Up to 50 AI itineraries generated daily with PathLog Standard</li>
+                        <li><span class="showcase-bullet-icon">✓</span> Instant day-by-day plans with verified places and travel times</li>
+                        <li><span class="showcase-bullet-icon">✓</span> Quick-start destinations: Seoul, Jeju, Paris, Rome, Madrid, New York, Bali, Tokyo</li>
+                    </ul>
+                    <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
+                        <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 44px;">
+                    </a>
+                </div>
+
+                <div class="showcase-media">
+                    <div class="showcase-img-wrap" id="spotlight-img-wrap" onclick="openLightbox(currentShowcaseIndex)">
+                        <img id="spotlight-img" src="assets/screenshot-ai-planner.png" alt="PathLog AI Planner Screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail Ribbon -->
+            <div class="gallery-strip-header">
+                <h4>All App Store Screens</h4>
+                <span class="gallery-strip-hint">Tap any screen to spotlight &amp; zoom</span>
+            </div>
+            <div class="gallery-strip">
+                <div class="gallery-card active" data-index="0" onclick="switchShowcase(0)">
+                    <div class="gallery-thumb-wrap">
+                        <img src="assets/screenshot-ai-planner.png" alt="AI Planner">
+                    </div>
+                    <span class="gallery-card-label">1. AI Planner</span>
+                </div>
+                <div class="gallery-card" data-index="1" onclick="switchShowcase(1)">
+                    <div class="gallery-thumb-wrap">
+                        <img src="assets/screenshot-trip-list.png" alt="My Trips">
+                    </div>
+                    <span class="gallery-card-label">2. My Trips Hub</span>
+                </div>
+                <div class="gallery-card" data-index="2" onclick="switchShowcase(2)">
+                    <div class="gallery-thumb-wrap">
+                        <img src="assets/screenshot-map.png" alt="Live Map">
+                    </div>
+                    <span class="gallery-card-label">3. Live Map</span>
+                </div>
+                <div class="gallery-card" data-index="3" onclick="switchShowcase(3)">
+                    <div class="gallery-thumb-wrap">
+                        <img src="assets/screenshot-trail.png" alt="Trail Logger">
+                    </div>
+                    <span class="gallery-card-label">4. Trail Logger</span>
+                </div>
+                <div class="gallery-card" data-index="4" onclick="switchShowcase(4)">
+                    <div class="gallery-thumb-wrap">
+                        <img src="assets/screenshot-kml-import.png" alt="KML Import">
+                    </div>
+                    <span class="gallery-card-label">5. Google Earth KML</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features -->
     <section class="section" id="features" style="background: #fff;">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">Comprehensive Capabilities</span>
                 <h2>Everything you need to <span class="gradient-text">log your path.</span></h2>
-                <p>Powerful tools for planning trips and trails — from AI generation to on-the-go map editing.</p>
+                <p>Powerful tools for planning trips and trails — from instant AI generation to on-the-go live map editing.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
-                    <h3>AI-Generated Travel Import</h3>
-                    <p>Ask any AI (like Gemini, ChatGPT, Claude) to generate a travel itinerary KML file, then import it into PathLog to visualize and edit on the map.</p>
+                    <h3>Smart AI Travel Planning</h3>
+                    <p>Describe where you want to go — PathLog's built-in AI crafts day-by-day itineraries, smart routes, and top landmarks in seconds.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🗺️</div>
@@ -668,7 +1059,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📁</div>
-                    <h3>KML Import & Export</h3>
+                    <h3>KML Import &amp; Export</h3>
                     <p>Import routes from Google My Maps, Google Earth, or AI-generated KML files. Export any trip back to KML to share with friends.</p>
                 </div>
                 <div class="feature-card">
@@ -692,9 +1083,9 @@
                     <p>Browse AI-curated itineraries for Seoul, London, Paris, New York, and Tokyo. Preview any trip in seconds and save it with one tap.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Plant Identification</h3>
-                    <p>Snap a photo of any plant on your travels. PathLog's AI identifies the species instantly — available directly from the Home screen.</p>
+                    <div class="feature-icon">🛰️</div>
+                    <h3>Satellite &amp; Offline Maps</h3>
+                    <p>High-detail satellite view &amp; reliable GPS tracking. Follow your custom trails and travel paths even with cellular data turned off.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">👟</div>
@@ -705,37 +1096,64 @@
         </div>
     </section>
 
-    <!-- Travel & Trail Modes -->
+    <!-- Travel & Trail Modes with Live Previews -->
     <section class="section" id="modes">
         <div class="container">
             <div class="section-header">
-                <h2>Two modes. <span class="gradient-text">One app.</span></h2>
+                <span class="eyebrow">Tailored Workflows</span>
+                <h2>Two modes. <span class="gradient-text">One seamless app.</span></h2>
                 <p>Switch between Travel and Trail with a single tap. Each mode has a dedicated workflow tailored to its purpose.</p>
             </div>
 
             <div class="mode-grid">
+                <!-- Travel Mode Card -->
                 <div class="mode-card mode-card-travel">
-                    <div class="mode-badge mode-badge-blue">✈️ Travel Mode</div>
-                    <h3>Plan trips with AI KML.</h3>
-                    <p>Build multi-day travel itineraries by importing KML files generated by AI. Organize stops by day, view the full route, and navigate between stops.</p>
-                    <ul class="mode-features">
-                        <li>Import AI-generated itineraries via KML</li>
-                        <li>Add & reorder stops on the map</li>
-                        <li>Drive time between stops</li>
-                        <li>Export and share your itinerary as KML</li>
-                    </ul>
+                    <div>
+                        <div class="mode-badge mode-badge-blue">✈️ Travel Mode</div>
+                        <h3>Plan trips with Smart AI.</h3>
+                        <p>Build multi-day travel itineraries in seconds with built-in AI. Organize stops by day, customize routes on the map, and navigate seamlessly.</p>
+                        <ul class="mode-features">
+                            <li>Instant AI itinerary generation (up to 50/day)</li>
+                            <li>Add &amp; reorder stops on live interactive maps</li>
+                            <li>Turn-by-turn directions via Apple &amp; Google Maps</li>
+                            <li>Export and share your itinerary as KML</li>
+                        </ul>
+                    </div>
+
+                    <div class="mode-preview-box">
+                        <div class="mode-preview-thumb" onclick="openLightbox(1)">
+                            <img src="assets/screenshot-trip-list.png" alt="Travel Mode Preview">
+                        </div>
+                        <div class="mode-preview-text">
+                            <strong>All trips, one happy place</strong>
+                            <span>5 days in Paris, 2 in Seoul — every plan saved, organized, and ready whenever you are.</span>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Trail Mode Card -->
                 <div class="mode-card mode-card-trail">
-                    <div class="mode-badge mode-badge-green">🥾 Trail Mode</div>
-                    <h3>Log your trails.</h3>
-                    <p>Import GPX-style KML routes from trusted hiking sources. The original GPS LineString is preserved through export and re-import round-trips.</p>
-                    <ul class="mode-features">
-                        <li>Import KML routes created in Google Earth</li>
-                        <li>GPS route lines rendered on the map</li>
-                        <li>FIFO-safe KML round-trip export</li>
-                        <li>Hiking time estimation</li>
-                    </ul>
+                    <div>
+                        <div class="mode-badge mode-badge-green">🥾 Trail Mode</div>
+                        <h3>Log your trails.</h3>
+                        <p>Import GPX-style KML routes from trusted hiking sources. The original GPS LineString is preserved through export and re-import round-trips.</p>
+                        <ul class="mode-features">
+                            <li>Import KML routes created in Google Earth</li>
+                            <li>GPS route lines rendered faithfully on the map</li>
+                            <li>FIFO-safe KML round-trip export</li>
+                            <li>Hiking time estimation &amp; loop tracking</li>
+                        </ul>
+                    </div>
+
+                    <div class="mode-preview-box">
+                        <div class="mode-preview-thumb" onclick="openLightbox(3)">
+                            <img src="assets/screenshot-trail.png" alt="Trail Mode Preview">
+                        </div>
+                        <div class="mode-preview-text">
+                            <strong>Log every trail you walk</strong>
+                            <span>Palace of Versailles Loop, High Park Cherry Blossoms — distance, stops, and hiking time for each route.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -745,25 +1163,26 @@
     <section class="section" style="background: #fff;">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">Quick Guide</span>
                 <h2>How it works</h2>
-                <p>From idea to interactive map in three steps.</p>
+                <p>From idea to interactive map in three simple steps.</p>
             </div>
 
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Ask AI for KML</h3>
-                    <p>Ask any AI (Gemini, Claude, ChatGPT) to generate a travel KML itinerary, or use Google Earth to create trail paths.</p>
+                    <h3>Plan with AI or Import KML</h3>
+                    <p>Describe your trip in PathLog to generate an instant day-by-day itinerary, or import GPS trail KML files from Google Earth.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Import & Edit on Map</h3>
-                    <p>Import your KML file into PathLog. Review and edit stops day-by-day on an interactive map.</p>
+                    <h3>Review &amp; Edit on Map</h3>
+                    <p>View all stops on an interactive map. Easily add, reorder, or delete stops per day with smart route statistics.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Share the route</h3>
-                    <p>Export your finished trip as a KML file and share it — friends can import it directly into PathLog or Google Earth.</p>
+                    <h3>Navigate &amp; Share</h3>
+                    <p>Launch turn-by-turn directions in Apple Maps or Google Maps, and export your finished route as KML to share with friends.</p>
                 </div>
             </div>
         </div>
@@ -773,6 +1192,7 @@
     <section class="section" id="explore" style="background: #fff;">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">Curated Itineraries</span>
                 <h2>Explore <span class="gradient-text">AI-curated cities.</span></h2>
                 <p>Jump-start any trip with a ready-made day-by-day itinerary for top destinations. One tap to preview, one tap to save.</p>
             </div>
@@ -807,14 +1227,14 @@
         </div>
     </section>
 
-    <!-- KML Section -->
+    <!-- KML Section with Screenshot -->
     <section class="section" id="kml">
         <div class="container">
             <div class="kml-section">
                 <div class="kml-content">
                     <div class="badge">📂 Universal Format</div>
                     <h2>Works with <span class="gradient-text">any KML source.</span></h2>
-                    <p>PathLog speaks the open KML standard — import routes from anywhere and export back out. No lock-in, no proprietary formats.</p>
+                    <p>PathLog speaks the open KML standard — import routes from Google Earth, Google My Maps, or AI links, and export back out without proprietary lock-in.</p>
                     <div class="hero-actions">
                         <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
                             <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 48px;">
@@ -852,6 +1272,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="kml-mockup-wrap">
+                    <img class="kml-mockup-img" src="assets/screenshot-kml-import.png" alt="KML Import Screen" onclick="openLightbox(4)">
+                </div>
             </div>
         </div>
     </section>
@@ -860,6 +1284,7 @@
     <section class="section" id="pricing" style="background: #fff;">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">Flexible Plans</span>
                 <h2>Simple, <span class="gradient-text">transparent pricing.</span></h2>
                 <p>PathLog is free to explore. Upgrade to PathLog Standard for the full experience.</p>
             </div>
@@ -869,25 +1294,25 @@
                     <div class="plan-price">$0 &mdash; always free</div>
                     <ul class="plan-features">
                         <li>✓ Unlimited trips &amp; trails</li>
+                        <li>✓ 5 Free AI Itinerary Generations</li>
+                        <li>✓ Up to 5 Travel &amp; 5 Trail KML previews</li>
                         <li>✓ Interactive map editing</li>
-                        <li>✓ KML import &amp; export</li>
-                        <li>✓ Up to 5 Travel KML previews</li>
-                        <li>✓ Up to 5 Trail KML previews</li>
-                        <li>✓ Plant ID (limited daily)</li>
-                        <li>✓ Step counter</li>
+                        <li>✓ Turn-by-turn directions in Apple &amp; Google Maps</li>
+                        <li>✓ Daily step counter via Apple Health</li>
                     </ul>
                 </div>
                 <div class="pricing-card pricing-card-featured">
                     <div class="plan-badge">PathLog Standard</div>
                     <div class="plan-label">Standard</div>
-                    <div class="plan-price">Monthly &amp; Annual plans</div>
+                    <div class="plan-price">$2.99/mo or $24.99/yr (Save 30%)</div>
                     <ul class="plan-features">
                         <li>✓ Everything in Free</li>
-                        <li>✓ Unlimited Trail KML imports</li>
+                        <li>✓ Up to 50 Smart AI Route Generations / day</li>
+                        <li>✓ Unlimited KML route imports &amp; saves</li>
                         <li>✓ Unlimited Explore Cities saves</li>
-                        <li>✓ Plant ID &middot; 10 uses / day</li>
+                        <li>✓ High-detail Satellite map layer</li>
                         <li>✓ Full KML export &amp; route sharing</li>
-                        <li>✓ Local-first, no account needed</li>
+                        <li>✓ Local-first privacy, no account needed</li>
                     </ul>
                     <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" id="upgrade-btn" style="text-align: center; display: block; margin-top: auto;">
                         <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 48px; margin: 0 auto;">
@@ -918,63 +1343,306 @@
         </div>
     </footer>
 
-</body>
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="App Preview">
+        </div>
+    </div>
+
 <script>
+    const SHOWCASE_DATA = [
+        {
+            theme: 'ai',
+            badge: '✨ AI Itinerary Generation',
+            badgeBg: 'rgba(124, 58, 237, 0.1)',
+            badgeColor: '#7C3AED',
+            title: 'Tell AI where. Get your itinerary!',
+            tagline: 'Type a destination — a day-by-day plan in seconds.',
+            desc: "Describe where you want to go or tap quick-start cities like Seoul, Paris, Rome, or Tokyo. PathLog's built-in AI drafts a comprehensive multi-day itinerary with verified coordinates and local landmarks.",
+            bullets: [
+                'Up to 50 AI itineraries generated daily with PathLog Standard',
+                'Instant day-by-day plans with verified places and travel times',
+                'Quick-start destinations: Seoul, Jeju, Paris, Rome, Madrid, New York, Bali, Tokyo'
+            ],
+            img: 'assets/screenshot-ai-planner.png',
+            alt: 'PathLog AI Planner Screenshot'
+        },
+        {
+            theme: 'trips',
+            badge: '✈️ Centralized Trip Hub',
+            badgeBg: 'rgba(37, 99, 235, 0.1)',
+            badgeColor: '#2563EB',
+            title: 'All your trips, one happy place!',
+            tagline: '5 days in Paris, 2 in Seoul — every plan saved and ready.',
+            desc: 'Keep all your travel plans organized in one clean interface. View days, stops, and dates at a glance, with instant access to edit, duplicate, or share.',
+            bullets: [
+                'Clear trip cards showing days, total stops, and creation dates',
+                'Dedicated Travel and Trail tabs for clean organization',
+                'Filter, search, and manage your trips with a single tap'
+            ],
+            img: 'assets/screenshot-trip-list.png',
+            alt: 'PathLog My Trips Hub Screenshot'
+        },
+        {
+            theme: 'map',
+            badge: '🗺️ Interactive Map & Route Editor',
+            badgeBg: 'rgba(2, 132, 199, 0.1)',
+            badgeColor: '#0284C7',
+            title: 'Every stop, on a live map!',
+            tagline: 'Add, reorder, remove. Distance and time update instantly.',
+            desc: 'See your route come alive on an interactive map. Rearrange stops with drag-and-drop, track driving/walking times, and launch one-tap directions in Apple Maps or Google Maps.',
+            bullets: [
+                'Interactive numbered pins showing your full day progression',
+                'Slide-up day sheet on iPhone, side-by-side split screen on iPad',
+                'Direct one-tap navigation via Apple Maps, Google Maps, or Safari'
+            ],
+            img: 'assets/screenshot-map.png',
+            alt: 'PathLog Live Map View Screenshot'
+        },
+        {
+            theme: 'trail',
+            badge: '🥾 Dedicated Trail Logging',
+            badgeBg: 'rgba(217, 119, 6, 0.1)',
+            badgeColor: '#D97706',
+            title: 'Log every trail you walk!',
+            tagline: 'Distance, stops and hiking time for each route.',
+            desc: "Whether it's the Palace of Versailles Park Loop or High Park Cherry Blossom trails, record your hikes, track exact loop distances, and monitor estimated hiking duration.",
+            bullets: [
+                'Dedicated Trail mode tailored for outdoor exploration',
+                'Accurate loop distance, stop counts, and hiking time estimation',
+                'Step count integration with Apple Health right on your home screen'
+            ],
+            img: 'assets/screenshot-trail.png',
+            alt: 'PathLog Trail Logger Screenshot'
+        },
+        {
+            theme: 'kml',
+            badge: '📂 Open KML Integration',
+            badgeBg: 'rgba(5, 150, 105, 0.1)',
+            badgeColor: '#059669',
+            title: 'Your Google Earth trails, imported!',
+            tagline: 'Import KML from Google Earth, My Maps or AI.',
+            desc: 'Never lose a route. Import trails generated by AI, custom maps from Google My Maps, or 3D terrain paths from Google Earth with lossless GPS LineString preservation.',
+            bullets: [
+                'Lossless import and export with open KML standards',
+                'Import trails from Google Earth, Google My Maps, and AI',
+                'Share finished routes with friends in a single tap'
+            ],
+            img: 'assets/screenshot-kml-import.png',
+            alt: 'PathLog Google Earth KML Import Screenshot'
+        }
+    ];
+
+    let currentShowcaseIndex = 0;
+
+    function switchShowcase(index) {
+        currentShowcaseIndex = index;
+        const item = SHOWCASE_DATA[index];
+        if (!item) return;
+
+        // Update tabs
+        document.querySelectorAll('.showcase-tab').forEach((tab, i) => {
+            tab.classList.toggle('active', i === index);
+        });
+
+        // Update gallery cards
+        document.querySelectorAll('.gallery-card').forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+        });
+
+        // Update spotlight card
+        const badge = document.getElementById('spotlight-badge');
+        badge.textContent = item.badge;
+        badge.style.background = item.badgeBg;
+        badge.style.color = item.badgeColor;
+
+        const title = document.getElementById('spotlight-title');
+        title.textContent = item.title;
+
+        const tagline = document.getElementById('spotlight-tagline');
+        tagline.textContent = item.tagline;
+        tagline.style.color = item.badgeColor;
+
+        const desc = document.getElementById('spotlight-desc');
+        desc.textContent = item.desc;
+
+        const bulletsList = document.getElementById('spotlight-bullets');
+        bulletsList.innerHTML = item.bullets.map(b => `<li><span class="showcase-bullet-icon" style="background:${item.badgeBg}; color:${item.badgeColor};">✓</span> ${b}</li>`).join('');
+
+        const img = document.getElementById('spotlight-img');
+        img.src = item.img;
+        img.alt = item.alt;
+    }
+
+    // Lightbox
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(index) {
+        const item = SHOWCASE_DATA[index];
+        if (!item) return;
+        lightboxImg.src = item.img;
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+        if (!e || e.target === lightboxModal || e.target.classList.contains('lightbox-close')) {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Attach click events to tabs
+    document.querySelectorAll('.showcase-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const idx = parseInt(tab.getAttribute('data-index'), 10);
+            switchShowcase(idx);
+        });
+    });
+
+    /* ── Multi-Language I18N ── */
     const I18N = {
         en: {
-            title: 'PathLog - KML Trip & Trail Map Planner',
-            description: 'Plan trips and trails by importing KML files. Ask AI to generate your travel KML or create trail routes in Google Earth, then edit stops on an interactive map.',
+            title: 'PathLog – AI Travel Itinerary Planner & KML Trail Maps',
+            description: 'Generate smart multi-day travel itineraries with AI. Import and export GPS trails with KML, customize stops on an interactive map, and navigate with turn-by-turn directions.',
+            navPreview: 'Preview',
             navFeatures: 'Features',
             navModes: 'Modes',
             navCities: 'Cities',
             navKml: 'KML',
             navPricing: 'Pricing',
-            navStore: '🍎 App Store',
-            heroBadge: '🗺️ iOS App - Travel & Trail',
-            heroTitleA: 'Your trips,',
-            heroTitleB: 'mapped with KML & AI.',
-            heroDesc: 'PathLog lets you import day-by-day travel itineraries from AI (via KML) or trails from Google Earth, edit stops on a live map, and export them back as KML.',
-            heroBtnPrimary: '🍎 Download on iOS',
-            heroBtnSecondary: 'See Features',
+            heroBadge: '🗺️ iOS App — AI Travel & Trail Planner v2',
+            heroTitleA: 'Tell AI where.',
+            heroTitleB: 'Get your itinerary in seconds.',
+            heroDesc: 'The complete travel & trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live interactive maps, and track your daily steps.',
+            heroBtnSecondary: 'Explore Screenshots',
+            showcaseEyebrow: 'Interactive Preview',
+            showcaseTitleA: 'Inside ',
+            showcaseTitleB: 'PathLog with AI Planner',
+            showcaseDesc: 'From AI-generated multi-day itineraries to live map editing and Google Earth trail tracking — explore the 5 core workflows.',
+            showcaseTabs: ['AI Planner', 'My Trips', 'Live Map', 'Trail Logger', 'Google Earth KML'],
+            showcaseItems: [
+                {
+                    badge: '✨ AI Itinerary Generation',
+                    title: 'Tell AI where. Get your itinerary!',
+                    tagline: 'Type a destination — a day-by-day plan in seconds.',
+                    desc: "Describe where you want to go or tap quick-start cities like Seoul, Paris, Rome, or Tokyo. PathLog's built-in AI drafts a comprehensive multi-day itinerary with verified coordinates and local landmarks.",
+                    bullets: [
+                        'Up to 50 AI itineraries generated daily with PathLog Standard',
+                        'Instant day-by-day plans with verified places and travel times',
+                        'Quick-start destinations: Seoul, Jeju, Paris, Rome, Madrid, New York, Bali, Tokyo'
+                    ]
+                },
+                {
+                    badge: '✈️ Centralized Trip Hub',
+                    title: 'All your trips, one happy place!',
+                    tagline: '5 days in Paris, 2 in Seoul — every plan saved and ready.',
+                    desc: 'Keep all your travel plans organized in one clean interface. View days, stops, and dates at a glance, with instant access to edit, duplicate, or share.',
+                    bullets: [
+                        'Clear trip cards showing days, total stops, and creation dates',
+                        'Dedicated Travel and Trail tabs for clean organization',
+                        'Filter, search, and manage your trips with a single tap'
+                    ]
+                },
+                {
+                    badge: '🗺️ Interactive Map & Route Editor',
+                    title: 'Every stop, on a live map!',
+                    tagline: 'Add, reorder, remove. Distance and time update instantly.',
+                    desc: 'See your route come alive on an interactive map. Rearrange stops with drag-and-drop, track driving/walking times, and launch one-tap directions in Apple Maps or Google Maps.',
+                    bullets: [
+                        'Interactive numbered pins showing your full day progression',
+                        'Slide-up day sheet on iPhone, side-by-side split screen on iPad',
+                        'Direct one-tap navigation via Apple Maps, Google Maps, or Safari'
+                    ]
+                },
+                {
+                    badge: '🥾 Dedicated Trail Logging',
+                    title: 'Log every trail you walk!',
+                    tagline: 'Distance, stops and hiking time for each route.',
+                    desc: "Whether it's the Palace of Versailles Park Loop or High Park Cherry Blossom trails, record your hikes, track exact loop distances, and monitor estimated hiking duration.",
+                    bullets: [
+                        'Dedicated Trail mode tailored for outdoor exploration',
+                        'Accurate loop distance, stop counts, and hiking time estimation',
+                        'Step count integration with Apple Health right on your home screen'
+                    ]
+                },
+                {
+                    badge: '📂 Open KML Integration',
+                    title: 'Your Google Earth trails, imported!',
+                    tagline: 'Import KML from Google Earth, My Maps or AI.',
+                    desc: 'Never lose a route. Import trails generated by AI, custom maps from Google My Maps, or 3D terrain paths from Google Earth with lossless GPS LineString preservation.',
+                    bullets: [
+                        'Lossless import and export with open KML standards',
+                        'Import trails from Google Earth, Google My Maps, and AI',
+                        'Share finished routes with friends in a single tap'
+                    ]
+                }
+            ],
             sectionFeaturesTitleA: 'Everything you need to ',
             sectionFeaturesTitleB: 'log your path.',
-            sectionFeaturesDesc: 'Powerful tools for planning trips and trails - from KML import to on-the-go map editing.',
-            featureTitles: ['AI-Generated Travel Import', 'Interactive Map Editing', 'KML Import & Export', 'Route Stats', 'Navigation App Picker', 'Multi-Language', 'Explore Cities', 'Plant Identification', 'Daily Step Counter'],
+            sectionFeaturesDesc: 'Powerful tools for planning trips and trails — from instant AI generation to on-the-go live map editing.',
+            featureTitles: [
+                'Smart AI Travel Planning',
+                'Interactive Map Editing',
+                'KML Import & Export',
+                'Route Stats',
+                'Navigation App Picker',
+                'Multi-Language',
+                'Explore Cities',
+                'Satellite & Offline Maps',
+                'Daily Step Counter'
+            ],
             featureDescs: [
-                'Ask any AI (like Gemini, ChatGPT, Claude) to generate a travel itinerary KML file, then import it into PathLog to visualize and edit on the map.',
+                "Describe where you want to go — PathLog's built-in AI crafts day-by-day itineraries, smart routes, and top landmarks in seconds.",
                 'View all stops on a live map. Add, reorder, or remove stops per day. iPhone shows a slide-up panel; iPad shows a full side-by-side layout.',
                 'Import routes from Google My Maps, Google Earth, or AI-generated KML files. Export any trip back to KML to share with friends.',
-                'Live distance, estimated drive or walk time, and stop count - updated instantly as you edit your itinerary on the map.',
-                'Tap any stop to open directions in Apple Maps, Google Maps, or your browser - choose your preferred app in Settings.',
+                'Live distance, estimated drive or walk time, and stop count — updated instantly as you edit your itinerary on the map.',
+                'Tap any stop to open turn-by-turn directions in Apple Maps or Google Maps — choose your preferred app in Settings.',
                 'Available in English, Spanish, French, and Korean. The full UI adapts to your device language automatically.',
                 'Browse AI-curated itineraries for Seoul, London, Paris, New York, and Tokyo. Preview any trip in seconds and save it with one tap.',
-                'Snap a photo of any plant on your travels. PathLog\'s AI identifies the species instantly - available directly from the Home screen.',
-                'Connect Apple Health to see today\'s step count on your Home screen. Track your activity alongside your travel plans.'
+                'High-detail satellite view & reliable GPS tracking. Follow your custom trails and travel paths even with cellular data turned off.',
+                "Connect Apple Health to see today's step count on your Home screen. Track your activity alongside your travel plans."
             ],
             sectionModesTitleA: 'Two modes. ',
-            sectionModesTitleB: 'One app.',
+            sectionModesTitleB: 'One seamless app.',
             sectionModesDesc: 'Switch between Travel and Trail with a single tap. Each mode has a dedicated workflow tailored to its purpose.',
             travelBadge: '✈️ Travel Mode',
-            travelTitle: 'Plan trips with AI KML.',
-            travelDesc: 'Build multi-day travel itineraries by importing KML files generated by AI. Organize stops by day, view the full route, and navigate between stops.',
-            travelBullets: ['Import AI-generated itineraries via KML', 'Add & reorder stops on the map', 'Drive time between stops', 'Export and share your itinerary as KML'],
+            travelTitle: 'Plan trips with Smart AI.',
+            travelDesc: 'Build multi-day travel itineraries in seconds with built-in AI. Organize stops by day, customize routes on the map, and navigate seamlessly.',
+            travelBullets: [
+                'Instant AI itinerary generation (up to 50/day)',
+                'Add & reorder stops on live interactive maps',
+                'Turn-by-turn directions via Apple & Google Maps',
+                'Export and share your itinerary as KML'
+            ],
             trailBadge: '🥾 Trail Mode',
             trailTitle: 'Log your trails.',
             trailDesc: 'Import GPX-style KML routes from trusted hiking sources. The original GPS LineString is preserved through export and re-import round-trips.',
-            trailBullets: ['Import KML routes created in Google Earth', 'GPS route lines rendered on the map', 'FIFO-safe KML round-trip export', 'Hiking time estimation'],
+            trailBullets: [
+                'Import KML routes created in Google Earth',
+                'GPS route lines rendered faithfully on the map',
+                'FIFO-safe KML round-trip export',
+                'Hiking time estimation & loop tracking'
+            ],
             howTitle: 'How it works',
-            howDesc: 'From idea to interactive map in three steps.',
-            stepTitles: ['Ask AI for Travel KML', 'Import & Edit on Map', 'Export & Share'],
+            howDesc: 'From idea to interactive map in three simple steps.',
+            stepTitles: ['Plan with AI or Import KML', 'Review & Edit on Map', 'Navigate & Share'],
             stepDescs: [
-                'Ask any AI (Gemini, Claude, ChatGPT) to generate a travel itinerary KML file, or create a trail route in Google Earth.',
-                'Import the KML file into PathLog. Review and edit stops day-by-day on an interactive map.',
-                'Export your modified trip back to KML to share with friends, or open routes in Google Earth.'
+                'Describe your trip in PathLog to generate an instant day-by-day itinerary, or import GPS trail KML files from Google Earth.',
+                'View all stops on an interactive map. Easily add, reorder, or delete stops per day with smart route statistics.',
+                'Launch turn-by-turn directions in Apple Maps or Google Maps, and export your finished route as KML to share with friends.'
             ],
             kmlBadge: '📂 Universal Format',
             kmlTitleA: 'Works with ',
             kmlTitleB: 'any KML source.',
-            kmlDesc: 'PathLog speaks the open KML standard - import routes from anywhere and export back out. No lock-in, no proprietary formats.',
-            kmlBtn: 'Get PathLog Free',
+            kmlDesc: 'PathLog speaks the open KML standard — import routes from Google Earth, Google My Maps, or AI links, and export back out without proprietary lock-in.',
             kmlPills: [
                 ['Google My Maps', 'Export as KML → Import to PathLog'],
                 ['Google Earth', 'KML files open directly in PathLog'],
@@ -996,201 +1664,173 @@
             pricingTitleB: 'transparent pricing.',
             pricingDesc: 'PathLog is free to explore. Upgrade to PathLog Standard for the full experience.',
             pricingFreeLabel: 'Free',
-            pricingFreePrice: '$0 - always free',
+            pricingFreePrice: '$0 — always free',
             pricingFreeFeatures: [
                 '✓ Unlimited trips & trails',
+                '✓ 5 Free AI Itinerary Generations',
+                '✓ Up to 5 Travel & 5 Trail KML previews',
                 '✓ Interactive map editing',
-                '✓ KML import & export',
-                '✓ Up to 5 Travel KML previews',
-                '✓ Up to 5 Trail KML previews',
-                '✓ Plant ID (limited daily)',
-                '✓ Step counter'
+                '✓ Turn-by-turn directions in Apple & Google Maps',
+                '✓ Daily step counter via Apple Health'
             ],
             pricingStandardBadge: 'PathLog Standard',
             pricingStandardLabel: 'Standard',
-            pricingStandardPrice: 'Monthly & Annual plans',
+            pricingStandardPrice: '$2.99/mo or $24.99/yr (Save 30%)',
             pricingStandardFeatures: [
                 '✓ Everything in Free',
-                '✓ Unlimited Trail KML imports',
+                '✓ Up to 50 Smart AI Route Generations / day',
+                '✓ Unlimited KML route imports & saves',
                 '✓ Unlimited Explore Cities saves',
-                '✓ Plant ID · 10 uses / day',
+                '✓ High-detail Satellite map layer',
                 '✓ Full KML export & route sharing',
-                '✓ Local-first, no account needed'
+                '✓ Local-first privacy, no account needed'
             ],
-            upgradeBtn: 'Get PathLog Standard',
             ctaTitleA: 'Start planning your ',
             ctaTitleB: 'next adventure.',
             ctaDesc: 'Free to download. Plan unlimited trips, import any KML, and share routes with everyone.',
-            ctaBtn: '🍎 Download on the App Store',
             footerCopy: '© 2026 PathLog by Pureum Software. All rights reserved.',
             footerTerms: 'Terms of Service',
             footerPrivacy: 'Privacy Policy',
             footerSupport: 'Support'
         },
-        es: {
-            title: 'PathLog - Planificador de viajes y senderos con KML',
-            description: 'Planifica viajes y senderos importando archivos KML. Pide a la IA que genere el KML de tu viaje o crea rutas de senderos en Google Earth, luego edita paradas en un mapa interactivo.',
-            navFeatures: 'Funciones',
-            navModes: 'Modos',
-            navCities: 'Ciudades',
-            navKml: 'KML',
-            navPricing: 'Precios',
-            navStore: '🍎 App Store',
-            heroBadge: '🗺️ App iOS - Viaje y Sendero',
-            heroTitleA: 'Tus viajes,',
-            heroTitleB: 'trazados con KML e IA.',
-            heroDesc: 'PathLog te permite importar itinerarios de viaje diarios generados por IA (vía KML) o senderos creados en Google Earth, editar paradas en un mapa en vivo y exportarlos de nuevo como KML.',
-            heroBtnPrimary: '🍎 Descargar en iOS',
-            heroBtnSecondary: 'Ver funciones',
-            sectionFeaturesTitleA: 'Todo lo que necesitas para ',
-            sectionFeaturesTitleB: 'registrar tu ruta.',
-            sectionFeaturesDesc: 'Herramientas potentes para planificar viajes y senderos, desde importación KML hasta edición en mapa.',
-            featureTitles: ['Importación de Viajes con IA', 'Edición interactiva del mapa', 'Importar y exportar KML', 'Estadísticas de ruta', 'Selector de navegación', 'Multiidioma', 'Explorar ciudades', 'Identificación de plantas', 'Contador de pasos'],
-            featureDescs: [
-                'Pide a cualquier IA (Gemini, ChatGPT, Claude) que genere un itinerario de viaje en KML, luego impórtalo en PathLog para visualizarlo y editarlo en el mapa.',
-                'Mira todas las paradas en un mapa en vivo. Agrega, reordena o elimina paradas por día. En iPhone aparece panel flotante y en iPad vista lado a lado.',
-                'Importa rutas desde Google My Maps, Google Earth o archivos KML generados por IA. Exporta cualquier viaje a KML para compartir.',
-                'Distancia en vivo, tiempo estimado en auto o caminata y cantidad de paradas actualizadas al instante.',
-                'Toca cualquier parada para abrir direcciones en Apple Maps, Google Maps o navegador y elige tu app preferida en Settings.',
-                'Disponible en inglés, español, francés y coreano. La interfaz se adapta automáticamente al idioma del dispositivo.',
-                'Explora itinerarios recomendados por IA para Seúl, Londres, París, Nueva York y Tokio. Previsualiza cualquier viaje al instante y guárdalo con un toque.',
-                'Fotografía cualquier planta en tus viajes. La IA de PathLog identifica la especie al instante, disponible desde la pantalla principal.',
-                'Conecta Apple Health para ver tu conteo de pasos del día en la pantalla principal.'
-            ],
-            sectionModesTitleA: 'Dos modos. ',
-            sectionModesTitleB: 'Una app.',
-            sectionModesDesc: 'Cambia entre Travel y Trail con un toque. Cada modo tiene un flujo dedicado.',
-            travelBadge: '✈️ Modo Travel',
-            travelTitle: 'Planifica viajes con KML de IA.',
-            travelDesc: 'Crea itinerarios de viaje de varios días importando archivos KML generados por IA. Organiza paradas por día y navega entre ellas.',
-            travelBullets: ['Importa itinerarios generados por IA vía KML', 'Agregar y reordenar paradas en el mapa', 'Tiempo de manejo entre paradas', 'Exportar y compartir itinerario en KML'],
-            trailBadge: '🥾 Modo Trail',
-            trailTitle: 'Registra tus senderos.',
-            trailDesc: 'Importa rutas KML tipo GPX desde fuentes confiables. El LineString GPS original se conserva en exportación e importación.',
-            trailBullets: ['Importa rutas de senderos creadas en Google Earth', 'Líneas GPS renderizadas en el mapa', 'Exportación KML round-trip segura', 'Estimación de tiempo de senderismo'],
-            howTitle: 'Cómo funciona',
-            howDesc: 'De una idea a un mapa interactivo en tres pasos.',
-            stepTitles: ['Pide KML a la IA / Google Earth', 'Edita en el mapa', 'Comparte la ruta'],
-            stepDescs: [
-                'Pide a una IA que genere un itinerario KML de viaje, o crea una ruta de sendero en Google Earth.',
-                'Importa el archivo KML en PathLog. Revisa y edita las paradas día a día en el mapa interactivo.',
-                'Exporta el viaje terminado como archivo KML y compártelo; tus amigos pueden importarlo en PathLog o Google Earth.'
-            ],
-            kmlBadge: '📂 Formato universal',
-            kmlTitleA: 'Funciona con ',
-            kmlTitleB: 'cualquier fuente KML.',
-            kmlDesc: 'PathLog usa el estándar KML abierto: importa rutas desde cualquier lugar y vuelve a exportarlas.',
-            kmlBtn: 'Obtener PathLog gratis',
-            kmlPills: [
-                ['Google My Maps', 'Exportar KML → Importar en PathLog'],
-                ['Google Earth', 'Los archivos KML se abren directo en PathLog'],
-                ['KML generado por IA', 'Pide a la IA un itinerario de viaje KML e impórtalo'],
-                ['Compartir con amigos', 'Exporta KML para que cualquiera siga tu ruta']
-            ],
-            exploreTitleA: 'Explora ',
-            exploreTitleB: 'ciudades con IA.',
-            exploreDesc: 'Empieza cualquier viaje con un itinerario día por día para los destinos más populares. Un toque para previsualizar, un toque para guardar.',
-            citiesNote: 'Los usuarios gratuitos pueden previsualizar itinerarios. PathLog Standard desbloquea guardados ilimitados.',
-            cityCards: [
-                ['Seúl', 'Cultura K y comida callejera'],
-                ['Londres', 'Historia y lugares icónicos'],
-                ['París', 'Arte, comida y romance'],
-                ['Nueva York', 'La ciudad que nunca duerme'],
-                ['Tokio', 'Cultura, tecnología y cocina']
-            ],
-            pricingTitleA: 'Precios ',
-            pricingTitleB: 'simples y claros.',
-            pricingDesc: 'PathLog es gratis para explorar. Actualiza a PathLog Standard para la experiencia completa.',
-            pricingFreeLabel: 'Gratis',
-            pricingFreePrice: '$0 - siempre gratis',
-            pricingFreeFeatures: [
-                '✓ Viajes y senderos ilimitados',
-                '✓ Edición interactiva del mapa',
-                '✓ Importación y exportación KML',
-                '✓ Hasta 5 previsualizaciones KML de Travel',
-                '✓ Hasta 5 previsualizaciones KML de Trail',
-                '✓ Identificación de plantas (límite diario)',
-                '✓ Contador de pasos'
-            ],
-            pricingStandardBadge: 'PathLog Standard',
-            pricingStandardLabel: 'Standard',
-            pricingStandardPrice: 'Planes mensual y anual',
-            pricingStandardFeatures: [
-                '✓ Todo lo incluido en Gratis',
-                '✓ Importaciones KML de Trail ilimitadas',
-                '✓ Guardados ilimitados de Explorar ciudades',
-                '✓ Identificación de plantas · 10 usos / día',
-                '✓ Exportación KML completa y compartir rutas',
-                '✓ Enfoque local, sin cuenta'
-            ],
-            upgradeBtn: 'Obtener PathLog Standard',
-            ctaTitleA: 'Comienza a planificar tu ',
-            ctaTitleB: 'próxima aventura.',
-            ctaDesc: 'Descarga gratis. Planifica viajes ilimitados, importa cualquier KML y comparte rutas.',
-            ctaBtn: '🍎 Descargar en App Store',
-            footerCopy: '© 2026 PathLog de Pureum Software. Todos los derechos reservados.',
-            footerTerms: 'Términos de servicio',
-            footerPrivacy: 'Política de privacidad',
-            footerSupport: 'Soporte'
-        },
         ko: {
-            title: 'PathLog - KML 여행 및 트레일 지도 플래너',
-            description: 'KML 파일을 가져와 여행과 트레일을 계획하고, 지도에서 경유지를 편집하며, KML 가져오기/내보내기로 경로를 공유하세요. 인공지능(AI)에게 일정을 요청해 만든 KML을 가져오거나 Google Earth에서 경로를 만들 수 있습니다.',
+            title: 'PathLog – 스마트 AI 여행 플래너 & KML 트레일 지도 v2',
+            description: '내장된 스마트 AI로 일자별 여행 코스를 자동 생성하고, 구글 어스 트레일 KML을 가져와 실시간 지도에서 편집 및 길찾기까지 한 번에 즐기세요.',
+            navPreview: '미리보기',
             navFeatures: '기능',
             navModes: '모드',
-            navCities: '도시',
+            navCities: '도시 탐색',
             navKml: 'KML',
-            navPricing: '요금',
-            navStore: '🍎 앱스토어',
-            heroBadge: '🗺️ iOS 앱 - 여행 & 트레일',
-            heroTitleA: '당신의 여행을,',
-            heroTitleB: 'KML과 AI로 지도 위에 그리세요.',
-            heroDesc: 'PathLog는 AI에게 물어본 여행 일정 KML 또는 구글 어스(Google Earth)에서 만든 트레일 KML을 가져와 실시간 지도에서 경유지를 편집하고 다시 KML로 내보낼 수 있게 해줍니다.',
-            heroBtnPrimary: '🍎 iOS에서 다운로드',
-            heroBtnSecondary: '기능 보기',
+            navPricing: '요금제',
+            heroBadge: '🗺️ iOS 앱 – AI 여행 & 트레일 플래너 v2',
+            heroTitleA: '어디로 갈지만 알려주세요.',
+            heroTitleB: '몇 초 만에 여행 일정이 완성됩니다.',
+            heroDesc: 'iOS를 위한 올인원 여행 & 트레일 플래너. 내장 스마트 AI로 일자별 여행 코스를 즉시 생성하고, 구글 어스 트레일 KML을 가져와 실시간 지도에서 편집 및 길찾기까지 한 번에 즐기세요.',
+            heroBtnSecondary: '스크린샷 둘러보기',
+            showcaseEyebrow: '실제 앱 화면 미리보기',
+            showcaseTitleA: 'PathLog AI 플래너 ',
+            showcaseTitleB: '핵심 기능 둘러보기',
+            showcaseDesc: '스마트 AI 일정 생성부터 실시간 지도 편집, 구글 어스 트레일 트래킹까지 — 5가지 핵심 워크플로우를 직접 확인하세요.',
+            showcaseTabs: ['AI 플래너', '여행 보관함', '실시간 지도', '트레일 기록', '구글 어스 KML'],
+            showcaseItems: [
+                {
+                    badge: '✨ AI 스마트 일정 생성',
+                    title: '원하는 여행지를 입력하면, 일정이 완성됩니다!',
+                    tagline: '목적지만 적으면 몇 초 만에 일자별 코스 자동 생성.',
+                    desc: '가고 싶은 여행지를 입력하거나 서울, 파리, 로마, 도쿄 등 퀵스타트 추천 도시를 탭하세요. AI가 검증된 좌표와 추천 명소를 포함한 일자별 상세 일정을 즉시 설계합니다.',
+                    bullets: [
+                        'PathLog Standard로 매일 최대 50회 AI 여행 일정 생성',
+                        '검증된 좌표와 이동 시간을 반영한 일자별 상세 동선',
+                        '퀵스타트 추천 도시: 서울, 제주, 파리, 로마, 마드리드, 뉴욕, 발리, 도쿄'
+                    ]
+                },
+                {
+                    badge: '✈️ 나만의 여행 허브',
+                    title: '모든 여행 계획을 한눈에 깔끔하게!',
+                    tagline: '파리 5일, 서울 2일 — 언제든 바로 꺼내보는 나만의 일정.',
+                    desc: '다녀온 여행과 다가올 모험을 한곳에 깔끔하게 보관하세요. 일수, 총 경유지 수, 날짜를 한눈에 파악하고 필요할 때 언제든 편집하거나 공유할 수 있습니다.',
+                    bullets: [
+                        '일수, 경유지 수, 작성일이 한눈에 보이는 직관적인 카드 UI',
+                        '여행(Travel)과 트레일(Trail) 전용 탭으로 깔끔한 분류',
+                        '한 번의 탭으로 검색, 정렬, 다중 관리 가능'
+                    ]
+                },
+                {
+                    badge: '🗺️ 실시간 지도 편집',
+                    title: '지도 위에서 펼쳐지는 생생한 경로!',
+                    tagline: '추가, 순서 변경, 삭제 시 거리와 시간이 실시간 업데이트.',
+                    desc: '번호 핀으로 하루 동선을 직관적으로 파악하세요. 장소 순서를 드래그하여 바꾸면 총 거리와 예상 이동 시간이 즉시 계산되며, Apple 지도 및 Google 지도로 바로 길안내가 연결됩니다.',
+                    bullets: [
+                        '하루 동선의 흐름을 직관적으로 보여주는 번호 핀',
+                        'iPhone 하단 시트 & iPad 좌우 분할 멀티 레이아웃',
+                        'Apple Maps, Google Maps, 사파리 원터치 길안내 연동'
+                    ]
+                },
+                {
+                    badge: '🥾 트레일 & 하이킹 로깅',
+                    title: '걸어온 모든 트레일을 생생하게 기록하세요!',
+                    tagline: '각 코스별 총 거리, 경유지, 하이킹 소요 시간 완벽 지원.',
+                    desc: '베르사유 정원 루프부터 하이파크 벚꽃 트레일까지, 하이킹과 산책 코스를 정확하게 관리하세요. 코스 총 거리와 소요 시간, 홈 화면 걸음 수 연동까지 지원합니다.',
+                    bullets: [
+                        '아웃도어 탐험에 최적화된 트레일 전용 모드',
+                        '루프 총 거리, 경유지 수, 예상 하이킹 시간 자동 계산',
+                        'Apple Health 연동으로 홈 화면에서 오늘의 걸음 수 바로 확인'
+                    ]
+                },
+                {
+                    badge: '📂 개방형 KML 연동',
+                    title: '구글 어스 트레일도 그대로 가져오세요!',
+                    tagline: 'Google Earth, My Maps, AI에서 KML을 즉시 불러오기.',
+                    desc: 'Google Earth, Google My Maps, AI 링크에서 만든 경로를 그대로 가져오세요. 원본 GPS LineString을 손실 없이 보존하여 언제 어디서나 정확한 경로를 따라갈 수 있습니다.',
+                    bullets: [
+                        '개방형 KML 표준 기반의 무손실 가져오기 및 내보내기',
+                        'Google Earth, Google My Maps, AI 생성 KML 완벽 호환',
+                        '완성된 경로를 친구에게 한 번의 탭으로 공유'
+                    ]
+                }
+            ],
             sectionFeaturesTitleA: '경로 기록에 필요한 ',
             sectionFeaturesTitleB: '모든 기능.',
-            sectionFeaturesDesc: 'KML 가져오기부터 지도 편집까지, 여행과 트레일 계획을 위한 강력한 도구를 제공합니다.',
-            featureTitles: ['AI 생성 여행 일정 가져오기', '인터랙티브 지도 편집', 'KML 가져오기/내보내기', '경로 통계', '내비게이션 앱 선택', '다국어 지원', '도시 탐색', '식물 인식', '일일 걸음 수'],
+            sectionFeaturesDesc: '내장 AI 일정 생성부터 지도 편집, 내비게이션 길찾기까지 여행과 트레일을 위한 강력한 도구를 제공합니다.',
+            featureTitles: [
+                '내장 스마트 AI 여행 플래너',
+                '인터랙티브 지도 편집',
+                'KML 가져오기/내보내기',
+                '경로 통계',
+                '내비게이션 앱 선택',
+                '다국어 지원',
+                '도시 탐색',
+                '위성 지도 & 오프라인 트래킹',
+                '일일 걸음 수'
+            ],
             featureDescs: [
-                'Gemini, ChatGPT, Claude 등 AI에게 여행 일정을 KML 파일로 요청하여 다운로드한 뒤 PathLog로 가져와 지도에서 시각화하고 편집할 수 있습니다.',
+                '목적지와 여행 스타일만 입력하면 AI가 일자별 코스, 스마트 동선, 추천 장소를 몇 초 만에 지도 위에 자동 생성합니다.',
                 '실시간 지도에서 모든 경유지를 확인하고 추가, 재정렬, 삭제할 수 있습니다. iPhone과 iPad 레이아웃에 최적화됩니다.',
-                'Google My Maps, Google Earth, AI 생성 KML에서 경로를 가져오고 KML로 다시 내보내 공유할 수 있습니다.',
+                'Google My Maps, Google Earth, KML 파일에서 경로를 가져오고 KML로 다시 내보내 친구들과 공유할 수 있습니다.',
                 '총 거리, 예상 이동 시간, 경유지 수가 지도 편집과 동시에 즉시 업데이트됩니다.',
-                '경유지를 탭해 Apple Maps, Google Maps, 브라우저로 길찾기를 열고 설정에서 기본 앱을 고를 수 있습니다.',
+                '경유지를 탭해 Apple Maps, Google Maps 원터치 길찾기를 열고 설정에서 기본 앱을 고를 수 있습니다.',
                 '영어, 스페인어, 프랑스어, 한국어를 지원하며 기기 언어에 맞춰 UI가 자동 적용됩니다.',
                 '서울, 런던, 파리, 뉴욕, 도쿄 등 인기 도시의 AI 추천 일정을 탐색하세요. 미리보기 후 한 번의 탭으로 저장할 수 있습니다.',
-                '여행 중 식물 사진을 찍어보세요. PathLog AI가 즉시 식물 종류를 알려줍니다. 홈 화면에서 바로 사용할 수 있습니다.',
+                '고해상도 위성 지도 레이어를 지원하며, 데이터가 없는 깊은 산속이나 해외에서도 안정적으로 경로를 추적할 수 있습니다.',
                 'Apple Health를 연결해 홈 화면에서 오늘의 걸음 수를 확인하세요. 여행 일정과 함께 활동을 기록하세요.'
             ],
             sectionModesTitleA: '두 가지 모드. ',
             sectionModesTitleB: '하나의 앱.',
             sectionModesDesc: '한 번의 탭으로 Travel과 Trail을 전환하세요. 각 모드는 목적에 맞는 전용 흐름을 제공합니다.',
             travelBadge: '✈️ Travel 모드',
-            travelTitle: 'AI KML로 여행을 계획하세요.',
-            travelDesc: 'AI가 생성한 KML 파일을 가져와 다일정 여행을 구성하고, 날짜별 경유지 편집 및 전체 경로 탐색이 가능합니다.',
-            travelBullets: ['AI 생성 일정을 KML 가져오기로 등록', '지도에서 경유지 추가/재정렬', '경유지 간 이동 시간', 'KML로 내보내 공유'],
+            travelTitle: '스마트 AI로 여행을 계획하세요.',
+            travelDesc: '내장된 AI로 다일정 여행 코스를 즉시 생성하고, 날짜별 경유지 편집 및 전체 경로 탐색이 가능합니다.',
+            travelBullets: [
+                '스마트 AI 여행 일정 생성 (매일 최대 50회)',
+                '실시간 지도에서 경유지 추가/재정렬',
+                'Apple 및 Google 지도 원터치 길찾기',
+                'KML로 내보내 공유'
+            ],
             trailBadge: '🥾 Trail 모드',
             trailTitle: '트레일을 기록하세요.',
             trailDesc: '신뢰할 수 있는 소스에서 GPX 스타일 KML을 가져옵니다. 원래의 GPS LineString을 보존한 채 왕복 변환이 가능합니다.',
-            trailBullets: ['구글 어스(Google Earth)에서 경로를 만들어 가져오기', '지도에 GPS 경로선 렌더링', '안전한 KML 라운드트립 내보내기', '하이킹 소요 시간 추정'],
+            trailBullets: [
+                '구글 어스(Google Earth)에서 경로를 만들어 가져오기',
+                '지도에 GPS 경로선 렌더링',
+                '안전한 KML 라운드트립 내보내기',
+                '하이킹 소요 시간 및 루프 추정'
+            ],
             howTitle: '작동 방식',
             howDesc: '아이디어에서 인터랙티브 지도까지 3단계로 완성됩니다.',
-            stepTitles: ['AI 또는 구글 어스로 KML 준비', '지도에서 편집하세요', '경로를 공유하세요'],
+            stepTitles: ['AI 생성 또는 KML 준비', '지도에서 맞춤 편집', '길찾기 & 경로 공유'],
             stepDescs: [
-                'AI(Gemini, Claude 등)에게 여행 KML 일정을 요청하거나 구글 어스(Google Earth)를 사용해 트레일 경로를 만듭니다.',
-                '만든 KML 파일을 PathLog로 가져와 실시간 지도에서 일자별 경유지를 검토하고 추가/순서변경/삭제를 합니다.',
-                '완성한 여행을 KML로 내보내 공유하면 친구가 PathLog나 Google Earth에서 바로 가져올 수 있습니다.'
+                '가고 싶은 여행지를 입력해 즉시 AI 일정을 생성하거나, 구글 어스에서 만든 트레일 KML을 가져옵니다.',
+                '실시간 지도에서 일자별 경유지를 검토하고 추가/순서변경/삭제를 자유롭게 편집합니다.',
+                'Apple 지도나 Google 지도로 길안내를 받고, 완성한 코스를 KML로 내보내 친구들과 공유합니다.'
             ],
             kmlBadge: '📂 범용 포맷',
             kmlTitleA: '어떤 KML 소스와도 ',
             kmlTitleB: '연동됩니다.',
             kmlDesc: 'PathLog는 개방형 KML 표준을 지원해 어디서든 경로를 가져오고 다시 내보낼 수 있습니다.',
-            kmlBtn: 'PathLog 무료로 받기',
             kmlPills: [
                 ['Google My Maps', 'KML로 내보내기 → PathLog로 가져오기'],
                 ['Google Earth', 'KML 파일을 PathLog에서 바로 열기'],
-                ['AI 생성 KML', 'AI에게 여행 일정 KML을 요청해 가져오기'],
+                ['스마트 AI 코스 생성', 'AI 일정을 표준 KML로 내보내기'],
                 ['친구와 공유', 'KML을 내보내 누구나 경로 따라가기']
             ],
             exploreTitleA: '',
@@ -1208,138 +1848,398 @@
             pricingTitleB: '요금제.',
             pricingDesc: 'PathLog는 무료로 시작할 수 있습니다. PathLog Standard로 업그레이드하면 모든 기능을 이용할 수 있습니다.',
             pricingFreeLabel: '무료',
-            pricingFreePrice: '$0 - 항상 무료',
+            pricingFreePrice: '$0 — 항상 무료',
             pricingFreeFeatures: [
                 '✓ 여행 및 트레일 무제한',
-                '✓ 지도 편집 기능',
-                '✓ KML 가져오기/내보내기',
-                '✓ Travel KML 미리보기 최대 5회',
-                '✓ Trail KML 미리보기 최대 5회',
-                '✓ 식물 인식 (일일 제한)',
-                '✓ 걸음 수 카드'
+                '✓ 무료 5회 AI 여행 일정 생성',
+                '✓ Travel & Trail KML 미리보기 5회',
+                '✓ 지도 편집 및 동선 최적화',
+                '✓ Apple & Google 지도 길찾기 연동',
+                '✓ Apple Health 일일 걸음 수 연동'
             ],
             pricingStandardBadge: 'PathLog Standard',
             pricingStandardLabel: '스탠다드',
-            pricingStandardPrice: '월간 및 연간 플랜',
+            pricingStandardPrice: '월 $2.99 / 연 $24.99 (30% 할인)',
             pricingStandardFeatures: [
                 '✓ 무료 플랜의 모든 기능',
-                '✓ Trail KML 무제한 가져오기',
+                '✓ 매일 최대 50회 스마트 AI 여행 생성',
+                '✓ Trail KML 무제한 가져오기 및 저장',
                 '✓ 도시 탐색 일정 무제한 저장',
-                '✓ 식물 인식 · 일 10회',
+                '✓ 고해상도 위성 지도 레이어',
                 '✓ 전체 KML 내보내기 및 경로 공유',
                 '✓ 로컬 중심, 계정 불필요'
             ],
-            upgradeBtn: 'PathLog Standard 시작하기',
             ctaTitleA: '당신의 ',
             ctaTitleB: '다음 모험을 계획하세요.',
-            ctaDesc: '무료 다운로드. 무제한 여행 계획, KML 가져오기, 경로 공유를 모두 지원합니다.',
-            ctaBtn: '🍎 앱스토어에서 다운로드',
+            ctaDesc: '무료 다운로드. 무제한 여행 계획, AI 코스 생성, 경로 공유를 모두 지원합니다.',
             footerCopy: '© 2026 Pureum Software의 PathLog. 모든 권리 보유.',
             footerTerms: '서비스 이용약관',
             footerPrivacy: '개인정보 처리방침',
             footerSupport: '지원'
         },
+        es: {
+            title: 'PathLog – Planificador de viajes con IA y mapas KML v2',
+            description: 'Planifica viajes con generación inteligente de itinerarios por IA. Importa y exporta rutas GPS con KML, personaliza paradas en un mapa interactivo y navega paso a paso.',
+            navPreview: 'Vistas previas',
+            navFeatures: 'Funciones',
+            navModes: 'Modos',
+            navCities: 'Ciudades',
+            navKml: 'KML',
+            navPricing: 'Precios',
+            heroBadge: '🗺️ App iOS – Planificador con IA y KML v2',
+            heroTitleA: 'Dile a la IA dónde ir.',
+            heroTitleB: 'Obtén tu itinerario en segundos.',
+            heroDesc: 'El planificador completo de viajes y senderos para iOS. Genera itinerarios de varios días con IA inteligente, importa senderos de Google Earth y personaliza paradas en vivo.',
+            heroBtnSecondary: 'Explorar capturas',
+            showcaseEyebrow: 'Vistas previas interactivas',
+            showcaseTitleA: 'Descubre ',
+            showcaseTitleB: 'PathLog con Planificador IA',
+            showcaseDesc: 'Desde itinerarios generados por IA hasta edición en mapa en vivo y seguimiento de rutas de Google Earth.',
+            showcaseTabs: ['Planificador IA', 'Mis Viajes', 'Mapa en Vivo', 'Registro Senderos', 'Google Earth KML'],
+            showcaseItems: [
+                {
+                    badge: '✨ Generación de Itinerarios con IA',
+                    title: '¡Dile a la IA adónde ir y listo!',
+                    tagline: 'Escribe un destino: un plan día a día en segundos.',
+                    desc: 'Describe a dónde quieres ir o selecciona ciudades de inicio rápido como Seúl, París, Roma o Tokio. La IA diseña un itinerario completo con coordenadas verificadas.',
+                    bullets: [
+                        'Hasta 50 itinerarios generados por día con PathLog Standard',
+                        'Planes instantáneos día a día con lugares verificados y tiempos de ruta',
+                        'Destinos rápidos: Seúl, Jeju, París, Roma, Madrid, Nueva York, Bali, Tokio'
+                    ]
+                },
+                {
+                    badge: '✈️ Centro Unificado de Viajes',
+                    title: '¡Todos tus viajes en un solo lugar!',
+                    tagline: '5 días en París, 2 en Seúl: cada plan guardado y listo.',
+                    desc: 'Mantén todos tus viajes organizados en una interfaz limpia. Consulta días, paradas y fechas de un vistazo con acceso rápido para editar o compartir.',
+                    bullets: [
+                        'Tarjetas claras que muestran días, paradas totales y fechas',
+                        'Pestañas dedicadas de Viaje y Sendero para una organización limpia',
+                        'Filtra, busca y gestiona tus viajes con un solo toque'
+                    ]
+                },
+                {
+                    badge: '🗺️ Editor de Rutas y Mapa en Vivo',
+                    title: '¡Cada parada, en un mapa en vivo!',
+                    tagline: 'Agrega, reordena, elimina. Distancia y tiempo actualizados al instante.',
+                    desc: 'Mira cómo cobra vida tu ruta en un mapa interactivo. Reordena paradas arrastrando, sigue tiempos de traslado y abre rutas en Apple Maps o Google Maps.',
+                    bullets: [
+                        'Pines numerados interactivos que muestran la progresión de tu día',
+                        'Panel deslizable en iPhone, vista lado a lado en iPad',
+                        'Navegación paso a paso en un toque en Apple Maps y Google Maps'
+                    ]
+                },
+                {
+                    badge: '🥾 Registro Dedicado de Senderos',
+                    title: '¡Registra cada sendero que recorras!',
+                    tagline: 'Distancia, paradas y tiempo de caminata para cada ruta.',
+                    desc: 'Ya sea el circuito del Parque de Versalles o High Park, registra tus caminatas, rastrea distancias exactas y estima la duración de senderismo.',
+                    bullets: [
+                        'Modo Sendero dedicado para la exploración al aire libre',
+                        'Distancia precisa de circuito y estimación de tiempo de senderismo',
+                        'Integración de conteo de pasos con Apple Health'
+                    ]
+                },
+                {
+                    badge: '📂 Integración Universal KML',
+                    title: '¡Tus rutas de Google Earth, importadas!',
+                    tagline: 'Importa KML desde Google Earth, My Maps o IA.',
+                    desc: 'No pierdas ninguna ruta. Importa senderos generados por IA, mapas personalizados de Google My Maps o caminos de Google Earth conservando el GPS original.',
+                    bullets: [
+                        'Importación y exportación sin pérdida con el estándar KML',
+                        'Listo para Google Earth, Google My Maps e itinerarios IA',
+                        'Comparte rutas terminadas con amigos en un toque'
+                    ]
+                }
+            ],
+            sectionFeaturesTitleA: 'Todo lo que necesitas para ',
+            sectionFeaturesTitleB: 'registrar tu ruta.',
+            sectionFeaturesDesc: 'Herramientas potentes para planificar viajes y senderos, desde generación con IA hasta navegación en vivo.',
+            featureTitles: [
+                'Planificación inteligente con IA',
+                'Edición interactiva del mapa',
+                'Importar y exportar KML',
+                'Estadísticas de ruta',
+                'Selector de navegación',
+                'Multiidioma',
+                'Explorar ciudades',
+                'Mapas satélite y sin conexión',
+                'Contador de pasos'
+            ],
+            featureDescs: [
+                'Describe a dónde quieres ir: la IA integrada de PathLog diseña itinerarios diarios, rutas inteligentes y paradas destacadas en segundos.',
+                'Mira todas las paradas en un mapa en vivo. Agrega, reordena o elimina paradas por día. En iPhone aparece panel flotante y en iPad vista lado a lado.',
+                'Importa rutas desde Google My Maps, Google Earth o archivos KML. Exporta cualquier viaje a KML para compartir.',
+                'Distancia en vivo, tiempo estimado en auto o caminata y cantidad de paradas actualizadas al instante.',
+                'Toca cualquier parada para abrir direcciones paso a paso en Apple Maps o Google Maps.',
+                'Disponible en inglés, español, francés y coreano. La interfaz se adapta automáticamente al idioma del dispositivo.',
+                'Explora itinerarios recomendados por IA para Seúl, Londres, París, Nueva York y Tokio. Previsualiza cualquier viaje al instante y guárdalo con un toque.',
+                'Vista satelital de alta resolución y seguimiento GPS fiable, incluso con datos celulares desactivados.',
+                'Conecta Apple Health para ver tu conteo de pasos del día en la pantalla principal.'
+            ],
+            sectionModesTitleA: 'Dos modos. ',
+            sectionModesTitleB: 'Una app fluida.',
+            sectionModesDesc: 'Cambia entre Travel y Trail con un toque. Cada modo tiene un flujo dedicado.',
+            travelBadge: '✈️ Modo Travel',
+            travelTitle: 'Planifica viajes con IA inteligente.',
+            travelDesc: 'Crea itinerarios de varios días en segundos con IA. Organiza paradas por día, personaliza rutas en el mapa y navega fácilmente.',
+            travelBullets: [
+                'Generación instantánea de itinerarios con IA (hasta 50/día)',
+                'Agregar y reordenar paradas en el mapa',
+                'Rutas paso a paso en Apple Maps y Google Maps',
+                'Exportar y compartir itinerario en KML'
+            ],
+            trailBadge: '🥾 Modo Trail',
+            trailTitle: 'Registra tus senderos.',
+            trailDesc: 'Importa rutas KML tipo GPX desde fuentes confiables. El LineString GPS original se conserva en exportación e importación.',
+            trailBullets: [
+                'Importa rutas de senderos creadas en Google Earth',
+                'Líneas GPS renderizadas en el mapa',
+                'Exportación KML round-trip segura',
+                'Estimación de tiempo de senderismo'
+            ],
+            howTitle: 'Cómo funciona',
+            howDesc: 'De una idea a un mapa interactivo en tres pasos.',
+            stepTitles: ['Planifica con IA o KML', 'Edita en el mapa', 'Navega y comparte'],
+            stepDescs: [
+                'Describe tu viaje en PathLog para generar un itinerario instantáneo, o importa rutas KML desde Google Earth.',
+                'Revisa y edita las paradas día a día en el mapa interactivo con estadísticas de ruta en vivo.',
+                'Abre direcciones paso a paso en Apple Maps o Google Maps y exporta tu viaje en KML para compartir.'
+            ],
+            kmlBadge: '📂 Formato universal',
+            kmlTitleA: 'Funciona con ',
+            kmlTitleB: 'cualquier fuente KML.',
+            kmlDesc: 'PathLog usa el estándar KML abierto: importa rutas desde cualquier lugar y vuelve a exportarlas sin bloqueos.',
+            kmlPills: [
+                ['Google My Maps', 'Exportar KML → Importar en PathLog'],
+                ['Google Earth', 'Los archivos KML se abren directo en PathLog'],
+                ['Rutas con IA', 'Diseña rutas y expórtalas en KML estándar'],
+                ['Compartir con amigos', 'Exporta KML para que cualquiera siga tu ruta']
+            ],
+            exploreTitleA: 'Explora ',
+            exploreTitleB: 'ciudades con IA.',
+            exploreDesc: 'Empieza cualquier viaje con un itinerario día por día para los destinos más populares. Un toque para previsualizar, un toque para guardar.',
+            citiesNote: 'Los usuarios gratuitos pueden previsualizar itinerarios. PathLog Standard desbloquea guardados ilimitados.',
+            cityCards: [
+                ['Seúl', 'Cultura K y comida callejera'],
+                ['Londres', 'Historia y lugares icónicos'],
+                ['París', 'Arte, comida y romance'],
+                ['Nueva York', 'La ciudad que nunca duerme'],
+                ['Tokio', 'Cultura, tecnología y cocina']
+            ],
+            pricingTitleA: 'Precios ',
+            pricingTitleB: 'claros y sencillos.',
+            pricingDesc: 'PathLog es gratis para explorar. Pasa a PathLog Standard para desbloquear toda la experiencia.',
+            pricingFreeLabel: 'Gratis',
+            pricingFreePrice: '$0 — siempre gratis',
+            pricingFreeFeatures: [
+                '✓ Viajes y senderos ilimitados',
+                '✓ 5 pruebas gratuitas de itinerarios con IA',
+                '✓ Hasta 5 vistas previas de KML Travel y Trail',
+                '✓ Edición interactiva del mapa',
+                '✓ Enlaces de navegación paso a paso',
+                '✓ Contador de pasos diario con Apple Health'
+            ],
+            pricingStandardBadge: 'PathLog Standard',
+            pricingStandardLabel: 'Standard',
+            pricingStandardPrice: '$2.99/mes o $24.99/año (Ahorra 30%)',
+            pricingStandardFeatures: [
+                '✓ Todo lo incluido en Gratis',
+                '✓ Hasta 50 generaciones de rutas con IA al día',
+                '✓ Importación y guardado ilimitado de KML',
+                '✓ Guardado ilimitado de ciudades exploradas',
+                '✓ Capa de mapa satelital de alta resolución',
+                '✓ Exportación completa de KML y rutas compartidas',
+                '✓ Privacidad local, sin necesidad de cuenta'
+            ],
+            ctaTitleA: 'Comienza a planificar tu ',
+            ctaTitleB: 'próxima aventura.',
+            ctaDesc: 'Descarga gratis. Planifica viajes ilimitados, genera rutas con IA y compártelas con todos.',
+            footerCopy: '© 2026 PathLog by Pureum Software. Todos los derechos reservados.',
+            footerTerms: 'Términos de servicio',
+            footerPrivacy: 'Política de privacidad',
+            footerSupport: 'Soporte'
+        },
         fr: {
-            title: 'PathLog - Planificateur de voyage et sentier via KML',
-            description: 'Planifiez vos voyages et sentiers en important des fichiers KML. Demandez à l\'IA de générer le KML de votre voyage ou créez des sentiers dans Google Earth, puis modifiez les arrêts sur une carte interactive.',
+            title: 'PathLog – Planificateur de voyage IA et cartes de sentiers KML v2',
+            description: 'Planifiez vos voyages avec génération intelligente d\'itinéraires par IA. Importez et exportez des tracés GPS via KML, personnalisez les arrêts sur carte interactive et naviguez pas à pas.',
+            navPreview: 'Aperçu',
             navFeatures: 'Fonctionnalités',
             navModes: 'Modes',
             navCities: 'Villes',
             navKml: 'KML',
             navPricing: 'Tarifs',
-            navStore: '🍎 App Store',
-            heroBadge: '🗺️ App iOS - Voyage & Sentier',
-            heroTitleA: 'Vos voyages,',
-            heroTitleB: 'tracés avec KML et l\'IA.',
-            heroDesc: 'PathLog vous permet d\'importer des itinéraires de voyage jour par jour générés par l\'IA (via KML) ou des sentiers créés dans Google Earth, de modifier les arrêts sur une carte en direct et de les réexporter en KML.',
-            heroBtnPrimary: '🍎 Télécharger sur iOS',
-            heroBtnSecondary: 'Voir les fonctions',
-            sectionFeaturesTitleA: 'Tout ce qu\'il faut pour ',
+            heroBadge: '🗺️ App iOS – Planificateur IA & Sentiers v2',
+            heroTitleA: 'Dites à l\'IA où aller.',
+            heroTitleB: 'Obtenez votre itinéraire en quelques secondes.',
+            heroDesc: 'Le planificateur tout-en-un de voyages et de sentiers pour iOS. Générez des itinéraires complets avec l\'IA, importez des tracés Google Earth et naviguez pas à pas.',
+            heroBtnSecondary: 'Voir les captures',
+            showcaseEyebrow: 'Aperçu Interactif',
+            showcaseTitleA: 'Découvrez ',
+            showcaseTitleB: 'PathLog avec Planificateur IA',
+            showcaseDesc: 'De la génération d\'itinéraires IA à l\'édition en direct sur carte et au suivi de sentiers Google Earth.',
+            showcaseTabs: ['Planificateur IA', 'Mes Voyages', 'Carte en Direct', 'Sentiers', 'Google Earth KML'],
+            showcaseItems: [
+                {
+                    badge: '✨ Génération d\'Itinéraires par IA',
+                    title: 'Dites à l\'IA où aller. Obtenez votre itinéraire !',
+                    tagline: 'Tapez une destination — un plan jour par jour en quelques secondes.',
+                    desc: 'Décrivez où vous souhaitez voyager ou touchez des villes suggérées comme Séoul, Paris, Rome ou Tokyo. L\'IA conçoit un itinéraire complet avec coordonnées vérifiées.',
+                    bullets: [
+                        'Jusqu\'à 50 itinéraires générés par jour avec PathLog Standard',
+                        'Plans instantanés jour par jour avec lieux vérifiés et temps de trajet',
+                        'Villes rapides : Séoul, Jeju, Paris, Rome, Madrid, New York, Bali, Tokyo'
+                    ]
+                },
+                {
+                    badge: '✈️ Bibliothèque de Voyages Centralisée',
+                    title: 'Tous vos voyages, au même endroit !',
+                    tagline: '5 jours à Paris, 2 à Séoul — chaque plan sauvegardé et prêt.',
+                    desc: 'Gardez tous vos projets organisés dans une interface claire. Visualisez les jours, étapes et dates en un coup d\'œil, prêts à être modifiés ou partagés.',
+                    bullets: [
+                        'Cartes claires affichant jours, étapes totales et dates',
+                        'Onglets dédiés Voyage et Sentier pour un classement net',
+                        'Filtrez, recherchez et gérez vos voyages en un geste'
+                    ]
+                },
+                {
+                    badge: '🗺️ Carte Interactive & Édition d\'Étapes',
+                    title: 'Chaque étape, sur une carte en direct !',
+                    tagline: 'Ajoutez, réorganisez, supprimez. Distance et durée recalculées.',
+                    desc: 'Donnez vie à votre parcours sur une carte interactive. Réorganisez les étapes par glisser-déposer, suivez les temps de trajet et lancez le guidage direct.',
+                    bullets: [
+                        'Repères numérotés interactifs illustrant votre progression',
+                        'Volet coulissant sur iPhone, vue côte à côte sur iPad',
+                        'Guidage en un geste dans Apple Plans, Google Maps ou Safari'
+                    ]
+                },
+                {
+                    badge: '🥾 Enregistreur Dédié de Randonnées',
+                    title: 'Enregistrez chaque sentier que vous parcourez !',
+                    tagline: 'Distance, étapes et temps de marche pour chaque itinéraire.',
+                    desc: 'Que ce soit la boucle du parc de Versailles ou les cerisiers de High Park, suivez vos randonnées avec mesure précise des distances et durées estimées.',
+                    bullets: [
+                        'Mode Sentier dédié aux explorations en plein air',
+                        'Distance exacte de boucle et estimation du temps de marche',
+                        'Comptage des pas avec Apple Santé sur votre écran d\'accueil'
+                    ]
+                },
+                {
+                    badge: '📂 Intégration KML Ouverte',
+                    title: 'Vos tracés Google Earth, importés !',
+                    tagline: 'Importez du KML depuis Google Earth, My Maps ou l\'IA.',
+                    desc: 'Ne perdez aucun sentier. Importez des parcours d\'IA, de Google My Maps ou de Google Earth en préservant fidèlement le tracé GPS LineString d\'origine.',
+                    bullets: [
+                        'Import et export sans perte selon les normes ouvertes KML',
+                        'Parfaitement compatible Google Earth, Google My Maps et IA',
+                        'Partagez vos parcours avec vos amis en un geste'
+                    ]
+                }
+            ],
+            sectionFeaturesTitleA: 'Tout ce dont vous avez besoin pour ',
             sectionFeaturesTitleB: 'tracer votre chemin.',
-            sectionFeaturesDesc: 'Des outils puissants pour planifier voyages et sentiers, de l\'importation KML à l\'édition sur carte.',
-            featureTitles: ['Importation de voyage IA', 'Édition de carte interactive', 'Import & export KML', 'Statistiques de trajet', 'Choix de l\'app de navigation', 'Multi-langue', 'Explorer les villes', 'Identification de plantes', 'Compteur de pas'],
+            sectionFeaturesDesc: 'Des outils puissants pour planifier vos voyages et sentiers, de la génération IA à la navigation en direct.',
+            featureTitles: [
+                'Planification intelligente avec IA',
+                'Édition interactive de la carte',
+                'Import et export KML',
+                'Statistiques d\'itinéraire',
+                'Sélecteur d\'application GPS',
+                'Multilingue',
+                'Explorer les villes',
+                'Cartes satellite et hors ligne',
+                'Compteur de pas quotidien'
+            ],
             featureDescs: [
-                'Demandez à une IA (Gemini, ChatGPT, Claude) de générer un itinéraire KML, puis importez-le dans PathLog pour le visualiser et le modifier sur la carte.',
-                'Affichez tous les arrêts sur une carte en direct. Ajoutez, réordonnez ou supprimez les arrêts par jour.',
-                'Importez des routes depuis Google My Maps, Google Earth ou des fichiers KML générés par IA. Exportez tout voyage en KML pour le partager.',
-                'Distance en direct, temps estimé en voiture ou à pied, et nombre d\'arrêts - mis à jour instantanément.',
-                'Touchez un arrêt pour ouvrir les directions dans Apple Maps, Google Maps ou navigateur.',
-                'Disponible en anglais, espagnol, français et coréen. L\'interface s\'adapte automatiquement à la langue de l\'appareil.',
-                'Explorez des itinéraires recommandés par IA pour Séoul, Londres, Paris, New York et Tokyo. Prévisualisation en quelques secondes, sauvegarde en un toucher.',
-                'Photographiez une plante lors de vos voyages. L\'IA de PathLog identifie l\'espèce instantanément - accessible depuis l\'écran d\'accueil.',
-                'Connectez Apple Health pour voir votre nombre de pas du jour sur l\'écran d\'accueil.'
+                'Décrivez vos envies : l\'IA intégrée de PathLog conçoit vos itinéraires quotidiens, arrêts incontournables et trajets en quelques secondes.',
+                'Affichez tous vos arrêts sur une carte en direct. Ajoutez, réorganisez ou supprimez des arrêts par jour avec une interface optimisée iPhone et iPad.',
+                'Importez des parcours depuis Google My Maps, Google Earth ou des fichiers KML. Exportez vos voyages pour les partager.',
+                'Distance en direct, temps de route ou marche estimé et nombre d\'arrêts actualisés instantanément.',
+                'Touchez un arrêt pour lancer le guidage pas à pas dans Apple Plans ou Google Maps.',
+                'Disponible en anglais, espagnol, français et coréen. L\'interface s'adapte automatiquement à votre appareil.',
+                'Parcourez des itinéraires recommandés par l\'IA pour Séoul, Londres, Paris, New York et Tokyo. Prévisualisez et enregistrez en un geste.',
+                'Vue satellite haute définition et suivi GPS fiable, même sans connexion de données cellulaires.',
+                'Connectez Apple Santé pour suivre vos pas quotidiens directement sur votre écran d\'accueil.'
             ],
             sectionModesTitleA: 'Deux modes. ',
-            sectionModesTitleB: 'Une seule app.',
-            sectionModesDesc: 'Basculez entre Travel et Trail en un toucher. Chaque mode a un flux dédié.',
+            sectionModesTitleB: 'Une seule application fluide.',
+            sectionModesDesc: 'Basculez entre Travel et Trail d\'un simple geste. Chaque mode offre un parcours dédié.',
             travelBadge: '✈️ Mode Travel',
-            travelTitle: 'Planifiez avec le KML de l\'IA.',
-            travelDesc: 'Créez des itinéraires de voyage multi-jours en important des fichiers KML générés par l\'IA. Organisez les arrêts par jour et naviguez facilement.',
-            travelBullets: ['Importez des itinéraires générés par l\'IA via KML', 'Ajouter et réordonner les arrêts', 'Temps de conduite entre arrêts', 'Exporter et partager en KML'],
+            travelTitle: 'Planifiez vos voyages avec l\'IA.',
+            travelDesc: 'Créez des itinéraires complets en quelques secondes avec l\'IA intégrée. Organisez vos arrêts et naviguez facilement.',
+            travelBullets: [
+                'Génération instantanée d\'itinéraires par IA (jusqu\'à 50/jour)',
+                'Ajout et réorganisation d\'arrêts sur la carte',
+                'Guidage pas à pas dans Apple Plans & Google Maps',
+                'Export et partage d\'itinéraires en KML'
+            ],
             trailBadge: '🥾 Mode Trail',
             trailTitle: 'Enregistrez vos sentiers.',
-            trailDesc: 'Importez des routes KML style GPX depuis des sources fiables. Le GPS LineString es préservé lors des allers-retours.',
-            trailBullets: ['Importez des tracés de sentiers créés dans Google Earth', 'Lignes GPS affichées sur la carte', 'Export KML round-trip fiable', 'Estimation du temps de randonnée'],
+            trailDesc: 'Importez des tracés KML de type GPX fiables. Le LineString GPS d\'origine est préservé lors des exports et imports.',
+            trailBullets: [
+                'Import de sentiers créés dans Google Earth',
+                'Lignes GPS affichées fidèlement sur la carte',
+                'Export KML aller-retour sécurisé',
+                'Estimation du temps de randonnée'
+            ],
             howTitle: 'Comment ça marche',
-            howDesc: 'De l\'idée à la carte interactive en trois étapes.',
-            stepTitles: ['Demander un KML à l\'IA / Google Earth', 'Éditez sur la carte', 'Partagez la route'],
+            howDesc: 'De votre idée à la carte interactive en trois étapes.',
+            stepTitles: ['Planifiez avec l\'IA ou KML', 'Éditez sur la carte', 'Naviguez et partagez'],
             stepDescs: [
-                'Demandez à l\'IA de générer un itinéraire de voyage en KML, ou créez un itinéraire de sentier dans Google Earth.',
-                'Importez le fichier KML dans PathLog. Révisez et modifiez les arrêts jour par jour sur une carte interactive.',
-                'Exportez le voyage fini en KML et partagez-le ; vos amis peuvent l\'importer dans PathLog ou Google Earth.'
+                'Décrivez votre voyage dans PathLog pour générer un itinéraire instantané, ou importez un tracé KML depuis Google Earth.',
+                'Visualisez et modifiez les arrêts jour par jour sur la carte interactive avec des statistiques de route précises.',
+                'Lancez la navigation dans Apple Plans ou Google Maps et exportez votre itinéraire en KML pour vos amis.'
             ],
             kmlBadge: '📂 Format universel',
             kmlTitleA: 'Compatible avec ',
             kmlTitleB: 'toute source KML.',
-            kmlDesc: 'PathLog prend en charge le standard KML ouvert : importez de partout, exportez à nouveau librement.',
-            kmlBtn: 'Obtenir PathLog gratuitement',
+            kmlDesc: 'PathLog adopte le standard ouvert KML : importez vos tracés de partout et réexportez-les sans verrouillage.',
             kmlPills: [
-                ['Google My Maps', 'Exporter en KML → Importer dans PathLog'],
-                ['Google Earth', 'Les fichiers KML s\'ouvrent directement'],
-                ['KML généré par IA', 'Demandez un lien KML à l\'IA et importez'],
-                ['Partager avec des amis', 'Exportez en KML pour partager votre route']
+                ['Google My Maps', 'Exportez en KML → Importez dans PathLog'],
+                ['Google Earth', 'Les fichiers KML s\'ouvrent directement dans PathLog'],
+                ['Itinéraires IA', 'Générez des trajets et exportez-les en KML standard'],
+                ['Partage d\'amis', 'Exportez en KML pour que chacun suive votre parcours']
             ],
-            exploreTitleA: 'Explorer ',
-            exploreTitleB: 'les villes recommandées.',
-            exploreDesc: 'Démarrez n\'importe quel voyage avec un itinéraire jour par jour pour les destinations les plus populaires. Un toucher pour prévisualiser, un toucher pour sauvegarder.',
-            citiesNote: 'Les utilisateurs gratuits peuvent prévisualiser les itinéraires. PathLog Standard débloque les sauvegardes illimitées.',
+            exploreTitleA: 'Explorez ',
+            exploreTitleB: 'des villes avec l\'IA.',
+            exploreDesc: 'Démarrez rapidement avec des itinéraires prêts à l\'emploi pour les grandes métropoles. Prévisualisez et enregistrez en un geste.',
+            citiesNote: 'Les utilisateurs gratuits peuvent prévisualiser les itinéraires. PathLog Standard permet un enregistrement illimité.',
             cityCards: [
-                ['Seoul', 'Culture K et street food'],
-                ['Londres', 'Histoire et lieux iconiques'],
-                ['Paris', 'Art, gastronomie et romance'],
+                ['Séoul', 'Culture K et street food'],
+                ['Londres', 'Histoire et monuments célèbres'],
+                ['Paris', 'Art, gastronomie et romantisme'],
                 ['New York', 'La ville qui ne dort jamais'],
-                ['Tokyo', 'Culture, technologie et cuisine']
+                ['Tokyo', 'Culture, technologie et gastronomie']
             ],
             pricingTitleA: 'Tarifs ',
-            pricingTitleB: 'simples et transparents.',
-            pricingDesc: 'PathLog est gratuit pour commencer. Passez à PathLog Standard pour l\'expérience complète.',
+            pricingTitleB: 'transparents et simples.',
+            pricingDesc: 'PathLog est gratuit à explorer. Passez à PathLog Standard pour profiter de toute l\'expérience.',
             pricingFreeLabel: 'Gratuit',
-            pricingFreePrice: '$0 - toujours gratuit',
+            pricingFreePrice: '0 $ — toujours gratuit',
             pricingFreeFeatures: [
                 '✓ Voyages et sentiers illimités',
-                '✓ Édition interactive sur carte',
-                '✓ Import et export KML',
-                '✓ Jusqu\'à 5 aperçus KML Travel',
-                '✓ Jusqu\'à 5 aperçus KML Trail',
-                '✓ Identification de plantes (limite journalière)',
-                '✓ Compteur de pas'
+                '✓ 5 essais gratuits de génération par IA',
+                '✓ Jusqu\'à 5 prévisualisations KML Travel et Trail',
+                '✓ Édition interactive de la carte',
+                '✓ Liens directs de navigation GPS',
+                '✓ Compteur de pas quotidien via Apple Santé'
             ],
             pricingStandardBadge: 'PathLog Standard',
             pricingStandardLabel: 'Standard',
-            pricingStandardPrice: 'Plans mensuel et annuel',
+            pricingStandardPrice: '2,99 $/mois ou 24,99 $/an (-30 %)',
             pricingStandardFeatures: [
-                '✓ Tout le contenu de Gratuit',
-                '✓ Imports KML Trail illimités',
-                '✓ Sauvegardes illimitées Explorer les villes',
-                '✓ Identification de plantes · 10 utilisations / jour',
-                '✓ Export KML complet et partage de route',
-                '✓ Local-first, sans compte'
+                '✓ Tout ce qui est inclus dans Gratuit',
+                '✓ Jusqu\'à 50 générations d\'itinéraires IA par jour',
+                '✓ Imports et sauvegardes KML illimités',
+                '✓ Enregistrement illimité de villes explorées',
+                '✓ Couche de carte satellite haute définition',
+                '✓ Export KML complet et partage d\'itinéraires',
+                '✓ Confidentialité locale, sans aucun compte requis'
             ],
-            upgradeBtn: 'Obtenir PathLog Standard',
             ctaTitleA: 'Commencez à planifier votre ',
             ctaTitleB: 'prochaine aventure.',
-            ctaDesc: 'Téléchargement gratuit. Planifiez des voyages illimités, importez tout KML et partagez les routes.',
-            ctaBtn: '🍎 Télécharger sur l\'App Store',
+            ctaDesc: 'Téléchargement gratuit. Créez des voyages illimités, concevez vos trajets avec l\'IA et partagez-les.',
             footerCopy: '© 2026 PathLog par Pureum Software. Tous droits réservés.',
             footerTerms: 'Conditions d\'utilisation',
             footerPrivacy: 'Politique de confidentialité',
@@ -1350,13 +2250,9 @@
     function getInitialLang() {
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
-        if (langParam && I18N[langParam]) {
-            return langParam;
-        }
+        if (langParam && I18N[langParam]) return langParam;
         const saved = localStorage.getItem('pathlog_lang');
-        if (saved && I18N[saved]) {
-            return saved;
-        }
+        if (saved && I18N[saved]) return saved;
         const browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
         return I18N[browser] ? browser : 'en';
     }
@@ -1365,57 +2261,120 @@
         const t = I18N[lang] || I18N.en;
         document.documentElement.lang = lang;
         document.title = t.title;
-        document.querySelector('meta[name="description"]').setAttribute('content', t.description);
-        document.querySelector('.nav-links a[href="#features"]').textContent = t.navFeatures;
-        document.querySelector('.nav-links a[href="#modes"]').textContent = t.navModes;
-        document.querySelector('.nav-links a[href="#explore"]').textContent = t.navCities;
-        document.querySelector('.nav-links a[href="#kml"]').textContent = t.navKml;
-        document.querySelector('.nav-links a[href="#pricing"]').textContent = t.navPricing;
-        // document.getElementById('nav-store-btn').textContent = t.navStore;
-        document.querySelector('.hero-content .badge').textContent = t.heroBadge;
-        document.querySelector('.hero h1').innerHTML = t.heroTitleA + '<br><span class="gradient-text">' + t.heroTitleB + '</span>';
-        document.querySelector('.hero-content p').textContent = t.heroDesc;
-        // document.querySelector('.hero-actions .btn-primary').textContent = t.heroBtnPrimary;
-        document.querySelector('.hero-actions .btn-secondary').textContent = t.heroBtnSecondary;
-        document.querySelector('#features .section-header h2').innerHTML = t.sectionFeaturesTitleA + '<span class="gradient-text">' + t.sectionFeaturesTitleB + '</span>';
-        document.querySelector('#features .section-header p').textContent = t.sectionFeaturesDesc;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', t.description);
 
-        document.querySelectorAll('.features-grid .feature-card').forEach((card, i) => {
-            card.querySelector('h3').textContent = t.featureTitles[i];
-            card.querySelector('p').textContent = t.featureDescs[i];
-        });
+        // Navbar
+        const navPrev = document.querySelector('.nav-links a[href="#showcase"]');
+        if (navPrev && t.navPreview) navPrev.textContent = t.navPreview;
+        const navFeat = document.querySelector('.nav-links a[href="#features"]');
+        if (navFeat) navFeat.textContent = t.navFeatures;
+        const navModes = document.querySelector('.nav-links a[href="#modes"]');
+        if (navModes) navModes.textContent = t.navModes;
+        const navExplore = document.querySelector('.nav-links a[href="#explore"]');
+        if (navExplore) navExplore.textContent = t.navCities;
+        const navKml = document.querySelector('.nav-links a[href="#kml"]');
+        if (navKml) navKml.textContent = t.navKml;
+        const navPricing = document.querySelector('.nav-links a[href="#pricing"]');
+        if (navPricing) navPricing.textContent = t.navPricing;
 
-        document.querySelector('#modes .section-header h2').innerHTML = t.sectionModesTitleA + '<span class="gradient-text">' + t.sectionModesTitleB + '</span>';
-        document.querySelector('#modes .section-header p').textContent = t.sectionModesDesc;
-        document.querySelector('.mode-card-travel .mode-badge').textContent = t.travelBadge;
-        document.querySelector('.mode-card-travel h3').textContent = t.travelTitle;
-        document.querySelector('.mode-card-travel p').textContent = t.travelDesc;
-        document.querySelectorAll('.mode-card-travel .mode-features li').forEach((el, i) => el.textContent = t.travelBullets[i]);
-        document.querySelector('.mode-card-trail .mode-badge').textContent = t.trailBadge;
-        document.querySelector('.mode-card-trail h3').textContent = t.trailTitle;
-        document.querySelector('.mode-card-trail p').textContent = t.trailDesc;
-        document.querySelectorAll('.mode-card-trail .mode-features li').forEach((el, i) => el.textContent = t.trailBullets[i]);
+        // Hero
+        const heroBadge = document.querySelector('.hero-content .badge');
+        if (heroBadge) heroBadge.textContent = t.heroBadge;
+        const heroH1 = document.querySelector('.hero h1');
+        if (heroH1) heroH1.innerHTML = t.heroTitleA + '<br><span class="gradient-text">' + t.heroTitleB + '</span>';
+        const heroP = document.querySelector('.hero-content p');
+        if (heroP) heroP.textContent = t.heroDesc;
+        const heroBtnSec = document.querySelector('.hero-actions .btn-secondary');
+        if (heroBtnSec && t.heroBtnSecondary) heroBtnSec.textContent = t.heroBtnSecondary;
 
-        const howSection = document.querySelector('.steps-container').closest('.section');
-        howSection.querySelector('.section-header h2').textContent = t.howTitle;
-        howSection.querySelector('.section-header p').textContent = t.howDesc;
-        document.querySelectorAll('.steps-container .step').forEach((step, i) => {
-            step.querySelector('h3').textContent = t.stepTitles[i];
-            step.querySelector('p').textContent = t.stepDescs[i];
-        });
+        // Showcase Section
+        const showcaseSec = document.getElementById('showcase');
+        if (showcaseSec && t.showcaseTitleA) {
+            const scEyebrow = showcaseSec.querySelector('.section-header .eyebrow');
+            if (scEyebrow && t.showcaseEyebrow) scEyebrow.textContent = t.showcaseEyebrow;
+            const scH2 = showcaseSec.querySelector('.section-header h2');
+            if (scH2) scH2.innerHTML = t.showcaseTitleA + '<span class="gradient-text">' + t.showcaseTitleB + '</span>';
+            const scP = showcaseSec.querySelector('.section-header p');
+            if (scP) scP.textContent = t.showcaseDesc;
 
-        document.querySelector('.kml-content .badge').textContent = t.kmlBadge;
-        document.querySelector('.kml-content h2').innerHTML = t.kmlTitleA + '<span class="gradient-text">' + t.kmlTitleB + '</span>';
-        document.querySelector('.kml-content p').textContent = t.kmlDesc;
-        // document.querySelector('.kml-content .btn-primary').textContent = t.kmlBtn;
-        document.querySelectorAll('.kml-pill').forEach((pill, i) => {
-            pill.querySelector('strong').textContent = t.kmlPills[i][0];
-            pill.querySelector('span').textContent = t.kmlPills[i][1];
-        });
+            // Update tab labels
+            if (t.showcaseTabs) {
+                showcaseSec.querySelectorAll('.showcase-tab .tab-label').forEach((el, i) => {
+                    if (t.showcaseTabs[i]) el.textContent = t.showcaseTabs[i];
+                });
+            }
 
-        document.querySelector('.cta-box h2').innerHTML = t.ctaTitleA + '<span class="gradient-text">' + t.ctaTitleB + '</span>';
-        document.querySelector('.cta-box p').textContent = t.ctaDesc;
-        // document.querySelector('.cta-box .btn-primary').textContent = t.ctaBtn;
+            // Update current showcase item data text
+            if (t.showcaseItems && t.showcaseItems[currentShowcaseIndex]) {
+                const itemT = t.showcaseItems[currentShowcaseIndex];
+                const baseItem = SHOWCASE_DATA[currentShowcaseIndex];
+                document.getElementById('spotlight-badge').textContent = itemT.badge;
+                document.getElementById('spotlight-title').textContent = itemT.title;
+                const tagline = document.getElementById('spotlight-tagline');
+                tagline.textContent = itemT.tagline;
+                tagline.style.color = baseItem.badgeColor;
+                document.getElementById('spotlight-desc').textContent = itemT.desc;
+                document.getElementById('spotlight-bullets').innerHTML = itemT.bullets.map(b => `<li><span class="showcase-bullet-icon" style="background:${baseItem.badgeBg}; color:${baseItem.badgeColor};">✓</span> ${b}</li>`).join('');
+            }
+        }
+
+        // Features
+        const featSec = document.getElementById('features');
+        if (featSec) {
+            featSec.querySelector('.section-header h2').innerHTML = t.sectionFeaturesTitleA + '<span class="gradient-text">' + t.sectionFeaturesTitleB + '</span>';
+            featSec.querySelector('.section-header p').textContent = t.sectionFeaturesDesc;
+            featSec.querySelectorAll('.features-grid .feature-card').forEach((card, i) => {
+                if (t.featureTitles[i]) card.querySelector('h3').textContent = t.featureTitles[i];
+                if (t.featureDescs[i]) card.querySelector('p').textContent = t.featureDescs[i];
+            });
+        }
+
+        // Modes
+        const modesSec = document.getElementById('modes');
+        if (modesSec) {
+            modesSec.querySelector('.section-header h2').innerHTML = t.sectionModesTitleA + '<span class="gradient-text">' + t.sectionModesTitleB + '</span>';
+            modesSec.querySelector('.section-header p').textContent = t.sectionModesDesc;
+            const travCard = modesSec.querySelector('.mode-card-travel');
+            if (travCard) {
+                travCard.querySelector('.mode-badge').textContent = t.travelBadge;
+                travCard.querySelector('h3').textContent = t.travelTitle;
+                travCard.querySelector('p').textContent = t.travelDesc;
+                travCard.querySelectorAll('.mode-features li').forEach((el, i) => { if (t.travelBullets[i]) el.textContent = t.travelBullets[i]; });
+            }
+            const trailCard = modesSec.querySelector('.mode-card-trail');
+            if (trailCard) {
+                trailCard.querySelector('.mode-badge').textContent = t.trailBadge;
+                trailCard.querySelector('h3').textContent = t.trailTitle;
+                trailCard.querySelector('p').textContent = t.trailDesc;
+                trailCard.querySelectorAll('.mode-features li').forEach((el, i) => { if (t.trailBullets[i]) el.textContent = t.trailBullets[i]; });
+            }
+        }
+
+        // How it works
+        const howSec = document.querySelector('.steps-container')?.closest('.section');
+        if (howSec) {
+            howSec.querySelector('.section-header h2').textContent = t.howTitle;
+            howSec.querySelector('.section-header p').textContent = t.howDesc;
+            howSec.querySelectorAll('.steps-container .step').forEach((step, i) => {
+                if (t.stepTitles[i]) step.querySelector('h3').textContent = t.stepTitles[i];
+                if (t.stepDescs[i]) step.querySelector('p').textContent = t.stepDescs[i];
+            });
+        }
+
+        // KML Section
+        const kmlSec = document.getElementById('kml');
+        if (kmlSec) {
+            kmlSec.querySelector('.kml-content .badge').textContent = t.kmlBadge;
+            kmlSec.querySelector('.kml-content h2').innerHTML = t.kmlTitleA + '<span class="gradient-text">' + t.kmlTitleB + '</span>';
+            kmlSec.querySelector('.kml-content p').textContent = t.kmlDesc;
+            kmlSec.querySelectorAll('.kml-pill').forEach((pill, i) => {
+                if (t.kmlPills && t.kmlPills[i]) {
+                    pill.querySelector('strong').textContent = t.kmlPills[i][0];
+                    pill.querySelector('span').textContent = t.kmlPills[i][1];
+                }
+            });
+        }
 
         // Explore Cities
         const exploreSection = document.getElementById('explore');
@@ -1434,8 +2393,6 @@
         }
 
         // Pricing
-        const upgradeBtn = document.getElementById('upgrade-btn');
-        // if (upgradeBtn && t.upgradeBtn) upgradeBtn.textContent = t.upgradeBtn;
         const pricingSection = document.getElementById('pricing');
         if (pricingSection && t.pricingTitleA !== undefined) {
             pricingSection.querySelector('.section-header h2').innerHTML = t.pricingTitleA + '<span class="gradient-text">' + t.pricingTitleB + '</span>';
@@ -1444,9 +2401,7 @@
                 pricingSection.querySelector('.pricing-card .plan-label').textContent = t.pricingFreeLabel;
                 pricingSection.querySelector('.pricing-card .plan-price').textContent = t.pricingFreePrice;
                 pricingSection.querySelectorAll('.pricing-card .plan-features li').forEach((el, i) => {
-                    if (t.pricingFreeFeatures && t.pricingFreeFeatures[i]) {
-                        el.textContent = t.pricingFreeFeatures[i];
-                    }
+                    if (t.pricingFreeFeatures && t.pricingFreeFeatures[i]) el.textContent = t.pricingFreeFeatures[i];
                 });
             }
             if (t.pricingStandardBadge) {
@@ -1455,24 +2410,39 @@
                 standardCard.querySelector('.plan-label').textContent = t.pricingStandardLabel;
                 standardCard.querySelector('.plan-price').textContent = t.pricingStandardPrice;
                 standardCard.querySelectorAll('.plan-features li').forEach((el, i) => {
-                    if (t.pricingStandardFeatures && t.pricingStandardFeatures[i]) {
-                        el.textContent = t.pricingStandardFeatures[i];
-                    }
+                    if (t.pricingStandardFeatures && t.pricingStandardFeatures[i]) el.textContent = t.pricingStandardFeatures[i];
                 });
             }
         }
 
-        document.querySelector('footer p').textContent = t.footerCopy;
-        document.querySelector('footer a[href="terms.html"]').textContent = t.footerTerms;
-        document.querySelector('footer a[href="privacy.html"]').textContent = t.footerPrivacy;
-        document.querySelector('footer a[href="support.html"]').textContent = t.footerSupport;
+        // CTA & Footer
+        const ctaBox = document.querySelector('.cta-box');
+        if (ctaBox) {
+            ctaBox.querySelector('h2').innerHTML = t.ctaTitleA + '<span class="gradient-text">' + t.ctaTitleB + '</span>';
+            ctaBox.querySelector('p').textContent = t.ctaDesc;
+        }
 
-        document.getElementById('lang-select').value = lang;
+        const footer = document.querySelector('footer');
+        if (footer) {
+            footer.querySelector('p').textContent = t.footerCopy;
+            const termsLink = footer.querySelector('a[href="terms.html"]');
+            if (termsLink) termsLink.textContent = t.footerTerms;
+            const privLink = footer.querySelector('a[href="privacy.html"]');
+            if (privLink) privLink.textContent = t.footerPrivacy;
+            const suppLink = footer.querySelector('a[href="support.html"]');
+            if (suppLink) suppLink.textContent = t.footerSupport;
+        }
+
+        const langSelect = document.getElementById('lang-select');
+        if (langSelect) langSelect.value = lang;
         localStorage.setItem('pathlog_lang', lang);
     }
 
     const langSelect = document.getElementById('lang-select');
     langSelect.addEventListener('change', (e) => applyLang(e.target.value));
+
+    // Initialize
     applyLang(getInitialLang());
 </script>
+</body>
 </html>
