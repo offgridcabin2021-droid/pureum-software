@@ -141,17 +141,18 @@
             object-fit: contain;
         }
 
-        /* ── Hero ── */
-        .hero {
-            padding: clamp(60px, 8vw, 110px) clamp(20px, 5vw, 60px) clamp(40px, 6vw, 70px);
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* ── Unified Hero & Showcase ── */
+        .hero-showcase-section {
+            padding: clamp(48px, 6vw, 76px) clamp(20px, 5vw, 60px) clamp(56px, 8vw, 96px);
+            background: linear-gradient(180deg, #F8FAFF 0%, #EEF4FF 45%, #F8FAFF 100%);
+            border-bottom: 1px solid var(--border);
         }
 
-        .hero-content { flex: 1.1; }
+        .hero-intro {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto clamp(36px, 5vw, 48px);
+        }
 
         .badge {
             display: inline-flex;
@@ -159,16 +160,16 @@
             gap: 8px;
             background: rgba(26, 93, 255, 0.08);
             color: var(--blue);
-            padding: 6px 14px;
+            padding: 6px 16px;
             border-radius: 100px;
             font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             letter-spacing: 0.02em;
         }
 
-        .hero h1 {
-            font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+        .hero-intro h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
             font-weight: 800;
             line-height: 1.12;
             letter-spacing: -0.03em;
@@ -182,105 +183,47 @@
             background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.08rem;
+        .hero-intro p {
+            font-size: 1.1rem;
             color: var(--text-secondary);
             line-height: 1.7;
-            max-width: 500px;
-            margin-bottom: 34px;
+            max-width: 600px;
+            margin: 0 auto 30px;
         }
 
-        .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-
-        .hero-visual {
-            flex: 0.9;
-            max-width: 440px;
+        .hero-actions {
             display: flex;
+            gap: 14px;
             align-items: center;
             justify-content: center;
-            position: relative;
+            flex-wrap: wrap;
         }
 
-        /* Hero Video Mockup */
-        .hero-phone-wrap {
-            position: relative;
-            width: 250px;
-        }
-
-        .phone-mockup {
-            width: 100%;
-            background: #1C1C1E;
-            border-radius: 36px;
-            padding: 7px;
-            box-shadow: 0 32px 80px rgba(26, 93, 255, 0.22), 0 8px 32px rgba(0,0,0,0.18);
-            position: relative;
-        }
-
-        .phone-screen {
-            background: #000;
-            border-radius: 30px;
-            overflow: hidden;
-            aspect-ratio: 9/19.5;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .floating-pill-hero {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 8px 14px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            display: flex;
+        .video-play-btn {
+            height: 48px;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
-            z-index: 10;
-            border: 1px solid rgba(255,255,255,0.8);
-            animation: floatSlow 3.5s ease-in-out infinite alternate;
+            gap: 8px;
+            padding: 0 24px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            transition: all 0.2s ease;
         }
-        .floating-pill-hero.left { bottom: 15%; left: -36px; }
-        .floating-pill-hero.right { top: 18%; right: -28px; animation-delay: 1.8s; }
-
-        @keyframes floatSlow {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-8px); }
-        }
-
-        /* ── Sections ── */
-        .section { padding: clamp(52px, 8vw, 96px) clamp(20px, 5vw, 60px); }
-        .container { max-width: 1200px; margin: 0 auto; }
-
-        .section-header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
-        .section-header .eyebrow {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--blue);
-            margin-bottom: 10px;
-        }
-        .section-header h2 { font-size: clamp(1.85rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
-        .section-header p { font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.65; }
-
-        /* ── App Showcase Section ── */
-        .showcase-section {
-            background: linear-gradient(180deg, #F8FAFF 0%, #EFF4FF 50%, #F8FAFF 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        .video-play-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(26, 93, 255, 0.15);
         }
 
+        /* ── Showcase Tabs ── */
         .showcase-tabs {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
         }
 
         .showcase-tab {
@@ -334,7 +277,7 @@
             box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
         }
 
-        /* Showcase Spotlight Frame */
+        /* ── Spotlight Frame ── */
         .showcase-spotlight {
             background: #fff;
             border: 1px solid var(--border);
@@ -358,7 +301,7 @@
             color: var(--text);
         }
         .showcase-info .tagline {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             font-weight: 600;
             color: var(--blue);
             margin-bottom: 16px;
@@ -399,6 +342,13 @@
             flex-shrink: 0;
         }
 
+        .spotlight-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
         .showcase-media {
             display: flex;
             align-items: center;
@@ -426,7 +376,7 @@
             display: block;
         }
 
-        /* Gallery Carousel Strip */
+        /* ── Gallery Carousel Strip ── */
         .gallery-strip-header {
             display: flex;
             align-items: center;
@@ -487,6 +437,23 @@
             font-weight: 700;
             color: var(--text);
         }
+
+        /* ── Sections ── */
+        .section { padding: clamp(52px, 8vw, 96px) clamp(20px, 5vw, 60px); }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .section-header .eyebrow {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .section-header h2 { font-size: clamp(1.85rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+        .section-header p { font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.65; }
 
         /* ── Feature Cards ── */
         .features-grid {
@@ -845,17 +812,66 @@
         }
         .lightbox-close:hover { background: rgba(255,255,255,0.4); }
 
+        /* ── Video Modal ── */
+        .video-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(10px);
+            z-index: 1001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .video-modal.active { display: flex; }
+        .video-modal-content {
+            position: relative;
+            max-width: 330px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video-modal-phone {
+            width: 100%;
+            background: #1C1C1E;
+            border-radius: 36px;
+            padding: 7px;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+            border: 2px solid rgba(255,255,255,0.18);
+        }
+        .video-modal-phone video {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+            display: block;
+            background: #000;
+        }
+        .video-modal-close {
+            position: absolute;
+            top: -48px;
+            right: 0;
+            color: #fff;
+            background: rgba(255,255,255,0.22);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .video-modal-close:hover { background: rgba(255,255,255,0.4); }
+
         /* ── Responsive ── */
         @media (max-width: 960px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero p { max-width: 100%; margin-left: auto; margin-right: auto; }
-            .hero-actions { justify-content: center; }
-            .hero-visual { max-width: 300px; }
-            .floating-pill-hero.left { left: -10px; }
-            .floating-pill-hero.right { right: -10px; }
-
             .showcase-spotlight { grid-template-columns: 1fr; text-align: center; }
             .showcase-bullets { align-items: center; }
+            .spotlight-actions { justify-content: center; }
             .gallery-strip { grid-template-columns: repeat(3, 1fr); }
 
             .mode-grid { grid-template-columns: 1fr; }
@@ -896,7 +912,6 @@
             <span>PathLog</span>
         </a>
         <div class="nav-links">
-            <a href="#showcase">Preview</a>
             <a href="#features">Features</a>
             <a href="#modes">Modes</a>
             <a href="#explore">Cities</a>
@@ -916,42 +931,22 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="container">
-        <div class="hero">
-            <div class="hero-content">
+    <!-- Unified Main Hero & Showcase -->
+    <section class="hero-showcase-section" id="hero">
+        <div class="container">
+            <!-- Header Intro -->
+            <div class="hero-intro">
                 <div class="badge">🗺️ iOS App — AI Travel &amp; Trail Planner v2</div>
                 <h1>Tell AI where.<br><span class="gradient-text">Get your itinerary in seconds.</span></h1>
-                <p>The complete travel &amp; trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live interactive maps, and track your daily steps.</p>
+                <p>The complete travel &amp; trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live maps, and track your daily steps.</p>
                 <div class="hero-actions">
                     <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
                         <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 48px;">
                     </a>
-                    <a href="#showcase" class="btn btn-secondary" style="height: 48px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border-radius: 100px; padding: 0 26px;">Explore Screenshots</a>
+                    <button class="btn btn-secondary video-play-btn" onclick="openVideoModal()">
+                        <span>🎬</span> <span class="video-btn-text">Watch Video Demo</span>
+                    </button>
                 </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="hero-phone-wrap">
-                    <div class="floating-pill-hero left">✨ 50 AI trips/day</div>
-                    <div class="floating-pill-hero right">🥾 Google Earth KML</div>
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <video src="assets/PathLog.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- App Showcase Section -->
-    <section class="section showcase-section" id="showcase">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Interactive Preview</span>
-                <h2>Inside <span class="gradient-text">PathLog with AI Planner</span></h2>
-                <p>From AI-generated multi-day itineraries to live map editing and Google Earth trail tracking — explore the 5 core workflows.</p>
             </div>
 
             <!-- Tab Buttons -->
@@ -973,7 +968,7 @@
                 </button>
             </div>
 
-            <!-- Spotlight Card -->
+            <!-- Spotlight Card (Picture 2 Main) -->
             <div class="showcase-spotlight" id="spotlight-card">
                 <div class="showcase-info">
                     <div class="badge" id="spotlight-badge" style="background: rgba(124, 58, 237, 0.1); color: var(--purple);">✨ AI Itinerary Generation</div>
@@ -985,9 +980,14 @@
                         <li><span class="showcase-bullet-icon">✓</span> Instant day-by-day plans with verified places and travel times</li>
                         <li><span class="showcase-bullet-icon">✓</span> Quick-start destinations: Seoul, Jeju, Paris, Rome, Madrid, New York, Bali, Tokyo</li>
                     </ul>
-                    <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
-                        <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 44px;">
-                    </a>
+                    <div class="spotlight-actions">
+                        <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 44px;">
+                        </a>
+                        <button class="btn btn-secondary video-play-btn" style="height: 44px;" onclick="openVideoModal()">
+                            <span>🎬</span> <span class="video-btn-text">Watch Video Demo</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="showcase-media">
@@ -1096,7 +1096,7 @@
         </div>
     </section>
 
-    <!-- Travel & Trail Modes with Live Previews -->
+    <!-- Travel & Trail Modes with Embedded Previews -->
     <section class="section" id="modes">
         <div class="container">
             <div class="section-header">
@@ -1235,7 +1235,7 @@
                     <div class="badge">📂 Universal Format</div>
                     <h2>Works with <span class="gradient-text">any KML source.</span></h2>
                     <p>PathLog speaks the open KML standard — import routes from Google Earth, Google My Maps, or AI links, and export back out without proprietary lock-in.</p>
-                    <div class="hero-actions">
+                    <div class="hero-actions" style="justify-content: flex-start;">
                         <a href="https://apps.apple.com/ca/app/pathlog/id6764615274" target="_blank" rel="noopener noreferrer" class="app-store-badge-link">
                             <img src="assets/app-store-badge.png" alt="Download on the App Store" style="height: 48px;">
                         </a>
@@ -1348,6 +1348,16 @@
         <div class="lightbox-content">
             <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
             <img id="lightbox-img" src="" alt="App Preview">
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            <div class="video-modal-phone">
+                <video id="hero-demo-video" src="assets/PathLog.mp4" controls playsinline></video>
+            </div>
         </div>
     </div>
 
@@ -1476,7 +1486,7 @@
         img.alt = item.alt;
     }
 
-    // Lightbox
+    // Lightbox for Screenshots
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
 
@@ -1495,8 +1505,35 @@
         }
     }
 
+    // Video Modal
+    const videoModal = document.getElementById('video-modal');
+    const heroVideo = document.getElementById('hero-demo-video');
+
+    function openVideoModal() {
+        if (!videoModal) return;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (heroVideo) {
+            heroVideo.currentTime = 0;
+            heroVideo.play().catch(() => {});
+        }
+    }
+
+    function closeVideoModal(e) {
+        if (!e || e.target === videoModal || e.target.classList.contains('video-modal-close')) {
+            videoModal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (heroVideo) {
+                heroVideo.pause();
+            }
+        }
+    }
+
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'Escape') {
+            closeLightbox();
+            closeVideoModal();
+        }
     });
 
     // Attach click events to tabs
@@ -1512,7 +1549,6 @@
         en: {
             title: 'PathLog – AI Travel Itinerary Planner & KML Trail Maps',
             description: 'Generate smart multi-day travel itineraries with AI. Import and export GPS trails with KML, customize stops on an interactive map, and navigate with turn-by-turn directions.',
-            navPreview: 'Preview',
             navFeatures: 'Features',
             navModes: 'Modes',
             navCities: 'Cities',
@@ -1521,12 +1557,8 @@
             heroBadge: '🗺️ iOS App — AI Travel & Trail Planner v2',
             heroTitleA: 'Tell AI where.',
             heroTitleB: 'Get your itinerary in seconds.',
-            heroDesc: 'The complete travel & trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live interactive maps, and track your daily steps.',
-            heroBtnSecondary: 'Explore Screenshots',
-            showcaseEyebrow: 'Interactive Preview',
-            showcaseTitleA: 'Inside ',
-            showcaseTitleB: 'PathLog with AI Planner',
-            showcaseDesc: 'From AI-generated multi-day itineraries to live map editing and Google Earth trail tracking — explore the 5 core workflows.',
+            heroDesc: 'The complete travel & trail planner for iOS. Auto-generate multi-day itineraries with smart AI, import Google Earth trails, customize stops on live maps, and track your daily steps.',
+            heroBtnVideo: 'Watch Video Demo',
             showcaseTabs: ['AI Planner', 'My Trips', 'Live Map', 'Trail Logger', 'Google Earth KML'],
             showcaseItems: [
                 {
@@ -1696,7 +1728,6 @@
         ko: {
             title: 'PathLog – 스마트 AI 여행 플래너 & KML 트레일 지도 v2',
             description: '내장된 스마트 AI로 일자별 여행 코스를 자동 생성하고, 구글 어스 트레일 KML을 가져와 실시간 지도에서 편집 및 길찾기까지 한 번에 즐기세요.',
-            navPreview: '미리보기',
             navFeatures: '기능',
             navModes: '모드',
             navCities: '도시 탐색',
@@ -1706,11 +1737,7 @@
             heroTitleA: '어디로 갈지만 알려주세요.',
             heroTitleB: '몇 초 만에 여행 일정이 완성됩니다.',
             heroDesc: 'iOS를 위한 올인원 여행 & 트레일 플래너. 내장 스마트 AI로 일자별 여행 코스를 즉시 생성하고, 구글 어스 트레일 KML을 가져와 실시간 지도에서 편집 및 길찾기까지 한 번에 즐기세요.',
-            heroBtnSecondary: '스크린샷 둘러보기',
-            showcaseEyebrow: '실제 앱 화면 미리보기',
-            showcaseTitleA: 'PathLog AI 플래너 ',
-            showcaseTitleB: '핵심 기능 둘러보기',
-            showcaseDesc: '스마트 AI 일정 생성부터 실시간 지도 편집, 구글 어스 트레일 트래킹까지 — 5가지 핵심 워크플로우를 직접 확인하세요.',
+            heroBtnVideo: '데모 비디오 보기',
             showcaseTabs: ['AI 플래너', '여행 보관함', '실시간 지도', '트레일 기록', '구글 어스 KML'],
             showcaseItems: [
                 {
@@ -1880,7 +1907,6 @@
         es: {
             title: 'PathLog – Planificador de viajes con IA y mapas KML v2',
             description: 'Planifica viajes con generación inteligente de itinerarios por IA. Importa y exporta rutas GPS con KML, personaliza paradas en un mapa interactivo y navega paso a paso.',
-            navPreview: 'Vistas previas',
             navFeatures: 'Funciones',
             navModes: 'Modos',
             navCities: 'Ciudades',
@@ -1890,11 +1916,7 @@
             heroTitleA: 'Dile a la IA dónde ir.',
             heroTitleB: 'Obtén tu itinerario en segundos.',
             heroDesc: 'El planificador completo de viajes y senderos para iOS. Genera itinerarios de varios días con IA inteligente, importa senderos de Google Earth y personaliza paradas en vivo.',
-            heroBtnSecondary: 'Explorar capturas',
-            showcaseEyebrow: 'Vistas previas interactivas',
-            showcaseTitleA: 'Descubre ',
-            showcaseTitleB: 'PathLog con Planificador IA',
-            showcaseDesc: 'Desde itinerarios generados por IA hasta edición en mapa en vivo y seguimiento de rutas de Google Earth.',
+            heroBtnVideo: 'Ver video demo',
             showcaseTabs: ['Planificador IA', 'Mis Viajes', 'Mapa en Vivo', 'Registro Senderos', 'Google Earth KML'],
             showcaseItems: [
                 {
@@ -2064,7 +2086,6 @@
         fr: {
             title: 'PathLog – Planificateur de voyage IA et cartes de sentiers KML v2',
             description: 'Planifiez vos voyages avec génération intelligente d\'itinéraires par IA. Importez et exportez des tracés GPS via KML, personnalisez les arrêts sur carte interactive et naviguez pas à pas.',
-            navPreview: 'Aperçu',
             navFeatures: 'Fonctionnalités',
             navModes: 'Modes',
             navCities: 'Villes',
@@ -2074,11 +2095,7 @@
             heroTitleA: 'Dites à l\'IA où aller.',
             heroTitleB: 'Obtenez votre itinéraire en quelques secondes.',
             heroDesc: 'Le planificateur tout-en-un de voyages et de sentiers pour iOS. Générez des itinéraires complets avec l\'IA, importez des tracés Google Earth et naviguez pas à pas.',
-            heroBtnSecondary: 'Voir les captures',
-            showcaseEyebrow: 'Aperçu Interactif',
-            showcaseTitleA: 'Découvrez ',
-            showcaseTitleB: 'PathLog avec Planificateur IA',
-            showcaseDesc: 'De la génération d\'itinéraires IA à l\'édition en direct sur carte et au suivi de sentiers Google Earth.',
+            heroBtnVideo: 'Voir la vidéo démo',
             showcaseTabs: ['Planificateur IA', 'Mes Voyages', 'Carte en Direct', 'Sentiers', 'Google Earth KML'],
             showcaseItems: [
                 {
@@ -2265,8 +2282,6 @@
         if (metaDesc) metaDesc.setAttribute('content', t.description);
 
         // Navbar
-        const navPrev = document.querySelector('.nav-links a[href="#showcase"]');
-        if (navPrev && t.navPreview) navPrev.textContent = t.navPreview;
         const navFeat = document.querySelector('.nav-links a[href="#features"]');
         if (navFeat) navFeat.textContent = t.navFeatures;
         const navModes = document.querySelector('.nav-links a[href="#modes"]');
@@ -2278,45 +2293,35 @@
         const navPricing = document.querySelector('.nav-links a[href="#pricing"]');
         if (navPricing) navPricing.textContent = t.navPricing;
 
-        // Hero
-        const heroBadge = document.querySelector('.hero-content .badge');
+        // Hero Intro
+        const heroBadge = document.querySelector('.hero-intro .badge');
         if (heroBadge) heroBadge.textContent = t.heroBadge;
-        const heroH1 = document.querySelector('.hero h1');
+        const heroH1 = document.querySelector('.hero-intro h1');
         if (heroH1) heroH1.innerHTML = t.heroTitleA + '<br><span class="gradient-text">' + t.heroTitleB + '</span>';
-        const heroP = document.querySelector('.hero-content p');
+        const heroP = document.querySelector('.hero-intro p');
         if (heroP) heroP.textContent = t.heroDesc;
-        const heroBtnSec = document.querySelector('.hero-actions .btn-secondary');
-        if (heroBtnSec && t.heroBtnSecondary) heroBtnSec.textContent = t.heroBtnSecondary;
+        document.querySelectorAll('.video-btn-text').forEach(btn => {
+            if (t.heroBtnVideo) btn.textContent = t.heroBtnVideo;
+        });
 
-        // Showcase Section
-        const showcaseSec = document.getElementById('showcase');
-        if (showcaseSec && t.showcaseTitleA) {
-            const scEyebrow = showcaseSec.querySelector('.section-header .eyebrow');
-            if (scEyebrow && t.showcaseEyebrow) scEyebrow.textContent = t.showcaseEyebrow;
-            const scH2 = showcaseSec.querySelector('.section-header h2');
-            if (scH2) scH2.innerHTML = t.showcaseTitleA + '<span class="gradient-text">' + t.showcaseTitleB + '</span>';
-            const scP = showcaseSec.querySelector('.section-header p');
-            if (scP) scP.textContent = t.showcaseDesc;
+        // Showcase Tabs
+        if (t.showcaseTabs) {
+            document.querySelectorAll('.showcase-tab .tab-label').forEach((el, i) => {
+                if (t.showcaseTabs[i]) el.textContent = t.showcaseTabs[i];
+            });
+        }
 
-            // Update tab labels
-            if (t.showcaseTabs) {
-                showcaseSec.querySelectorAll('.showcase-tab .tab-label').forEach((el, i) => {
-                    if (t.showcaseTabs[i]) el.textContent = t.showcaseTabs[i];
-                });
-            }
-
-            // Update current showcase item data text
-            if (t.showcaseItems && t.showcaseItems[currentShowcaseIndex]) {
-                const itemT = t.showcaseItems[currentShowcaseIndex];
-                const baseItem = SHOWCASE_DATA[currentShowcaseIndex];
-                document.getElementById('spotlight-badge').textContent = itemT.badge;
-                document.getElementById('spotlight-title').textContent = itemT.title;
-                const tagline = document.getElementById('spotlight-tagline');
-                tagline.textContent = itemT.tagline;
-                tagline.style.color = baseItem.badgeColor;
-                document.getElementById('spotlight-desc').textContent = itemT.desc;
-                document.getElementById('spotlight-bullets').innerHTML = itemT.bullets.map(b => `<li><span class="showcase-bullet-icon" style="background:${baseItem.badgeBg}; color:${baseItem.badgeColor};">✓</span> ${b}</li>`).join('');
-            }
+        // Spotlight Item Content
+        if (t.showcaseItems && t.showcaseItems[currentShowcaseIndex]) {
+            const itemT = t.showcaseItems[currentShowcaseIndex];
+            const baseItem = SHOWCASE_DATA[currentShowcaseIndex];
+            document.getElementById('spotlight-badge').textContent = itemT.badge;
+            document.getElementById('spotlight-title').textContent = itemT.title;
+            const tagline = document.getElementById('spotlight-tagline');
+            tagline.textContent = itemT.tagline;
+            tagline.style.color = baseItem.badgeColor;
+            document.getElementById('spotlight-desc').textContent = itemT.desc;
+            document.getElementById('spotlight-bullets').innerHTML = itemT.bullets.map(b => `<li><span class="showcase-bullet-icon" style="background:${baseItem.badgeBg}; color:${baseItem.badgeColor};">✓</span> ${b}</li>`).join('');
         }
 
         // Features
