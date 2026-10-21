@@ -143,3 +143,12 @@ Without location permission, map centering and real-time tracking will not work.
 
 > **Q: 위치 권한을 허용하지 않았어요. 어떻게 켤 수 있나요?**
 > **A:** 기기의 **설정 → 앱(또는 개인정보 보호 및 보안) → PathLog → 위치**로 이동한 후 **'앱 사용 중'** 또는 **'항상'**을 선택하세요. 설정 후 앱으로 돌아오면 지도에 현재 위치가 표시됩니다.
+
+---
+
+### Q: Can two or more people share one person's Travel or Trail KML file and view it together?
+**A:** Yes, absolutely! One person can plan a travel itinerary or create a trail route, export it as a KML file, and share it with friends or family via AirDrop, messaging apps, or email. Anyone with PathLog can simply open the shared KML file to view the exact same route, stops, and map details in their own PathLog app.
+
+> **Q: 2명 이상이 한 사람의 여행(Travel)이나 트레일(Trail) KML 파일을 공유해서 각자의 PathLog 앱에서 볼 수 있나요?**
+> **A:** 네, 가능합니다! 일행 중 한 사람이 여행 일정이나 하이킹 트레일 코스를 완성한 뒤 KML 파일로 내보내어(AirDrop, 카카오톡, 메시지, 이메일 등) 공유하면, 동행자들은 각자의 스마트폰에 설치된 PathLog 앱에서 해당 파일을 열어 똑같은 지도 경로와 방문 일정을 함께 확인하며 여행할 수 있습니다.
+
