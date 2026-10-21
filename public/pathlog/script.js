@@ -52,3 +52,22 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-30% 0px -55% 0px' });
   sections.forEach(section => observer.observe(section));
 }
+
+// Destination cards cinematic pan on click / tap (5.5s smooth motion)
+const destinationCards = document.querySelectorAll('.destination-card');
+destinationCards.forEach(card => {
+  let timer = null;
+  card.addEventListener('click', () => {
+    destinationCards.forEach(other => {
+      if (other !== card) other.classList.remove('is-animating');
+    });
+    card.classList.remove('is-animating');
+    void card.offsetWidth;
+    card.classList.add('is-animating');
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      card.classList.remove('is-animating');
+    }, 5500);
+  });
+});
+
