@@ -861,3 +861,56 @@
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   Fix Footer Brand Typography & Prevent Parent Span Inheritance
+   ========================================================================== */
+.footer-main .brand,
+.brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.brand .brand-name-text,
+.footer-main .brand .brand-name-text {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--green) !important;
+  line-height: 1.1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+}
+
+.brand .brand-name-text span,
+.footer-main .brand .brand-name-text span,
+.brand .brand-light,
+.footer-main .brand .brand-light {
+  font-size: 21px !important;
+  font-weight: 500 !important;
+  color: #3b6b5d !important;
+  letter-spacing: -0.03em !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline !important;
+  line-height: 1.1 !important;
+  vertical-align: baseline !important;
+}
+
+.brand .brand-sub-text,
+.footer-main .brand .brand-sub-text {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.15em !important;
+  color: var(--muted) !important;
+  text-transform: uppercase !important;
+  margin-top: 2px !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  display: block !important;
+}
