@@ -23,7 +23,6 @@
 
       <ul class="nav-links">
         <li><a href="index.html" class="active">Overview</a></li>
-        <li><a href="#screens">Screenshots</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="terms.html">Terms</a></li>
@@ -87,70 +86,6 @@
             <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Full Backup Export</div>
           </div>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- App Screenshots Showcase Section -->
-  <section class="screens-section" id="screens">
-    <div class="container">
-      
-      <div class="section-header">
-        <span class="section-label">Inside PlantLog</span>
-        <h2 class="section-title">Designed for Everyday Simplicity & Delight</h2>
-        <p class="section-desc">
-          Clean iOS typography, serene botanical greens, and intuitive organization that puts your plants first.
-        </p>
-      </div>
-
-      <div class="screens-grid">
-
-        <!-- Screen Card 1: Today & Reminders -->
-        <div class="screen-card" onclick="openScreenModal('assets/screen-reminders.png', 'Never Miss a Watering Day - Today Screen')">
-          <div class="screen-card-tag">
-            <span class="iconify" data-icon="solar:bell-bold"></span>
-            Smart Reminders
-          </div>
-          <div class="screen-image-frame">
-            <img src="assets/screen-reminders.png" alt="Never Miss a Watering Day - PlantLog Today Screen" loading="lazy">
-          </div>
-          <span class="screen-hint">
-            <span class="iconify" data-icon="solar:magnifer-zoom-in-bold"></span>
-            Tap to expand
-          </span>
-        </div>
-
-        <!-- Screen Card 2: Greenery Collection -->
-        <div class="screen-card" onclick="openScreenModal('assets/screen-greenery.png', 'Your Whole Plant Family, Organized - Greenery Screen')">
-          <div class="screen-card-tag" style="background: #E8F5E9; color: #2E7D32;">
-            <span class="iconify" data-icon="solar:leaf-bold"></span>
-            Plant Collection
-          </div>
-          <div class="screen-image-frame">
-            <img src="assets/screen-greenery.png" alt="Your Whole Plant Family, Organized - PlantLog Greenery Screen" loading="lazy">
-          </div>
-          <span class="screen-hint">
-            <span class="iconify" data-icon="solar:magnifer-zoom-in-bold"></span>
-            Tap to expand
-          </span>
-        </div>
-
-        <!-- Screen Card 3: Settings & Backup -->
-        <div class="screen-card" onclick="openScreenModal('assets/screen-backup.png', 'Back Up & Restore in One Tap - Settings Screen')">
-          <div class="screen-card-tag" style="background: #EDE7F6; color: #5E35B1;">
-            <span class="iconify" data-icon="solar:shield-check-bold"></span>
-            100% Private & Backup
-          </div>
-          <div class="screen-image-frame">
-            <img src="assets/screen-backup.png" alt="Back Up & Restore in One Tap - PlantLog Settings Screen" loading="lazy">
-          </div>
-          <span class="screen-hint">
-            <span class="iconify" data-icon="solar:magnifer-zoom-in-bold"></span>
-            Tap to expand
-          </span>
-        </div>
-
       </div>
 
     </div>
@@ -287,39 +222,6 @@
     </div>
   </footer>
 
-  <!-- Image Lightbox Modal -->
-  <div class="screen-modal" id="screenModal" onclick="closeScreenModal(event)">
-    <div class="screen-modal-content">
-      <button class="screen-modal-close" onclick="closeScreenModal()" aria-label="Close Preview">&times;</button>
-      <img id="modalImg" src="" alt="Screen Preview">
-    </div>
-  </div>
-
-  <script>
-    function openScreenModal(src, alt) {
-      const modal = document.getElementById('screenModal');
-      const img = document.getElementById('modalImg');
-      img.src = src;
-      img.alt = alt || 'PlantLog App Preview';
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeScreenModal(e) {
-      if (e && e.target && e.target.id !== 'screenModal' && !e.target.classList.contains('screen-modal-close')) {
-        return;
-      }
-      const modal = document.getElementById('screenModal');
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeScreenModal();
-      }
-    });
-  </script>
-
 </body>
 </html>
+
