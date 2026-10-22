@@ -21,7 +21,7 @@
         <span class="brand-badge">iOS App</span>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="plantlogNav">
         <li><a href="index.html" class="active">Overview</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="privacy.html">Privacy</a></li>
@@ -29,10 +29,17 @@
         <li><a href="support.html">Support</a></li>
       </ul>
 
-      <a href="support.html" class="nav-cta">
-        <span class="iconify" data-icon="solar:chat-round-line-bold"></span>
-        Support
-      </a>
+      <div class="nav-actions">
+        <a href="support.html" class="nav-cta">
+          <span class="iconify" data-icon="solar:chat-round-line-bold"></span>
+          Support
+        </a>
+        <button class="mobile-toggle" id="plantlogNavToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -222,6 +229,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
 

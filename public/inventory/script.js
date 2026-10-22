@@ -129,7 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data) return;
 
     const screenBtns = document.querySelectorAll('[data-screen]');
-    screenBtns.forEach(b => b.classList.toggle('active', b.dataset.screen === key));
+    screenBtns.forEach(b => {
+      const isActive = b.dataset.screen === key;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-selected', String(isActive));
+      if (isActive && window.innerWidth <= 960) {
+        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
 
     const screenImg = document.getElementById('activeScreenImg');
     const screenBadge = document.getElementById('activeScreenBadge');
