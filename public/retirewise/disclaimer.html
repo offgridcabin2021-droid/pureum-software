@@ -7,36 +7,33 @@
   <meta name="description" content="RetireWise Financial & Tax Disclaimer. Estimates for educational and illustrative purposes only. Review our statutory CRA 2026 tax modeling assumptions and legal notices.">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="stylesheet" href="styles.css?v=1.2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2.0">
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
 
   <!-- Navigation Header -->
   <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="brand-link">
-        <img src="assets/app-icon.png" alt="RetireWise Logo" class="brand-icon">
-        <span class="brand-name">RetireWise</span>
-        <span class="brand-badge">Fintech iOS</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Overview</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="tos.html">Terms</a></li>
-        <li><a href="disclaimer.html" class="active">Disclaimer</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="support.html" class="btn-nav-cta">
-          <span class="iconify" data-icon="solar:help-bold"></span>
-          Support
-        </a>
-      </div>
-    </div>
-  </header>
+  <a class="brand" href="index.html" aria-label="RetireWise home"><span class="brand-icon">r<span>↗</span></span><span>retire<span class="brand-light">wise</span><small>BY PUREUM SOFTWARE</small></span></a>
+  <nav id="nav" aria-label="Main navigation">
+    <a href="index.html#why">Why RetireWise</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#plan">Plan your future</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
+  <div class="header-actions">
+    <a class="nav-login" href="index.html#faq">FAQs <span>↗</span></a>
+    <a class="btn btn-dark btn-small" href="index.html#plan">Try the planner <span>↗</span></a>
+  </div>
+  <button class="hamburger" id="menuToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
   <!-- Main Content -->
   <main class="doc-page">
@@ -122,53 +119,49 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4>
-            <img src="assets/app-icon.png" alt="RetireWise" style="width: 26px; height: 26px; border-radius: 6px;">
-            RetireWise
-          </h4>
-          <p>
-            Smart Canadian retirement, wealth sequencing, and CRA tax optimization engine for individuals and financial advisors.
-          </p>
-        </div>
-        <div class="footer-col">
-          <h5>Product</h5>
-          <ul>
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="index.html#simulator">Simulator</a></li>
-            <li><a href="index.html#features">Features</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal & Trust</h5>
-          <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="tos.html">Terms of Service</a></li>
-            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
-            <li><a href="support.html">Help & FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Studio</h5>
-          <ul>
-            <li><a href="https://pureum.dev">Pureum Software</a></li>
-            <li><a href="mailto:support@pureum.dev">support@pureum.dev</a></li>
-            <li>Toronto, ON, Canada</li>
-          </ul>
-        </div>
-      </div>
-      <div style="padding: 16px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); font-size: 0.78rem; color: #64748B; line-height: 1.5;">
-        <strong>Notice:</strong> Estimates for educational & illustrative purposes only. Not financial, tax, or legal advice. Consult a licensed CFP® or CPA before making financial decisions.
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Pureum Software. All rights reserved.</p>
-        <p>RetireWise is a trademark of Pureum Software.</p>
-      </div>
+  <footer>
+  <div class="footer-main">
+    <div>
+      <a class="brand footer-brand" href="index.html"><span class="brand-icon">r<span>↗</span></span><span>retire<span class="brand-light">wise</span><small>BY PUREUM SOFTWARE</small></span></a>
+      <p>Thoughtful Canadian retirement planning, made beautifully simple.</p>
     </div>
-  </footer>
+    <div>
+      <b>EXPLORE</b>
+      <a href="index.html#why">Our approach</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#plan">Planner</a>
+      <a href="index.html#pricing">Pricing</a>
+    </div>
+    <div>
+      <b>LEGAL & SUPPORT</b>
+      <a href="index.html#faq">Questions & answers</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="tos.html">Terms of Service</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div>
+      <b>STAY IN TOUCH</b>
+      <a href="mailto:hello@pureum.dev">hello@pureum.dev ↗</a>
+      <a href="https://pureum.dev/" target="_blank" rel="noopener">Pureum Software ↗</a>
+      <span>Made in Canada 🇨🇦</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Pureum Software. All rights reserved.</span>
+    <span>Illustrative educational content only. Not financial, tax or legal advice.</span>
+    <a href="#">BACK TO TOP ↑</a>
+  </div>
+</footer>
+<script>
+  const menu = document.getElementById('menuToggle'), nav = document.getElementById('nav');
+  if (menu && nav) {
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+    });
+  }
+</script>
 
 </body>
 </html>
