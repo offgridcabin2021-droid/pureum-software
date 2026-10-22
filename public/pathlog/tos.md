@@ -36,7 +36,7 @@ To the maximum extent permitted by applicable law, PathLog is provided “as-is�
 We may update these Terms from time to time. The “Effective date” above will reflect the most recent revision. Continued use of PathLog after changes constitutes acceptance of the revised Terms.
 
 #### 9. Contact
-For legal or support inquiries, visit our Support page or email support@pureum.dev.
+For legal or support inquiries, visit our Support page or email pureumsoftware@gmail.com.
 
 ### Apple App Store Additional Terms (Required for Custom EULA)
 The following terms apply if you download the App from the Apple App Store:
@@ -48,7 +48,7 @@ The following terms apply if you download the App from the Apple App Store:
 5. **Product Claims:** Pureum Software, not Apple, is responsible for addressing any claims you or any third party may have relating to the App or your possession and/or use of the App, including, but not limited to: (i) product liability claims; (ii) any claim that the App fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection, privacy, or similar legislation.
 6. **Intellectual Property Rights:** In the event of any third-party claim that the App or your possession and use of the App infringes that third party’s intellectual property rights, Pureum Software, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim.
 7. **Legal Compliance:** You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.
-8. **Developer Name and Address:** Any end-user questions, complaints or claims with respect to the App should be directed to Pureum Software at support@pureum.dev.
+8. **Developer Name and Address:** Any end-user questions, complaints or claims with respect to the App should be directed to Pureum Software at pureumsoftware@gmail.com.
 9. **Third Party Terms of Agreement:** You must comply with applicable third-party terms of agreement when using the App.
 10. **Third Party Beneficiary:** You acknowledge and agree that Apple, and Apple’s subsidiaries, are third-party beneficiaries of this Agreement, and that, upon your acceptance of the terms and conditions of this Agreement, Apple will have the right (and will be deemed to have accepted the right) to enforce this Agreement against you as a third-party beneficiary thereof.
 
@@ -86,7 +86,7 @@ PathLog Standard 구독(월간 및 연간 플랜)은 Apple App Store를 통해 �
 본 약관은 수시로 업데이트될 수 있습니다. 상단 시행일은 최신 개정 시점을 반영합니다. 변경 후 PathLog를 계속 사용하면 개정 약관에 동의한 것으로 간주됩니다.
 
 #### 9. 문의
-법적 문의 또는 지원 문의는 지원 페이지를 방문하거나 support@pureum.dev로 이메일을 보내주세요.
+법적 문의 또는 지원 문의는 지원 페이지를 방문하거나 pureumsoftware@gmail.com으로 이메일을 보내주세요.
 
 ### Apple App Store 추가 약관 (Custom EULA 적용 필수 조항)
 귀하가 Apple App Store에서 앱을 다운로드하는 경우 다음 약관이 적용됩니다:
@@ -98,7 +98,7 @@ PathLog Standard 구독(월간 및 연간 플랜)은 Apple App Store를 통해 �
 5. **제품 클레임:** Pureum Software는 귀하 또는 제3자가 본 앱 또는 귀하의 본 앱 소유 및/또는 사용과 관련하여 제기하는 클레임(제조물 책임 클레임, 본 앱이 적용 가능한 법적 또는 규제 요구 사항을 준수하지 못했다는 클레임, 소비자 보호, 개인정보 보호 또는 유사한 법률에 따라 발생하는 클레임을 포함하되 이에 국한되지 않음)을 처리할 책임이 있습니다.
 6. **지식재산권:** 본 앱 또는 귀하의 본 앱 소유 및 사용이 제3자의 지식재산권을 침해한다는 제3자의 클레임이 제기되는 경우, Pureum Software가 해당 지식재산권 침해 클레임의 조사, 방어, 합의 및 면책에 대해 전적으로 책임을 집니다.
 7. **법적 준수:** 귀하는 (i) 미국 정부의 수출 금지 조치 대상 국가 또는 미국 정부가 "테러 지원" 국가로 지정한 국가에 거주하지 않으며, (ii) 미국 정부의 금지 또는 제한 당사자 목록에 등재되어 있지 않음을 진술하고 보증합니다.
-8. **개발자 이름 및 주소:** 본 앱과 관련된 최종 사용자의 질문, 불만 또는 클레임은 support@pureum.dev로 Pureum Software에 문의해야 합니다.
+8. **개발자 이름 및 주소:** 본 앱과 관련된 최종 사용자의 질문, 불만 또는 클레임은 pureumsoftware@gmail.com으로 Pureum Software에 문의해야 합니다.
 9. **제3자 계약 약관:** 귀하는 본 앱을 사용할 때 적용 가능한 제3자 계약 약관을 준수해야 합니다.
 10. **제3자 수혜자:** 귀하는 Apple 및 Apple의 자회사가 본 계약의 제3자 수혜자이며, 귀하가 본 계약의 약관에 동의하면 Apple이 제3자 수혜자로서 귀하를 상대로 본 계약을 집행할 권리를 갖게 됨(그리고 권리를 수락한 것으로 간주됨)을 인정하고 동의합니다.
 
@@ -136,7 +136,7 @@ Dans la limite maximale autorisée par la loi applicable, PathLog est fourni « 
 Nous pouvons mettre à jour ces Conditions périodiquement. La date d'effet ci-dessus reflétera la révision la plus récente. L'utilisation continue de PathLog après modification vaut acceptation des Conditions révisées.
 
 #### 9. Contact
-Pour toute question juridique ou assistance, consultez notre page d'assistance ou écrivez à support@pureum.dev.
+Pour toute question juridique ou assistance, consultez notre page d'assistance ou écrivez à pureumsoftware@gmail.com.
 
 ### Conditions supplémentaires pour l'Apple App Store (Obligatoires pour la EULA personnalisée)
 Les conditions suivantes s'appliquent si vous téléchargez l'Application depuis l'Apple App Store :
@@ -148,7 +148,7 @@ Les conditions suivantes s'appliquent si vous téléchargez l'Application depuis
 5. **Réclamations relatives au produit :** Pureum Software, et non Apple, est responsable du traitement de toute réclamation formulée par vous ou par un tiers concernant l'Application ou votre possession et/ou utilisation de l'Application, y compris, mais sans s'y limiter : (i) les réclamations en matière de responsabilité du fait des produits ; (ii) toute réclamation selon laquelle l'Application ne se conforme pas aux exigences légales ou réglementaires applicables ; et (iii) les réclamations découlant de la législation sur la protection des consommateurs, de la vie privée ou similaire.
 6. **Droits de propriété intellectuelle :** En cas de réclamation d'un tiers selon laquelle l'Application ou votre possession et utilisation de l'Application enfreint les droits de propriété intellectuelle de ce tiers, Pureum Software, et non Apple, sera seul responsable de l'enquête, de la défense, du règlement et de l'apurement de toute réclamation pour contrefaçon de propriété intellectuelle.
 7. **Conformité légale :** Vous déclarez et garantissez que (i) vous ne vous trouvez pas dans un pays soumis à un embargo du gouvernement américain ou désigné par le gouvernement américain comme pays soutenant le terrorisme ; et (ii) vous ne figurez sur aucune liste de personnes interdites ou restreintes du gouvernement américain.
-8. **Nom et adresse du développeur :** Toute question, réclamation ou plainte de l'utilisateur final concernant l'Application doit être adressée à Pureum Software à l'adresse support@pureum.dev.
+8. **Nom et adresse du développeur :** Toute question, réclamation ou plainte de l'utilisateur final concernant l'Application doit être adressée à Pureum Software à l'adresse pureumsoftware@gmail.com.
 9. **Conditions des contrats de tiers :** Vous devez vous conformer aux conditions des contrats de tiers applicables lors de l'utilisation de l'Application.
 10. **Tiers bénéficiaire :** Vous reconnaissez et acceptez qu'Apple et ses filiales soient des tiers bénéficiaires du présent contrat, et que, dès votre acceptation des conditions du présent contrat, Apple aura le droit (et sera réputé avoir accepté le droit) d'appliquer le présent contrat contre vous en tant que tiers bénéficiaire de celui-ci.
 
@@ -186,7 +186,7 @@ En la máxima medida permitida por la ley aplicable, PathLog se proporciona "tal
 Podemos actualizar estos Términos ocasionalmente. La fecha de entrada en vigor reflejará la revisión más reciente. El uso continuo de PathLog después de cambios implica aceptación de los términos revisados.
 
 #### 9. Contacto
-Para consultas legales o de soporte, visita nuestra página de soporte o escribe a support@pureum.dev.
+Para consultas legales o de soporte, visita nuestra página de soporte o escribe a pureumsoftware@gmail.com.
 
 ### Términos adicionales de Apple App Store (Obligatorios para la EULA personalizada)
 Los siguientes términos se aplican si descargas la aplicación desde la tienda Apple App Store:
@@ -198,6 +198,6 @@ Los siguientes términos se aplican si descargas la aplicación desde la tienda 
 5. **Reclamaciones sobre el producto:** Pureum Software, y no Apple, es responsable de abordar cualquier reclamación tuya o de un tercero relacionada con la Aplicación o tu posesión y/o uso de la Aplicación, lo que incluye, entre otros: (i) reclamaciones de responsabilidad por productos defectuosos; (ii) cualquier reclamación de que la Aplicación no cumple con los requisitos legales o regulatorios aplicables; y (iii) reclamaciones que surjan de la legislación de protección al consumidor, privacidad o similar.
 6. **Derechos de propiedad intelectual:** En caso de reclamación de un tercero de que la Aplicación o tu posesión y uso de la Aplicación infringen los derechos de propiedad intelectual de dicho tercero, Pureum Software, y no Apple, será el único responsable de la investigación, defensa, acuerdo y descargo de dicha reclamación por infracción de propiedad intelectual.
 7. **Cumplimiento legal:** Declaras y garantizas que (i) no te encuentras en un país sujeto a embargo del Gobierno de los EE. UU. o que haya sido designado por el Gobierno de los EE. UU. como país "patrocinador del terrorismo"; y (ii) no figuras en ninguna lista del Gobierno de los EE. UU. de partes prohibidas o restringidas.
-8. **Nombre y dirección del desarrollador:** Cualquier pregunta, queja o reclamación del usuario final con respecto a la Aplicación debe dirigirse a Pureum Software a support@pureum.dev.
+8. **Nombre y dirección del desarrollador:** Cualquier pregunta, queja o reclamación del usuario final con respecto a la Aplicación debe dirigirse a Pureum Software a pureumsoftware@gmail.com.
 9. **Términos de contratos de terceros:** Debes cumplir con los términos de los contratos de terceros aplicables al usar la Aplicación.
 10. **Tercero beneficiario:** Reconoces y aceptas que Apple y las subsidiarias de Apple son terceros beneficiarios de este Contrato y que, al aceptar los términos y condiciones de este Contrato, Apple tendrá el derecho (y se considerará que ha aceptado el derecho) de hacer cumplir este Contrato contra ti como tercero beneficiario del mismo.

@@ -3,7 +3,7 @@
 **Effective Date / Date d'entrée en vigueur:** September 1, 2026  
 **Last Updated / Dernière mise à jour:** September 9, 2026  
 **Developer / Développeur:** Pureum Software (pureum.dev)  
-**Contact:** support@pureum.dev
+**Contact:** pureumsoftware@gmail.com
 
 ---
 
@@ -174,7 +174,7 @@ If any provision of these Terms is found to be unenforceable or invalid, that pr
 If you have questions about these Terms, please contact:
 
 **Pureum Software**  
-Email: support@pureum.dev  
+Email: pureumsoftware@gmail.com  
 Website: https://pureum.dev/optipay
 
 ---
@@ -249,5 +249,5 @@ Les présentes Conditions sont régies par les lois de la province d'Ontario et 
 ### 8. Nous contacter
 
 **Pureum Software**  
-Courriel : support@pureum.dev  
+Courriel : pureumsoftware@gmail.com  
 Site Web : https://pureum.dev/optipay

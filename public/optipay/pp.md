@@ -3,7 +3,7 @@
 **Effective Date / Date d'entrée en vigueur:** September 1, 2026  
 **Last Updated / Dernière mise à jour:** September 9, 2026  
 **Developer / Développeur:** Pureum Software (pureum.dev)  
-**Contact:** support@pureum.dev
+**Contact:** pureumsoftware@gmail.com
 
 ---
 
@@ -119,7 +119,7 @@ Under Canada's Personal Information Protection and Electronic Documents Act (PIP
 - **Withdraw consent** at any time by deleting the App and your account
 - **File a complaint** with the Office of the Privacy Commissioner of Canada (OPC) if you believe your privacy rights have been violated
 
-To exercise these rights, contact us at: **support@pureum.dev**
+To exercise these rights, contact us at: **pureumsoftware@gmail.com**
 
 ---
 
@@ -138,7 +138,7 @@ We may update this Privacy Policy from time to time. When we do, we will update 
 ### 10. Contact Us
 
 **Pureum Software**  
-Email: support@pureum.dev  
+Email: pureumsoftware@gmail.com  
 Website: https://pureum.dev/optipay
 
 ---
@@ -213,12 +213,12 @@ Vos données de compte sont conservées aussi longtemps que vous maintenez un co
 
 Conformément à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) et aux lois provinciales applicables sur la protection de la vie privée, vous avez le droit d'accéder à vos informations, de les corriger, de les supprimer et de retirer votre consentement à tout moment.
 
-Pour exercer ces droits, contactez-nous à : **support@pureum.dev**
+Pour exercer ces droits, contactez-nous à : **pureumsoftware@gmail.com**
 
 ---
 
 ### 6. Nous contacter
 
 **Pureum Software**  
-Courriel : support@pureum.dev  
+Courriel : pureumsoftware@gmail.com  
 Site Web : https://pureum.dev/optipay
