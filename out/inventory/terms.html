@@ -1,638 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureStock - Terms of Service</title>
-    <meta name="description" content="PureStock Dental Inventory Terms of Service (EN/KO/FR/ES)">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #0A84FF;
-            --text-primary: #1D1D1F;
-            --text-secondary: #6E6E73;
-            --bg-secondary: #F5F5F7;
-            --border-color: #E5E5EA;
-            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .legal-page {
-            min-height: 100vh;
-            padding: 56px 0 72px;
-        }
-
-        .legal-container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .legal-header {
-            text-align: center;
-            margin-bottom: 26px;
-        }
-
-        .app-name {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.2px;
-        }
-
-        .legal-header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            letter-spacing: -0.8px;
-        }
-
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .language-switcher {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 auto 24px;
-            flex-wrap: wrap;
-        }
-
-        .lang-btn {
-            border: 1px solid var(--border-color);
-            background: white;
-            color: var(--text-primary);
-            border-radius: 999px;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .lang-btn.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-
-        .legal-content {
-            background: white;
-            border-radius: 22px;
-            padding: 44px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #F0F0F2;
-        }
-
-        .lang-block {
-            display: none;
-        }
-
-        .lang-block.active {
-            display: block;
-        }
-
-        .legal-section {
-            margin-bottom: 34px;
-        }
-
-        .legal-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .legal-section h2 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            letter-spacing: -0.2px;
-        }
-
-        .legal-section p {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-
-        .legal-section ul {
-            margin: 10px 0 0 22px;
-            color: var(--text-secondary);
-        }
-
-        .legal-section li {
-            margin-bottom: 8px;
-        }
-
-        .disclaimer-box {
-            background: #F0F7FF;
-            border-left: 4px solid var(--primary-color);
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 16px 0;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        .legal-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .legal-section a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #1D1D1F;
-            color: white;
-            text-align: center;
-            padding: 32px 0;
-            margin-top: 56px;
-        }
-
-        .footer-links {
-            color: #9A9AA1;
-            font-size: 0.88rem;
-        }
-
-        .footer-links a {
-            color: #9A9AA1;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer-links a:hover {
-            color: #FFFFFF;
-        }
-
-        @media (max-width: 768px) {
-            .legal-header h1 {
-                font-size: 1.9rem;
-            }
-
-            .legal-content {
-                padding: 30px 22px;
-            }
-
-            .legal-section h2 {
-                font-size: 1.18rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#123e33"/>
+  <meta name="description" content="PureStock Terms of Service — Terms governing the use of PureStock dental inventory software, Apple In-App subscriptions, clinical operational disclaimers, and account deletion."/>
+  <title>Terms of Service — PureStock Dental Inventory</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-    <main class="legal-page">
-        <div class="legal-container">
-            <div class="legal-header">
-                <p class="app-name">PureStock (Inventory App)</p>
-                <h1>Terms of Service</h1>
-                <p class="last-updated">Last Updated: October 2, 2026</p>
-            </div>
 
-            <div class="language-switcher" aria-label="Language selector">
-                <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="ko">한국어</button>
-                <button class="lang-btn" data-lang="fr">Français</button>
-                <button class="lang-btn" data-lang="es">Español</button>
-            </div>
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="index.html" class="brand" aria-label="PureStock home">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="PureStock Logo">
+        </span>
+        <span>purestock<span class="brand-period">.</span></span>
+      </a>
 
-            <div class="legal-content">
-                <!-- English Version -->
-                <div class="lang-block" data-lang-block="en">
-                    <section class="legal-section">
-                        <h2>1. Service Description</h2>
-                        <p><strong>PureStock</strong> (Dental Inventory Manager) provides intelligent dental supply tracking, barcode/QR scanning, low-stock threshold alerts, order generation, receiving management, invoice archiving, autoclave sterilization compliance logs, and PureAI assistive automation.</p>
-                        <p>For corporate-wide terms, see <a href="../terms.html" data-base-href="../terms.html">Pureum Software Terms</a>.</p>
-                    </section>
+      <nav id="nav" aria-label="Main navigation">
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#app-screens">Live App</a>
+        <a href="index.html#ai">PureAI</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="support.html">Support</a>
+      </nav>
 
-                    <section class="legal-section">
-                        <h2>2. User Responsibilities</h2>
-                        <ul>
-                            <li>Maintain truthful and up-to-date account and inventory records.</li>
-                            <li>Configure and maintain proper authorization and access controls for staff members within your clinic's account.</li>
-                            <li>Comply with all applicable local medical, business, and data privacy regulations.</li>
-                        </ul>
-                    </section>
+      <div class="nav-actions">
+        <a class="nav-link" href="support.html">Support</a>
+        <a class="btn btn-dark nav-cta" href="index.html#pricing">Get started <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-                    <section class="legal-section">
-                        <h2>3. PureAI Assistive Features &amp; User Verification (Disclaimer)</h2>
-                        <p>PureStock features <strong>PureAI</strong>, an assistive tool that translates natural language prompts into app actions using structured function parameters (Function Calling). In compliance with Apple App Store Guideline 2.5.2, PureAI never executes arbitrary dynamic remote code; it solely invokes safe, pre-compiled native in-app methods.</p>
-
-                        <div class="disclaimer-box">
-                            <strong>Mandatory Verification Clause:</strong> Actions executed or suggested by PureAI must be reviewed and verified under the user's supervision. Please confirm critical inventory updates and stock adjustments directly in the inventory records.
-                        </div>
-
-                        <ul>
-                            <li><strong>Safety Safeguards &amp; Undo Functionality (Guidelines 1.2 &amp; 2.1):</strong> The app presents transparent <strong>Action Result Cards (<code>ActionResultCard</code>)</strong> detailing every automated action executed by PureAI, accompanied by an immediate <strong>Undo (<code>Undo Last Action</code>)</strong> option. Users are solely responsible for inspecting action cards and reversing unintended changes immediately.</li>
-                            <li><strong>Voice Recognition &amp; Speech Interpretation:</strong> Pureum Software is not liable for inventory discrepancies, stock inaccuracies, or unintended modifications arising from speech recognition errors, ambient noise misinterpretations, or misaligned AI intent parsing.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Healthcare &amp; Regulatory Scope (HIPAA &amp; Non-Medical Use)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Non-Medical / Commercial Inventory Scope:</strong> PureStock is strictly a commercial supply and inventory tracking system. It is NOT a medical device, diagnostic tool, or Electronic Health Record (EHR) system.
-                        </div>
-                        <ul>
-                            <li><strong>No Protected Health Information (PHI):</strong> PureStock does not collect, process, or store patient health records. Users agree never to enter patient Protected Health Information (PHI) such as patient names, chart identifiers, or treatment notes into the app. HIPAA regulations regarding medical charts do not apply to commercial inventory records.</li>
-                            <li>Each clinic remains solely responsible for ensuring its operational use complies with local medical practice laws and patient privacy regulations.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. Prohibited Use</h2>
-                        <ul>
-                            <li>No unauthorized attempts to access or disrupt server infrastructure or cloud functions.</li>
-                            <li>No utilization of the software for unlawful or unauthorized clinical activities.</li>
-                            <li>No storage of confidential patient health records without independent legal compliance systems.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Subscriptions &amp; Billing (Apple Auto-Renewing In-App Subscriptions)</h2>
-                        <p>PureStock operates on an auto-renewable subscription basis via Apple App Store In-App Purchases (StoreKit), compliant with Apple App Store Review Guideline 3.1.2:</p>
-                        <ul>
-                            <li><strong>7-Day Free Trial:</strong> Eligible new subscribers receive a 7-day complimentary free trial. If you do not cancel at least 24 hours prior to the trial expiration, your Apple ID account will be charged for the selected subscription tier.</li>
-                            <li><strong>Subscription Tiers:</strong>
-                                <ul>
-                                    <li><strong>Standard Tier:</strong> $19.99 USD per month (or $189.99 USD annually). Features real-time multi-device sync, barcode/QR scanner, order tracking, receiving workflows, and essential PureAI clinical commands.</li>
-                                    <li><strong>Premium Tier:</strong> $29.99 USD per month (or $289.99 USD annually). Includes everything in Standard plus unlimited PureAI assistant actions, sterilization &amp; autoclave cycle tracking, biological indicator (BI) compliance logs, role-based operatory permissions, and full audit logs.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Payment &amp; Automatic Renewal:</strong> Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the end of the current billing or trial period. Your account will be charged for renewal within 24 hours prior to the end of the current period.</li>
-                            <li><strong>Managing &amp; Cancelling Subscriptions:</strong> You can manage or cancel your subscription at any time in your iOS device account settings: <code>Settings &gt; [Your Name / Apple Account] &gt; Subscriptions</code>. Any unused portion of a free trial period will be forfeited when purchasing a subscription.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. In-App Account Deletion &amp; Data Erasure (Apple Guideline 5.1.1(v))</h2>
-                        <p>Pursuant to Apple App Store Review Guideline 5.1.1(v), PureStock provides a direct in-app account deletion mechanism:</p>
-                        <ul>
-                            <li><strong>In-App Self-Service Deletion:</strong> Clinic administrators and users can initiate permanent deletion directly in the PureStock app by navigating to <code>Settings &gt; Account Deletion</code>.</li>
-                            <li><strong>Permanent Erasure:</strong> Upon confirmation, all clinic inventory items, staff profile associations, invoice records, sterilization logs, and authentication credentials are permanently deleted from active production databases within 30 days. Encrypted database backup snapshots are completely overwritten and purged within 90 days.</li>
-                            <li><strong>Support Assisted Requests:</strong> Users may also request immediate manual account and data deletion by contacting <a href="mailto:support@pureum.dev">support@pureum.dev</a>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>8. Limitation of Liability &amp; Warranty Disclaimer</h2>
-                        <p>PureStock is provided on an "as-is" and "as-available" basis without warranties of any kind. Pureum Software disclaims all liability for indirect, incidental, or consequential damages resulting from inventory discrepancies, supply stockouts, or operational delays.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>9. Contact</h2>
-                        <p>Email: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Company: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- Korean Version -->
-                <div class="lang-block" data-lang-block="ko">
-                    <section class="legal-section">
-                        <h2>1. 서비스 설명</h2>
-                        <p><strong>PureStock</strong> (치과 자재 재고 관리 솔루션)은 치과 의원 및 병원을 위한 지능형 치과 자재/소모품 재고 관리 플랫폼으로, 품목 관리, 바코드/QR 스캐너, 최소 재고 부족 알림, 발주 및 입고 워크플로우, 거래명세서 보관, 멸균기/오토클레이브 사이클 관리 및 PureAI 음성 보조 자동화 기능을 제공합니다.</p>
-                        <p>회사 차원의 포괄적인 약관은 <a href="../terms.html" data-base-href="../terms.html">Pureum Software 서비스 약관</a>을 참고해 주세요.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. 이용자의 책임 및 의무</h2>
-                        <ul>
-                            <li>정확하고 최신의 계정 및 치과 자재 재고 정보를 등록하고 유지해야 합니다.</li>
-                            <li>소속 치과 클리닉 계정 내 직원들의 사용자 권한을 적절히 설정하고 관리할 책임이 있습니다.</li>
-                            <li>치과 병·의원에 적용되는 관할 지역의 법령과 규정을 준수하여 서비스를 이용하여야 합니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. PureAI 기능 및 사용자 최종 확인 의무 (면책 조항)</h2>
-                        <p>PureStock은 프롬프트 입력을 매개변수(JSON)로 해석하여 앱 기능을 실행하는 <strong>PureAI</strong> 보조 기능을 제공합니다. 본 기능은 Apple 앱스토어 심사 지침(Guideline 2.5.2)을 완벽히 준수하여 외부의 임의 실행 코드를 다운로드받지 않으며, 앱 내에 이미 안전하게 빌드된 네이티브 함수(예: <code>executeUpdateStock</code>, <code>executeDeleteEntity</code> 등)만을 호출합니다.</p>
-
-                        <div class="disclaimer-box">
-                            <strong>PureAI 면책 조항 (Disclaimer):</strong> "PureAI의 작업 결과는 사용자의 확인 하에 적용되어야 하며, 중요한 재고 변경 사항은 목록에서 최종 확인해 주세요."
-                        </div>
-
-                        <ul>
-                            <li><strong>안전장치 및 실행 취소 (Apple 지침 1.2 &amp; 2.1 준수):</strong> AI 실행 결과를 투명하게 파악할 수 있도록 실행 결과 피드백 카드(<strong>ActionResultCard</strong>)와 즉시 작업을 되돌릴 수 있는 실행 취소(<strong>Undo Last Action</strong>) 기능이 제공됩니다. 이용자는 카드 내용을 반드시 확인해야 하며, 의도치 않은 변경이 발생한 경우 즉시 실행 취소 기능을 사용해야 합니다.</li>
-                            <li><strong>음성 인식 및 자연어 해석의 한계:</strong> 주변 소음, 발음 오인, 음성 인식(STT) 오류 또는 AI 모델의 자연어 해석 차이로 인해 발생한 데이터 오차나 수량 변경에 대해 Pureum Software는 고의 또는 중대한 과실이 없는 한 법적 책임을 지지 않습니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. 의료 규제 및 미국 의료정보보호법 (HIPAA) 면책</h2>
-                        <div class="disclaimer-box">
-                            <strong>비의료 상업용 재고 앱 고지:</strong> PureStock은 순수한 치과 자재/소모품 재고(Dental Supplies)만을 다루는 상업용 재고 관리 앱입니다. 환자 진료 목적의 의료기기나 전자의무기록(EHR/EMR) 시스템이 아닙니다.
-                        </div>
-                        <ul>
-                            <li><strong>환자 개인 건강정보(PHI) 입력 금지:</strong> 본 서비스는 환자 이름, 차트번호, 진료기록 등 미국 의료정보보호법(HIPAA)상 보호 대상 건강정보(PHI)를 다루지 않으므로 HIPAA 의료기록 규제 대상이 아닙니다. 이용자는 품목 메모나 입력란에 환자 개인정보를 입력해서는 안 되며, 이를 위반하여 발생하는 모든 책임은 이용자에게 있습니다.</li>
-                            <li>각 치과는 해당 관할 지역의 의료법 및 개인정보보호 법률을 준수하여 본 소프트웨어를 합법적으로 운용해야 합니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. 금지 행위</h2>
-                        <ul>
-                            <li>시스템 리버스 엔지니어링, 인프라 공격, 비정상적 과부하 유발 행위.</li>
-                            <li>소프트웨어를 불법적이거나 비인가된 목적으로 이용하는 행위.</li>
-                            <li>환자의 기밀 의료 기록이나 비인가 개인정보를 무단 업로드하는 행위.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. 구독 및 결제 (Apple 자동 갱신 인앱 결제)</h2>
-                        <p>PureStock은 Apple App Store의 인앱 결제(StoreKit)를 통한 자동 갱신 구독 방식으로 서비스를 제공하며, Apple 심사 지침 3.1.2를 준수합니다:</p>
-                        <ul>
-                            <li><strong>7일 무료 체험:</strong> 신규 가입자에게 7일간의 무료 체험 기간이 제공됩니다. 무료 체험 종료 최소 24시간 전에 구독을 해지하지 않으면 선택한 유료 구독 플랜으로 자동 전환되어 청구됩니다.</li>
-                            <li><strong>구독 플랜 안내:</strong>
-                                <ul>
-                                    <li><strong>스탠다드(Standard) 플랜:</strong> 월 $19.99 USD (연간 결제 시 $189.99 USD). 실시간 다중 기기 동기화, 바코드/QR 스캐너, 발주/입고 관리, 핵심 PureAI 명령을 지원합니다.</li>
-                                    <li><strong>프리미엄(Premium) 플랜:</strong> 월 $29.99 USD (연간 결제 시 $289.99 USD). 스탠다드 전체 기능에 더해 무제한 PureAI 어시스턴트 액션, 멸균기/오토클레이브 사이클 기록, 생물학적 인디케이터(BI) 검사 로그, 체어별 권한 제어 및 전체 감사 기록을 제공합니다.</li>
-                                </ul>
-                            </li>
-                            <li><strong>청구 및 자동 갱신:</strong> 구매 확정 시 이용자의 Apple ID 계정으로 결제 금액이 청구됩니다. 현재 구독 주기가 종료되기 최소 24시간 전에 자동 갱신을 끄지 않는 한 동일한 조건으로 자동 갱신 청구됩니다.</li>
-                            <li><strong>구독 관리 및 취소 방법:</strong> 구독은 언제든지 iOS 기기 설정(<code>설정 &gt; [사용자 Apple 계정] &gt; 구독</code>)에서 직접 관리하거나 해지할 수 있습니다. 무료 체험 기간 중 유료 구독을 결제할 경우 미사용 무료 체험 기간은 소멸됩니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. 앱 내 직접 계정 삭제 및 데이터 파기 (Apple 심사 지침 5.1.1(v) 준수)</h2>
-                        <p>PureStock은 Apple App Store 심사 지침 5.1.1(v)에 따라 앱 내에서 직접 계정을 삭제할 수 있는 자체 셀프서비스 기능을 제공합니다:</p>
-                        <ul>
-                            <li><strong>앱 내 직접 계정 삭제:</strong> 이용자는 앱 내 <code>설정(Settings) &gt; 계정 삭제(Account Deletion)</code> 경로를 통해 언제든지 즉시 계정 및 클리닉 데이터 삭제를 실행할 수 있습니다.</li>
-                            <li><strong>데이터 파기 절차 및 기간:</strong> 삭제 요청 시 운영 데이터베이스의 모든 재고 항목, 발주/입고 내역, 멸균 기록, 거래명세서 이미지, 직원 권한 정보는 30일 이내에 영구 파기되며, 백업 사본은 최대 90일 후 완전히 덮어쓰기되어 소멸됩니다.</li>
-                            <li><strong>고객지원 이메일 요청:</strong> 필요 시 고객지원팀(<a href="mailto:support@pureum.dev">support@pureum.dev</a>)으로 문의하여 계정 및 데이터 파기를 요청할 수도 있습니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>8. 보증의 부인 및 책임 제한</h2>
-                        <p>PureStock은 "있는 그대로(AS-IS)" 제공되며, 명시적 또는 묵시적 보증을 하지 않습니다. 법령이 허용하는 최대 범위 내에서, Pureum Software는 재고 수량 오차, 공급 부족, 영업 지연 등 간접적이거나 결과적인 손해에 대해 책임을 지지 않습니다.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>9. 문의처</h2>
-                        <p>이메일: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>회사명: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- French Version -->
-                <div class="lang-block" data-lang-block="fr">
-                    <section class="legal-section">
-                        <h2>1. Description du service</h2>
-                        <p><strong>PureStock</strong> (Gestionnaire d'inventaire dentaire) propose des flux logistiques et de gestion des stocks pour les cabinets dentaires: suivi des articles, lecture code-barres/QR, alertes de seuil bas, commandes, reception de marchandises, archivage de factures, registres de sterilisation par autoclave et assistance automatisee PureAI.</p>
-                        <p>Pour les conditions globales, consultez les <a href="../terms.html" data-base-href="../terms.html">Conditions generales de Pureum Software</a>.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. Responsabilites de l'utilisateur</h2>
-                        <ul>
-                            <li>Fournir des informations de compte et d'inventaire precises et a jour.</li>
-                            <li>Gerer l'attribution des droits d'acces aux membres du cabinet dentaire.</li>
-                            <li>Respecter les lois medicales et commerciales applicables a votre etablissement.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. Fonctions d'assistance PureAI &amp; Clause de non-responsabilite</h2>
-                        <p>PureStock integre <strong>PureAI</strong>, un outil d'assistance transformant les instructions naturelles en actions internes via des parametres structures (Function Calling). Conformement a la directive Apple 2.5.2, PureAI n'execute aucun code externe dynamique; il declenche uniquement des methodes sures et precompilees dans l'application.</p>
-
-                        <div class="disclaimer-box">
-                            <strong>Clause de verification obligatoire:</strong> Les actions executees ou suggerees par PureAI doivent etre appliquees sous la verification de l'utilisateur. Veuillez verifier les modifications importantes directement dans le registre d'inventaire.
-                        </div>
-
-                        <ul>
-                            <li><strong>Securite et annulation (Directives 1.2 &amp; 2.1):</strong> L'application presente des fiches de resultat (<strong>ActionResultCard</strong>) et propose une annulation immediate (<strong>Undo Last Action</strong>). L'utilisateur est tenu de verifier les actions executees et d'utiliser l'annulation en cas d'erreur.</li>
-                            <li><strong>Reconnaissance vocale:</strong> Pureum Software decline toute responsabilite pour les ecarts causes par des erreurs de transcription ou des malentendus d'interpretation linguistique.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Cadre reglementaire et avis sante (HIPAA / Non-medical)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Usage commercial logistique:</strong> PureStock est uniquement un systeme de gestion des fournitures dentaires. Ce n'est pas un dispositif medical ni un dossier patient informatise (DPI).
-                        </div>
-                        <ul>
-                            <li><strong>Pas de donnees patients protegees (PHI):</strong> PureStock ne traite pas de donnees medicales identifiables et n'est pas soumis aux regles HIPAA relatives aux dossiers de sante. Il est interdit d'introduire des donnees de patients dans l'application.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. Usages interdits</h2>
-                        <ul>
-                            <li>Toute tentative d'intrusion ou perturbation de l'infrastructure.</li>
-                            <li>Toute utilisation a des fins illegales ou non conformes.</li>
-                            <li>Le televersement de dossiers cliniques ou donnees de sante sans cadre legal distinct.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Abonnement et facturation (Achats integres Apple renouvelables)</h2>
-                        <p>PureStock fonctionne par abonnement renouvelable automatiquement via l'App Store d'Apple (StoreKit), conformement a la directive Apple 3.1.2:</p>
-                        <ul>
-                            <li><strong>Essai gratuit de 7 jours:</strong> Les nouveaux abonnes beneficient d'un essai gratuit de 7 jours. Sans resiliation au moins 24 heures avant l'echeance, l'abonnement sera converti automatiquement dans le forfait payant selectionne.</li>
-                            <li><strong>Forfaits disponibles:</strong>
-                                <ul>
-                                    <li><strong>Standard:</strong> 19,99 $ US / mois (ou 189,99 $ US / an). Jusqu'a 300 articles, 2 membres d'equipe, sauvegarde cloud securisee et synchronisation multi-appareils, scanneur, commandes, reception et commandes PureAI de base.</li>
-                                    <li><strong>Premium:</strong> 29,99 $ US / mois (ou 289,99 $ US / an). Articles illimites, membres d'equipe illimites (collaboration a 2+), sauvegarde cloud, toutes les fonctions Standard plus actions PureAI illimitees, suivi des cycles d'autoclave et indicateurs biologiques, et historique complet des audits.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Paiement et renouvellement automatique:</strong> Le montant est debite du compte Apple ID a la confirmation d'achat. Le renouvellement est automatique sauf resiliation au moins 24 heures avant la fin de la periode.</li>
-                            <li><strong>Gestion et resiliation:</strong> Vous pouvez gerer ou annuler votre abonnement dans les reglages de votre appareil iOS: <code>Reglages &gt; [Votre compte Apple] &gt; Abonnements</code>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. Suppression de compte integree &amp; Effacement des donnees (Directive Apple 5.1.1(v))</h2>
-                        <p>Conformement a la directive 5.1.1(v) de l'App Store d'Apple, PureStock propose une fonctionnalite de suppression de compte en libre-service dans l'application:</p>
-                        <ul>
-                            <li><strong>Suppression directe dans l'app:</strong> Vous pouvez supprimer definitivement votre compte clinique directement via <code>Reglages &gt; Suppression de compte</code>.</li>
-                            <li><strong>Delais d'effacement:</strong> Les donnees de production actives (articles d'inventaire, registres de sterilisation, factures, profils d'equipe) sont definitivement supprimees sous 30 jours. Les sauvegardes chiffrees sont completement ecrasees sous 90 jours.</li>
-                            <li><strong>Demande par support:</strong> Vous pouvez egalement solliciter la suppression aupres de l'equipe support a <a href="mailto:support@pureum.dev">support@pureum.dev</a>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>8. Limitation de responsabilite</h2>
-                        <p>PureStock est fourni "en l'etat". Dans la mesure permise par la loi, Pureum Software ne repond d'aucun dommage indirect, perte d'exploitation ou penurie de materiel resultant de l'usage de l'application.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>9. Contact</h2>
-                        <p>E-mail: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Entreprise: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- Spanish Version -->
-                <div class="lang-block" data-lang-block="es">
-                    <section class="legal-section">
-                        <h2>1. Descripcion del servicio</h2>
-                        <p><strong>PureStock</strong> (Gestion de Inventario Dental) es una plataforma logistica integral para clinicas dentales que facilita el seguimiento de suministros, escaneo de codigos QR/barras, alertas de stock bajo, pedidos, recepcion de mercancia, archivo de facturas, registros de ciclos de esterilizacion en autoclave y automatizacion asistida por PureAI.</p>
-                        <p>Para conocer los terminos generales, consulte los <a href="../terms.html" data-base-href="../terms.html">Terminos de Servicio de Pureum Software</a>.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. Responsabilidades del usuario</h2>
-                        <ul>
-                            <li>Mantener actualizados y veraces los registros de inventario y datos de cuenta.</li>
-                            <li>Administrar los niveles de acceso y permisos del personal de la clinica.</li>
-                            <li>Cumplir con las normativas comerciales y sanitarias vigentes en su jurisdiccion.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. Funciones con PureAI y Descargo de Responsabilidad</h2>
-                        <p>PureStock incorpora <strong>PureAI</strong>, un asistente que interpreta comandos en lenguaje natural para activar funciones de la app mediante parametros estructurados (Function Calling). Conforme a la Directriz 2.5.2 de Apple, nunca se descarga ni ejecuta codigo remoto; unicamente se invocan funciones nativas seguras precompiladas en la aplicacion.</p>
-
-                        <div class="disclaimer-box">
-                            <strong>Clausula de verificacion obligatoria:</strong> Los resultados y acciones de PureAI deben aplicarse bajo la supervision del usuario. Por favor, confirme los cambios criticos de stock directamente en el listado de inventario.
-                        </div>
-
-                        <ul>
-                            <li><strong>Mecanismos de seguridad y deshecho (Directrices 1.2 y 2.1):</strong> La aplicacion muestra tarjetas de resultado (<strong>ActionResultCard</strong>) y un boton de deshecho inmediato (<strong>Undo Last Action</strong>). El usuario es responsable de revisar los cambios y deshacerlos de inmediato en caso de error.</li>
-                            <li><strong>Reconocimiento de voz:</strong> Pureum Software no se hace responsable de discrepancias en el inventario debidas a ruidos ambientales, errores de transcripcion o interpretacion del modelo.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Ambito normativo y sanitario (HIPAA / Uso no medico)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Uso exclusivamente comercial:</strong> PureStock es una aplicacion de logistica e inventario de suministros dentales. No es un dispositivo medico ni un sistema de historias clinicas electronicas (EHR).
-                        </div>
-                        <ul>
-                            <li><strong>Sin Informacion de Salud Protegida (PHI):</strong> No tratamos expedientes ni datos de pacientes, por lo que la ley HIPAA sobre historiales medicos no resulta aplicable. Esta prohibido introducir datos de pacientes en la aplicacion.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. Uso prohibido</h2>
-                        <ul>
-                            <li>Cualquier intento de alteracion o acceso no autorizado a los servidores.</li>
-                            <li>Uso para fines ilegales o no autorizados.</li>
-                            <li>Carga o almacenamiento de expedientes medicos confidenciales sin sistemas de cumplimiento independientes.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Suscripcion y facturacion (Suscripciones autorrenovables de Apple)</h2>
-                        <p>PureStock opera mediante suscripciones autorrenovables a traves de Apple App Store (StoreKit), de conformidad con la Directriz 3.1.2 de Apple:</p>
-                        <ul>
-                            <li><strong>Prueba gratuita de 7 dias:</strong> Los nuevos suscriptores disfrutan de una prueba de 7 dias sin costo. Si no cancela al menos 24 horas antes de que finalice, la suscripcion se renovara automaticamente en el plan seleccionado.</li>
-                            <li><strong>Planes disponibles:</strong>
-                                <ul>
-                                    <li><strong>Plan Estandar:</strong> 19,99 USD / mes (o 189,99 USD / ano). Hasta 300 articulos, 2 miembros de equipo, copia de seguridad en la nube segura y sincronizacion multidispositivo, escaner, pedidos, recepciones y comandos clinicos basicos de PureAI.</li>
-                                    <li><strong>Plan Premium:</strong> 29,99 USD / mes (o 289,99 USD / ano). Articulos ilimitados, miembros de equipo ilimitados (colaboracion para 2+), copia de seguridad en la nube, todo lo de Estandar mas acciones ilimitadas de PureAI, registros de ciclos de esterilizacion y autoclave con indicadores biologicos, y auditoria completa de operadores.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Pago y renovacion automatica:</strong> El cobro se realiza en su cuenta de Apple ID al confirmar la compra. La suscripcion se renueva automaticamente salvo cancelacion al menos 24 horas antes de vencer el periodo.</li>
-                            <li><strong>Gestion y cancelacion:</strong> Puede administrar o cancelar la suscripcion en los ajustes de su dispositivo iOS: <code>Ajustes &gt; [Su cuenta de Apple] &gt; Suscripciones</code>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. Eliminacion de cuenta en la app y borrado de datos (Directriz Apple 5.1.1(v))</h2>
-                        <p>En cumplimiento de la Directriz 5.1.1(v) de Apple App Store, PureStock ofrece un mecanismo directo de eliminacion de cuenta dentro de la app:</p>
-                        <ul>
-                            <li><strong>Eliminacion directa dentro de la app:</strong> Los administradores y usuarios pueden eliminar definitivamente su cuenta y datos de clinica desde <code>Ajustes &gt; Eliminacion de cuenta</code>.</li>
-                            <li><strong>Plazo de borrado permanente:</strong> Todos los datos de inventario, registros de esterilizacion, facturas y credenciales se eliminan permanentemente de los servidores activos en un maximo de 30 dias. Las copias de seguridad cifradas se sobrescriben completamente en un plazo maximo de 90 dias.</li>
-                            <li><strong>Solicitud asistida por soporte:</strong> Tambien puede solicitar el borrado manual contactando a <a href="mailto:support@pureum.dev">support@pureum.dev</a>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>8. Limitacion de responsabilidad</h2>
-                        <p>PureStock se proporciona "tal cual". En la medida que la ley lo permita, Pureum Software no sera responsable de perdidas comerciales, desabastecimiento o danos indirectos derivados del uso de la aplicacion.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>9. Contacto</h2>
-                        <p>Correo: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Empresa: Pureum Software</p>
-                    </section>
-                </div>
-            </div>
+  <!-- Legal Content Page -->
+  <main class="legal-page">
+    <div class="container">
+      <div class="legal-header">
+        <div class="section-kicker" style="justify-content:center;"><span class="kicker-line"></span> LEGAL &amp; AGREEMENTS</div>
+        <h1>Terms of Service</h1>
+        <div class="legal-meta">
+          <span class="meta-dot"></span>
+          <span>Last Updated: October 2026</span>
+          <span style="opacity:0.4;">|</span>
+          <span>Apple In-App Purchase Compliant</span>
         </div>
-    </main>
+      </div>
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="terms.html" data-base-href="terms.html">Terms of Service</a>
-            <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
-            <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
-            <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
-            <p style="margin-top: 14px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
+      <div class="legal-layout">
+        <!-- Sticky Navigation Sidebar -->
+        <aside class="legal-sidebar">
+          <div class="legal-sidebar-title">TABLE OF CONTENTS</div>
+          <nav class="legal-nav-list">
+            <a href="#terms-1" class="active">1. Service Description</a>
+            <a href="#terms-2">2. User Responsibilities</a>
+            <a href="#terms-3">3. PureAI Assistive Disclaimer</a>
+            <a href="#terms-4">4. Healthcare &amp; Regulatory Notice</a>
+            <a href="#terms-5">5. Prohibited Use</a>
+            <a href="#terms-6">6. Subscriptions &amp; Billing</a>
+            <a href="#terms-7">7. Account &amp; Data Deletion</a>
+            <a href="#terms-8">8. Limitation of Liability</a>
+            <a href="#terms-9">9. Contact Information</a>
+          </nav>
+        </aside>
+
+        <!-- Main Legal Document Body -->
+        <article class="legal-card">
+          <div class="legal-intro-note">
+            <strong>Welcome to PureStock:</strong> These Terms of Service ("Terms") constitute a legally binding agreement between <strong>Pureum Software</strong> ("Pureum", "we", "us", or "our") and the dental practice entity or individual subscriber ("Customer", "User", or "You") governing the access and use of the PureStock application.
+          </div>
+
+          <!-- Section 1 -->
+          <section id="terms-1" class="legal-section-block">
+            <h2>1. Service Description &amp; License Scope</h2>
+            <p>PureStock is a professional iOS and iPadOS productivity application designed specifically for dental clinics and healthcare practices. The Service delivers:</p>
+            <ul>
+              <li>Real-time dental inventory tracking, low-stock threshold alerts, and category shelf management.</li>
+              <li>Supplier purchase order consolidation (Henry Schein, Patterson, Darby, Benco, etc.) and doctor sign-off workflows.</li>
+              <li>Optical code recognition (QR code and 1D/2D barcode scanning) for fast drawer checkouts and stockroom audits.</li>
+              <li>Receiving check-in, backorder tracking, and cloud archiving of paper invoice slips.</li>
+              <li>Autoclave and sterilization cycle logs, biological indicator (BI spore test) tracking, and PDF audit exports.</li>
+              <li>PureAI natural language inventory query and command automation.</li>
+            </ul>
+            <p>Subject to these Terms, Pureum Software grants you a limited, non-exclusive, non-transferable, revocable license to install and use PureStock on compatible Apple devices owned or controlled by your practice.</p>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="terms-2" class="legal-section-block">
+            <h2>2. User Responsibilities &amp; Practice Governance</h2>
+            <p>By using the Service, your practice agrees to:</p>
+            <ul>
+              <li>Provide accurate, current, and complete practice and account information during setup.</li>
+              <li>Maintain the confidentiality of login credentials and immediately notify us of any suspected unauthorized access.</li>
+              <li>Assign role permissions responsibly (Practice Owner, Associate Doctor, Lead Assistant) to ensure clinical oversight.</li>
+              <li>Independently verify physical supply levels and ensure that clinical procedures are never conducted without required medical supplies.</li>
+            </ul>
+          </section>
+
+          <!-- Section 3 -->
+          <section id="terms-3" class="legal-section-block">
+            <h2>3. PureAI Assistive Features &amp; User Verification Disclaimer</h2>
+            <div class="legal-callout-warning">
+              <strong>Assistive Capability Disclaimer:</strong> PureAI is an artificial intelligence productivity assistant designed to expedite administrative cataloging and order draft generation. It is not an autonomous ordering agent or a clinical decision support system.
+            </div>
+            <p>When using PureAI voice or text commands (e.g., adding items to an order, searching for stock levels):</p>
+            <ul>
+              <li>The Practice remains solely responsible for verifying the quantity, manufacturer, catalog number, and price before submitting purchase orders to third-party suppliers.</li>
+              <li>Pureum Software does not guarantee that AI-interpreted speech or transcribed prompts will be error-free in noisy operatory environments.</li>
+              <li>PureStock provides explicit preview cards and undo functionality; users must review action previews prior to final confirmation.</li>
+            </ul>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="terms-4" class="legal-section-block">
+            <h2>4. Healthcare &amp; Regulatory Scope (HIPAA &amp; Non-Medical Use)</h2>
+            <p>PureStock is an <strong>operational business software</strong> for physical supply logistics and sterilization record keeping. It is <strong>NOT</strong> an Electronic Health Record (EHR) system, medical device, or diagnostic instrument under FDA, Health Canada, or EU Medical Device Regulations.</p>
+            <ul>
+              <li><strong>Zero PHI Requirement:</strong> PureStock does not require, solicit, or store Protected Health Information (PHI). Users must not enter patient names, charts, medical histories, or diagnostic notes into PureStock.</li>
+              <li><strong>Sterilization Records:</strong> While PureStock provides digital logs for autoclave cycle parameters and biological indicator tests, clinical teams remain strictly responsible for adhering to all CDC, OSHA, and state/provincial dental board infection control regulations.</li>
+            </ul>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="terms-5" class="legal-section-block">
+            <h2>5. Prohibited Use</h2>
+            <p>You agree that you will not:</p>
+            <ul>
+              <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the PureStock application.</li>
+              <li>Use the Service to transmit malicious code, viruses, or interfere with cloud sync servers.</li>
+              <li>Store illegal, fraudulent, or defamatory content within invoice photo archives or item descriptions.</li>
+              <li>Circumvent or tamper with role permissions, license limitations, or billing paywalls.</li>
+            </ul>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="terms-6" class="legal-section-block">
+            <h2>6. Subscriptions, 7-Day Free Trial &amp; Apple Auto-Renewing In-App Billing</h2>
+            <p>PureStock is offered via auto-renewing subscriptions processed securely through the <strong>Apple App Store</strong>:</p>
+            <ul>
+              <li><strong>7-Day Free Trial:</strong> New subscribers receive a 7-day free trial. If you do not cancel at least 24 hours before the trial ends, your subscription will automatically renew into the chosen paid subscription tier (Standard or Premium).</li>
+              <li><strong>Payment &amp; Auto-Renewal:</strong> Payment will be charged to your Apple ID Account at confirmation of purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current billing period.</li>
+              <li><strong>Managing &amp; Canceling:</strong> You can manage or cancel your subscription at any time directly through your device settings: <code>iOS Settings &gt; [Your Name] &gt; Subscriptions &gt; PureStock</code>.</li>
+              <li><strong>Refunds:</strong> All subscription fee billing and refund requests are governed by Apple's Media Services Terms and Conditions and must be requested directly through Apple Support.</li>
+            </ul>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="terms-7" class="legal-section-block">
+            <h2>7. In-App Account Deletion &amp; Permanent Erasure (Apple Guideline 5.1.1(v))</h2>
+            <p>In full compliance with <strong>Apple App Store Review Guideline 5.1.1(v)</strong>, PureStock ensures that account deletion is as straightforward as account creation:</p>
+            <ul>
+              <li>The Practice Administrator can permanently delete the practice account and all associated operational data at any time directly within the application: <code>PureStock App &gt; Settings &gt; Account &gt; Delete Account &amp; Erase All Practice Data</code>.</li>
+              <li>Initiating account deletion immediately and irreversibly deletes authentication records, supply inventory catalogs, pending order drafts, sterilization logbooks, and uploaded invoice photos from our active cloud databases.</li>
+            </ul>
+          </section>
+
+          <!-- Section 8 -->
+          <section id="terms-8" class="legal-section-block">
+            <h2>8. Limitation of Liability &amp; Warranty Disclaimer</h2>
+            <p>THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. PUREUM SOFTWARE DISCLAIMS ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL PUREUM SOFTWARE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF INVENTORY, SUPPLY SHORTAGES, STERILIZATION AUDIT FINES, OR CLINICAL DOWNTIME ARISING OUT OF YOUR USE OR INABILITY TO USE THE SERVICE.</p>
+          </section>
+
+          <!-- Section 9 -->
+          <section id="terms-9" class="legal-section-block">
+            <h2>9. Contact Information</h2>
+            <p>For inquiries regarding these Terms of Service or clinical licensing agreements, please reach out to our legal and customer operations desk:</p>
+            <div style="background:var(--pale); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:16px;">
+              <strong>Pureum Software — Legal Operations</strong><br>
+              Email: <a href="mailto:support@pureum.dev" style="color:var(--green); font-weight:700;">support@pureum.dev</a><br>
+              Website: <a href="https://pureum.dev" target="_blank" rel="noopener" style="color:var(--green);">https://pureum.dev</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">
+            <img src="assets/logo.jpg" alt="PureStock Logo">
+          </span>
+          <span>purestock<span class="brand-period">.</span></span>
+        </a>
+        <p>Intelligent inventory and sterilization compliance for the modern dental practice.<br>Crafted with precision by Pureum Software.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <strong>EXPLORE</strong>
+          <a href="index.html#platform">Platform Preview</a>
+          <a href="index.html#features">6 Core Modules</a>
+          <a href="index.html#app-screens">iOS App Screens</a>
+          <a href="index.html#ai">PureAI Voice</a>
+          <a href="index.html#pricing">Pricing Plans</a>
         </div>
-    </footer>
+        <div>
+          <strong>RESOURCES</strong>
+          <a href="support.html">Support &amp; FAQ</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="https://pureum.dev/">Pureum Software ↗</a>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        const supportedLangs = ['en', 'ko', 'fr', 'es'];
+    <div class="container footer-bottom">
+      <span>© 2026 Pureum Software. All rights reserved.</span>
+      <span>Made for smiles. Built for the clinical teams behind them. ✳</span>
+    </div>
 
-        function normalizeLang(raw) {
-            const value = (raw || '').toLowerCase();
-            if (value.startsWith('ko')) return 'ko';
-            if (value.startsWith('fr')) return 'fr';
-            if (value.startsWith('es')) return 'es';
-            return 'en';
-        }
+    <div class="container disclaimer">
+      PureStock is an operational management tool for dental practice supply tracking, purchase orders, and sterilization compliance logs. It is not an electronic health record (EHR) system, medical device, or clinical diagnostic instrument, and does not store Protected Health Information (PHI).
+    </div>
+  </footer>
 
-        function updateLocalizedLinks(lang) {
-            document.querySelectorAll('[data-base-href]').forEach((link) => {
-                const baseHref = link.getAttribute('data-base-href');
-                if (!baseHref) return;
-                link.setAttribute('href', `${baseHref}?lang=${lang}`);
-            });
-        }
-
-        function setLanguage(lang) {
-            const finalLang = supportedLangs.includes(lang) ? lang : 'en';
-
-            document.documentElement.setAttribute('lang', finalLang);
-
-            document.querySelectorAll('.lang-btn').forEach((btn) => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === finalLang);
-            });
-
-            document.querySelectorAll('.lang-block').forEach((block) => {
-                block.classList.toggle('active', block.getAttribute('data-lang-block') === finalLang);
-            });
-
-            updateLocalizedLinks(finalLang);
-
-            const currentUrl = new URL(window.location.href);
-            currentUrl.searchParams.set('lang', finalLang);
-            window.history.replaceState({}, '', currentUrl);
-        }
-
-        const initialLang = normalizeLang(new URLSearchParams(window.location.search).get('lang') || 'en');
-        setLanguage(initialLang);
-
-        document.querySelectorAll('.lang-btn').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const selected = btn.getAttribute('data-lang');
-                setLanguage(selected);
-            });
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
-
 </html>

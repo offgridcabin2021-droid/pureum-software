@@ -1,563 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureStock - Privacy Policy</title>
-    <meta name="description" content="PureStock Dental Inventory Privacy Policy (EN/KO/FR/ES)">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #0A84FF;
-            --text-primary: #1D1D1F;
-            --text-secondary: #6E6E73;
-            --bg-secondary: #F5F5F7;
-            --border-color: #E5E5EA;
-            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .legal-page {
-            min-height: 100vh;
-            padding: 56px 0 72px;
-        }
-
-        .legal-container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .legal-header {
-            text-align: center;
-            margin-bottom: 26px;
-        }
-
-        .app-name {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.2px;
-        }
-
-        .legal-header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            letter-spacing: -0.8px;
-        }
-
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .language-switcher {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 auto 24px;
-            flex-wrap: wrap;
-        }
-
-        .lang-btn {
-            border: 1px solid var(--border-color);
-            background: white;
-            color: var(--text-primary);
-            border-radius: 999px;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .lang-btn.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-
-        .legal-content {
-            background: white;
-            border-radius: 22px;
-            padding: 44px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #F0F0F2;
-        }
-
-        .lang-block {
-            display: none;
-        }
-
-        .lang-block.active {
-            display: block;
-        }
-
-        .legal-section {
-            margin-bottom: 34px;
-        }
-
-        .legal-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .legal-section h2 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            letter-spacing: -0.2px;
-        }
-
-        .legal-section h3 {
-            font-size: 1.05rem;
-            margin: 14px 0 8px;
-            color: var(--text-primary);
-        }
-
-        .legal-section p {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-
-        .legal-section ul {
-            margin: 10px 0 0 22px;
-            color: var(--text-secondary);
-        }
-
-        .legal-section li {
-            margin-bottom: 8px;
-        }
-
-        .disclaimer-box {
-            background: #F0F7FF;
-            border-left: 4px solid var(--primary-color);
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 16px 0;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        .legal-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .legal-section a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #1D1D1F;
-            color: white;
-            text-align: center;
-            padding: 32px 0;
-            margin-top: 56px;
-        }
-
-        .footer-links {
-            color: #9A9AA1;
-            font-size: 0.88rem;
-        }
-
-        .footer-links a {
-            color: #9A9AA1;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer-links a:hover {
-            color: #FFFFFF;
-        }
-
-        @media (max-width: 768px) {
-            .legal-header h1 {
-                font-size: 1.9rem;
-            }
-
-            .legal-content {
-                padding: 30px 22px;
-            }
-
-            .legal-section h2 {
-                font-size: 1.18rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#123e33"/>
+  <meta name="description" content="PureStock Privacy Policy — Learn how PureStock protects dental practice inventory data, guarantees zero PHI collection, and provides instant in-app account deletion under Apple Guideline 5.1.1(v)."/>
+  <title>Privacy Policy — PureStock Dental Inventory</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-    <main class="legal-page">
-        <div class="legal-container">
-            <div class="legal-header">
-                <p class="app-name">PureStock (Inventory App)</p>
-                <h1>Privacy Policy</h1>
-                <p class="last-updated">Last Updated: October 2, 2026</p>
-            </div>
 
-            <div class="language-switcher" aria-label="Language selector">
-                <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="ko">한국어</button>
-                <button class="lang-btn" data-lang="fr">Français</button>
-                <button class="lang-btn" data-lang="es">Español</button>
-            </div>
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="index.html" class="brand" aria-label="PureStock home">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="PureStock Logo">
+        </span>
+        <span>purestock<span class="brand-period">.</span></span>
+      </a>
 
-            <div class="legal-content">
-                <!-- English Version -->
-                <div class="lang-block" data-lang-block="en">
-                    <section class="legal-section">
-                        <h2>1. Scope &amp; Application</h2>
-                        <p>This Privacy Policy specifically applies to <strong>PureStock</strong> (Inventory App), a dental clinic inventory and supply management platform developed by Pureum Software.</p>
-                        <p>For corporate-level terms, please see the <a href="../privacy.html" data-base-href="../privacy.html">Pureum Software Privacy Policy</a>.</p>
-                    </section>
+      <nav id="nav" aria-label="Main navigation">
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#app-screens">Live App</a>
+        <a href="index.html#ai">PureAI</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="support.html">Support</a>
+      </nav>
 
-                    <section class="legal-section">
-                        <h2>2. Data We Process</h2>
-                        <ul>
-                            <li><strong>Account Credentials:</strong> Email address, user ID, clinic membership identifier, and role privileges.</li>
-                            <li><strong>Inventory Records:</strong> Item titles, SKUs, physical stock quantities, units, storage locations, expiration dates, reorder thresholds, and transaction history.</li>
-                            <li><strong>Sterilization &amp; Autoclave Compliance Records:</strong> Sterilizer unit identifiers, cycle load numbers, exposure temperatures/durations, biological indicator (BI) spore test pass/fail results, and instrument cycle turnaround dates.</li>
-                            <li><strong>Operational Documents:</strong> Photos and files of supplier invoices and packing slips voluntarily uploaded by users for clinic record-keeping.</li>
-                            <li><strong>Microphone &amp; Speech Recognition (Guideline 5.1.1):</strong> When you choose to utilize voice input for PureAI, the app requests microphone permission (<code>NSMicrophoneUsageDescription</code>) and speech recognition permission (<code>NSSpeechRecognitionUsageDescription</code>). Audio data is processed in real time solely to transcribe voice into text prompts via the native iOS Speech framework and ephemeral processing buffers. PureStock never conducts background listening, continuous ambient audio capture, or permanent storage of audio recordings.</li>
-                            <li><strong>AI Prompts &amp; Operational Commands:</strong> User prompts submitted via text or speech to automate inventory actions.</li>
-                            <li><strong>Usage &amp; Diagnostics:</strong> Crash logs, diagnostic telemetry, and performance metrics required to ensure application stability.</li>
-                        </ul>
-                    </section>
+      <div class="nav-actions">
+        <a class="nav-link" href="support.html">Support</a>
+        <a class="btn btn-dark nav-cta" href="index.html#pricing">Get started <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-                    <section class="legal-section">
-                        <h2>3. AI Processing &amp; Third-Party Services (PureAI &amp; Google Gemini)</h2>
-                        <p>PureStock incorporates <strong>PureAI</strong> to allow users to interact with and manage inventory workflows using natural language prompts.</p>
-                        <ul>
-                            <li><strong>Safe Function Calling (Guideline 2.5.2):</strong> PureAI does not execute arbitrary remote code. It interprets user prompts into structured parameters (JSON) to invoke safe, pre-compiled native functions built directly within the application (e.g., updating stock quantities, adding items, managing alerts).</li>
-                            <li><strong>Zero Data Retention Policy:</strong> AI prompts are transmitted through secure Firebase Cloud Function proxies to the Google Gemini API. Under commercial enterprise API agreements, customer prompts and inventory records are governed by a strict Zero Data Retention policy and are never used to train or improve underlying AI models.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Healthcare &amp; HIPAA Regulatory Notice (US &amp; Canada)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Notice Regarding Healthcare Regulations (HIPAA):</strong> PureStock is exclusively a commercial inventory tracking tool designed for dental consumables, supplies, instruments, and equipment. It is not an Electronic Health Record (EHR) system or a medical device.
-                        </div>
-                        <ul>
-                            <li><strong>No Protected Health Information (PHI):</strong> PureStock does not collect, process, or store patient health information (PHI) such as patient names, chart numbers, health histories, or clinical records. Consequently, HIPAA regulations concerning PHI do not apply to inventory operations within the app.</li>
-                            <li>Users and clinics are strictly prohibited from entering patient-identifiable medical records into item names, notes, or memos.</li>
-                            <li>We maintain PIPEDA-compliant privacy practices for Canadian practices and adhere to HIPAA Safe Harbor de-identification standards where applicable.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. How Data Is Used</h2>
-                        <ul>
-                            <li>Managing dental inventory levels, low-stock notifications, supply reorders, and receiving workflows.</li>
-                            <li>Executing requested inventory updates and search functions via PureAI.</li>
-                            <li>Synchronizing inventory records across authorized clinic devices in real time.</li>
-                            <li>Providing user support, issue troubleshooting, and continuous service enhancement.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Security, Storage &amp; In-App Account Deletion (Guideline 5.1.1(v))</h2>
-                        <ul>
-                            <li>All data transmissions are encrypted using standard TLS/HTTPS, and cloud data is protected by industry-standard cloud security protocols.</li>
-                            <li><strong>In-App Self-Service Deletion:</strong> In strict compliance with Apple App Store Review Guideline 5.1.1(v), users can permanently delete their user account, credentials, and associated clinic data directly within the iOS app by visiting <strong>Settings &gt; Account Deletion</strong>.</li>
-                            <li>Upon confirmed deletion, authentication access is immediately terminated, active cloud production records are permanently expunged within 30 days, and encrypted system backups are overwritten within 90 days.</li>
-                            <li>Access to production infrastructure is strictly restricted based on role and operational necessity.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>Email: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Company: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- Korean Version -->
-                <div class="lang-block" data-lang-block="ko">
-                    <section class="legal-section">
-                        <h2>1. 적용 범위</h2>
-                        <p>본 개인정보 처리방침은 Pureum Software가 개발 및 제공하는 치과 자재 및 소모품 재고 관리 솔루션인 <strong>PureStock</strong> (Inventory App)에 적용됩니다.</p>
-                        <p>회사 차원의 포괄적인 약관은 <a href="../privacy.html" data-base-href="../privacy.html">Pureum Software 개인정보 처리방침</a>을 참고해 주세요.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. 처리하는 개인정보 및 데이터 항목</h2>
-                        <ul>
-                            <li><strong>계정 정보:</strong> 이메일 주소, 로그인 식별자, 소속 치과 클리닉 코드 및 사용자 역할 권한.</li>
-                            <li><strong>재고 데이터:</strong> 품목명, 카테고리, 수량, 단위, 보관 위치, 유통기한, 최소 재고 알림 기준값 및 입출고 이력.</li>
-                            <li><strong>소독 및 멸균 일지 데이터:</strong> 오토클레이브 멸균기 식별자, 가동 일시, 로드 번호, 멸균 온도/시간, 생물학적 인디케이터(BI) 포자 검사 판독 결과 및 기구 재소독 주기 데이터.</li>
-                            <li><strong>운영 문서:</strong> 사용자가 입고 확인 및 관리를 위해 업로드한 거래명세서 및 영수증 이미지.</li>
-                            <li><strong>마이크 및 음성 인식 권한 (Apple 지침 5.1.1):</strong> 사용자가 PureAI 음성 명령 기능을 사용할 때 마이크 권한(<code>NSMicrophoneUsageDescription</code>)과 음성 인식 권한(<code>NSSpeechRecognitionUsageDescription</code>)을 요청합니다. 음성 데이터는 iOS 내장 Speech 프레임워크와 일시적 버퍼를 통해 실시간 텍스트 변환(Speech-to-Text)에만 일시적으로 사용되며, 백그라운드 상시 도청이나 음성 파일의 영구 저장, 생체 프로파일링에는 일절 사용되지 않습니다.</li>
-                            <li><strong>AI 프롬프트 및 명령:</strong> PureAI를 통해 재고 작업을 실행하기 위해 입력된 텍스트 및 음성 변환 프롬프트.</li>
-                            <li><strong>진단 및 사용 로그:</strong> 서비스 안정성 유지, 크래시 진단 및 앱 성능 모니터링을 위한 필수 기술 데이터.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. AI 처리 및 서드파티 AI 정책 (PureAI &amp; Google Gemini)</h2>
-                        <p>PureStock은 프롬프트를 통해 재고 업무를 빠르고 간편하게 처리할 수 있도록 <strong>PureAI</strong> 기능을 지원합니다.</p>
-                        <ul>
-                            <li><strong>안전한 함수 호출 (Function Calling / Apple 지침 2.5.2 준수):</strong> 외부에서 임의의 실행 코드를 동적으로 다운로드받아 실행하지 않습니다. AI는 사용자의 요청을 분석하여 매개변수(JSON)만 생성하며, 앱 내부에 미리 안전하게 빌드된 네이티브 함수(예: 재고 수량 수정, 품목 추가, 주문 알림 등록 등)만을 실행합니다.</li>
-                            <li><strong>데이터 미저장 정책 (Zero Data Retention):</strong> AI 요청은 보안 Firebase Cloud Function 프록시를 통해 Google Gemini API로 전송됩니다. 상용 API 보안 정책에 따라 고객의 재고 데이터 및 프롬프트는 AI 모델 학습에 일절 활용되지 않으며, 데이터 미저장(Zero Data Retention) 원칙이 철저하게 보장됩니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. 의료 규제 및 미국 의료정보보호법 (HIPAA) 안내</h2>
-                        <div class="disclaimer-box">
-                            <strong>의료정보 규제(HIPAA) 비적용 안내:</strong> PureStock은 순수한 치과 자재/기구/소모품 재고(Dental Supplies)만을 다루는 B2B 상업용 재고 관리 앱입니다. 환자 진료 목적의 의료기기나 전자의무기록(EHR) 시스템이 아닙니다.
-                        </div>
-                        <ul>
-                            <li><strong>환자 건강정보(PHI) 미취급:</strong> PureStock은 환자 이름, 차트번호, 진료기록 등 환자 개인정보(PHI)를 전혀 수집하거나 저장하지 않습니다. 따라서 미국 의료정보보호법(HIPAA)의 엄격한 규제 대상에 해당하지 않습니다.</li>
-                            <li>치과 사용자는 품목명이나 메모란에 환자 개인정보를 절대 입력해서는 안 됩니다.</li>
-                            <li>캐나다 개인정보보호법(PIPEDA)을 준수하며, 관련 법령의 비식별화 기준을 엄격히 적용합니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. 데이터 이용 목적</h2>
-                        <ul>
-                            <li>실시간 재고 추적, 부족 알림 발송, 발주 및 입고 워크플로우 관리.</li>
-                            <li>PureAI를 통한 프롬프트 기반 재고 자동화 명령 처리.</li>
-                            <li>인증된 치과 클리닉 기기 간 실시간 데이터 동기화 및 백업.</li>
-                            <li>고객 지원, 오류 진단 및 전반적인 서비스 품질 향상.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. 보안 및 인앱 계정 삭제 (Apple 지침 5.1.1(v) 준수)</h2>
-                        <ul>
-                            <li>모든 네트워크 전송은 TLS/HTTPS 표준 암호화 통신을 사용하며, 클라우드 접근 제어를 통해 보호됩니다.</li>
-                            <li><strong>인앱 셀프서비스 계정 삭제:</strong> 이용자는 Apple 앱스토어 심사 지침(Guideline 5.1.1(v))에 따라 앱 내 <strong>설정 &gt; 계정 삭제 (Settings &gt; Account Deletion)</strong> 메뉴를 통해 언제든지 즉시 직접 셀프서비스로 계정 및 클리닉 연동 데이터를 영구 삭제할 수 있습니다.</li>
-                            <li>삭제 실행 즉시 계정 자격 증명과 클라우드 접근이 차단되며, 활성 운영 데이터는 30일 이내에 완전히 영구 파기되고, 암호화된 백업 복제본은 최대 90일 내에 안전하게 덮어쓰기 파기됩니다.</li>
-                            <li>운영 시스템에 대한 접근은 담당자의 역할과 운영상 필요에 따라 엄격히 제한됩니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. 문의처</h2>
-                        <p>이메일: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>회사명: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- French Version -->
-                <div class="lang-block" data-lang-block="fr">
-                    <section class="legal-section">
-                        <h2>1. Portee &amp; Application</h2>
-                        <p>Cette politique de confidentialite s'applique specifiquement a <strong>PureStock</strong> (Inventory App), une application de gestion des stocks et fournitures dentaires developpee par Pureum Software.</p>
-                        <p>Pour les conditions globales de l'entreprise, consultez la <a href="../privacy.html" data-base-href="../privacy.html">Politique de confidentialite de Pureum Software</a>.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. Donnees traitees</h2>
-                        <ul>
-                            <li><strong>Donnees de compte:</strong> Adresse e-mail, identifiant utilisateur, code de clinique et autorisations.</li>
-                            <li><strong>Donnees d'inventaire:</strong> Noms d'articles, quantites, references (SKU), emplacements, dates d'expiration, seuils d'alerte et historique des mouvements.</li>
-                            <li><strong>Registres de sterilisation et d'autoclave:</strong> Identifiants d'autoclaves, numeros de charge, parametres de cycle, resultats d'indicateurs biologiques (BI) et dates de rotation des instruments.</li>
-                            <li><strong>Documents operationnels:</strong> Photos de factures et bons de livraison televerses pour la gestion interne.</li>
-                            <li><strong>Microphone et reconnaissance vocale (Directive 5.1.1):</strong> Lors de l'utilisation des commandes vocales avec PureAI, l'application demande l'acces au microphone (<code>NSMicrophoneUsageDescription</code>) et a la reconnaissance vocale (<code>NSSpeechRecognitionUsageDescription</code>). Les donnees audio sont traitees en temps reel uniquement pour la transcription via le framework natif iOS Speech et ne font l'objet d'aucune ecoute en arriere-plan ni d'aucun stockage permanent.</li>
-                            <li><strong>Invites et commandes AI:</strong> Instructions saisies par texte ou voix pour automatiser les operations d'inventaire.</li>
-                            <li><strong>Donnees de diagnostic:</strong> Journaux de plantage et metriques techniques pour assurer la stabilite de l'application.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. Traitement AI &amp; Services tiers (PureAI &amp; Google Gemini)</h2>
-                        <p>PureStock integre l'assistant <strong>PureAI</strong> pour simplifier la gestion des stocks via le langage naturel.</p>
-                        <ul>
-                            <li><strong>Appels de fonctions securises (Directive 2.5.2):</strong> PureAI n'execute aucun code distant. L'IA extrait des parametres structures (JSON) pour appeler exclusivement des fonctions precompilees natives et sures dans l'application.</li>
-                            <li><strong>Politique de non-retention des donnees (Zero Data Retention):</strong> Les requetes sont acheminees via un proxy Cloud Function securise vers l'API Google Gemini. Dans le cadre des accords pour entreprises, vos donnees d'inventaire et invites ne sont pas conservees ni utilisees pour entrainer les modeles d'IA.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Avis reglementaire de sante (HIPAA / PIPEDA)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Avis sur les reglementations de sante (HIPAA):</strong> PureStock est exclusivement un outil de gestion logistique pour les fournitures et consommables dentaires. Il ne constitue pas un dossier medical electronique (DME) ni un dispositif medical.
-                        </div>
-                        <ul>
-                            <li><strong>Absence de donnees de sante protegees (PHI):</strong> PureStock ne collecte ni ne stocke aucune donnee medicale ou identifiant patient. La reglementation HIPAA relative aux dossiers patients ne s'applique donc pas.</li>
-                            <li>Les utilisateurs s'engagent a ne jamais saisir de renseignements personnels medicaux dans les descriptions d'articles ou mémos.</li>
-                            <li>Nous maintenons des pratiques rigoureuses conformes a la LPRPDE/PIPEDA au Canada.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. Utilisation des donnees</h2>
-                        <ul>
-                            <li>Gestion des niveaux de stock, alertes, commandes et receptions.</li>
-                            <li>Execution des commandes d'inventaire via PureAI.</li>
-                            <li>Synchronisation en temps reel entre les appareils autorises de la clinique.</li>
-                            <li>Assistance utilisateur et fiabilisation continue du service.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Securite &amp; Suppression de compte dans l'app (Directive 5.1.1(v))</h2>
-                        <ul>
-                            <li>Chiffrement TLS/HTTPS pour tous les transferts et controles stricts de securite cloud.</li>
-                            <li><strong>Suppression libre-service dans l'application:</strong> Conformement a la directive Apple 5.1.1(v), les utilisateurs peuvent supprimer definitivement leur compte et les donnees cliniques associees directement depuis l'application via <strong>Settings &gt; Account Deletion</strong>.</li>
-                            <li>Les donnees de production actives sont effacees sous 30 jours, et les sauvegardes ecrasees sous 90 jours maximum.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. Contact</h2>
-                        <p>E-mail: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Entreprise: Pureum Software</p>
-                    </section>
-                </div>
-
-                <!-- Spanish Version -->
-                <div class="lang-block" data-lang-block="es">
-                    <section class="legal-section">
-                        <h2>1. Alcance y Aplicacion</h2>
-                        <p>Esta Politica de Privacidad aplica especificamente a <strong>PureStock</strong> (Inventory App), una solucion de gestion de suministros e inventario dental desarrollada por Pureum Software.</p>
-                        <p>Para conocer los terminos corporativos generales, consulte la <a href="../privacy.html" data-base-href="../privacy.html">Politica de Privacidad de Pureum Software</a>.</p>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>2. Datos que procesamos</h2>
-                        <ul>
-                            <li><strong>Datos de cuenta:</strong> Correo electronico, identificador de usuario, codigo de clinica y roles de acceso.</li>
-                            <li><strong>Registros de inventario:</strong> Nombre de articulos, cantidades, codigos SKU, ubicaciones, fechas de caducidad, niveles de alerta e historial de movimientos.</li>
-                            <li><strong>Registros de esterilizacion y autoclave:</strong> Identificadores de autoclaves, numeros de carga, parametros de ciclo, resultados de indicadores biologicos (BI) y fechas de ciclo de instrumental.</li>
-                            <li><strong>Documentos operativos:</strong> Fotografias de facturas y albaranes cargados por la clinica.</li>
-                            <li><strong>Microfono y reconocimiento de voz (Directriz 5.1.1):</strong> Al utilizar comandos de voz con PureAI, se solicitan permisos de microfono (<code>NSMicrophoneUsageDescription</code>) y reconocimiento de voz (<code>NSSpeechRecognitionUsageDescription</code>). El audio se procesa en tiempo real unicamente para transcripcion a traves del framework nativo iOS Speech y nunca se realiza escucha en segundo plano ni grabacion permanente.</li>
-                            <li><strong>Prompts y comandos de IA:</strong> Mensajes de texto o voz ingresados para automatizar tareas de inventario.</li>
-                            <li><strong>Diagnostico y uso:</strong> Registros de fallos y rendimiento esenciales para la estabilidad del servicio.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>3. Procesamiento con IA y Politica de Terceros (PureAI &amp; Google Gemini)</h2>
-                        <p>PureStock integra <strong>PureAI</strong> para permitir la administracion del inventario mediante lenguaje natural.</p>
-                        <ul>
-                            <li><strong>Llamadas a funciones seguras (Directriz 2.5.2):</strong> PureAI no ejecuta codigo remoto descargado. Procesa las solicitudes en parametros JSON para invocar funciones nativas precompiladas y seguras dentro de la aplicacion.</li>
-                            <li><strong>Politica de Cero Retencion de Datos (Zero Data Retention):</strong> Las solicitudes se envian mediante un proxy seguro de Firebase Cloud Functions a la API comercial de Google Gemini, garantizando que sus datos y prompts no se utilicen para entrenar modelos de IA.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>4. Aviso Legal y Normativa Sanitaria (HIPAA / PIPEDA)</h2>
-                        <div class="disclaimer-box">
-                            <strong>Aviso sobre la Ley HIPAA:</strong> PureStock es una herramienta exclusivamente comercial para el control de suministros y materiales dentales. No es un expediente clinico electronico (EHR) ni un dispositivo medico.
-                        </div>
-                        <ul>
-                            <li><strong>Sin Informacion Medica Protegida (PHI):</strong> No recopilamos ni almacenamos datos de pacientes (nombres, historiales o expedientes). Por lo tanto, la normativa HIPAA no aplica a las operaciones habituales del inventario.</li>
-                            <li>Queda estrictamente prohibido introducir datos de pacientes en los nombres o notas de los articulos.</li>
-                            <li>Cumplimos con los estandares de PIPEDA para Canada y normas aplicables de desidentificacion.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>5. Uso de los datos</h2>
-                        <ul>
-                            <li>Gestion de stock, alertas de reposicion, pedidos y recepcion de mercancia.</li>
-                            <li>Ejecucion de comandos de inventario mediante PureAI.</li>
-                            <li>Sincronizacion en la nube entre dispositivos autorizados de la clinica.</li>
-                            <li>Soporte tecnico, correccion de errores y optimizacion del sistema.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>6. Seguridad y eliminacion de cuenta en la app (Directriz 5.1.1(v))</h2>
-                        <ul>
-                            <li>Transmision cifrada con TLS/HTTPS y estrictos controles de seguridad cloud.</li>
-                            <li><strong>Eliminacion de cuenta en autoservicio:</strong> Conforme a la Directriz 5.1.1(v) de Apple, los usuarios pueden eliminar de forma permanente su cuenta y datos de la clinica directamente en la aplicacion en <strong>Settings &gt; Account Deletion</strong>.</li>
-                            <li>Los datos activos se borran de inmediato en un plazo maximo de 30 dias y las copias de seguridad en un maximo de 90 dias.</li>
-                        </ul>
-                    </section>
-
-                    <section class="legal-section">
-                        <h2>7. Contacto</h2>
-                        <p>Correo: <a href="mailto:support@pureum.dev">support@pureum.dev</a></p>
-                        <p>Empresa: Pureum Software</p>
-                    </section>
-                </div>
-            </div>
+  <!-- Legal Content Page -->
+  <main class="legal-page">
+    <div class="container">
+      <div class="legal-header">
+        <div class="section-kicker" style="justify-content:center;"><span class="kicker-line"></span> LEGAL &amp; COMPLIANCE</div>
+        <h1>Privacy Policy</h1>
+        <div class="legal-meta">
+          <span class="meta-dot"></span>
+          <span>Last Updated: October 2026</span>
+          <span style="opacity:0.4;">|</span>
+          <span>Apple Guideline 5.1.1(v) Compliant</span>
         </div>
-    </main>
+      </div>
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="terms.html" data-base-href="terms.html">Terms of Service</a>
-            <a href="privacy.html" data-base-href="privacy.html">Privacy Policy</a>
-            <a href="../terms.html" data-base-href="../terms.html">Company Terms</a>
-            <a href="../privacy.html" data-base-href="../privacy.html">Company Privacy</a>
-            <p style="margin-top: 14px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
+      <div class="legal-layout">
+        <!-- Sticky Navigation Sidebar -->
+        <aside class="legal-sidebar">
+          <div class="legal-sidebar-title">TABLE OF CONTENTS</div>
+          <nav class="legal-nav-list">
+            <a href="#section-1" class="active">1. Scope &amp; Application</a>
+            <a href="#section-2">2. Data We Process</a>
+            <a href="#section-3">3. PureAI &amp; Third-Party AI</a>
+            <a href="#section-4">4. Healthcare &amp; HIPAA Notice</a>
+            <a href="#section-5">5. How Data Is Used</a>
+            <a href="#section-6">6. Security &amp; Account Deletion</a>
+            <a href="#section-7">7. Contact &amp; Privacy Officer</a>
+          </nav>
+        </aside>
+
+        <!-- Main Legal Document Body -->
+        <article class="legal-card">
+          <div class="legal-intro-note">
+            <strong>Practice Commitment:</strong> PureStock is engineered exclusively for dental supply inventory, supplier replenishment, and autoclave sterilization tracking. PureStock is <em>not</em> an Electronic Health Record (EHR) system and strictly prohibits the storage of Protected Health Information (PHI).
+          </div>
+
+          <!-- Section 1 -->
+          <section id="section-1" class="legal-section-block">
+            <h2>1. Scope &amp; Application</h2>
+            <p>This Privacy Policy explains how <strong>Pureum Software</strong> ("we", "us", or "our") collects, uses, protects, and discloses information when dental practices, clinicians, practice owners, and authorized staff members ("Users" or "Practice") access and use the <strong>PureStock</strong> iOS mobile application, iPad application, and related cloud synchronization services (collectively, the "Service").</p>
+            <p>By downloading, installing, registering for, or using PureStock, you confirm that you have read, understood, and agreed to this Privacy Policy. If you do not agree, please do not access or use the Service.</p>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="section-2" class="legal-section-block">
+            <h2>2. Data We Process</h2>
+            <p>We process only the minimum operational data necessary to deliver smart inventory tracking, vendor reordering, and clinical compliance records:</p>
+            
+            <h3>A. Practice Inventory &amp; Supply Data</h3>
+            <ul>
+              <li>Dental supply names, manufacturer details, model numbers, and internal catalog codes (e.g., 3M Filtek, Septodont Septanest).</li>
+              <li>Quantities on hand, minimum reorder thresholds, unit costs, and storage locations (operatory drawers, central stockrooms).</li>
+              <li>Batch numbers, lot identifiers, and expiration dates for FIFO (First-In, First-Out) shelf management.</li>
+            </ul>
+
+            <h3>B. Purchasing &amp; Invoices</h3>
+            <ul>
+              <li>Vendor names (e.g., Henry Schein, Patterson Dental, Darby, Benco), order line items, order status, and doctor review timestamps.</li>
+              <li>Photographic captures of paper delivery slips and vendor invoices captured using the device camera for internal practice verification.</li>
+            </ul>
+
+            <h3>C. Autoclave &amp; Sterilization Compliance Logs</h3>
+            <ul>
+              <li>Autoclave machine identifiers, cycle run numbers, cycle dates, temperature/pressure readings, and technician operator names/signatures.</li>
+              <li>Biological Indicator (BI spore test) results, incubation monitoring records, and pass/fail indicators.</li>
+            </ul>
+
+            <h3>D. Account &amp; Device Information</h3>
+            <ul>
+              <li>Practice name, clinic administrator email address, authentication credentials, and assigned role permissions (Owner, Associate Doctor, Assistant).</li>
+              <li>Basic diagnostic device tokens, iOS version, and crash diagnostic logs to maintain sync stability.</li>
+            </ul>
+          </section>
+
+          <!-- Section 3 -->
+          <section id="section-3" class="legal-section-block">
+            <h2>3. AI Processing &amp; Third-Party Services (PureAI &amp; Google Gemini)</h2>
+            <p>PureStock incorporates <strong>PureAI</strong>, an intelligent assistive capability powered by the Google Gemini API, allowing hands-free voice and natural language text commands in the operatory:</p>
+            <ul>
+              <li><strong>Strictly Operational Queries:</strong> PureAI only processes queries related to dental supplies (e.g., "Add 10 boxes of composite resin A2 to the Henry Schein reorder list" or "Check how many vials of lidocaine are left").</li>
+              <li><strong>No Model Training:</strong> Your clinic's inventory data, operational records, and voice queries are <strong>never</strong> used to train, fine-tune, or improve public foundation AI models.</li>
+              <li><strong>Zero PHI Transmission:</strong> Users are expressly prohibited from entering patient names, charts, treatment plans, or health records into PureAI prompts.</li>
+              <li><strong>Explicit Action Confirmation:</strong> PureAI prompts show clear preview cards before modifying any stock counts or submitting purchase orders, with full undo capability.</li>
+            </ul>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="section-4" class="legal-section-block">
+            <h2>4. Healthcare &amp; HIPAA Regulatory Notice (US &amp; Canada)</h2>
+            <div class="legal-callout-warning">
+              <strong>Non-Medical, Non-EHR Operational Software:</strong> PureStock is not a medical device, diagnostic system, or Electronic Health Record (EHR) repository under HIPAA (Health Insurance Portability and Accountability Act) or PIPEDA (Personal Information Protection and Electronic Documents Act).
+            </div>
+            <p>PureStock is strictly an operational business tool designed to manage clinic supplies, vendor procurement, and autoclave equipment maintenance. PureStock does not collect, solicit, or store Protected Health Information (PHI) or personal patient healthcare records.</p>
+            <p>The Practice remains solely responsible for ensuring that staff members do not input patient health information into item notes, photo attachments, or AI prompts.</p>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="section-5" class="legal-section-block">
+            <h2>5. How Practice Data Is Used</h2>
+            <p>We use the processed data solely for the following legitimate business purposes:</p>
+            <ul>
+              <li>Enabling real-time cloud synchronization across all authenticated iOS devices in your practice.</li>
+              <li>Calculating automated low-stock warnings and building supplier-grouped purchase order sheets.</li>
+              <li>Generating exportable PDF compliance logs for state dental board and health authority inspections.</li>
+              <li>Creating year-end inventory valuation and tax-readiness reports for practice accounting.</li>
+              <li>Providing technical customer support and maintaining platform reliability.</li>
+            </ul>
+            <p>We do not sell, rent, monetize, or trade practice operational data to third-party advertisers or data brokers under any circumstances.</p>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="section-6" class="legal-section-block">
+            <h2>6. Security, Storage &amp; In-App Account Deletion (Apple Guideline 5.1.1(v))</h2>
+            <p>We implement industry-standard administrative, physical, and technical safeguards to protect your practice data:</p>
+            <ul>
+              <li><strong>Encryption:</strong> All data transmitted between your iOS devices and our servers is encrypted using Transport Layer Security (TLS 1.3), and stored in secured cloud databases with AES-256 encryption at rest.</li>
+              <li><strong>Role-Based Access Control:</strong> Practice owners can restrict staff permissions so only authorized personnel can view pricing, approve purchase orders, or alter audit logs.</li>
+            </ul>
+
+            <h3>Direct In-App Account Deletion</h3>
+            <p>In strict accordance with <strong>Apple App Store Review Guideline 5.1.1(v)</strong>, PureStock provides an automated, instantaneous, and direct in-app account deletion mechanism:</p>
+            <ul>
+              <li>The Practice Administrator can initiate permanent account deletion at any time by navigating to: <code>PureStock App &gt; Settings &gt; Account &gt; Delete Account &amp; Erase All Practice Data</code>.</li>
+              <li>Upon confirmation, your account authentication credentials, active inventory master lists, purchase order history, sterilization logs, uploaded invoice photos, and device sync tokens are <strong>permanently and irreversibly purged from our active databases and cloud storage</strong> without requiring you to email support or wait for manual intervention.</li>
+            </ul>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="section-7" class="legal-section-block">
+            <h2>7. Contact &amp; Privacy Officer</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our security practices, please contact our designated Data Protection Officer:</p>
+            <div style="background:var(--pale); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:16px;">
+              <strong>Pureum Software — PureStock Privacy Team</strong><br>
+              Email: <a href="mailto:support@pureum.dev" style="color:var(--green); font-weight:700;">support@pureum.dev</a><br>
+              Website: <a href="https://pureum.dev" target="_blank" rel="noopener" style="color:var(--green);">https://pureum.dev</a><br>
+              Response Window: Inquiries are answered within 24 business hours.
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">
+            <img src="assets/logo.jpg" alt="PureStock Logo">
+          </span>
+          <span>purestock<span class="brand-period">.</span></span>
+        </a>
+        <p>Intelligent inventory and sterilization compliance for the modern dental practice.<br>Crafted with precision by Pureum Software.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <strong>EXPLORE</strong>
+          <a href="index.html#platform">Platform Preview</a>
+          <a href="index.html#features">6 Core Modules</a>
+          <a href="index.html#app-screens">iOS App Screens</a>
+          <a href="index.html#ai">PureAI Voice</a>
+          <a href="index.html#pricing">Pricing Plans</a>
         </div>
-    </footer>
+        <div>
+          <strong>RESOURCES</strong>
+          <a href="support.html">Support &amp; FAQ</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="https://pureum.dev/">Pureum Software ↗</a>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        const supportedLangs = ['en', 'ko', 'fr', 'es'];
+    <div class="container footer-bottom">
+      <span>© 2026 Pureum Software. All rights reserved.</span>
+      <span>Made for smiles. Built for the clinical teams behind them. ✳</span>
+    </div>
 
-        function normalizeLang(raw) {
-            const value = (raw || '').toLowerCase();
-            if (value.startsWith('ko')) return 'ko';
-            if (value.startsWith('fr')) return 'fr';
-            if (value.startsWith('es')) return 'es';
-            return 'en';
-        }
+    <div class="container disclaimer">
+      PureStock is an operational management tool for dental practice supply tracking, purchase orders, and sterilization compliance logs. It is not an electronic health record (EHR) system, medical device, or clinical diagnostic instrument, and does not store Protected Health Information (PHI).
+    </div>
+  </footer>
 
-        function updateLocalizedLinks(lang) {
-            document.querySelectorAll('[data-base-href]').forEach((link) => {
-                const baseHref = link.getAttribute('data-base-href');
-                if (!baseHref) return;
-                link.setAttribute('href', `${baseHref}?lang=${lang}`);
-            });
-        }
-
-        function setLanguage(lang) {
-            const finalLang = supportedLangs.includes(lang) ? lang : 'en';
-
-            document.documentElement.setAttribute('lang', finalLang);
-
-            document.querySelectorAll('.lang-btn').forEach((btn) => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === finalLang);
-            });
-
-            document.querySelectorAll('.lang-block').forEach((block) => {
-                block.classList.toggle('active', block.getAttribute('data-lang-block') === finalLang);
-            });
-
-            updateLocalizedLinks(finalLang);
-
-            const currentUrl = new URL(window.location.href);
-            currentUrl.searchParams.set('lang', finalLang);
-            window.history.replaceState({}, '', currentUrl);
-        }
-
-        const initialLang = normalizeLang(new URLSearchParams(window.location.search).get('lang') || 'en');
-        setLanguage(initialLang);
-
-        document.querySelectorAll('.lang-btn').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const selected = btn.getAttribute('data-lang');
-                setLanguage(selected);
-            });
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
-
 </html>

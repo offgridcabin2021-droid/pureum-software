@@ -1,636 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support &amp; FAQ - PureStock Dental Inventory</title>
-    <meta name="description" content="PureStock Dental Inventory support, FAQs, PureAI voice commands guide, sterilization tracking, and subscription assistance.">
-
-    <!-- Google Fonts: Inter covering multiple weights -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css?v=2.6">
-    <style>
-        .support-page {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            min-height: 100vh;
-        }
-
-        .support-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .support-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .support-header h1 {
-            font-size: 2.6rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .support-header p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            max-width: 620px;
-            margin: 0 auto;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #9D4EDD 100%);
-            border-radius: 24px;
-            padding: 48px;
-            color: white;
-            text-align: center;
-            margin-bottom: 56px;
-            box-shadow: 0 16px 36px rgba(0, 122, 255, 0.2);
-        }
-
-        .contact-section h2 {
-            font-size: 1.85rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .contact-section p {
-            opacity: 0.95;
-            margin-bottom: 24px;
-            font-size: 1.05rem;
-        }
-
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 16px 32px;
-            border-radius: 999px;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: white;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .contact-email:hover {
-            background: rgba(255, 255, 255, 0.32);
-            transform: translateY(-2px);
-        }
-
-        .response-time {
-            margin-top: 18px;
-            font-size: 0.9rem;
-            opacity: 0.85;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin-bottom: 60px;
-        }
-
-        .faq-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 36px;
-            text-align: center;
-            letter-spacing: -0.6px;
-        }
-
-        .faq-category {
-            margin-bottom: 40px;
-        }
-
-        .faq-category h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #E5E5EA;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 16px;
-            margin-bottom: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #ECECF0;
-            overflow: hidden;
-            transition: border-color 0.2s;
-        }
-
-        .faq-item.active {
-            border-color: #007AFF;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 20px 24px;
-            background: none;
-            border: none;
-            text-align: left;
-            font-size: 1.02rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: inherit;
-        }
-
-        .faq-question:hover {
-            background: #FAFAFA;
-        }
-
-        .faq-question-text {
-            flex: 1;
-            padding-right: 12px;
-        }
-
-        .faq-question svg {
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-question svg {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 600px;
-        }
-
-        .faq-answer-content {
-            padding: 0 24px 22px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 0.96rem;
-        }
-
-        .faq-answer-content ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        .faq-answer-content li {
-            margin-bottom: 6px;
-        }
-
-        .faq-answer-content code {
-            background: #F2F2F7;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            color: #1D1D1F;
-        }
-
-        /* Back Link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 28px;
-            transition: opacity 0.2s;
-        }
-
-        .back-link:hover {
-            opacity: 0.75;
-        }
-
-        /* Additional Help */
-        .additional-help {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #ECECF0;
-        }
-
-        .additional-help h3 {
-            font-size: 1.35rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .additional-help p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .help-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .help-link {
-            padding: 12px 24px;
-            background: #F2F2F7;
-            border-radius: 12px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .help-link:hover {
-            background: #E5E5EA;
-        }
-
-        @media (max-width: 768px) {
-            .support-header h1 {
-                font-size: 2rem;
-            }
-
-            .contact-section {
-                padding: 32px 20px;
-            }
-
-            .contact-email {
-                font-size: 1rem;
-                padding: 14px 24px;
-            }
-
-            .faq-question {
-                padding: 16px 20px;
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#123e33"/>
+  <meta name="description" content="PureStock Help Desk & FAQ — Quick answers on PureAI voice commands, multi-operatory setup, autoclave sterilization compliance, and Apple App Store subscription billing."/>
+  <title>Support &amp; FAQ — PureStock Dental Inventory</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar glass">
-        <div class="container nav-container">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="assets/logo.jpg" alt="PureStock Logo" style="height: 36px; width: auto; border-radius: 8px;">
-                <span style="font-weight: 700; font-size: 19px; letter-spacing: -0.3px;">PureStock</span>
-            </a>
-            <div class="nav-links">
-                <a href="features.html">Features</a>
-                <a href="index.html#pure-ai">PureAI</a>
-                <a href="index.html#workflow">Workflow</a>
-                <a href="support.html" style="color: var(--primary-color); font-weight: 600;">Support</a>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <a href="index.html#download" class="btn btn-primary btn-sm">Download App</a>
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="index.html" class="brand" aria-label="PureStock home">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="PureStock Logo">
+        </span>
+        <span>purestock<span class="brand-period">.</span></span>
+      </a>
+
+      <nav id="nav" aria-label="Main navigation">
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#app-screens">Live App</a>
+        <a href="index.html#ai">PureAI <span class="nav-sparkle">✦</span></a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="support.html" style="color:var(--green); font-weight:700;">Support</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">← Overview</a>
+        <a class="btn btn-dark nav-cta" href="index.html#pricing">Get started <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Support Hero Section -->
+    <section class="support-hero-section">
+      <div class="container">
+        <div class="section-kicker" style="justify-content:center;"><span class="kicker-line"></span> CLINIC HELP DESK</div>
+        <h1>How can we help your dental practice?</h1>
+        <p>Get in touch directly with our product team or find instant answers about PureStock workflows, PureAI voice recognition, and account settings.</p>
+
+        <!-- 3 Contact Cards -->
+        <div class="support-cards-grid">
+          <div class="support-card">
+            <div class="support-icon">✉</div>
+            <h3>Email Support</h3>
+            <p>Direct assistance for operatory onboarding, inventory CSV imports, and practice inquiries.</p>
+            <a href="mailto:pureumsoftware@gmail.com" class="support-link-btn">pureumsoftware@gmail.com <span>↗</span></a>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">💳</div>
+            <h3>Apple In-App Billing</h3>
+            <p>Manage subscription renewals, switch between Monthly and Annual plans, or view invoices anytime.</p>
+            <a href="https://support.apple.com/billing" target="_blank" rel="noopener" class="support-link-btn">Manage Apple ID <span>↗</span></a>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">🔐</div>
+            <h3>Privacy &amp; Data Rights</h3>
+            <p>PureStock operates on a strict zero-PHI basis. You can erase your cloud database anytime in Settings.</p>
+            <a href="privacy.html" class="support-link-btn">Review Privacy Policy <span>↗</span></a>
+          </div>
         </div>
-    </nav>
+      </div>
+    </section>
 
-    <main class="support-page">
-        <div class="support-container">
-            <a href="index.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-                Back to PureStock Home
-            </a>
-
-            <div class="support-header">
-                <h1>How can we help your dental practice?</h1>
-                <p>Get in touch with our clinic support team or find instant answers to common questions about PureStock and PureAI.</p>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="contact-section">
-                <h2>Contact PureStock Support</h2>
-                <p>Have an inquiry about your practice account, PureAI setup, or billing?</p>
-                <a href="mailto:support@pureum.dev" class="contact-email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    support@pureum.dev
-                </a>
-                <p class="response-time">We typically respond within 24–48 business hours</p>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-
-                <!-- PureAI Voice & Assistant -->
-                <div class="faq-category">
-                    <h3>✨ PureAI Voice Assistant</h3>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">What is PureAI and how does it help in the operatory?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <strong>PureAI</strong> is PureStock’s native voice and text clinical assistant designed specifically for dental teams. In the middle of patient procedures when wearing gloves, clinicians can simply speak natural requests such as:
-                                <ul>
-                                    <li><em>"Used 2 carpules of Lidocaine in Op 2"</em></li>
-                                    <li><em>"Add 3 boxes of size 2 barrier sleeves to the order list"</em></li>
-                                    <li><em>"Check if we have enough flowable composite A2 in stock"</em></li>
-                                    <li><em>"Start an autoclave cycle: Pouches, 30 min, 121°C"</em></li>
-                                </ul>
-                                PureAI interprets the intent and securely calls native in-app functions to update inventory, create orders, or start cycle timers hands-free.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How does the Undo feature work if PureAI mishears an instruction?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                In full alignment with Apple App Store Guidelines 1.2 &amp; 2.1, every action initiated by PureAI displays an interactive <strong>Action Result Card (<code>ActionResultCard</code>)</strong> with a prominent <strong>[↩ Undo Last Action]</strong> button. If background dental noise caused a transcription inaccuracy or wrong quantity, tap <strong>Undo</strong> to instantly roll back the database transaction.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Does PureAI collect or store patient health information (PHI)?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <strong>No. PureStock enforces a strict Zero PHI Policy.</strong> PureStock is an administrative supply management and sterilization tracking application, NOT an Electronic Health Record (EHR) or diagnostic tool. PureAI only processes dental material SKUs, quantities, and equipment cycles. Patient names, chart numbers, and treatment records are never requested, processed, or stored.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Are there role-based safety guardrails for dental assistants?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Yes. PureStock separates team responsibilities into <strong>Doctor / Clinic Admin</strong> and <strong>Dental Assistant / Staff</strong> roles. While staff can decrement inventory, request orders, and log sterilization runs, high-impact actions (such as permanent item deletions, vendor contract rate modifications, and staff role promotions) are blocked by PureAI guardrails unless authenticated by a Doctor.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subscriptions & Free Trial -->
-                <div class="faq-category">
-                    <h3>💳 Subscriptions &amp; Apple In-App Billing</h3>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How does the 7-day free trial work?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Eligible new subscribers receive 7 days of complimentary, full-featured access to PureStock. You will not be charged during the trial period. If you decide not to continue, simply cancel at least 24 hours before the 7-day trial ends to avoid being billed.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">What are the subscription plans and pricing?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                PureStock offers two straightforward auto-renewable subscription tiers via the Apple App Store:
-                                <ul>
-                                    <li><strong>Standard Tier:</strong> $19.99 USD / month (or $189.99 USD / year). Includes real-time multi-device cloud sync, barcode/QR scanner, order tracking, invoice archiving, and core PureAI commands.</li>
-                                    <li><strong>Premium Tier:</strong> $29.99 USD / month (or $289.99 USD / year). Includes all Standard features plus unlimited PureAI assistant actions, complete Autoclave Sterilization &amp; Biological Indicator (BI) logs, multi-operatory permission controls, and audit trails.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How do I cancel or change my subscription?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Subscriptions are managed directly through Apple StoreKit. You can manage or cancel your subscription at any time using your iOS device:
-                                <ol style="padding-left: 20px; margin-top: 8px;">
-                                    <li>Open the <strong>Settings</strong> app on your iPhone or iPad.</li>
-                                    <li>Tap your <strong>Apple Account name</strong> at the top.</li>
-                                    <li>Tap <strong>Subscriptions</strong>.</li>
-                                    <li>Select <strong>PureStock</strong> and tap <strong>Cancel Subscription</strong>.</li>
-                                </ol>
-                                Once canceled, you will continue to have access until the end of your current billing or trial period.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sterilization & Autoclaves -->
-                <div class="faq-category">
-                    <h3>🧼 Sterilization &amp; Autoclave Tracking</h3>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How do I record autoclave cycles?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Tap the <strong>Sterilization</strong> tab or tell PureAI to start a cycle. Choose your autoclave unit, cycle program (e.g., Pouches, Wrapped Cassettes, Unwrapped, Liquid), and enter temperature, pressure (psi), cycle duration, and operator initials. PureStock maintains an audit-ready log for dental board and health authority inspections.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Can I track weekly biological spore tests (BI)?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Yes. PureStock includes a dedicated Biological Indicator (BI) section where staff can record weekly spore test incubation start times, results (Pass/Negative or Fail/Positive), and automatic reminders when a scheduled test is due.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Account & In-App Deletion -->
-                <div class="faq-category">
-                    <h3>🔐 Account &amp; In-App Deletion</h3>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How do I permanently delete my account and practice data?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                In accordance with Apple App Store Guideline 5.1.1(v), PureStock provides a direct in-app account deletion mechanism:
-                                <ul>
-                                    <li>Open PureStock and tap <code>Settings &gt; Account Deletion</code>.</li>
-                                    <li>Review the confirmation dialog and confirm deletion.</li>
-                                    <li>All active inventory items, operatory logs, invoice records, and sterilization cycles are permanently removed from production servers within 30 days. Encrypted backups are completely purged within 90 days.</li>
-                                </ul>
-                                Alternatively, you can contact <a href="mailto:support@pureum.dev">support@pureum.dev</a> with your registered email to request manual account termination.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">How do multiple clinic devices sync inventory?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                PureStock synchronizes in real time across all authenticated iOS devices in your dental clinic using secure Firebase Cloud Firestore with AES-256 encryption. Changes made in Operatory 1 immediately appear on front desk iPads and supply room devices.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Barcode & Inventory Management -->
-                <div class="faq-category">
-                    <h3>📦 Scanner &amp; Inventory Management</h3>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Which barcodes are supported?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                PureStock supports all standard 1D linear barcodes (UPC-A, EAN-13, Code 128, Code 39) as well as 2D QR codes and GS1 DataMatrix codes commonly printed on dental packaging and manufacturer lots.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="faq-question-text">Can I import and export my inventory via CSV?</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Yes. Go to <code>Settings &gt; Data Management</code> to export your complete inventory into CSV or printable PDF format. You can also import initial inventory catalogues via CSV using our pre-formatted spreadsheet template.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Help -->
-            <div class="additional-help">
-                <h3>Still need help?</h3>
-                <p>Explore our deep-dive module guides or review our legal documentation.</p>
-                <div class="help-links">
-                    <a href="features.html" class="help-link">Features Deep Dive</a>
-                    <a href="index.html#pure-ai" class="help-link">PureAI Guide</a>
-                    <a href="terms.html" class="help-link">Terms of Service</a>
-                    <a href="privacy.html" class="help-link">Privacy Policy</a>
-                </div>
-            </div>
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+      <div class="container faq-container">
+        <div class="faq-header">
+          <div class="section-kicker" style="justify-content:center;"><span class="kicker-line"></span> FREQUENTLY ASKED QUESTIONS</div>
+          <h2>Everything you need to know</h2>
+          <p style="color:var(--muted); font-size:16px;">Quick, practical answers for dental directors, hygienists, and practice administrators.</p>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-cta">
-                <h2>Ready to streamline your dental practice?</h2>
-                <a href="index.html#download" class="btn btn-white">Download for iOS</a>
-            </div>
-            <div class="footer-links">
-                <p>
-                    <a href="features.html" style="color: #86868B; margin-right: 20px;">Features</a>
-                    <a href="terms.html" style="color: #86868B; margin-right: 20px;">Terms of Service</a>
-                    <a href="privacy.html" style="color: #86868B; margin-right: 20px;">Privacy Policy</a>
-                    <a href="support.html" style="color: #86868B;">Support</a>
-                </p>
-                <p style="margin-top: 16px;">&copy; 2026 PureStock by Pureum Software. All rights reserved.</p>
-            </div>
+        <!-- Category 1: PureAI Voice Assistant -->
+        <div class="faq-category-title">
+          <span>✧</span> PureAI Voice &amp; Operatory Assistant
         </div>
-    </footer>
 
-    <script src="script.js?v=2.6"></script>
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is PureAI and how does it help in the operatory?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>PureAI</strong> is PureStock’s native voice and text clinical assistant designed specifically for dental teams. When wearing gloves during patient procedures, clinicians can speak natural dental requests hands-free:</p>
+            <ul style="padding-left:20px; margin:10px 0;">
+              <li><em>"Used 2 carpules of Septanest in Chair 2"</em></li>
+              <li><em>"Add 5 boxes of size 2 barrier sleeves to the Henry Schein order"</em></li>
+              <li><em>"Check if we have enough Filtek Supreme A2 in stock"</em></li>
+              <li><em>"Start an autoclave cycle: Pouches, 30 min, 273°F"</em></li>
+            </ul>
+            <p>PureAI parses dental terminology and executes native in-app adjustments without requiring screen touches.</p>
+          </div>
+        </div>
 
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the Undo feature work if PureAI mishears an instruction?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every voice and text action initiated by PureAI presents an interactive <strong>Action Confirmation Card</strong> with a prominent <strong>[↩ Undo]</strong> button. If clinical operatory noise causes an inaccurate count, simply tap <strong>Undo</strong> to immediately reverse the database change.</p>
+          </div>
+        </div>
 
-                // Toggle current item
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-    </script>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does PureAI collect or store Protected Health Information (PHI)?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>No. PureStock enforces a strict Zero-PHI architecture.</strong> PureStock is purely an operational supply inventory and autoclave compliance platform—never an Electronic Health Record (EHR) system or diagnostic tool. Patient names, health charts, and medical histories are never requested, processed, or saved.</p>
+          </div>
+        </div>
 
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are there role-based safety guardrails for dental assistants?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. PureStock differentiates roles between <strong>Doctor / Clinic Owner</strong>, <strong>Associate Dentist</strong>, and <strong>Dental Assistant / Staff</strong>. While staff can record supply usage, log autoclave runs, and request replenishment, sensitive administrative actions (such as permanent item deletions, vendor contract pricing modifications, and staff role changes) require Doctor confirmation.</p>
+          </div>
+        </div>
+
+        <!-- Category 2: Subscriptions & Billing -->
+        <div class="faq-category-title">
+          <span>💳</span> Subscriptions &amp; Apple In-App Billing
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the 7-day free trial work?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>All new clinics receive 7 days of full-featured access across all devices. You will not be billed during the trial. If you choose not to subscribe, simply cancel in your Apple ID Subscriptions settings at least 24 hours before the 7 days elapse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What are the subscription options and pricing?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>PureStock is available via Apple In-App Purchase in two tiers:</p>
+            <ul style="padding-left:20px; margin:10px 0;">
+              <li><strong>Standard Tier:</strong> $19.99 USD / month (or $189.99 USD / year, saving ~21%). Supports up to 300 inventory items, 2 team members, real-time iCloud sync, barcode/QR scanner, purchase order drafts, and core PureAI commands.</li>
+              <li><strong>Premium Tier:</strong> $29.99 USD / month (or $289.99 USD / year). Includes unlimited inventory items, unlimited clinic devices, full Autoclave Sterilization &amp; Biological Spore Test logs, delivery invoice photo archiving, and year-end inventory valuation tax exports.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I cancel or modify my subscription?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Subscriptions are securely handled by Apple StoreKit. You can manage or cancel anytime directly from your iOS device:</p>
+            <ol style="padding-left:20px; margin:8px 0;">
+              <li>Open the <strong>Settings</strong> app on your iPhone or iPad.</li>
+              <li>Tap your <strong>Apple Account / Name</strong> at the top.</li>
+              <li>Select <strong>Subscriptions</strong>.</li>
+              <li>Choose <strong>PureStock</strong> and tap <strong>Cancel Subscription</strong>.</li>
+            </ol>
+            <p>Your access remains active through the end of the paid billing period.</p>
+          </div>
+        </div>
+
+        <!-- Category 3: Sterilization & Compliance -->
+        <div class="faq-category-title">
+          <span>◎</span> Sterilization &amp; Autoclave Compliance
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I record autoclave cycles?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Navigate to the <strong>Sterilization</strong> module or instruct PureAI. Select your sterilizer unit, cycle program (Pouches, Wrapped Cassettes, Unwrapped, or Liquid), set the temperature, pressure, duration, and enter the operator's initials. PureStock generates a timestamped digital logbook ready for state dental board audits.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can we track weekly Biological Indicator (spore) tests?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. PureStock provides a dedicated Biological Indicator (BI) log. Assistants record incubation start times, control test vials, final results (Pass/Negative or Fail/Positive), and receive automated alerts whenever a weekly test is due.</p>
+          </div>
+        </div>
+
+        <!-- Category 4: Privacy & Account Sovereignty -->
+        <div class="faq-category-title">
+          <span>🔐</span> Account &amp; In-App Data Deletion
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I permanently delete my account and clinic data?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>In accordance with Apple App Store Guideline 5.1.1(v), PureStock provides a direct in-app account deletion mechanism under <code>Settings &gt; Account &gt; Delete Practice Data</code>. Confirming this action immediately purges your active inventory, sterilization records, and invoice photos from production servers within 30 days. You may also email <a href="mailto:pureumsoftware@gmail.com">pureumsoftware@gmail.com</a> for expedited removal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do multiple operatory devices stay in sync?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>PureStock uses encrypted real-time cloud synchronization (AES-256). Any supply adjustment, new purchase order, or logged autoclave run on an assistant’s iPhone appears instantly on front-desk iPads and the practice owner’s device.</p>
+          </div>
+        </div>
+
+        <!-- Category 5: Barcode Scanner & Imports -->
+        <div class="faq-category-title">
+          <span>▦</span> Barcode Scanner &amp; Catalog Imports
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Which barcode and QR formats are supported?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>The high-speed camera scanner detects all standard linear 1D barcodes (UPC-A, EAN-13, Code 128, Code 39) along with 2D QR codes and GS1 DataMatrix codes printed on dental supply boxes and lot stickers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I import our existing supply spreadsheet?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Under <code>Settings &gt; Data Management</code>, you can import your existing practice catalog using our pre-formatted CSV template. You can also export your active inventory into CSV or formatted valuation PDF at any time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section class="bottom-cta">
+      <div class="container cta-inner">
+        <div class="cta-pattern">✳</div>
+        <div class="section-kicker light-kicker">STILL HAVE QUESTIONS?</div>
+        <h2>We're here to help your practice run smoother.</h2>
+        <p>Our team is available to assist with custom vendor setups, catalog onboarding, and team training.</p>
+        <a class="btn btn-light btn-large" href="mailto:pureumsoftware@gmail.com">Contact Support Team <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">
+            <img src="assets/logo.jpg" alt="PureStock Logo">
+          </span>
+          <span>purestock<span class="brand-period">.</span></span>
+        </a>
+        <p>Intelligent inventory and sterilization compliance for the modern dental practice.<br>Crafted with precision by Pureum Software.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <strong>EXPLORE</strong>
+          <a href="index.html#platform">Platform Preview</a>
+          <a href="index.html#features">6 Core Modules</a>
+          <a href="index.html#app-screens">iOS App Screens</a>
+          <a href="index.html#ai">PureAI Voice</a>
+          <a href="index.html#pricing">Pricing Plans</a>
+        </div>
+        <div>
+          <strong>RESOURCES</strong>
+          <a href="support.html">Support &amp; FAQ</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="https://pureum.dev/">Pureum Software ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Pureum Software. All rights reserved.</span>
+      <span>Made for smiles. Built for the clinical teams behind them. ✳</span>
+    </div>
+
+    <div class="container disclaimer">
+      PureStock is an operational management tool for dental practice supply tracking, purchase orders, and sterilization compliance logs. It is not an electronic health record (EHR) system, medical device, or clinical diagnostic instrument, and does not store Protected Health Information (PHI). Clinical teams remain solely responsible for patient care and regulatory compliance.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
